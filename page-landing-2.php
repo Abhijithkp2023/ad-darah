@@ -51,6 +51,9 @@ get_header();
 			),
 		);
 		include locate_template('template-parts/InfiniteSlider.php');
+
+		// Video Form Section
+		get_template_part('template-parts/VideoForm');
 		?>
 	</div>
 </main><!-- #main -->

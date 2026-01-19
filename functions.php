@@ -377,6 +377,7 @@ function addarah_scripts()
 	
 	if ($is_landing_2_page) {
 		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
+		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
 	}
 
 	// Load page-specific scripts
