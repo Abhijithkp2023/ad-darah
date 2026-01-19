@@ -198,27 +198,131 @@
 		};
 
 		/**
-		 * Close Fullscreen Navigation Menu
+		 * Close Fullscreen Navigation Menu with GSAP Animation
 		 */
 		const closeFullscreenMenu = function() {
-			const fullscreenNav = document.getElementById('fullscreenNavMenu');
-			if (fullscreenNav) {
-				fullscreenNav.classList.remove('fullscreen-nav-open');
-				document.body.classList.remove('fullscreen-nav-open');
-				// Reset submenu state
-				resetFullscreenSubmenu();
+			// Check if GSAP is available
+			if (typeof gsap === 'undefined') {
+				console.warn('GSAP is not loaded');
+				return;
 			}
+
+			const fullscreenNav = document.getElementById('fullscreenNavMenu');
+			if (!fullscreenNav) {
+				return;
+			}
+
+			// Get elements
+			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+			// Create reverse timeline
+			const tl = gsap.timeline({
+				onComplete: function() {
+					// Reset after animation completes
+					fullscreenNav.classList.remove('fullscreen-nav-open');
+					document.body.classList.remove('fullscreen-nav-open');
+					// Reset submenu state
+					resetFullscreenSubmenu();
+				}
+			});
+
+			// Reverse sequence (headings stay visible, no animation)
+			tl.to(menuItems, {
+				opacity: 0,
+				x: 30,
+				duration: 0.3,
+				ease: 'power2.in'
+			})
+			.to([gridSubs, gridSocials], {
+				opacity: 0,
+				y: 20,
+				rotationX: 90,
+				duration: 0.3,
+				stagger: 0.02,
+				ease: 'power2.in'
+			}, '-=0.2')
+			.to(leftPanel, {
+				x: '-100%',
+				duration: 0.4,
+				ease: 'power2.in'
+			}, '-=0.2')
+			.to(rightPanel, {
+				x: '100%',
+				duration: 0.4,
+				ease: 'power2.in'
+			}, '-=0.4'); // Start at same time as left panel
 		};
 
 		/**
-		 * Open Fullscreen Navigation Menu
+		 * Open Fullscreen Navigation Menu with GSAP Animation
 		 */
 		const openFullscreenMenu = function() {
-			const fullscreenNav = document.getElementById('fullscreenNavMenu');
-			if (fullscreenNav) {
-				fullscreenNav.classList.add('fullscreen-nav-open');
-				document.body.classList.add('fullscreen-nav-open');
+			// Check if GSAP is available
+			if (typeof gsap === 'undefined') {
+				console.warn('GSAP is not loaded');
+				return;
 			}
+
+			const fullscreenNav = document.getElementById('fullscreenNavMenu');
+			if (!fullscreenNav) {
+				return;
+			}
+
+			// Get elements
+			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+			// Show menu container
+			fullscreenNav.classList.add('fullscreen-nav-open');
+			document.body.classList.add('fullscreen-nav-open');
+
+			// Reset initial states (headings are visible from start, no animation needed)
+			gsap.set(leftPanel, { x: '-100%' });
+			gsap.set(rightPanel, { x: '100%' });
+			gsap.set(gridSubs, { opacity: 0, y: 20, rotationX: 90 });
+			gsap.set(gridSocials, { opacity: 0, y: 20, rotationX: 90 });
+			gsap.set(menuItems, { opacity: 0, x: 30 });
+
+			// Create timeline for animation sequence
+			const tl = gsap.timeline();
+
+			// Step 1: Slide in panels (0.6s)
+			tl.to(leftPanel, {
+				x: 0,
+				duration: 0.6,
+				ease: 'power2.out'
+			})
+			.to(rightPanel, {
+				x: 0,
+				duration: 0.6,
+				ease: 'power2.out'
+			}, '-=0.6') // Start at the same time as left panel
+
+			// Step 2: Flip grid subs and socials together from bottom (after panels fully join)
+			.to([gridSubs, gridSocials], {
+				opacity: 1,
+				y: 0,
+				rotationX: 0,
+				duration: 0.5,
+				stagger: 0.05,
+				ease: 'back.out(1.7)',
+				transformOrigin: 'bottom'
+			}) // Start after panels animation completes (at 0.6s)
+
+			// Step 3: Show menu items (after subs/socials finish)
+			.to(menuItems, {
+				opacity: 1,
+				x: 0,
+				duration: 0.5,
+				ease: 'power2.out'
+			}); // Start after subs/socials animation completes
 		};
 
 		/**

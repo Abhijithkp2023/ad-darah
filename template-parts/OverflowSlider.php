@@ -34,6 +34,8 @@ $overflow_slider_items = isset($overflow_slider_items) && is_array($overflow_sli
         <?php if ($overflow_slider_paragraph): ?>
             <p class="overflow-slider-section-paragraph"><?php echo esc_html($overflow_slider_paragraph); ?></p>
         <?php endif; ?>
+        </div>
+        <div class="overflow-slider-cards-wrapper">
 
         <?php if (!empty($overflow_slider_items)): ?>
             <div class="overflow-slider-swiper-container">
@@ -74,6 +76,7 @@ $overflow_slider_items = isset($overflow_slider_items) && is_array($overflow_sli
                 </div>
             </div>
         <?php endif; ?>
-    </div>
+        </div>
+   
 </section>
 

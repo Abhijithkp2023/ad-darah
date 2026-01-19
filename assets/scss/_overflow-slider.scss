@@ -10,6 +10,12 @@
 		z-index: 1;
 	}
 
+	.overflow-slider-cards-wrapper {
+		width: calc(100vw - (100vw - 1400px) / 2);
+		margin-left: auto;
+		overflow: visible;
+	}
+
 	.overflow-slider-section-heading {
 		@include packages-section-heading;
 		color: #c5b17f;

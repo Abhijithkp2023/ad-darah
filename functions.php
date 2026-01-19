@@ -158,6 +158,8 @@ function addarah_scripts()
 	wp_enqueue_style('flatpickr-css', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', array(), '4.6.13');
 	wp_enqueue_script('flatpickr-js', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js', array(), '4.6.13', true);
 
+	wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/Header.js', array('gsap', 'choices-js', 'flatpickr-js'), _S_VERSION, true);
+
 	wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/Header.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
 
 	// Enqueue Footer component script (loaded on all pages)
@@ -368,6 +370,13 @@ function addarah_scripts()
 		// Enqueue Statistics script for number animation
 		wp_enqueue_script('statistics-script', get_template_directory_uri() . '/assets/js/Statistics.js', array(), _S_VERSION, true);
 
+	}
+
+	// Load scripts for Landing 2 page
+	$is_landing_2_page = is_page_template('page-landing-2.php');
+	
+	if ($is_landing_2_page) {
+		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
 	}
 
 	// Load page-specific scripts
