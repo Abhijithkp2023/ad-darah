@@ -1,0 +1,117 @@
+// Contact Us Component Styles
+
+.contact-us-container {
+	position: relative;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+
+	// Overlay for better text readability (optional)
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+	}
+
+
+	.contact-us-title {
+		@include px-rem(60);
+		font-weight: 500;
+		line-height: 1.2;
+		color: #fff;
+		margin: 0 0 20px 0;
+		text-align: left;
+	}
+
+	.contact-us-description {
+		@include px-rem(18);
+		line-height: 1.6;
+		color: #fff;
+		margin-block:0px 56px;
+		text-align: left;
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		min-height: 450px;
+		padding: 60px 0;
+
+		.contact-us-title {
+			font-size: 42px;
+			margin-bottom: 18px;
+		}
+
+		.contact-us-description {
+			font-size: 17px;
+			margin-bottom: 25px;
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		min-height: 400px;
+		padding: 50px 0;
+
+
+		.contact-us-title {
+			font-size: 32px;
+			margin-bottom: 15px;
+			line-height: 1.3;
+		}
+
+		.contact-us-description {
+			font-size: 16px;
+			margin-bottom: 25px;
+			line-height: 1.5;
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+		min-height: 350px;
+		padding: 40px 0;
+
+		.contact-us-title {
+			font-size: 28px;
+			margin-bottom: 12px;
+		}
+
+		.contact-us-description {
+			font-size: 15px;
+			margin-bottom: 20px;
+		}
+
+	}
+
+	// Extra Small Mobile
+	@media #{$media-480} {
+		min-height: 320px;
+		padding: 30px 0;
+
+		.contact-us-title {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.contact-us-description {
+			font-size: 14px;
+			margin-bottom: 18px;
+		}
+	}
+}
+

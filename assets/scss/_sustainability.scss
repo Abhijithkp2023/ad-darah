@@ -1,0 +1,216 @@
+// Sustainability Component Styles
+
+.sustainability-container {
+	width: 100%;
+	padding: 100px 0;
+	background-color: #F4F1E7;
+
+
+	.sustainability-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 60px;
+		margin-bottom: 70px;
+	}
+
+	.sustainability-header-left {
+		flex: 0 0 auto;
+	}
+
+	.sustainability-header-right {
+		flex: 0 0 auto;
+		max-width: 640px;
+	}
+
+	.sustainability-tag {
+		@include sustainability-tag;
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.sustainability-heading {
+		@include sustainability-heading;
+		margin: 0;
+	}
+
+	.sustainability-paragraph {
+		@include sustainability-paragraph;
+		margin: 0;
+	}
+
+	.sustainability-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	// Image Section (Left) - 54.86% of 1400px = 768px
+	.sustainability-image-wrapper {
+		flex: 0 0 54.86%;
+		max-width: 768px;
+		width: 100%;
+		transition: all 0.5s ease;
+		overflow: hidden;
+		border-radius: 20px;
+
+		&:hover {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.sustainability-image {
+		width: 100%;
+		height: 468px;
+		object-fit: cover;
+		display: block;
+		transition: all 0.5s ease;
+
+	}
+
+	// Cards Section (Right) - 46.57% of 1400px = 652px
+	.sustainability-cards {
+		flex: 0 0 46.57%;
+		max-width: 652px;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		height: 468px;
+	}
+
+	.sustainability-card {
+		width: calc(50% - 10px);
+		height: calc(50% - 10px);
+		background: #ffffff;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 30px;
+		text-align: left;
+	}
+
+	.sustainability-card-icon {
+		width: 47px;
+		height: 47px;
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	.sustainability-card-text {
+		@include sustainability-card-text;
+		margin: 0;
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		padding: 80px 0;
+
+		.sustainability-content {
+			flex-direction: column;
+		}
+
+		.sustainability-image-wrapper {
+			flex: 1 1 100%;
+			max-width: 100%;
+		}
+
+		.sustainability-image {
+			height: 400px;
+		}
+
+		.sustainability-cards {
+			flex: 1 1 100%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		.sustainability-card {
+			width: calc(50% - 10px);
+			height: auto;
+			min-height: 200px;
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		padding: 60px 0;
+
+		.sustainability-heading {
+			font-size: 48px;
+		}
+
+		.sustainability-paragraph {
+			font-size: 16px;
+		}
+
+		.sustainability-image {
+			height: 300px;
+		}
+
+		.sustainability-cards {
+			gap: 15px;
+		}
+
+		.sustainability-card {
+			width: calc(50% - 7.5px);
+			padding: 20px 15px;
+		}
+
+		.sustainability-card-icon {
+			width: 40px;
+			height: 40px;
+			margin-bottom: 10px;
+		}
+
+		.sustainability-card-text {
+			font-size: 16px;
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+		padding: 40px 0;
+
+		.sustainability-tag {
+			font-size: 18px;
+		}
+
+		.sustainability-heading {
+			font-size: 36px;
+		}
+
+		.sustainability-paragraph {
+			font-size: 14px;
+		}
+
+		.sustainability-image {
+			height: 250px;
+		}
+
+		.sustainability-cards {
+			flex-direction: column;
+			height: auto;
+		}
+
+		.sustainability-card {
+			width: 100%;
+			height: auto;
+			min-height: 150px;
+		}
+	}
+}
+

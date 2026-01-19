@@ -1,0 +1,172 @@
+// Image Text Section Styles
+
+.image-text-section {
+	padding: 100px 0;
+	background-color: $white;
+
+	.container {
+		position: relative;
+	}
+
+	.image-text-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 60px;
+	}
+
+	.image-text-left {
+		width: 42.3%;
+		flex-shrink: 0;
+         border-radius: 10px;
+         overflow: hidden;
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			object-fit: cover;
+		}
+	}
+
+	.image-text-right {
+		width: 48%;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+        p{
+			margin-top: 0;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 1px;
+            color: #282828;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+		.image-text-button {
+			margin-top: 20px;
+		}
+	}
+
+	.image-text-headline {
+		margin: 0 0 30px 0;
+		display: flex;
+		flex-direction: column;
+		line-height: 1.2;
+        display: block;
+        font-size: 60px;
+        color: $gold;
+        font-weight: 500;
+       
+
+
+		.headline-line-1 {
+			margin-bottom: 5px;
+		}
+
+		.headline-line-2 {
+			font-weight: 400;
+		}
+	}
+
+
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		padding: 70px 0;
+
+		.image-text-wrapper {
+			gap: 50px;
+		}
+
+		.image-text-left,
+		.image-text-right {
+			width: 48%;
+		}
+
+		.image-text-headline {
+			font-size: 45px;
+			margin: 0 0 20px 0;
+
+			.headline-line-1,
+			.headline-line-2 {
+				@include px-rem(42);
+			}
+		}
+
+		.image-text-paragraph {
+			@include px-rem(17);
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		padding: 60px 0;
+
+		.image-text-wrapper {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		.image-text-left,
+		.image-text-right {
+			width: 100%;
+		}
+
+		.image-text-headline {
+			margin-bottom: 25px;
+
+			.headline-line-1,
+			.headline-line-2 {
+				@include px-rem(36);
+			}
+		}
+
+		.image-text-paragraph {
+			@include px-rem(16);
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+		padding: 50px 0;
+
+		.image-text-wrapper {
+			gap: 30px;
+		}
+
+		.image-text-headline {
+			margin-bottom: 20px;
+
+			.headline-line-1,
+			.headline-line-2 {
+				@include px-rem(32);
+			}
+		}
+
+		.image-text-paragraph {
+			@include px-rem(15);
+		}
+	}
+
+	// Extra Small Mobile
+	@media #{$media-480} {
+		padding: 40px 0;
+
+		.image-text-headline {
+			margin-bottom: 18px;
+
+			.headline-line-1,
+			.headline-line-2 {
+				@include px-rem(28);
+			}
+		}
+
+		.image-text-paragraph {
+			@include px-rem(14);
+		}
+	}
+}

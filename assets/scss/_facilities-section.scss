@@ -1,0 +1,165 @@
+// Facilities Section Styles
+
+.facilities-section {
+	width: 100%;
+	background-color: $white;
+
+	.container {
+		position: relative;
+	}
+
+	.facilities-header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 60px;
+		gap: 30px;
+
+		.facilities-heading {
+			font-family: "Neue Regrade", sans-serif;
+			font-weight: 600;
+			font-size: 60px;
+			line-height: 1;
+			color: $black;
+			margin: 0;
+			flex: 0 0 auto;
+		}
+
+		.facilities-description {
+			font-family: "Neue Regrade", sans-serif;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 1.5;
+			color: $black;
+			margin: 0;
+			width: 510px;
+			flex: 0 0 auto;
+		}
+	}
+
+	.facilities-cards {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: flex-start;
+	}
+
+	.facilities-card {
+		flex: 1 1 calc(33.333% - 14px);
+		min-width: 300px;
+		background-color: $white;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+
+		.facilities-card-image {
+			width: 100%;
+			height: 0;
+			padding-bottom: 56.25%; // 16:9 aspect ratio
+			position: relative;
+			overflow: hidden;
+			border-radius: 20px;
+            height: 301px;
+
+            img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+                transition: transform 0.5s ease;
+			}
+
+            &:hover {
+                img {
+                    transform: scale(1.05);
+                }
+            }
+		}
+
+		.facilities-card-content {
+			padding: 50px 20px 0 20px;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+            max-width: 418px;
+
+			.facilities-card-title {
+				@include perfect-day-card-heading;
+				color: #282828;
+				margin: 0 0 15px 0;
+			}
+
+			.facilities-card-description {
+				@include perfect-day-paragraph;
+				color: #282828;
+				margin: 0 0 20px 0;
+				flex-grow: 1;
+			}
+
+			.facilities-card-button {
+				margin-top: auto;
+			}
+		}
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		.facilities-header {
+			flex-direction: column;
+			margin-bottom: 50px;
+
+			.facilities-heading {
+				font-size: 50px;
+			}
+
+			.facilities-description {
+				width: 100%;
+				max-width: 548px;
+			}
+		}
+
+		.facilities-card {
+			flex: 1 1 calc(50% - 10px);
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		.facilities-header {
+			margin-bottom: 40px;
+
+			.facilities-heading {
+				font-size: 40px;
+			}
+
+			.facilities-description {
+				font-size: 16px;
+			}
+		}
+
+		.facilities-cards {
+			flex-direction: column;
+		}
+
+		.facilities-card {
+			flex: 1 1 100%;
+			min-width: 100%;
+
+			.facilities-card-content {
+				padding: 25px 20px;
+
+				.facilities-card-title {
+					font-size: 24px;
+				}
+
+				.facilities-card-description {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

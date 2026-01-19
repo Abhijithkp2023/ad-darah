@@ -1,0 +1,424 @@
+// Main Banner Component Styles
+// Used for the front page/homepage banner
+
+// Disable body scroll during banner animation
+html.banner-animating,
+body.banner-animating {
+	overflow: hidden !important;
+	position: fixed !important;
+	width: 100% !important;
+	height: 100% !important;
+	touch-action: none !important;
+	-webkit-overflow-scrolling: none !important;
+}
+
+.main-banner-container {
+	position: relative;
+	width: 100%;
+	min-height: 600px;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	// overflow: hidden;
+	max-height: 900px;
+
+	// Dark overlay for better text readability
+	.main-banner-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.3) 0%,
+				rgba(0, 0, 0, 0.5) 20%,
+				rgba(0, 0, 0, 0) 55%
+			),
+			linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.6) 0%,
+				rgba(0, 0, 0, 0.5) 25%,
+				rgba(0, 0, 0, 0) 55%
+			);
+		z-index: 4;
+	}
+
+	// SVG mask overlay
+	.main-banner-mask {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10000;
+		pointer-events: none;
+		transform-origin: center center;
+		will-change: transform; // Optimize for animation
+		backface-visibility: hidden; // Prevent blur during transforms
+		-webkit-backface-visibility: hidden;
+		transform: translate3d(
+			0,
+			0,
+			0
+		); // Force hardware acceleration with 3D transform
+		-webkit-transform: translate3d(0, 0, 0); // WebKit hardware acceleration
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		perspective: 1000px; // Enable 3D rendering context
+
+		img,
+		.main-banner-mask-img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: bottom;
+			image-rendering: -webkit-optimize-contrast; // Crisp edges for WebKit
+			image-rendering: crisp-edges; // Crisp edges standard
+			shape-rendering: crispEdges; // Crisp edges for SVG paths
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			transform-origin: center center;
+			will-change: transform, opacity; // Optimize for animation
+			transform: translate3d(0, 0, 0); // Force hardware acceleration
+			-webkit-transform: translate3d(0, 0, 0); // WebKit hardware acceleration
+			opacity: 1;
+			animation: svgScaleFade 3s ease-in-out forwards;
+		}
+
+		// SVG specific styles
+		svg.main-banner-mask-img {
+			display: block;
+		}
+	}
+
+	// SVG scaling and fade animation
+	@keyframes svgScaleFade {
+		0% {
+			transform: translate3d(0, 0, 0) scale(1);
+			opacity: 1;
+		}
+		100% {
+			transform: translate3d(0, 0, 0) scale(1.5);
+			opacity: 0;
+		}
+	}
+
+	.main-banner-content {
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 60px 0;
+	}
+
+	.main-banner-text-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 30px;
+		padding-inline: 25px;
+	}
+
+	.main-banner-title-wrapper {
+		flex: 0 0 auto;
+		max-width: 50%;
+	}
+
+	.main-banner-title {
+		@include main-banner-title-large;
+		color: rgba(255, 255, 255, 0.83);
+		margin: 0;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.main-banner-subtitle-wrapper {
+		flex: 0 0 auto;
+		text-align: right;
+		max-width: 400px;
+	}
+
+	.main-banner-subtitle {
+		@include para-text;
+		font-weight: 500;
+		color: $white;
+		margin: 0;
+		opacity: 0.95;
+	}
+
+	.main-banner-form-wrapper {
+		overflow: visible; // Allow dropdowns to overflow
+		position: relative; // For dropdown positioning context
+		z-index: 10; // Ensure dropdowns appear above other elements
+	}
+
+	.main-banner-form {
+		display: flex;
+		align-items: center;
+		background: rgba(255, 255, 255, 1);
+		padding: 25px;
+		flex-wrap: nowrap;
+		border: 1px solid #7a6f55;
+		border-radius: 102px; // Apply border-radius directly to form
+		justify-content: space-between;
+		gap: 20px;
+		position: relative; // For dropdown positioning
+
+		.form-label {
+			@include form-label;
+			white-space: nowrap;
+			margin-bottom: 10px;
+		}
+
+		input,
+		select {
+			border: none;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			font-family: "Neue Regrade", sans-serif;
+			font-size: 18px;
+			line-height: 1.5;
+			font-weight: 500;
+			color: $black;
+			width: 100%;
+			outline: none;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+
+			&::placeholder {
+				@include form-placeholder;
+			}
+
+			&::-webkit-input-placeholder {
+				@include form-placeholder;
+			}
+
+			&::-moz-placeholder {
+				@include form-placeholder;
+				opacity: 1;
+			}
+
+			&:-ms-input-placeholder {
+				@include form-placeholder;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			// For select options
+			option {
+				color: $black;
+				background: $white;
+			}
+
+			// Placeholder option styling
+			option[value=""] {
+				color: $placeholder-gray;
+			}
+
+			// For date input
+			&[type="date"] {
+				position: relative;
+				cursor: pointer;
+
+				&::-webkit-calendar-picker-indicator {
+					cursor: pointer;
+					opacity: 0.6;
+					transition: opacity 0.3s ease;
+				}
+
+				&:hover::-webkit-calendar-picker-indicator {
+					opacity: 1;
+				}
+			}
+		}
+
+		// Choices.js styling for select dropdowns
+		.choices-form {
+			width: 100%;
+			margin-bottom: 0;
+			position: relative;
+
+			// Hide the native select
+			select.choices__input {
+				display: none;
+			}
+
+			// Hide default Choices.js arrow
+			&::after {
+				display: none !important;
+			}
+
+			.choices__inner {
+				background: transparent;
+				border: none;
+				padding: 0;
+				padding-right: 24px;
+				min-height: auto;
+				font-size: 18px;
+				line-height: 1.5;
+				font-weight: 500;
+				position: relative;
+			}
+
+			.choices__list--single {
+				padding: 0;
+			}
+
+			.choices__item--selectable {
+				@include form-placeholder;
+				padding: 0;
+			}
+
+			.choices__placeholder {
+				@include form-placeholder;
+				opacity: 1;
+			}
+
+			// When value is selected, show in black
+			&.has-value {
+				.choices__item--selectable {
+					color: $black;
+				}
+			}
+
+			// Dropdown arrow - override Choices.js default arrow
+			.choices__inner::after {
+				content: "";
+				width: 12px;
+				height: 8px;
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ABAFB1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: center;
+				border: none;
+				margin-top: 0;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				position: absolute;
+			}
+
+			// Dropdown list styling
+			.choices__list--dropdown {
+				border: 1px solid #e0e0e0;
+				border-radius: 4px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				margin-top: 4px;
+				z-index: 10000; // High z-index to appear above form
+				position: absolute; // Ensure it can overflow
+
+				.choices__item--choice {
+					padding: 12px 16px;
+					font-size: 18px;
+					line-height: 1.5;
+					font-weight: 500;
+					color: $black;
+
+					&.is-highlighted {
+						background-color: #f5f5f5;
+					}
+				}
+			}
+		}
+
+		// Fallback for native select (if Choices.js not loaded)
+		select:not(.choices__input) {
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ABAFB1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right center;
+			padding-right: 24px;
+			cursor: pointer;
+			color: $placeholder-gray;
+
+			&.has-value {
+				color: $black;
+			}
+
+			option[value=""] {
+				color: $placeholder-gray;
+			}
+
+			option:not([value=""]) {
+				color: $black;
+			}
+		}
+
+		// Date input styling - show placeholder color when empty
+		input[type="date"] {
+			color: $placeholder-gray; // Default to placeholder color
+
+			// When date is selected, change to black
+			&:not(:invalid),
+			&.has-value {
+				color: $black;
+			}
+
+			// For browsers that support :placeholder-shown on date inputs
+			&:placeholder-shown {
+				color: $placeholder-gray;
+			}
+		}
+	}
+
+	.form-field {
+		flex: 0 1 auto;
+		padding-left: 20px;
+		border-left: 1px solid #abafb1;
+
+		&:first-child {
+			border-left: none;
+			padding-left: 0;
+		}
+
+		// Smaller fields (Full Name, Email Address, Phone No.)
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3) {
+			min-width: 100px;
+			max-width: 140px;
+		}
+
+		// Larger fields (Event Type, Event Date, Preferred Contact Time)
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(6) {
+			min-width: 150px;
+			max-width: 200px;
+		}
+	}
+
+	.book-visit-button {
+		@include button_primary;
+	}
+
+	.main-banner-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		overflow: hidden;
+		transform-origin: center center;
+		will-change: transform; // Optimize for animation
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+		}
+	}
+}

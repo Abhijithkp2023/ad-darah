@@ -1,0 +1,189 @@
+// Three Image Text Section Styles
+
+.three-image-text-section {
+	background-color: $white;
+
+	.container {
+		position: relative;
+	}
+
+	.three-image-text-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: start;
+		gap: 60px;
+
+		&.three-image-text-wrapper-image-left {
+			.three-image-text-image {
+				order: 1;
+			}
+			.three-image-text-text {
+				order: 2;
+			}
+		}
+
+		&.three-image-text-wrapper-image-right {
+			.three-image-text-image {
+				order: 2;
+			}
+			.three-image-text-text {
+				order: 1;
+			}
+		}
+
+		&.three-image-text-wrapper-text-bottom {
+			.three-image-text-text {
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	.three-image-text-wrapper-image-left {
+		.three-image-text-image {
+			width: 52.5%;
+		}
+		.three-image-text-text {
+			width: 548px;
+		}
+	}
+
+	.three-image-text-wrapper-image-right {
+		padding-top: 30px;
+		.three-image-text-image {
+			width: 462px;
+		}
+		.three-image-text-text {
+			padding-top: 70px;
+			width: 58.2%;
+		}
+	}
+
+	.three-image-text-image {
+		flex-shrink: 0;
+		border-radius: 20px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			object-fit: cover;
+            transition: transform 0.5s ease;
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.05);
+			}
+		}
+	}
+
+	.three-image-text-text {
+		display: flex;
+		gap: 30px;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		&.three-image-text-text-last {
+			margin-top: auto;
+			padding-bottom: 70px;
+		}
+	}
+
+	.three-image-text-item {
+		padding-bottom: 15px;
+		border-bottom: 1px solid #c5b17f;
+	}
+
+	.three-image-text-heading {
+		@include weddings-detail-heading;
+		letter-spacing: -1.9px;
+		white-space: nowrap;
+		margin: 0 0 10px 0;
+	}
+
+	.three-image-text-description {
+		@include weddings-detail-paragraph;
+		margin: 0;
+	}
+
+	.three-image-text-paragraph {
+		@include weddings-detail-paragraph;
+		margin: 0 0 20px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		padding: 70px 0;
+
+		.three-image-text-wrapper {
+			gap: 50px;
+		}
+
+		.three-image-text-wrapper-image-left {
+			.three-image-text-image {
+				width: 52.5%;
+			}
+			.three-image-text-text {
+				width: 548px;
+			}
+		}
+
+		.three-image-text-wrapper-image-right {
+			.three-image-text-image {
+				width: 462px;
+			}
+			.three-image-text-text {
+				width: 58.2%;
+			}
+		}
+
+		.three-image-text-heading {
+			font-size: 36px;
+		}
+
+		.three-image-text-description,
+		.three-image-text-paragraph {
+			font-size: 18px;
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		padding: 60px 0;
+
+		.three-image-text-wrapper {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		.three-image-text-wrapper-image-right {
+			.three-image-text-image {
+				order: 1;
+			}
+			.three-image-text-text {
+				order: 2;
+			}
+		}
+
+		.three-image-text-image,
+		.three-image-text-text {
+			width: 100% !important;
+		}
+
+		.three-image-text-heading {
+			font-size: 32px;
+		}
+
+		.three-image-text-description,
+		.three-image-text-paragraph {
+			font-size: 16px;
+		}
+	}
+}
+

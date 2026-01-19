@@ -1,0 +1,149 @@
+// Statistics Component Styles
+
+.statistics-container {
+	background-color: $white;
+	width: 100%;
+
+	.container {
+		position: relative;
+	}
+
+	.statistics-wrapper {
+		width: 100%;
+	}
+
+	.statistics-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 17px;
+		width: 100%;
+		@media #{$media-1024} {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.stat-item {
+		background-color: $white;
+		aspect-ratio: 347 / 347;
+		border: 1px solid #abb277; // Light gold border
+		border-radius: 20px;
+		padding: 36px 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: 200px;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		position: relative;
+		overflow: hidden;
+		@media #{$media-1024} {
+			aspect-ratio: 347 / 200;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 144px;
+			height: 218px;
+			background-image: url("../images/static_hover_decor.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: bottom right;
+			opacity: 0;
+			transform: translate(100%, 100%);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		&:hover {
+			&::after {
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	.stat-title {
+		@include stat-title;
+		margin-bottom: 20px;
+		text-align: left;
+		font-weight: 600;
+		color: #1D1D1B;
+	}
+
+	.stat-value {
+		@include stat-value;
+		display: flex;
+		color: $gold;
+		font-weight: 500;
+		gap: 5px;
+		margin-top: auto;
+
+		.statNumber,
+		.stat-plus {
+			// Inherit typography from parent .stat-value
+			font-family: inherit;
+			font-weight: inherit;
+			font-style: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			letter-spacing: inherit;
+			vertical-align: inherit;
+			color: inherit;
+		}
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+
+		.statistics-grid {
+			gap: 25px;
+		}
+
+		.stat-item {
+			padding: 35px 25px;
+			min-height: 180px;
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+
+		.statistics-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		.stat-item {
+			padding: 30px 20px;
+			min-height: 160px;
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+
+		.statistics-grid {
+			gap: 15px;
+		}
+
+		.stat-item {
+			padding: 25px 18px;
+			min-height: 150px;
+		}
+	}
+
+	// Extra Small Mobile
+	@media #{$media-480} {
+		.statistics-grid {
+			grid-template-columns: 1fr;
+			gap: 15px;
+		}
+
+		.stat-item {
+			padding: 25px 20px;
+			min-height: 140px;
+		}
+	}
+}

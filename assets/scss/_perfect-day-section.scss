@@ -1,0 +1,220 @@
+// Perfect Day Section Styles
+
+.perfect-day-section {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	.perfect-day-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 1;
+	}
+
+	.perfect-day-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.61);
+		z-index: 2;
+	}
+
+	.container {
+		position: relative;
+		z-index: 3;
+	}
+
+	.perfect-day-content {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 60px;
+	}
+
+	.perfect-day-header {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.perfect-day-heading {
+			@include perfect-day-heading;
+			color: $white;
+			margin: 0;
+			flex: 0 0 auto;
+			max-width: 460px;
+		}
+
+		.perfect-day-paragraph {
+			@include perfect-day-paragraph;
+			color: $white;
+			margin: 0;
+			flex: 1;
+			max-width: 600px;
+		}
+	}
+
+	.perfect-day-slider {
+		position: relative;
+		padding: 20px 0 40px 0;
+		z-index: 3;
+		width: 100%;
+		overflow: visible;
+
+		.swiper-slide {
+			height: auto;
+			max-width: 466px;
+			width: auto;
+			flex-shrink: 0;
+		}
+	}
+
+	.swiper-slide.perfect-day-card {
+		position: relative;
+		background-color: $white;
+		border-radius: 20px;
+		padding: 40px 30px;
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		align-items: flex-start;
+		flex-direction: column;
+		overflow: hidden;
+		height: 100%;
+		width: 100%;
+		max-width: 466px;
+		height: 292px;
+
+		&:hover {
+			.perfect-day-card-decor {
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+		}
+
+		.perfect-day-card-decor {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 172px;
+			height: 143px;
+			opacity: 0;
+			transform: translate(20px, -20px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			pointer-events: none;
+			z-index: 1;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		.perfect-day-card-heading {
+			@include perfect-day-card-heading;
+			color: #c5b17f;
+			margin: 0 0 15px 0;
+			position: relative;
+			z-index: 2;
+		}
+
+		.perfect-day-card-paragraph {
+			@include perfect-day-card-paragraph;
+			color: $black;
+			margin: 0;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	@media #{$media-1440} {
+		padding: 60px 0;
+
+		.perfect-day-header {
+			.perfect-day-heading {
+				@include perfect-day-heading;
+				font-size: 50px;
+			}
+
+			.perfect-day-paragraph {
+				@include perfect-day-paragraph;
+				font-size: 16px;
+			}
+		}
+
+		.swiper-slide.perfect-day-card {
+			.perfect-day-card-heading {
+				@include perfect-day-card-heading;
+				font-size: 24px;
+			}
+
+			.perfect-day-card-paragraph {
+				@include perfect-day-card-paragraph;
+				font-size: 16px;
+			}
+		}
+	}
+
+	@media #{$media-1200} {
+		padding: 50px 0;
+
+		.perfect-day-header {
+			flex-direction: column;
+			gap: 30px;
+
+			.perfect-day-heading {
+				@include perfect-day-heading;
+				font-size: 40px;
+				min-width: auto;
+			}
+
+			.perfect-day-paragraph {
+				@include perfect-day-paragraph;
+				max-width: 100%;
+			}
+		}
+
+		.swiper-slide.perfect-day-card {
+			padding: 30px 25px;
+		}
+	}
+
+	@media #{$media-768} {
+		padding: 40px 0;
+
+		.perfect-day-header {
+			.perfect-day-heading {
+				@include perfect-day-heading;
+				font-size: 32px;
+			}
+
+			.perfect-day-paragraph {
+				@include perfect-day-paragraph;
+				font-size: 14px;
+			}
+		}
+
+		.swiper-slide.perfect-day-card {
+			padding: 25px 20px;
+
+			.perfect-day-card-heading {
+				@include perfect-day-card-heading;
+				font-size: 22px;
+			}
+
+			.perfect-day-card-paragraph {
+				@include perfect-day-card-paragraph;
+				font-size: 14px;
+			}
+		}
+	}
+}

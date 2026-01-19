@@ -1,0 +1,30 @@
+.title-block {
+	h5 {
+		font-size: 20px;
+		color: #c5b17f;
+		font-weight: 500;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin-bottom: 25px;
+	}
+	h2 {
+		font-size: 40px;
+		color: #000;
+		font-weight: 600;
+		margin: 0;
+		@include px-rem(60);
+		font-weight: 600;
+		margin-bottom: 25px;
+	}
+}
+
+
+.title_style_1 {
+	@include px-rem(60);
+	margin: 0 0 10px 0;
+	line-height: 130%;
+
+	&.yello{ color: #C5B17F; }
+}
+

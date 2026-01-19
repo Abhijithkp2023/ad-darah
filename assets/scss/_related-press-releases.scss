@@ -1,0 +1,182 @@
+// Related Press Releases Component Styles
+
+.related-press-releases-section {
+	width: 100%;
+	padding: 60px 0;
+	background-color: #f9f9f9;
+	
+	@media #{$media-768} {
+		padding: 40px 0;
+	}
+}
+
+.related-press-releases-carousel-wrapper {
+	position: relative;
+	margin-top: 50px;
+	
+	@media #{$media-768} {
+		margin-top: 40px;
+	}
+}
+
+.related-press-releases-carousel {
+	overflow: visible;
+	padding-bottom: 20px;
+}
+
+.related-press-release-item {
+	background-color: #fff;
+	border-radius: 12px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.related-press-release-image {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+		display: block;
+	}
+	
+	&:hover img {
+		transform: scale(1.05);
+	}
+	
+	@media #{$media-768} {
+		height: 200px;
+	}
+	
+	@media #{$media-600} {
+		height: 180px;
+	}
+}
+
+.related-press-release-content {
+	padding: 25px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	
+	@media #{$media-768} {
+		padding: 20px;
+	}
+	
+	@media #{$media-600} {
+		padding: 18px;
+	}
+}
+
+.related-press-release-date {
+	font-size: 14px;
+	font-weight: 500;
+	color: $gold;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 12px;
+	display: block;
+	
+	@media #{$media-600} {
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+}
+
+.related-press-release-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #000;
+	margin: 0;
+	line-height: 1.4;
+	flex: 1;
+	
+	a {
+		color: #000;
+		text-decoration: none;
+		transition: color 0.3s ease;
+		display: block;
+		
+		&:hover {
+			color: $gold;
+		}
+	}
+	
+	@media #{$media-768} {
+		font-size: 18px;
+	}
+	
+	@media #{$media-600} {
+		font-size: 16px;
+	}
+}
+
+.related-press-releases-navigation {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 40px;
+	
+	@media #{$media-768} {
+		margin-top: 30px;
+	}
+}
+
+.related-press-releases-prev-btn,
+.related-press-releases-next-btn {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 2px solid $gold;
+	color: $gold;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+	
+	&:hover {
+		background-color: $gold;
+		color: #fff;
+	}
+	
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	
+	@media #{$media-600} {
+		width: 45px;
+		height: 45px;
+		
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}
+

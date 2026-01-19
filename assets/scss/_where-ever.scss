@@ -1,0 +1,271 @@
+// Where Ever Page Styles
+
+.where-ever-page {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.where-ever-content {
+	background-color: $white;
+	min-height: 100vh;
+
+	.container {
+		position: relative;
+	}
+
+	.where_ever_text_wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		justify-content: space-between;
+	}
+
+	.where-ever-title {
+		@include px-rem(48);
+		font-weight: 500;
+		line-height: 1.3;
+		color: $black;
+		margin: 0 0 30px 0;
+		text-align: left;
+		text-transform: capitalize;
+	}
+
+	// .where-ever-text {
+	// 	@include px-rem(18);
+	// 	font-weight: 300;
+	// 	line-height: 1.8;
+	// 	color: $black;
+	// 	margin: 0;
+
+	// 	p {
+	// 		margin: 0 0 20px 0;
+
+	// 		&:last-child {
+	// 			margin-bottom: 0;
+	// 		}
+	// 	}
+
+	// 	h1,
+	// 	h2,
+	// 	h3,
+	// 	h4,
+	// 	h5,
+	// 	h6 {
+	// 		margin: 30px 0 15px 0;
+	// 		font-weight: 500;
+	// 		line-height: 1.3;
+	// 	}
+
+	// 	h2 {
+	// 		@include px-rem(36);
+	// 	}
+
+	// 	h3 {
+	// 		@include px-rem(30);
+	// 	}
+
+	// 	h4 {
+	// 		@include px-rem(24);
+	// 	}
+
+	// 	ul,
+	// 	ol {
+	// 		margin: 20px 0;
+	// 		padding-left: 30px;
+
+	// 		li {
+	// 			margin: 10px 0;
+	// 			list-style: disc;
+	// 		}
+	// 	}
+
+	// 	img {
+	// 		max-width: 100%;
+	// 		height: auto;
+	// 		margin: 30px 0;
+	// 	}
+
+	// 	a {
+	// 		color: #00a859;
+	// 		text-decoration: underline;
+
+	// 		&:hover {
+	// 			color: darken(#00a859, 10%);
+	// 		}
+	// 	}
+	// }
+
+	// @media #{$media-1024} {
+	// 	padding: 70px 0;
+
+	// 	.where-ever-title {
+	// 		@include px-rem(42);
+	// 		margin-bottom: 25px;
+	// 	}
+
+	// 	.where-ever-text {
+	// 		@include px-rem(17);
+	// 	}
+	// }
+
+	// // Mobile Responsive
+	// @media #{$media-768} {
+	// 	padding: 60px 0;
+
+	// 	.where-ever-title {
+	// 		@include px-rem(36);
+	// 		margin-bottom: 20px;
+	// 	}
+
+	// 	.where-ever-text {
+	// 		@include px-rem(16);
+
+	// 		h2 {
+	// 			@include px-rem(30);
+	// 		}
+
+	// 		h3 {
+	// 			@include px-rem(26);
+	// 		}
+
+	// 		h4 {
+	// 			@include px-rem(22);
+	// 		}
+	// 	}
+	// }
+
+	// // Small Mobile Responsive
+	// @media #{$media-600} {
+	// 	padding: 50px 0;
+
+	// 	.where-ever-title {
+	// 		@include px-rem(32);
+	// 		margin-bottom: 18px;
+	// 	}
+
+	// 	.where-ever-text {
+	// 		@include px-rem(15);
+	// 	}
+	// }
+
+	// // Extra Small Mobile
+	// @media #{$media-480} {
+	// 	padding: 40px 0;
+
+	// 	.where-ever-title {
+	// 		@include px-rem(28);
+	// 		margin-bottom: 15px;
+	// 	}
+
+	// 	.where-ever-text {
+	// 		@include px-rem(14);
+	// 	}
+	// }
+}
+
+.where-ever-left-block {
+	width: 50%;
+
+	h2.where-ever-title {
+		@include where-ever-title;
+		color: $gold;
+		margin: 0;
+	}
+}
+
+.where-ever-right-block {
+	width: 36%;
+
+	p.where-ever-description {
+		@include para-text;
+		margin: 0;
+		margin-bottom: 20px;
+		color: #282828;
+		font-weight: 500;
+	}
+}
+
+.where-ever-video-wrapper {
+	width: 100%;
+	margin-top: 90px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	overflow: visible;
+}
+
+.where-ever-video-container {
+	position: relative;
+	width: 100%;
+	max-width: 1306px;
+	aspect-ratio: 1306 / 734;
+	border-radius: 20px;
+	overflow: hidden;
+	transition: all 1s ease;
+	will-change: width, height, left, max-width;
+	margin: 0 auto;
+
+	&:hover {
+		position: relative;
+		max-width: 100vw;
+		z-index: 100;
+		border-radius: 0;
+
+		.where-ever-play-button {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+}
+
+.where-ever-video-thumbnail {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.where-ever-video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	object-fit: cover;
+	z-index: 1;
+}
+
+.where-ever-play-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 118px;
+	height: 118px;
+	background: rgba(217, 217, 217, 0.2);
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	z-index: 2;
+
+	&:hover {
+		background: rgba(217, 217, 217, 0.3);
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	svg {
+		width: 30px;
+		height: 36px;
+		margin-left: 4px; // Slight offset for visual centering
+	}
+
+	&.is-hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+}

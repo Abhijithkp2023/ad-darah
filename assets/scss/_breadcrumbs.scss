@@ -1,0 +1,71 @@
+// Breadcrumbs Component Styles
+
+.breadcrumbs {
+	width: 100%;
+	padding: 25px 0;
+ border-bottom: solid 1px #C5B17F;
+	
+	@media #{$media-768} {
+		padding: 15px 0;
+	}
+}
+
+.breadcrumbs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0;
+}
+
+.breadcrumbs-item {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.breadcrumbs-link {
+	font-size: 16px;
+	font-weight: 500;
+	color: $gold;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	
+	&:hover {
+		color: lighten($gold, 10%);
+		text-decoration: underline;
+	}
+	
+	@media #{$media-600} {
+		font-size: 14px;
+	}
+}
+
+.breadcrumbs-current {
+	font-size: 16px;
+	font-weight: 500;
+	color: #666;
+	
+	@media #{$media-600} {
+		font-size: 14px;
+	}
+}
+
+.breadcrumbs-separator {
+	font-size: 16px;
+	color: #666;
+	margin: 0 10px;
+	
+	@media #{$media-600} {
+		font-size: 14px;
+		margin: 0 8px;
+	}
+}
+
+
+
+

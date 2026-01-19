@@ -1,0 +1,440 @@
+// Timeline Slider Styles
+
+.timeline-slider {
+	padding: 80px 0;
+	background-color: #C5B17F;
+	position: relative;
+
+	.container {
+		position: relative;
+	}
+
+	.timeline-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 60px;
+		gap: 60px;
+		position: relative;
+	}
+
+	.timeline-header-left {
+		flex: 0 0 30%;
+	}
+
+	.timeline-headline {
+		@include px-rem(60);
+		font-weight: 500;
+		line-height: 1.2;
+		color: #FFFFFF;
+		margin: 0;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	}
+
+	.timeline-header-right {
+		flex: 1;
+		p{
+			font-size: 18px;
+			line-height: 1.3;
+			color: #FFFFFF;
+			margin: 0;
+			max-width: 660px;
+			margin-left: auto;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	.timeline-description {
+		@include px-rem(18);
+		font-weight: 300;
+		line-height: 1.8;
+		color: $black;
+		margin: 0 0 30px 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	.timeline-navigation {
+		display: flex;
+		gap: 12px;
+		position: absolute;
+		bottom: -40px;
+		right: 25px;
+
+		.timeline-swiper-prev {
+			img {
+				transform: rotate(180deg);
+			}
+		}
+
+		.timeline-swiper-prev,
+		.timeline-swiper-next {
+			width: 58px;
+			height: 58px;
+			border-radius: 50%;
+			background-color:rgb(255 255 255 / 8%);
+			border: 1px solid #fff;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+			padding: 0;
+
+			img {
+				width: 24px;
+				height: 24px;
+				display: block;
+			}
+
+			&:hover {
+				background-color: $gold;
+				transform: scale(1.1);
+			}
+
+			&:active {
+				background-color: $gold;
+				transform: scale(1.1);
+			}
+
+			&.swiper-button-disabled {
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.timeline-swiper-container {
+		margin-bottom: 60px;
+	}
+
+
+
+	.timeline-card {
+		background-color: $white;
+		border-radius: 15px;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: translateY(-5px);
+		}
+		p{
+			max-width: 350px;
+			margin:0;
+			font-size: 18px;
+			line-height: 1.3;
+			color: #FFFFFF;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+		}
+		.timeline-card-content{
+			position: absolute;
+			left: 35px;
+			bottom: 35px;
+		}
+	}
+
+	.timeline-year {
+		@include px-rem(40);
+		font-weight: 500;
+		color: $white;
+		z-index: 2;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	.timeline-image {
+		width: 100%;
+		height: 343px;
+		overflow: hidden;
+		position: relative;
+		// transition: all 0.3s ease-in-out;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 0%,
+				rgba(0, 0, 0, 0.71) 100%
+			);
+		}
+	}
+
+	.timeline-card-description {
+		@include px-rem(16);
+		font-weight: 300;
+		line-height: 1.6;
+		color: $black;
+		margin: 0;
+		padding: 25px 30px;
+	}
+
+	.timeline-indicator {
+		position: relative;
+		margin-top: 80px;
+		width: 100%;
+	}
+
+	.timeline-line {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 2px;
+		background-color: rgba(255, 255, 255, 0.23);
+		transform: translateY(-50%);
+		overflow: hidden;
+	}
+
+	.timeline-progress {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 0%;
+		background-color: $white;
+		transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		z-index: 1;
+		will-change: width;
+	}
+
+	.timeline-years {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+		max-width: 84%;
+    	margin: 0 auto;
+	}
+
+	.timeline-year-btn {
+		background: none;
+		border: none;
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		padding: 0;
+		transition: all 0.3s ease;
+
+		.timeline-year-mark {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background-color: $gray;
+			display: block;
+			transition: all 0.3s ease;
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 0;
+				height: 0;
+				border-radius: 50%;
+				background-color: transparent;
+				transition: all 0.3s ease;
+			}
+		}
+
+		.timeline-year-label {
+			@include px-rem(20);
+			font-weight: 400;
+			color: rgba(255, 255, 255, 0.5);
+			transition: color 0.3s ease;
+		}
+
+		&.active {
+			.timeline-year-mark {
+				background-color: $gold;
+				width: 16px;
+				height: 16px;
+
+				&::after {
+					width: 8px;
+					height: 8px;
+					background-color: $gold;
+				}
+			}
+
+			.timeline-year-label {
+				color: $white;
+				font-weight: 500;
+			}
+		}
+
+		&:hover {
+			.timeline-year-mark {
+				background-color: $white;
+			}
+
+			.timeline-year-label {
+				color: $white;
+			}
+		}
+	}
+	.timeline-main-swiper {
+		width: 100%;
+		overflow: visible;
+		.swiper-wrapper{
+			align-items: flex-end;
+		}
+		.swiper-slide {
+			transition: all 0.3s ease-in-out;
+		}
+		.swiper-slide-active {
+			height: auto;
+			flex-basis:55% !important;
+			max-width: 55%;
+			.timeline-image{
+				height: 414px;
+			}
+			.timeline-year{
+				font-size: 50px;
+			}
+		}
+		.swiper-slide:not(.swiper-slide-active) {
+			flex-basis: 45% !important;
+			max-width: 45%;
+		}
+		
+	}
+	// Tablet Responsive
+	@media #{$media-1024} {
+		padding: 70px 0;
+
+		.timeline-header {
+			margin-bottom: 50px;
+			gap: 40px;
+		}
+
+		.timeline-headline {
+			@include px-rem(42);
+		}
+
+		.timeline-description {
+			@include px-rem(17);
+		}
+
+		.timeline-image {
+			height: 350px;
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		padding: 60px 0;
+
+		.timeline-header {
+			flex-direction: column;
+			margin-bottom: 40px;
+			gap: 30px;
+		}
+
+		.timeline-header-left {
+			flex: 1;
+			width: 100%;
+		}
+
+		.timeline-header-right {
+			flex: 1;
+			width: 100%;
+		}
+
+		.timeline-navigation {
+			position: static;
+			margin-top: 20px;
+		}
+
+		.timeline-headline {
+			@include px-rem(36);
+		}
+
+		.timeline-description {
+			@include px-rem(16);
+			margin-bottom: 20px;
+		}
+
+		.timeline-image {
+			height: 300px;
+		}
+
+		.timeline-year {
+			@include px-rem(56);
+			top: 20px;
+			left: 20px;
+		}
+
+		.timeline-card-description {
+			padding: 20px;
+			@include px-rem(15);
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+		padding: 50px 0;
+
+		.timeline-headline {
+			@include px-rem(32);
+		}
+
+		.timeline-image {
+			height: 250px;
+		}
+
+		.timeline-year {
+			@include px-rem(48);
+		}
+	}
+
+	// Extra Small Mobile
+	@media #{$media-480} {
+		padding: 40px 0;
+
+		.timeline-headline {
+			@include px-rem(28);
+		}
+
+		.timeline-description {
+			@include px-rem(14);
+		}
+
+		.timeline-image {
+			height: 200px;
+		}
+
+		.timeline-year {
+			@include px-rem(40);
+			top: 15px;
+			left: 15px;
+		}
+
+		.timeline-card-description {
+			padding: 15px;
+			@include px-rem(14);
+		}
+	}
+}

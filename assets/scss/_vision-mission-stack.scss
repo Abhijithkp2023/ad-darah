@@ -1,0 +1,96 @@
+// Vision Mission Stack Component Styles
+
+.vision-mission-stack-container {
+	width: 100%;
+	position: relative;
+	background-color: $black;
+	min-height: 100vh;
+
+	.vision-mission-stack-cards {
+		position: relative;
+		width: 100%;
+	}
+
+	.vision-mission-stack-card {
+		width: 100vw;
+		height: 100vh;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		.vision-mission-stack-card-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+
+		.vision-mission-stack-card-content {
+			position: relative;
+			z-index: 2;
+			padding: 40px 60px;
+			color: $white;
+			margin-bottom: auto;
+			margin-top: 200px;
+		}
+
+		.vision-mission-stack-card-title {
+			@include services-stack-title;
+			font-weight: 600;
+			font-style: normal;
+			letter-spacing: 0%;
+			color: $white;
+			margin: 0 0 20px 0;
+		}
+
+		.vision-mission-stack-card-description {
+			@include services-stack-description;
+			font-weight: 400;
+			font-style: normal;
+			letter-spacing: 0%;
+			color: $white;
+			margin: 0;
+			max-width: 600px;
+		}
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		padding-top: 70px;
+
+		.vision-mission-stack-card {
+			.vision-mission-stack-card-content {
+				padding: 35px 50px;
+			}
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		padding-top: 60px;
+
+		.vision-mission-stack-card {
+			.vision-mission-stack-card-content {
+				padding: 30px 40px;
+			}
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-600} {
+		padding-top: 50px;
+
+		.vision-mission-stack-card {
+			.vision-mission-stack-card-content {
+				padding: 25px 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,155 @@
+// Related Services Section Styles
+
+.related-services-section {
+	width: 100%;
+	background-color: rgba(197, 177, 127, 0.19);
+
+	.container {
+		position: relative;
+	}
+
+	.related-services-heading {
+		@include packages-section-heading;
+		color: #c5b17f;
+		margin: 0 0 20px 0;
+	}
+
+	.related-services-description {
+		@include perfect-day-paragraph;
+		color: #282828;
+		margin: 0 auto 60px auto;
+		max-width: 800px;
+		text-align: center;
+	}
+
+	.related-services-cards {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.related-services-card {
+		position: relative;
+		width: 100%;
+		height: 523px;
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: $black;
+
+		.related-services-card-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			.related-services-card-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					215.74deg,
+					rgba(0, 0, 0, 0) 20.92%,
+					rgba(0, 0, 0, 0.86) 73.06%
+				);
+				z-index: 2;
+				pointer-events: none;
+			}
+		}
+
+		.related-services-card-content {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 40px 30px;
+			z-index: 3;
+			max-width: 845px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+
+			.related-services-card-title {
+				@include perfect-day-card-heading;
+				color: $white;
+				margin: 0 0 15px 0;
+			}
+
+			.related-services-card-description {
+				@include perfect-day-paragraph;
+				color: $white;
+				margin: 0 0 20px 0;
+			}
+
+			.related-services-card-button {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	// Tablet Responsive
+	@media #{$media-1024} {
+		.related-services-heading {
+			font-size: 50px;
+		}
+
+		.related-services-description {
+			font-size: 16px;
+			margin-bottom: 50px;
+		}
+
+		.related-services-card {
+			height: 450px;
+
+			.related-services-card-content {
+				padding: 35px 25px;
+
+				.related-services-card-title {
+					font-size: 24px;
+				}
+
+				.related-services-card-description {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	// Mobile Responsive
+	@media #{$media-768} {
+		.related-services-heading {
+			font-size: 40px;
+		}
+
+		.related-services-description {
+			font-size: 16px;
+			margin-bottom: 40px;
+		}
+
+		.related-services-card {
+			height: 400px;
+
+			.related-services-card-content {
+				padding: 30px 20px;
+
+				.related-services-card-title {
+					font-size: 22px;
+				}
+
+				.related-services-card-description {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}

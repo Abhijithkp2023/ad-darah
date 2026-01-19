@@ -1,0 +1,260 @@
+// Virtual Tour Component Styles
+
+.virtual-tour-container {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	background: #000000;
+
+	.virtual-tour-image-wrapper {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+
+		.virtual-tour-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			max-width: 100vw;
+		}
+	}
+
+	.virtual-tour-overlay {
+		position: absolute;
+		top: 150px;
+		left: 0;
+		z-index: 10;
+		pointer-events: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.virtual-tour-overlay-content {
+			position: relative;
+			width: 100vw;
+			padding: 0 20px;
+			text-align: center;
+		}
+
+		.virtual-tour-title {
+			@include testimonials-title;
+			letter-spacing: 0px;
+			text-align: center;
+			text-transform: capitalize;
+			color: #ffffff;
+			margin: 0 0 15px 0;
+		}
+
+		.virtual-tour-subtitle {
+			font-family: "Neue Regrade", sans-serif;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 150%;
+			letter-spacing: 0%;
+			color: #ffffff;
+			margin: 0 0 40px 0;
+		}
+
+		.virtual-tour-line {
+			position: relative;
+			width: 100%;
+			height: 1px;
+			background: #C5B17F;
+			margin: 0 auto;
+			margin-top: 100px;
+
+			.virtual-tour-arrow {
+				position: absolute;
+				top: -28px; // Half of arrow height to center above line
+				width: 57px;
+				height: 56px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+
+				&-left {
+					left: calc(50% - 200px); // Distance from center
+					img {
+						transform: rotate(180deg);
+					}
+				}
+
+				&-right {
+					right: calc(50% - 200px); // Distance from center
+				}
+			}
+
+			.virtual-tour-icon {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 120px;
+				height: 120px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+
+	// Responsive styles
+	@media #{$media-1440} {
+		.virtual-tour-overlay {
+			.virtual-tour-overlay-content {
+				.virtual-tour-title {
+					font-size: 48px;
+				}
+
+				.virtual-tour-subtitle {
+					font-size: 16px;
+				}
+
+				.virtual-tour-line {
+					.virtual-tour-arrow {
+						width: 50px;
+						height: 49px;
+						top: -25px;
+
+						&-left {
+							left: calc(50% - 180px);
+						}
+
+						&-right {
+							right: calc(50% - 180px);
+						}
+					}
+
+					.virtual-tour-icon {
+						width: 110px;
+						height: 110px;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$media-1200} {
+		.virtual-tour-overlay {
+			.virtual-tour-overlay-content {
+				.virtual-tour-title {
+					font-size: 42px;
+				}
+
+				.virtual-tour-subtitle {
+					font-size: 15px;
+				}
+
+				.virtual-tour-line {
+					.virtual-tour-arrow {
+						width: 45px;
+						height: 44px;
+						top: -22px;
+
+						&-left {
+							left: calc(50% - 160px);
+						}
+
+						&-right {
+							right: calc(50% - 160px);
+						}
+					}
+
+					.virtual-tour-icon {
+						width: 100px;
+						height: 100px;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$media-1024} {
+		.virtual-tour-overlay {
+			.virtual-tour-overlay-content {
+				.virtual-tour-title {
+					font-size: 36px;
+				}
+
+				.virtual-tour-subtitle {
+					font-size: 14px;
+					margin-bottom: 30px;
+				}
+
+				.virtual-tour-line {
+					.virtual-tour-arrow {
+						width: 40px;
+						height: 39px;
+						top: -20px;
+
+						&-left {
+							left: calc(50% - 140px);
+						}
+
+						&-right {
+							right: calc(50% - 140px);
+						}
+					}
+
+					.virtual-tour-icon {
+						width: 80px;
+						height: 80px;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$media-768} {
+		.virtual-tour-overlay {
+			.virtual-tour-overlay-content {
+				.virtual-tour-title {
+					font-size: 28px;
+					margin-bottom: 10px;
+				}
+
+				.virtual-tour-subtitle {
+					font-size: 12px;
+					margin-bottom: 25px;
+				}
+
+				.virtual-tour-line {
+					.virtual-tour-arrow {
+						width: 35px;
+						height: 34px;
+						top: -17px;
+
+						&-left {
+							left: calc(50% - 120px);
+						}
+
+						&-right {
+							right: calc(50% - 120px);
+						}
+					}
+
+					.virtual-tour-icon {
+						width: 60px;
+						height: 60px;
+					}
+				}
+			}
+		}
+	}
+}
