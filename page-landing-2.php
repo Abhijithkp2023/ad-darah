@@ -21,33 +21,33 @@ get_header();
 		$infinite_slider_items = array(
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_01.png',
-				'heading' => 'Wedding Hall',
-				'description' => 'Grand and elegantly decorated wedding hall with lush greenery and crystal chandeliers.',
+				'heading' => 'Grand Wedding Hall',
+				'description' => 'Spacious halls with flexible layouts designed for unforgettable wedding celebrations.',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_02.png',
 				'heading' => 'Bridal & VIP Suites',
-				'description' => 'Luxurious suites designed for the bride and VIP guests with elegant furnishings.',
+				'description' => 'Private, luxurious suites for the bride, groom, and VIP guests to relax and prepare.',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_03.png',
 				'heading' => 'Separate Male & Female Halls',
-				'description' => 'Spacious and beautifully designed separate halls for male and female guests.',
+				'description' => 'Thoughtfully designed separate halls offering comfort, privacy, and cultural ease.',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_04.png',
-				'heading' => 'Luxury Venue',
-				'description' => 'Opulent event space with ornate mirrors, elegant decor, and romantic ambiance.',
+				'heading' => 'Luxury Venue ',
+				'description' => 'State-of-the-art lighting and sound to elevate every moment of your celebration.',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_05.png',
-				'heading' => 'Grand Entrance',
-				'description' => 'Magnificent entrance with dramatic lighting and architectural grandeur.',
+				'heading' => 'Dedicated Parking Area',
+				'description' => 'Ample parking with professional valet service for a seamless guest experience.',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/second_land_slide_06.png',
-				'heading' => 'Elegant Dining',
-				'description' => 'Luxurious dining areas with exquisite buffet setups and golden accents.',
+				'heading' => 'On site Catering Service ',
+				'description' => 'Fully equipped kitchens and live stations delivering fresh, memorable cuisine.',
 			),
 		);
 		include locate_template('template-parts/InfiniteSlider.php');

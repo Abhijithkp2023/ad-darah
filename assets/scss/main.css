@@ -10413,7 +10413,6 @@ body.banner-animating {
   margin-left: auto;
   overflow: hidden;
   position: relative;
-  padding: 20px 0;
 }
 .infinite-slider-section .infinite-slider-cards-wrapper:hover .infinite-slider-track {
   animation-play-state: paused;
@@ -10422,7 +10421,7 @@ body.banner-animating {
   display: flex;
   gap: 20px;
   width: fit-content;
-  animation: infinite-slide 60s linear infinite;
+  animation: infinite-slide 20s linear infinite;
   will-change: transform;
 }
 @keyframes infinite-slide {
@@ -10442,6 +10441,8 @@ body.banner-animating {
   flex-shrink: 0;
   background-color: #000;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 .infinite-slider-section .infinite-slider-card::before {
   content: "";
@@ -10475,6 +10476,7 @@ body.banner-animating {
   flex-direction: column;
   transition: all 0.8s ease;
   margin-top: auto;
+  transform: translateY(calc(100% - 100px));
 }
 .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-heading {
   font-family: "Neue Regrade", sans-serif;
@@ -10493,7 +10495,8 @@ body.banner-animating {
   font-size: 18px;
   line-height: 1.5;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 0;
   opacity: 0;
   overflow: hidden;
   transition: all 0.8s ease;
