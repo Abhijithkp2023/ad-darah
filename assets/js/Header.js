@@ -131,7 +131,7 @@
 		// Use Lenis scroll event if available, otherwise fallback to window scroll
 		if (window.lenisInstance) {
 			window.lenisInstance.on('scroll', ({ scroll }) => {
-				// Handle initial header visibility (700px threshold)
+				// Handle initial header visibility (700px threshold) - works on all pages
 				if (scroll >= SCROLL_THRESHOLD) {
 					if (initialHeaderContainer) {
 						initialHeaderContainer.classList.add('header-inactive');
@@ -166,8 +166,10 @@
 				}
 			});
 		} else {
-			// Fallback to window scroll event
+			// Fallback to window scroll event - works on all pages
 			window.addEventListener('scroll', handleScroll, { passive: true });
+			// Also check initial scroll position
+			handleScroll();
 		}
 
 		/**

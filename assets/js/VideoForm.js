@@ -72,80 +72,98 @@
 
 		const selects = document.querySelectorAll('.video-form-choices-select');
 		
+		console.log('VideoForm: Found', selects.length, 'select elements with class video-form-choices-select');
+		
 		if (selects.length === 0) {
+			console.log('VideoForm: No select elements found. Checking all selects...');
+			const allSelects = document.querySelectorAll('select');
+			console.log('VideoForm: Total selects on page:', allSelects.length);
 			return;
 		}
 		
 		selects.forEach(function(select) {
 			// Skip if already initialized
 			if (select.choices) {
+				console.log('VideoForm: Select already initialized, skipping');
 				return;
 			}
 
+			console.log('VideoForm: Initializing Choices.js for select:', select.id || select.name);
+
 			const placeholderOption = select.querySelector('option[value=""]');
 			
-			const choices = new Choices(select, {
-				searchEnabled: false,
-				itemSelectText: '',
-				placeholder: true,
-				placeholderValue: placeholderOption ? placeholderOption.textContent : null,
-				shouldSort: false,
-				removeItemButton: false,
-				classNames: {
-					containerOuter: 'choices video-form-choices',
-					containerInner: 'choices__inner video-form-choices__inner',
-					input: 'choices__input',
-					inputCloned: 'choices__input--cloned',
-					list: 'choices__list',
-					listItems: 'choices__list--multiple',
-					listSingle: 'choices__list--single',
-					listDropdown: 'choices__list--dropdown',
-					item: 'choices__item',
-					itemSelectable: 'choices__item--selectable',
-					itemDisabled: 'choices__item--disabled',
-					itemChoice: 'choices__item--choice',
-					placeholder: 'choices__placeholder',
-					group: 'choices__group',
-					groupHeading: 'choices__heading',
-					button: 'choices__button',
-					activeState: 'is-active',
-					focusState: 'is-focused',
-					openState: 'is-open',
-					disabledState: 'is-disabled',
-					highlightedState: 'is-highlighted',
-					selectedState: 'is-selected',
-					flippedState: 'is-flipped',
-					loadingState: 'is-loading',
-					noResults: 'has-no-results',
-					noChoices: 'has-no-choices'
-				}
-			});
+			try {
+				const choices = new Choices(select, {
+					searchEnabled: false,
+					itemSelectText: '',
+					placeholder: true,
+					placeholderValue: placeholderOption ? placeholderOption.textContent : null,
+					shouldSort: false,
+					removeItemButton: false,
+					classNames: {
+						containerOuter: 'choices video-form-choices',
+						containerInner: 'choices__inner video-form-choices__inner',
+						input: 'choices__input',
+						inputCloned: 'choices__input--cloned',
+						list: 'choices__list',
+						listItems: 'choices__list--multiple',
+						listSingle: 'choices__list--single',
+						listDropdown: 'choices__list--dropdown',
+						item: 'choices__item',
+						itemSelectable: 'choices__item--selectable',
+						itemDisabled: 'choices__item--disabled',
+						itemChoice: 'choices__item--choice',
+						placeholder: 'choices__placeholder',
+						group: 'choices__group',
+						groupHeading: 'choices__heading',
+						button: 'choices__button',
+						activeState: 'is-active',
+						focusState: 'is-focused',
+						openState: 'is-open',
+						disabledState: 'is-disabled',
+						highlightedState: 'is-highlighted',
+						selectedState: 'is-selected',
+						flippedState: 'is-flipped',
+						loadingState: 'is-loading',
+						noResults: 'has-no-results',
+						noChoices: 'has-no-choices'
+					}
+				});
 
-			// Check initial state
-			const container = select.closest('.video-form-choices');
-			if (container) {
-				const initialValue = choices.getValue(true);
-				if (initialValue && initialValue !== '') {
-					container.classList.add('has-value');
-				}
-			}
+				console.log('VideoForm: Choices.js initialized successfully for:', select.id || select.name);
 
-			// Update color when choice is made
-			select.addEventListener('addItem', function() {
+				// Find container - Choices.js wraps the select, so container is the parent
+				const container = select.closest('.video-form-choices') || select.parentElement;
+				
+				// Check initial state
 				if (container) {
-					container.classList.add('has-value');
-				}
-			});
-
-			// Remove has-value class when placeholder is shown
-			select.addEventListener('removeItem', function() {
-				if (container && choices) {
-					const selectedValue = choices.getValue(true);
-					if (!selectedValue || selectedValue === '') {
-						container.classList.remove('has-value');
+					const initialValue = choices.getValue(true);
+					if (initialValue && initialValue !== '') {
+						container.classList.add('has-value');
 					}
 				}
-			});
+
+				// Update color when choice is made
+				select.addEventListener('addItem', function() {
+					const container = select.closest('.video-form-choices') || select.parentElement;
+					if (container) {
+						container.classList.add('has-value');
+					}
+				});
+
+				// Remove has-value class when placeholder is shown
+				select.addEventListener('removeItem', function() {
+					const container = select.closest('.video-form-choices') || select.parentElement;
+					if (container && choices) {
+						const selectedValue = choices.getValue(true);
+						if (!selectedValue || selectedValue === '') {
+							container.classList.remove('has-value');
+						}
+					}
+				});
+			} catch (error) {
+				console.error('VideoForm: Error initializing Choices.js:', error);
+			}
 		});
 	};
 
@@ -179,7 +197,10 @@
 	 * Initialize all components
 	 */
 	const init = function() {
+		console.log('VideoForm: Script loaded, initializing...');
+		
 		const initializeAll = function() {
+			console.log('VideoForm: DOM ready, initializing components...');
 			initVideoForm();
 			// Initialize Choices.js - it will retry if not available
 			initChoicesSelects();
@@ -190,6 +211,7 @@
 			document.addEventListener('DOMContentLoaded', initializeAll);
 			// Also try on window load as fallback
 			window.addEventListener('load', function() {
+				console.log('VideoForm: Window loaded, retrying Choices.js initialization...');
 				setTimeout(initChoicesSelects, 100);
 			});
 		} else {
@@ -197,6 +219,7 @@
 			initializeAll();
 			// Also try on window load as fallback
 			window.addEventListener('load', function() {
+				console.log('VideoForm: Window loaded, retrying Choices.js initialization...');
 				setTimeout(initChoicesSelects, 100);
 			});
 		}
