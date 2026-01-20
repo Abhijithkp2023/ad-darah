@@ -1,110 +1,36 @@
 /**
  * Testimonials Component JavaScript
- * Handles Swiper initialization for testimonials slider
+ * Simple infinite scroll slider with hover pause
  */
 
 (function () {
 	"use strict";
 
 	/**
-	 * Initialize Testimonials Swipers
+	 * Initialize Testimonials Infinite Sliders
 	 */
-	const initTestimonialsSwipers = function () {
-		// Check if Swiper is loaded
-		if (typeof Swiper === "undefined") {
-			console.warn("Testimonials: Swiper library is not loaded");
-			return;
-		}
+	const initTestimonialsSliders = function () {
+		const topWrapper = document.querySelector(".testimonials-slider-top");
+		const bottomWrapper = document.querySelector(".testimonials-slider-bottom");
 
-		// Top Swiper (Right to Left)
-		const topSwiperElement = document.querySelector("[data-testimonials-swiper-top]");
-		if (topSwiperElement && !topSwiperElement.swiper && !topSwiperElement._swiperInstance) {
-			const topSwiper = new Swiper(topSwiperElement, {
-				slidesPerView: 2.5,
-				spaceBetween: 20,
-				loop: true,
-				speed: 600,
-				direction: "horizontal",
-				centeredSlides: true,
-				autoplay: {
-					delay: 5000,
-					disableOnInteraction: false,
-					reverseDirection: true,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1.1,
-						spaceBetween: 15,
-					},
-					768: {
-						slidesPerView: 1.5,
-						spaceBetween: 20,
-					},
-					1024: {
-						slidesPerView: 1.7,
-						spaceBetween: 20,
-					},
-					1400: {
-						slidesPerView: 2,
-						spaceBetween: 20,
-					},
-				},
-			});
-			topSwiperElement._swiperInstance = topSwiper;
-		}
-
-		// Bottom Swiper (Left to Right)
-		const bottomSwiperElement = document.querySelector("[data-testimonials-swiper-bottom]");
-		if (bottomSwiperElement && !bottomSwiperElement.swiper && !bottomSwiperElement._swiperInstance) {
-			const bottomSwiper = new Swiper(bottomSwiperElement, {
-				slidesPerView: 2.5,
-				spaceBetween: 20,
-				loop: true,
-				speed: 600,
-				direction: "horizontal",
-				centeredSlides: true,
-				autoplay: {
-					delay: 5000,
-					disableOnInteraction: false,
-					reverseDirection: false,
-				},
-				breakpoints: {
-					320: {
-						slidesPerView: 1.1,
-						spaceBetween: 15,
-					},
-					768: {
-						slidesPerView: 1.5,
-						spaceBetween: 20,
-					},
-					1024: {
-						slidesPerView: 1.7,
-						spaceBetween: 20,
-					},
-					1400: {
-						slidesPerView: 2,
-						spaceBetween: 20,
-					},
-				},
-			});
-			bottomSwiperElement._swiperInstance = bottomSwiper;
+		// No JavaScript needed - CSS handles the animation
+		// Just ensure the wrappers exist
+		if (topWrapper && bottomWrapper) {
+			console.log("Testimonials: Infinite sliders initialized");
 		}
 	};
 
 	/**
-	 * Wait for DOM and Swiper to be ready
+	 * Wait for DOM to be ready
 	 */
 	const waitForReady = function () {
 		if (document.readyState === "loading") {
-			document.addEventListener("DOMContentLoaded", function () {
-				setTimeout(initTestimonialsSwipers, 100);
-			});
+			document.addEventListener("DOMContentLoaded", initTestimonialsSliders);
 		} else {
-			setTimeout(initTestimonialsSwipers, 100);
+			initTestimonialsSliders();
 		}
 	};
 
 	// Initialize when ready
 	waitForReady();
 })();
-
