@@ -3848,6 +3848,7 @@ body.fullscreen-nav-open {
   background-image: url("../images/footer-bg.jpg");
   background-position: center bottom;
   background-repeat: no-repeat;
+  border-top: 1px solid #C5B17F;
   /* Logo Section */
   /* Newsletter Section */
   /* Navigation Links Section */
@@ -11023,7 +11024,7 @@ body.banner-animating {
   transition: transform 0.5s ease;
 }
 .wedding-packages-section .wedding-packages-card-content {
-  padding: 30px 40px;
+  padding: 30px 40px 0px 40px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -11070,4 +11071,139 @@ body.banner-animating {
 }
 .wedding-packages-section .wedding-packages-card-button {
   margin-top: auto;
+}
+
+.landing-gallery-section {
+  width: 100%;
+  background-color: rgb(244, 241, 231);
+}
+.landing-gallery-section .landing-gallery-heading {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0 0 50px 0;
+  color: #C5B17F;
+}
+.landing-gallery-section .landing-gallery-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button {
+  font-family: "Neue Regrade", sans-serif;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  outline: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C5B17F;
+  color: #fff;
+  border-radius: 112px;
+  font-size: 16px;
+  height: 48px;
+  padding-inline: 45px;
+  line-height: 1;
+  z-index: 1;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+.landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button:hover {
+  background-color: #b64910;
+}
+@media only screen and (max-width: 768px) {
+  .landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button {
+    height: 42px;
+  }
+}
+.landing-gallery-section .landing-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  width: 100%;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item:hover img {
+  transform: scale(1.1);
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item img {
+  transition: transform 0.5s ease;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item img,
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-left {
+  grid-column: 1;
+  grid-row: 1;
+  height: 329px;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
+  grid-column: 2;
+  grid-row: 1/3;
+  height: 668px;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-right {
+  grid-column: 3;
+  grid-row: 1;
+  height: 329px;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-left {
+  grid-column: 1;
+  grid-row: 2;
+  height: 329px;
+}
+.landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-right {
+  grid-column: 3;
+  grid-row: 2;
+  height: 329px;
+}
+@media (max-width: 768px) {
+  .landing-gallery-section .landing-gallery-container {
+    padding: 0 15px;
+  }
+  .landing-gallery-section .landing-gallery-grid {
+    gap: 8px;
+  }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item {
+    border-radius: 15px;
+  }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-right, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-right {
+    height: 200px;
+  }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
+    height: 416px;
+  }
+}
+@media (max-width: 480px) {
+  .landing-gallery-section .landing-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-right, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-right {
+    grid-column: 1;
+    height: 250px;
+  }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
+    grid-row: auto;
+    height: 300px;
+  }
 }/*# sourceMappingURL=main.css.map */

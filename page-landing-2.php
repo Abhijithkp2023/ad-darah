@@ -52,6 +52,12 @@ get_header();
 		);
 		include locate_template('template-parts/InfiniteSlider.php');
 
+		// Landing Gallery Section
+		$landing_gallery_heading = 'Our Gallery';
+		$landing_gallery_button_text = 'View All';
+		$landing_gallery_button_link = get_permalink(get_page_by_path('gallery'));
+		include locate_template('template-parts/LandingGallery.php');
+
 		// Single Testimonial Section
 		$single_testimonial_title = 'Featured Clients';
 		$single_testimonial_show_navigation = true;
