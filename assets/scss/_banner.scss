@@ -72,10 +72,23 @@
 		margin: 0;
 		text-align: left;
 		text-transform: capitalize;
+		@media #{$media-1060} {
+			font-size: 50px;
+		}
+		@media #{$media-995} {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		@media #{$media-700} {
+			font-size: 30px;
+			line-height: 40px;
+		}
 	}
 
 
-	@media (max-width: 1024px) {}
+	@media (max-width: 1024px) {
+		min-height: 550px;
+	}
 	@media (max-width: 700px) {
 		min-height: 300px;
 	}

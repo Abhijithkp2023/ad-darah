@@ -108,6 +108,10 @@
 	&:active {
 		background-color: darken($gold, 15%);
 	}
+	@media #{$media-1060} {
+		height: 40px;
+		padding-inline: 30px;
+	}
 }
 
 // Button Classes (for backward compatibility)
