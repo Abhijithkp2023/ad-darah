@@ -88,7 +88,7 @@
 			justify-content: flex-end;
 			transition: all 0.8s ease;
 			transform: translateY(calc(100% - 100px));
-
+			
 			.container-slider-card-heading {
 				@include perfect-day-card-heading;
                 white-space: nowrap;
@@ -109,6 +109,7 @@
 			.container-slider-card-button {
 				margin-top: 10px;
 			}
+			
 		}
 
 		&:hover {
@@ -124,7 +125,8 @@
 
 	@media #{$media-1200} {
 		.container-slider-section-heading {
-			font-size: 50px;
+			font-size: 45px;
+			margin: 0 0 10px 0;
 		}
 
 		.container-slider-card {
@@ -143,7 +145,30 @@
 		}
 	}
 
-	@media #{$media-768} {
+	@media #{$media-1060} {
+		.container-slider-card {
+			.container-slider-card-overlay {
+				transform: initial;
+				padding: 25px 15px;
+				.container-slider-card-heading {
+					font-size:20px;
+					margin: 0 0 10px 0;
+				}
+				.container-slider-card-paragraph {
+				opacity: 1;
+			}
+			}
+			
+		}
+		.container-slider-section .container-slider-section-heading{
+			font-size: 45px;
+			margin: 0 0 10px 0;
+		}
+		.container-slider-section .container-slider-section-paragraph{
+			margin: 0 auto 35px auto;
+		}
+	}
+	@media #{$media-995} {
 		.container-slider-section-heading {
 			font-size: 40px;
 		}
@@ -156,16 +181,24 @@
 		.container-slider-card {
 			.container-slider-card-overlay {
 				padding: 30px 20px;
-				transform: translateY(calc(100% - 60px));
 
 				.container-slider-card-heading {
 					font-size: 22px;
 				}
 
 				.container-slider-card-paragraph {
-					font-size: 14px;
+					font-size: 15px;
 				}
 			}
+		}
+	}
+	@media #{$media-700} {
+		.container-slider-section-heading {
+			font-size: 30px;
+		}
+		.container-slider-section-paragraph {
+			font-size: 15px;
+			margin-bottom: 30px;
 		}
 	}
 }

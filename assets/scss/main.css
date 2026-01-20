@@ -2479,11 +2479,22 @@ a,
   flex-shrink: 0;
   white-space: nowrap;
 }
+@media only screen and (max-width: 700px) {
+  .book-visit-button {
+    font-size: 15px;
+  }
+}
 .book-visit-button:hover {
   background-color: #b59c5c;
 }
 .book-visit-button:active {
   background-color: #aa904d;
+}
+@media only screen and (max-width: 1060px) {
+  .book-visit-button {
+    height: 40px;
+    padding-inline: 30px;
+  }
 }
 
 .br_102 {
@@ -3609,6 +3620,16 @@ body.overflow_body_hidden {
   color: #ffffff;
   margin: 0 0 12px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-heading {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-heading {
+    font-size: 16px;
+  }
+}
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-sub {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -3619,6 +3640,11 @@ body.overflow_body_hidden {
   color: #ffffff;
   margin: 0;
   opacity: 1;
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-sub {
+    font-size: 15px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-social {
   display: flex;
@@ -3637,6 +3663,11 @@ body.overflow_body_hidden {
   text-decoration: none;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-social a {
+    font-size: 15px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content {
   display: none;
@@ -3664,6 +3695,16 @@ body.overflow_body_hidden {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-heading {
+    font-size: 24px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-heading::after {
   content: "";
@@ -3700,6 +3741,16 @@ body.overflow_body_hidden {
   margin: 0 0 25px 0;
   font-weight: 500;
 }
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-heading {
+    font-size: 24px;
+  }
+}
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
   list-style: none;
   margin: 0;
@@ -3720,6 +3771,16 @@ body.overflow_body_hidden {
   opacity: 0.9;
   transition: opacity 0.3s ease;
   display: block;
+}
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list li a {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list li a {
+    font-size: 18px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list li a:hover {
   opacity: 1;
@@ -3787,6 +3848,16 @@ body.overflow_body_hidden {
   transition: opacity 0.3s ease;
   width: -moz-max-content;
   width: max-content;
+}
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-link {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-link {
+    font-size: 30px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-link:hover {
   opacity: 0.8;
@@ -4345,6 +4416,43 @@ body.fullscreen-nav-open {
   text-align: left;
   text-transform: capitalize;
 }
+@media only screen and (max-width: 1060px) {
+  .banner-container .banner-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .banner-container .banner-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .banner-container .banner-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .banner-container .banner-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .banner-container .banner-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .banner-container .banner-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .banner-container {
+    min-height: 550px;
+  }
+}
 @media (max-width: 700px) {
   .banner-container {
     min-height: 300px;
@@ -4463,6 +4571,21 @@ body.banner-animating {
   font-weight: 700;
   text-transform: uppercase;
 }
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-title {
+    font-size: 100px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .main-banner-container .main-banner-title {
+    font-size: 80px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-title {
+    font-size: 60px;
+  }
+}
 .main-banner-container .main-banner-subtitle-wrapper {
   flex: 0 0 auto;
   text-align: right;
@@ -4476,6 +4599,16 @@ body.banner-animating {
   color: #fff;
   margin: 0;
   opacity: 0.95;
+}
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-subtitle {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-subtitle {
+    font-size: 15px;
+  }
 }
 .main-banner-container .main-banner-form-wrapper {
   overflow: visible;
@@ -4504,6 +4637,11 @@ body.banner-animating {
   color: #C5B17F;
   white-space: nowrap;
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form .form-label {
+    font-size: 15px;
+  }
 }
 .main-banner-container .main-banner-form input,
 .main-banner-container .main-banner-form select {
@@ -4541,6 +4679,24 @@ body.banner-animating {
   letter-spacing: 0%;
   color: #ABAFB1;
 }
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form input::-moz-placeholder, .main-banner-container .main-banner-form select::-moz-placeholder {
+    font-size: 16px;
+  }
+  .main-banner-container .main-banner-form input::placeholder,
+  .main-banner-container .main-banner-form select::placeholder {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form input::-moz-placeholder, .main-banner-container .main-banner-form select::-moz-placeholder {
+    font-size: 15px;
+  }
+  .main-banner-container .main-banner-form input::placeholder,
+  .main-banner-container .main-banner-form select::placeholder {
+    font-size: 15px;
+  }
+}
 .main-banner-container .main-banner-form input::-webkit-input-placeholder,
 .main-banner-container .main-banner-form select::-webkit-input-placeholder {
   font-family: "Neue Regrade", sans-serif;
@@ -4550,6 +4706,18 @@ body.banner-animating {
   line-height: 100%;
   letter-spacing: 0%;
   color: #ABAFB1;
+}
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form input::-webkit-input-placeholder,
+  .main-banner-container .main-banner-form select::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form input::-webkit-input-placeholder,
+  .main-banner-container .main-banner-form select::-webkit-input-placeholder {
+    font-size: 15px;
+  }
 }
 .main-banner-container .main-banner-form input::-moz-placeholder,
 .main-banner-container .main-banner-form select::-moz-placeholder {
@@ -4562,6 +4730,18 @@ body.banner-animating {
   color: #ABAFB1;
   opacity: 1;
 }
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form input::-moz-placeholder,
+  .main-banner-container .main-banner-form select::-moz-placeholder {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form input::-moz-placeholder,
+  .main-banner-container .main-banner-form select::-moz-placeholder {
+    font-size: 15px;
+  }
+}
 .main-banner-container .main-banner-form input:-ms-input-placeholder,
 .main-banner-container .main-banner-form select:-ms-input-placeholder {
   font-family: "Neue Regrade", sans-serif;
@@ -4571,6 +4751,18 @@ body.banner-animating {
   line-height: 100%;
   letter-spacing: 0%;
   color: #ABAFB1;
+}
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form input:-ms-input-placeholder,
+  .main-banner-container .main-banner-form select:-ms-input-placeholder {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form input:-ms-input-placeholder,
+  .main-banner-container .main-banner-form select:-ms-input-placeholder {
+    font-size: 15px;
+  }
 }
 .main-banner-container .main-banner-form input:focus,
 .main-banner-container .main-banner-form select:focus {
@@ -4636,6 +4828,16 @@ body.banner-animating {
   color: #ABAFB1;
   padding: 0;
 }
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form .choices-form .choices__item--selectable {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form .choices-form .choices__item--selectable {
+    font-size: 15px;
+  }
+}
 .main-banner-container .main-banner-form .choices-form .choices__placeholder {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -4645,6 +4847,16 @@ body.banner-animating {
   letter-spacing: 0%;
   color: #ABAFB1;
   opacity: 1;
+}
+@media only screen and (max-width: 1060px) {
+  .main-banner-container .main-banner-form .choices-form .choices__placeholder {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .main-banner-container .main-banner-form .choices-form .choices__placeholder {
+    font-size: 15px;
+  }
 }
 .main-banner-container .main-banner-form .choices-form.has-value .choices__item--selectable {
   color: #000;
@@ -4822,6 +5034,16 @@ body.banner-animating {
   color: #C5B17F;
   margin: 0;
 }
+@media only screen and (max-width: 1060px) {
+  .where-ever-left-block h2.where-ever-title {
+    font-size: 45px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .where-ever-left-block h2.where-ever-title {
+    font-size: 30px;
+  }
+}
 
 .where-ever-right-block {
   width: 36%;
@@ -4834,6 +5056,16 @@ body.banner-animating {
   margin-bottom: 20px;
   color: #282828;
   font-weight: 500;
+}
+@media only screen and (max-width: 1060px) {
+  .where-ever-right-block p.where-ever-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .where-ever-right-block p.where-ever-description {
+    font-size: 15px;
+  }
 }
 
 .where-ever-video-wrapper {
@@ -4955,7 +5187,7 @@ body.banner-animating {
 }
 @media only screen and (max-width: 1024px) {
   .statistics-container .stat-item {
-    aspect-ratio: 347/200;
+    aspect-ratio: auto;
   }
 }
 .statistics-container .stat-item::after {
@@ -4994,6 +5226,16 @@ body.banner-animating {
   font-weight: 600;
   color: #1D1D1B;
 }
+@media only screen and (max-width: 1060px) {
+  .statistics-container .stat-title {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .statistics-container .stat-title {
+    font-size: 18px;
+  }
+}
 @media only screen and (max-width: 700px) {
   .statistics-container .stat-title {
     font-size: 18px;
@@ -5009,6 +5251,16 @@ body.banner-animating {
   font-weight: 500;
   gap: 5px;
   margin-top: auto;
+}
+@media only screen and (max-width: 1060px) {
+  .statistics-container .stat-value {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .statistics-container .stat-value {
+    font-size: 50px;
+  }
 }
 @media only screen and (max-width: 995px) {
   .statistics-container .stat-value {
@@ -5127,6 +5379,16 @@ body.banner-animating {
   margin-bottom: 20px;
   color: #C5B17F;
 }
+@media only screen and (max-width: 1060px) {
+  .services-stack-container .services-stack-card .services-stack-card-tag {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .services-stack-container .services-stack-card .services-stack-card-tag {
+    font-size: 16px;
+  }
+}
 .services-stack-container .services-stack-card .services-stack-card-title {
   font-family: "Neue Regrade", sans-serif;
   font-size: 60px;
@@ -5136,6 +5398,21 @@ body.banner-animating {
   line-height: 130%;
   color: #fff;
   margin: 0 0 20px 0;
+}
+@media only screen and (max-width: 1060px) {
+  .services-stack-container .services-stack-card .services-stack-card-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .services-stack-container .services-stack-card .services-stack-card-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .services-stack-container .services-stack-card .services-stack-card-title {
+    font-size: 30px;
+  }
 }
 @media only screen and (max-width: 995px) {
   .services-stack-container .services-stack-card .services-stack-card-title {
@@ -5159,6 +5436,16 @@ body.banner-animating {
   color: #fff;
   margin: 0;
   max-width: 600px;
+}
+@media only screen and (max-width: 1060px) {
+  .services-stack-container .services-stack-card .services-stack-card-description {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .services-stack-container .services-stack-card .services-stack-card-description {
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 700px) {
   .services-stack-container .services-stack-card .services-stack-card-description {
@@ -5389,6 +5676,16 @@ body.banner-animating {
   color: #b64910;
   margin: 0;
 }
+@media only screen and (max-width: 1060px) {
+  .sub-title {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sub-title {
+    font-size: 16px;
+  }
+}
 
 .testimonials-container {
   width: 100%;
@@ -5437,6 +5734,16 @@ body.banner-animating {
   color: #b64910;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 1060px) {
+  .testimonials-container .testimonials-header .testimonials-tag {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .testimonials-container .testimonials-header .testimonials-tag {
+    font-size: 16px;
+  }
+}
 .testimonials-container .testimonials-header .testimonials-title {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
@@ -5447,6 +5754,21 @@ body.banner-animating {
   text-transform: capitalize;
   color: #ffffff;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .testimonials-container .testimonials-header .testimonials-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .testimonials-container .testimonials-header .testimonials-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .testimonials-container .testimonials-header .testimonials-title {
+    font-size: 30px;
+  }
 }
 .testimonials-container .testimonials-swiper-section {
   position: relative;
@@ -5511,6 +5833,16 @@ body.banner-animating {
   margin-top: 0;
   flex-grow: 1;
 }
+@media only screen and (max-width: 1060px) {
+  .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-review {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-review {
+    font-size: 15px;
+  }
+}
 .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-author {
   display: flex;
   align-items: center;
@@ -5539,6 +5871,16 @@ body.banner-animating {
   text-transform: capitalize;
   color: #1d1d1b;
   margin-bottom: 8px;
+}
+@media only screen and (max-width: 1060px) {
+  .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-author .testimonial-info .testimonial-name {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-author .testimonial-info .testimonial-name {
+    font-size: 15px;
+  }
 }
 .testimonials-container .testimonials-swiper-wrapper .testimonials-swiper .testimonial-card .testimonial-author .testimonial-info .testimonial-rating {
   display: flex;
@@ -5592,12 +5934,27 @@ body.banner-animating {
   right: 0;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 81.3%);
 }
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-overlay {
+    display: none;
+  }
+}
 .single-testimonial-container .single-testimonial-header {
   position: relative;
   z-index: 2;
   width: 100%;
   text-align: center;
   margin-bottom: 60px;
+}
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-header {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-header {
+    margin-bottom: 20px;
+  }
 }
 .single-testimonial-container .single-testimonial-header .single-testimonial-title {
   font-family: "Neue Regrade", sans-serif;
@@ -5609,6 +5966,33 @@ body.banner-animating {
   text-transform: capitalize;
   color: #c5b17f;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-header .single-testimonial-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .single-testimonial-container .single-testimonial-header .single-testimonial-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-header .single-testimonial-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-header .single-testimonial-title {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-header .single-testimonial-title {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 .single-testimonial-container .single-testimonial-content {
   position: relative;
@@ -5636,6 +6020,12 @@ body.banner-animating {
   justify-content: space-between;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card {
+    padding: 20px;
+    min-height: 250px;
+  }
+}
 .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-review {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -5647,10 +6037,36 @@ body.banner-animating {
   margin-top: 0;
   flex-grow: 1;
 }
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-review {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-review {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-review {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-review {
+    font-size: 15px;
+  }
+}
 .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author {
+    gap: 10px;
+  }
 }
 .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-image {
   width: 60px;
@@ -5676,6 +6092,22 @@ body.banner-animating {
   color: #1d1d1b;
   margin-bottom: 8px;
 }
+@media only screen and (max-width: 1060px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-info .testimonial-name {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-info .testimonial-name {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-info .testimonial-name {
+    font-size: 15px;
+    margin: 0;
+  }
+}
 .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-info .testimonial-rating {
   display: flex;
   gap: 4px;
@@ -5684,6 +6116,12 @@ body.banner-animating {
   width: 22px;
   height: 21px;
   flex-shrink: 0;
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container .single-testimonial-swiper .swiper-slide .testimonial-card .testimonial-author .testimonial-info .testimonial-rating .star {
+    width: 17px;
+    height: 17px;
+  }
 }
 
 .contact-page-testimonial-wrapper .single-testimonial-container {
@@ -6067,6 +6505,21 @@ body.banner-animating {
   text-transform: capitalize;
   color: #ffffff;
   margin: 0 0 15px 0;
+}
+@media only screen and (max-width: 1060px) {
+  .virtual-tour-container .virtual-tour-overlay .virtual-tour-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .virtual-tour-container .virtual-tour-overlay .virtual-tour-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .virtual-tour-container .virtual-tour-overlay .virtual-tour-title {
+    font-size: 30px;
+  }
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-subtitle {
   font-family: "Neue Regrade", sans-serif;
@@ -6661,6 +7114,11 @@ body.banner-animating {
 .image-text-section .image-text-right .image-text-button {
   margin-top: 20px;
 }
+@media only screen and (max-width: 700px) {
+  .image-text-section .image-text-right .image-text-button {
+    padding-inline: 30px;
+  }
+}
 .image-text-section .image-text-headline {
   margin: 0 0 30px 0;
   display: flex;
@@ -6682,7 +7140,7 @@ body.banner-animating {
     padding: 70px 0;
   }
   .image-text-section .image-text-wrapper {
-    gap: 50px;
+    gap: 40px;
   }
   .image-text-section .image-text-left,
   .image-text-section .image-text-right {
@@ -7270,6 +7728,21 @@ body.banner-animating {
   color: #fff;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-title {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-title {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-title {
+    font-size: 30px;
+  }
+}
 .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-description {
   font-family: "Neue Regrade", sans-serif;
   font-size: 20px;
@@ -7280,6 +7753,16 @@ body.banner-animating {
   color: #fff;
   margin: 0;
   max-width: 600px;
+}
+@media only screen and (max-width: 1060px) {
+  .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-description {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .vision-mission-stack-container .vision-mission-stack-card .vision-mission-stack-card-description {
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .vision-mission-stack-container {
@@ -8274,6 +8757,21 @@ body.banner-animating {
   flex: 0 0 auto;
   max-width: 460px;
 }
+@media only screen and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 30px;
+  }
+}
 .perfect-day-section .perfect-day-header .perfect-day-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8284,6 +8782,16 @@ body.banner-animating {
   margin: 0;
   flex: 1;
   max-width: 600px;
+}
+@media only screen and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 15px;
+  }
 }
 .perfect-day-section .perfect-day-slider {
   position: relative;
@@ -8348,6 +8856,21 @@ body.banner-animating {
   position: relative;
   z-index: 2;
 }
+@media only screen and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 18px;
+  }
+}
 .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8358,6 +8881,16 @@ body.banner-animating {
   margin: 0;
   position: relative;
   z-index: 2;
+}
+@media only screen and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 15px;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .perfect-day-section {
@@ -8372,6 +8905,23 @@ body.banner-animating {
     letter-spacing: 0px;
     font-size: 50px;
   }
+}
+@media only screen and (max-width: 1440px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 995px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1440px) {
   .perfect-day-section .perfect-day-header .perfect-day-paragraph {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 500;
@@ -8380,6 +8930,18 @@ body.banner-animating {
     line-height: 1.5;
     font-size: 16px;
   }
+}
+@media only screen and (max-width: 1440px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1440px) {
   .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 600;
@@ -8389,6 +8951,23 @@ body.banner-animating {
     letter-spacing: 0%;
     font-size: 24px;
   }
+}
+@media only screen and (max-width: 1440px) and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 995px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1440px) {
   .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 500;
@@ -8396,6 +8975,16 @@ body.banner-animating {
     font-size: 18px;
     line-height: 120%;
     font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1440px) and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -8416,6 +9005,23 @@ body.banner-animating {
     font-size: 40px;
     min-width: auto;
   }
+}
+@media only screen and (max-width: 1200px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 1200px) and (max-width: 995px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1200px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1200px) {
   .perfect-day-section .perfect-day-header .perfect-day-paragraph {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 500;
@@ -8424,6 +9030,18 @@ body.banner-animating {
     line-height: 1.5;
     max-width: 100%;
   }
+}
+@media only screen and (max-width: 1200px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1200px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1200px) {
   .perfect-day-section .swiper-slide.perfect-day-card {
     padding: 30px 25px;
   }
@@ -8441,6 +9059,23 @@ body.banner-animating {
     letter-spacing: 0px;
     font-size: 32px;
   }
+}
+@media only screen and (max-width: 768px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 995px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .perfect-day-section .perfect-day-header .perfect-day-paragraph {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 500;
@@ -8449,6 +9084,18 @@ body.banner-animating {
     line-height: 1.5;
     font-size: 14px;
   }
+}
+@media only screen and (max-width: 768px) and (max-width: 1060px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 700px) {
+  .perfect-day-section .perfect-day-header .perfect-day-paragraph {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .perfect-day-section .swiper-slide.perfect-day-card {
     padding: 25px 20px;
   }
@@ -8461,6 +9108,23 @@ body.banner-animating {
     letter-spacing: 0%;
     font-size: 22px;
   }
+}
+@media only screen and (max-width: 768px) and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 995px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-heading {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 768px) {
   .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
     font-family: "Neue Regrade", sans-serif;
     font-weight: 500;
@@ -8468,6 +9132,16 @@ body.banner-animating {
     font-size: 18px;
     line-height: 120%;
     font-size: 14px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 1060px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 700px) {
+  .perfect-day-section .swiper-slide.perfect-day-card .perfect-day-card-paragraph {
+    font-size: 15px;
   }
 }
 
@@ -8491,6 +9165,21 @@ body.banner-animating {
   color: #c5b17f;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .two-image-text-section .two-image-text-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .two-image-text-section .two-image-text-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .two-image-text-section .two-image-text-heading {
+    font-size: 30px;
+  }
+}
 .two-image-text-section .two-image-text-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8502,6 +9191,16 @@ body.banner-animating {
   color: #282828;
   margin: 0 auto 60px auto;
   max-width: 850px;
+}
+@media only screen and (max-width: 1060px) {
+  .two-image-text-section .two-image-text-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .two-image-text-section .two-image-text-description {
+    font-size: 15px;
+  }
 }
 .two-image-text-section .two-image-text-cards-wrapper {
   display: flex;
@@ -8566,6 +9265,21 @@ body.banner-animating {
   margin: 0 0 15px 0;
   position: relative;
 }
+@media only screen and (max-width: 1060px) {
+  .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-heading {
+    font-size: 18px;
+  }
+}
 .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8578,6 +9292,16 @@ body.banner-animating {
   opacity: 0;
   position: relative;
   transition: opacity 0.4s ease, transform 0.4s ease;
+}
+@media only screen and (max-width: 1060px) {
+  .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-paragraph {
+    font-size: 15px;
+  }
 }
 .two-image-text-section .two-image-text-card .two-image-text-card-overlay .two-image-text-card-button {
   margin-top: 10px;
@@ -8645,6 +9369,21 @@ body.banner-animating {
   color: #c5b17f;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .overflow-slider-section .overflow-slider-section-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .overflow-slider-section .overflow-slider-section-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .overflow-slider-section .overflow-slider-section-heading {
+    font-size: 30px;
+  }
+}
 .overflow-slider-section .overflow-slider-section-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8656,6 +9395,16 @@ body.banner-animating {
   color: #282828;
   margin: 0 auto 60px auto;
   max-width: 850px;
+}
+@media only screen and (max-width: 1060px) {
+  .overflow-slider-section .overflow-slider-section-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .overflow-slider-section .overflow-slider-section-paragraph {
+    font-size: 15px;
+  }
 }
 .overflow-slider-section .overflow-slider-swiper-container {
   width: 100%;
@@ -8725,6 +9474,21 @@ body.banner-animating {
   margin: 0 0 15px 0;
   position: relative;
 }
+@media only screen and (max-width: 1060px) {
+  .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-heading {
+    font-size: 18px;
+  }
+}
 .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8737,6 +9501,16 @@ body.banner-animating {
   opacity: 0;
   position: relative;
   transition: all 0.2s ease;
+}
+@media only screen and (max-width: 1060px) {
+  .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-paragraph {
+    font-size: 15px;
+  }
 }
 .overflow-slider-section .overflow-slider-card .overflow-slider-card-overlay .overflow-slider-card-button {
   margin-top: 10px;
@@ -8802,6 +9576,21 @@ body.banner-animating {
   color: #c5b17f;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-section-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .container-slider-section .container-slider-section-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-section-heading {
+    font-size: 30px;
+  }
+}
 .container-slider-section .container-slider-section-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8813,6 +9602,16 @@ body.banner-animating {
   color: #282828;
   margin: 0 auto 60px auto;
   max-width: 850px;
+}
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-section-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-section-paragraph {
+    font-size: 15px;
+  }
 }
 .container-slider-section .container-slider-swiper-container {
   width: 100%;
@@ -8883,6 +9682,21 @@ body.banner-animating {
   margin: 0 0 15px 0;
   position: relative;
 }
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-heading {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-heading {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-heading {
+    font-size: 18px;
+  }
+}
 .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -8896,6 +9710,16 @@ body.banner-animating {
   position: relative;
   transition: all 0.2s ease;
 }
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-paragraph {
+    font-size: 15px;
+  }
+}
 .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-button {
   margin-top: 10px;
 }
@@ -8907,7 +9731,8 @@ body.banner-animating {
 }
 @media only screen and (max-width: 1200px) {
   .container-slider-section .container-slider-section-heading {
-    font-size: 50px;
+    font-size: 45px;
+    margin: 0 0 10px 0;
   }
   .container-slider-section .container-slider-card .container-slider-card-overlay {
     padding: 35px 25px;
@@ -8920,7 +9745,27 @@ body.banner-animating {
     font-size: 16px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-card .container-slider-card-overlay {
+    transform: initial;
+    padding: 25px 15px;
+  }
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-heading {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+  }
+  .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-paragraph {
+    opacity: 1;
+  }
+  .container-slider-section .container-slider-section .container-slider-section-heading {
+    font-size: 45px;
+    margin: 0 0 10px 0;
+  }
+  .container-slider-section .container-slider-section .container-slider-section-paragraph {
+    margin: 0 auto 35px auto;
+  }
+}
+@media only screen and (max-width: 995px) {
   .container-slider-section .container-slider-section-heading {
     font-size: 40px;
   }
@@ -8930,13 +9775,21 @@ body.banner-animating {
   }
   .container-slider-section .container-slider-card .container-slider-card-overlay {
     padding: 30px 20px;
-    transform: translateY(calc(100% - 60px));
   }
   .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-heading {
     font-size: 22px;
   }
   .container-slider-section .container-slider-card .container-slider-card-overlay .container-slider-card-paragraph {
-    font-size: 14px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-section-heading {
+    font-size: 30px;
+  }
+  .container-slider-section .container-slider-section-paragraph {
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 }
 
@@ -9023,6 +9876,21 @@ body.banner-animating {
   white-space: nowrap;
   margin: 0 0 10px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .three-image-text-section .three-image-text-heading {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .three-image-text-section .three-image-text-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .three-image-text-section .three-image-text-heading {
+    font-size: 32px;
+  }
+}
 .three-image-text-section .three-image-text-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 400;
@@ -9030,12 +9898,32 @@ body.banner-animating {
   color: #282828;
   margin: 0;
 }
+@media only screen and (max-width: 1060px) {
+  .three-image-text-section .three-image-text-description {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .three-image-text-section .three-image-text-description {
+    font-size: 16px;
+  }
+}
 .three-image-text-section .three-image-text-paragraph {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #282828;
   margin: 0 0 20px 0;
+}
+@media only screen and (max-width: 1060px) {
+  .three-image-text-section .three-image-text-paragraph {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .three-image-text-section .three-image-text-paragraph {
+    font-size: 16px;
+  }
 }
 .three-image-text-section .three-image-text-paragraph:last-child {
   margin-bottom: 0;
@@ -9257,6 +10145,21 @@ body.banner-animating {
   color: #282828;
   margin: 0 0 15px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .facilities-section .facilities-card .facilities-card-content .facilities-card-title {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .facilities-section .facilities-card .facilities-card-content .facilities-card-title {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .facilities-section .facilities-card .facilities-card-content .facilities-card-title {
+    font-size: 18px;
+  }
+}
 .facilities-section .facilities-card .facilities-card-content .facilities-card-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -9266,6 +10169,16 @@ body.banner-animating {
   color: #282828;
   margin: 0 0 20px 0;
   flex-grow: 1;
+}
+@media only screen and (max-width: 1060px) {
+  .facilities-section .facilities-card .facilities-card-content .facilities-card-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .facilities-section .facilities-card .facilities-card-content .facilities-card-description {
+    font-size: 15px;
+  }
 }
 .facilities-section .facilities-card .facilities-card-content .facilities-card-button {
   margin-top: auto;
@@ -9332,6 +10245,21 @@ body.banner-animating {
   color: #c5b17f;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .related-services-section .related-services-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .related-services-section .related-services-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .related-services-section .related-services-heading {
+    font-size: 30px;
+  }
+}
 .related-services-section .related-services-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -9342,6 +10270,16 @@ body.banner-animating {
   margin: 0 auto 60px auto;
   max-width: 800px;
   text-align: center;
+}
+@media only screen and (max-width: 1060px) {
+  .related-services-section .related-services-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .related-services-section .related-services-description {
+    font-size: 15px;
+  }
 }
 .related-services-section .related-services-cards {
   display: flex;
@@ -9403,6 +10341,21 @@ body.banner-animating {
   color: #fff;
   margin: 0 0 15px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .related-services-section .related-services-card .related-services-card-content .related-services-card-title {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .related-services-section .related-services-card .related-services-card-content .related-services-card-title {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .related-services-section .related-services-card .related-services-card-content .related-services-card-title {
+    font-size: 18px;
+  }
+}
 .related-services-section .related-services-card .related-services-card-content .related-services-card-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -9411,6 +10364,16 @@ body.banner-animating {
   line-height: 1.5;
   color: #fff;
   margin: 0 0 20px 0;
+}
+@media only screen and (max-width: 1060px) {
+  .related-services-section .related-services-card .related-services-card-content .related-services-card-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .related-services-section .related-services-card .related-services-card-content .related-services-card-description {
+    font-size: 15px;
+  }
 }
 .related-services-section .related-services-card .related-services-card-content .related-services-card-button {
   margin-top: 10px;
@@ -10195,6 +11158,21 @@ body.banner-animating {
 }
 @media only screen and (max-width: 1060px) {
   .dual-slider-container .dual-slider-heading {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .dual-slider-container .dual-slider-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .dual-slider-container .dual-slider-heading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .dual-slider-container .dual-slider-heading {
     position: initial;
   }
 }
@@ -10225,6 +11203,21 @@ body.banner-animating {
   line-height: 1.3;
   margin: 0 0 20px 0;
 }
+@media only screen and (max-width: 1060px) {
+  .dual-slider-container .dual-slider-subheading {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .dual-slider-container .dual-slider-subheading {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .dual-slider-container .dual-slider-subheading {
+    font-size: 20px;
+  }
+}
 .dual-slider-container .dual-slider-description {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 500;
@@ -10233,6 +11226,16 @@ body.banner-animating {
   color: #282828;
   line-height: 1.6;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .dual-slider-container .dual-slider-description {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .dual-slider-container .dual-slider-description {
+    font-size: 15px;
+  }
 }
 .dual-slider-container .dual-slider-image-wrapper {
   flex: 0 0 54.9%;
@@ -10461,6 +11464,16 @@ body.banner-animating {
   display: block;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 1060px) {
+  .sustainability-container .sustainability-tag {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sustainability-container .sustainability-tag {
+    font-size: 16px;
+  }
+}
 .sustainability-container .sustainability-heading {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
@@ -10468,6 +11481,21 @@ body.banner-animating {
   color: #C5B17F;
   line-height: 1.2;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .sustainability-container .sustainability-heading {
+    font-size: 45px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .sustainability-container .sustainability-heading {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sustainability-container .sustainability-heading {
+    font-size: 30px;
+  }
 }
 @media only screen and (max-width: 1060px) {
   .sustainability-container .sustainability-heading br {
@@ -10486,6 +11514,16 @@ body.banner-animating {
   color: #282828;
   line-height: 1.6;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .sustainability-container .sustainability-paragraph {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sustainability-container .sustainability-paragraph {
+    font-size: 15px;
+  }
 }
 .sustainability-container .sustainability-content {
   display: flex;
@@ -10572,6 +11610,16 @@ body.banner-animating {
   color: #282828;
   line-height: 1.4;
   margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .sustainability-container .sustainability-card-text {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sustainability-container .sustainability-card-text {
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .sustainability-container {

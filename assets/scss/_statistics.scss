@@ -36,7 +36,7 @@
 		position: relative;
 		overflow: hidden;
 		@media #{$media-1024} {
-			aspect-ratio: 347 / 200;
+			aspect-ratio: auto;
 		}
 		&::after {
 			content: "";

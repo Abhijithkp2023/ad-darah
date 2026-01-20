@@ -7,6 +7,15 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 150px;
 	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 100px;
+	}
+	@media #{$media-995} {
+		font-size: 80px;
+	}
+	@media #{$media-700} {
+		font-size: 60px;
+	}
 }
 
 // Main Banner Subtitle Typography
@@ -14,6 +23,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Banner Title Typography (for regular banner component)
@@ -23,6 +38,15 @@
 	line-height: 86px;
 	font-weight: 600;
 	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Form Input Label Typography
@@ -34,6 +58,9 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: $gold;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Form Input Placeholder Typography
@@ -45,6 +72,12 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #ABAFB1;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Book Visit Button Typography
@@ -56,6 +89,9 @@
 	line-height: 30px;
 	letter-spacing: 0%;
 	text-align: center;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Where Ever Title Typography
@@ -66,6 +102,12 @@
 	font-size: 60px;
 	line-height: 100%;
 	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 45px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Statistics Title Typography
@@ -73,6 +115,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 24px;
 	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
 }
 
 // Statistics Value Typography
@@ -80,6 +128,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 80px;
 	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 60px;
+	}
+	@media #{$media-700} {
+		font-size: 50px;
+	}
 }
 
 // Partners Sub Title Typography
@@ -87,6 +141,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 20px;
 	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Services Stack Tag Typography
@@ -94,6 +154,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 20px;
 	line-height: 60px;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Services Stack Title Typography
@@ -101,6 +167,15 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 60px;
 	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Services Stack Description Typography
@@ -108,6 +183,12 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 20px;
 	line-height: 140%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Testimonials Tag Typography
@@ -116,6 +197,12 @@
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Testimonials Title Typography
@@ -124,6 +211,15 @@
 	font-weight: 600;
 	font-size: 70px;
 	line-height: 86px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Testimonial Review Text Typography
@@ -132,6 +228,12 @@
 	font-weight: 400;
 	font-size: 18.06px;
 	line-height: 150%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 
@@ -143,6 +245,12 @@
 	font-weight: 600;
 	font-size: 18.06px;
 	line-height: 150%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Full Screen Nav Menu Grid Heading Typography
@@ -154,6 +262,12 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	text-transform: uppercase;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Full Screen Nav Menu Grid Sub-point Typography
@@ -164,6 +278,9 @@
 	font-size: 16px;
 	line-height: 110%;
 	letter-spacing: 0%;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Full Screen Nav Menu Item Typography
@@ -174,6 +291,12 @@
 	font-size: 50px;
 	line-height: 100%;
 	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Full Screen Nav Submenu Heading Typography
@@ -184,6 +307,12 @@
 	font-size: 36px;
 	line-height: 100%;
 	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 30px;
+	}
+	@media #{$media-700} {
+		font-size: 24px;
+	}
 }
 
 // Full Screen Nav Submenu Item Typography
@@ -194,6 +323,12 @@
 	font-size: 24px;
 	line-height: 1.2;
 	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
 }
 
 // Perfect Day Section Heading Typography
@@ -204,6 +339,15 @@
 	font-size: 60px;
 	line-height: 130%;
 	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Perfect Day Section Paragraph Typography
@@ -213,6 +357,12 @@
 	font-style: normal;
 	font-size: 18px;
 	line-height: 1.5;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Perfect Day Card Heading Typography
@@ -223,6 +373,15 @@
 	font-size: 28px;
 	line-height: 120%;
 	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 24px;
+	}
+	@media #{$media-995} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
 }
 
 // Perfect Day Card Paragraph Typography
@@ -232,6 +391,12 @@
 	font-style: normal;
 	font-size: 18px;
 	line-height: 120%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Packages Section Main Heading Typography
@@ -243,6 +408,15 @@
 	line-height: 1.2;
 	letter-spacing: 0px;
 	text-align: center;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Packages Section Main Paragraph Typography
@@ -254,6 +428,12 @@
 	line-height: 1.3;
 	letter-spacing: 5%;
 	text-align: center;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Packages Card Paragraph Typography
@@ -264,6 +444,12 @@
 	font-size: 18px;
 	line-height: 1.2;
 	letter-spacing: 5%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Weddings Detail Heading Typography
@@ -272,6 +458,15 @@
 	font-weight: 500;
 	font-size: 40px;
 	color: #C5B17F;
+	@media #{$media-1060} {
+		font-size: 35px;
+	}
+	@media #{$media-995} {
+		font-size: 30px;
+	}
+	@media #{$media-700} {
+		font-size: 32px;
+	}
 }
 
 // Weddings Detail Paragraph Typography
@@ -280,6 +475,12 @@
 	font-weight: 400;
 	font-size: 20px;
 	color: #282828;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Dual Slider Heading Typography
@@ -290,6 +491,15 @@
 	font-size: 60px;
 	color: #C5B17F;
 	line-height: 1.2;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Dual Slider Subheading Typography
@@ -300,6 +510,15 @@
 	font-size: 36px;
 	color: #282828;
 	line-height: 1.3;
+	@media #{$media-1060} {
+		font-size: 30px;
+	}
+	@media #{$media-995} {
+		font-size: 25px;
+	}
+	@media #{$media-700} {
+		font-size: 20px;
+	}
 }
 
 // Dual Slider Description Typography
@@ -310,6 +529,12 @@
 	font-size: 18px;
 	color: #282828;
 	line-height: 1.6;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Sustainability Tag Typography
@@ -319,6 +544,12 @@
 	font-size: 20px;
 	color: #B64910;
 	text-transform: uppercase;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }
 
 // Sustainability Heading Typography
@@ -328,6 +559,15 @@
 	font-size: 60px;
 	color: #C5B17F;
 	line-height: 1.2;
+	@media #{$media-1060} {
+		font-size: 45px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
 }
 
 // Sustainability Paragraph Typography
@@ -337,6 +577,12 @@
 	font-size: 18px;
 	color: #282828;
 	line-height: 1.6;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
 }
 
 // Sustainability Card Text Typography
@@ -346,4 +592,10 @@
 	font-size: 20px;
 	color: #282828;
 	line-height: 1.4;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
 }

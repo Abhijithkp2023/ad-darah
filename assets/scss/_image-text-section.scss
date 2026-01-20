@@ -52,6 +52,9 @@
 
 		.image-text-button {
 			margin-top: 20px;
+			@media #{$media-700} {
+				padding-inline: 30px;
+			}
 		}
 	}
 
@@ -83,7 +86,7 @@
 		padding: 70px 0;
 
 		.image-text-wrapper {
-			gap: 50px;
+			gap: 40px;
 		}
 
 		.image-text-left,
