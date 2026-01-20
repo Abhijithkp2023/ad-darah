@@ -33,7 +33,7 @@
 				},
 				breakpoints: {
 					320: {
-						slidesPerView: 1,
+						slidesPerView: 1.1,
 						spaceBetween: 15,
 					},
 					768: {
@@ -41,11 +41,11 @@
 						spaceBetween: 20,
 					},
 					1024: {
-						slidesPerView: 2,
+						slidesPerView: 1.7,
 						spaceBetween: 20,
 					},
-					1200: {
-						slidesPerView: 2.2,
+					1400: {
+						slidesPerView: 2,
 						spaceBetween: 20,
 					},
 				},
@@ -70,7 +70,7 @@
 				},
 				breakpoints: {
 					320: {
-						slidesPerView: 1,
+						slidesPerView: 1.1,
 						spaceBetween: 15,
 					},
 					768: {
@@ -78,11 +78,11 @@
 						spaceBetween: 20,
 					},
 					1024: {
-						slidesPerView: 2,
+						slidesPerView: 1.7,
 						spaceBetween: 20,
 					},
-					1200: {
-						slidesPerView: 2.2,
+					1400: {
+						slidesPerView: 2,
 						spaceBetween: 20,
 					},
 				},

@@ -1,4 +1,7 @@
 // Main SCSS file
+// Note: To import CSS files (not SCSS), use the .css extension:
+// @import "path/to/file.css";
+// Example: @import "../fonts/stylesheet.css";
 
 @import "fonts";
 @import "mixins";
@@ -44,3 +47,9 @@
 @import "sustainability";
 @import "landing-gallery";
 @import "whatsapp-button";
+@import "second-land-banner";
+@import "infinite-slider";
+@import "video-form";
+@import "wedding-packages";
+@import "video-form";
+
