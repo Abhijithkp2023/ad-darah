@@ -4306,7 +4306,7 @@ body.banner-animating {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10000;
+  z-index: 999;
   pointer-events: none;
   transform-origin: center center;
   will-change: transform;
@@ -11205,5 +11205,101 @@ body.banner-animating {
   .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
     grid-row: auto;
     height: 300px;
+  }
+}
+
+/**
+ * WhatsApp Floating Button Styles
+ */
+.whatsapp-button-container {
+  position: fixed;
+  bottom: 250px;
+  right: -60px;
+  left: 0;
+  z-index: 100001;
+  pointer-events: none;
+}
+.whatsapp-button-container .container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.whatsapp-floating-button {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #1FAF38 0%, #60D669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(31, 175, 56, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.whatsapp-floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(31, 175, 56, 0.6);
+}
+.whatsapp-floating-button:active {
+  transform: scale(0.95);
+}
+.whatsapp-floating-button .whatsapp-button-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp-floating-button .whatsapp-button-icon .whatsapp-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.whatsapp-floating-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(0);
+  animation: whatsappPulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .whatsapp-button-container {
+    bottom: 20px;
+  }
+  .whatsapp-floating-button {
+    width: 56px;
+    height: 56px;
+  }
+}
+@media (max-width: 480px) {
+  .whatsapp-button-container {
+    bottom: 15px;
+  }
+  .whatsapp-floating-button {
+    width: 50px;
+    height: 50px;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -144,6 +144,9 @@ function addarah_scripts()
 {
 	// Enqueue main.css (Footer component styles)
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/scss/main.css', array(), _S_VERSION);
+	
+	// Enqueue WhatsApp button styles (separate file until SCSS is compiled)
+	wp_enqueue_style('whatsapp-button-style', get_template_directory_uri() . '/assets/css/whatsapp-button.css', array(), _S_VERSION);
 
 	// Enqueue Lenis Smooth Scroll library (CDN) - loaded on all pages
 	wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.42', false);
@@ -164,6 +167,9 @@ function addarah_scripts()
 
 	// Enqueue Footer component script (loaded on all pages)
 	wp_enqueue_script('footer-script', get_template_directory_uri() . '/assets/js/Footer.js', array(), _S_VERSION, true);
+
+	// Enqueue WhatsApp floating button script (loaded on all pages)
+	wp_enqueue_script('whatsapp-button-script', get_template_directory_uri() . '/assets/js/WhatsAppButton.js', array(), _S_VERSION, true);
 
 	// Enqueue ButtonPrimary component scripts (loaded on all pages - used in header)
 	wp_enqueue_script('button-primary-script', get_template_directory_uri() . '/assets/js/ButtonPrimary.js', array(), _S_VERSION, true);
