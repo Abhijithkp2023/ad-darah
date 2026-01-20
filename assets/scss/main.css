@@ -2392,9 +2392,10 @@ a,
 .primary-button:hover {
   background-color: #b64910;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 995px) {
   .primary-button {
-    height: 42px;
+    height: 40px;
+    padding-inline: 30px;
   }
 }
 
@@ -4967,9 +4968,10 @@ body.banner-animating {
 .main-banner-container .book-visit-button:hover {
   background-color: #b64910;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 995px) {
   .main-banner-container .book-visit-button {
-    height: 42px;
+    height: 40px;
+    padding-inline: 30px;
   }
 }
 .main-banner-container .main-banner-image {
@@ -9631,6 +9633,22 @@ body.banner-animating {
   height: 523px;
   background-color: #000;
   cursor: pointer;
+}
+@media only screen and (max-width: 1060px) {
+  .container-slider-section .container-slider-card {
+    height: 450px;
+  }
+}
+@media only screen and (max-width: 995px) {
+  .container-slider-section .container-slider-card {
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container-slider-section .container-slider-card {
+    height: 400px;
+    border-radius: 10px;
+  }
 }
 .container-slider-section .container-slider-card::before {
   content: "";

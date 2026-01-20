@@ -40,9 +40,11 @@
 		background-color: #b64910;
 	}
 
-	@media #{$media-768} {
-		height: 42px;
+	@media #{$media-995 	} {
+		height: 40px;
+		padding-inline: 30px;
 	}
+
 }
 
 // Contact Us Button Mixin (Brown)
