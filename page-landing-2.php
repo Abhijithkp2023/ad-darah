@@ -52,8 +52,32 @@ get_header();
 		);
 		include locate_template('template-parts/InfiniteSlider.php');
 
-		// Video Form Section
 		get_template_part('template-parts/VideoForm');
+
+
+		$wedding_packages_heading = 'Wedding Packages';
+		$wedding_packages_description = 'AD-DARAH offers world-class facilities tailored for weddings and social celebrations. Every detail—from the grand halls to the private suites—is crafted to ensure your event unfolds seamlessly with elegance and ease.';
+		$wedding_packages_items = array(
+			array(
+				'image' => get_template_directory_uri() . '/assets/images/package_01.png',
+				'heading' => 'Pearl Package',
+				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				'pdf_url' => '#',
+			),
+			array(
+				'image' => get_template_directory_uri() . '/assets/images/package_02.png',
+				'heading' => 'Diamond Package',
+				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				'pdf_url' => '#',
+			),
+			array(
+				'image' => get_template_directory_uri() . '/assets/images/package_03.png',
+				'heading' => 'Royal Package',
+				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+				'pdf_url' => '#',
+			),
+		);
+		include locate_template('template-parts/WeddingPackages.php');
 		?>
 	</div>
 </main><!-- #main -->
