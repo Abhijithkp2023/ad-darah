@@ -70,6 +70,9 @@
 					@media #{$media-1024} {
 						bottom: 20px;
 					}
+					@media #{$media-700} {
+						left:20px;
+					}
 				}
 
 				.venue-capacity {
@@ -92,6 +95,9 @@
 						font-weight: 500;
 						color: $white;
 						letter-spacing: 0.02em;
+						@media #{$media-700} {
+							 font-size: 14px;
+						}
 					}
 				}
 
@@ -108,6 +114,11 @@
                     margin-top: 25px;
 					@media #{$media-1024} {
 						margin-top: 15px;
+					}
+					@media #{$media-700} {
+						font-size: 13px;
+        				line-height: 1;
+						padding: 11px 20px 10px 20px;
 					}
 					&:hover {
 						background-color: darken($gold, 10%);
@@ -256,7 +267,7 @@
 	}
 
 	// Mobile Responsive
-	@media #{$media-768} {
+	@media #{$media-995} {
 		padding: 60px 0;
 
 		.venue-title {
@@ -265,6 +276,7 @@
 
 		.venue-main-swiper {
 			height: 400px;
+			margin-bottom: 10px;
 
 			.venue-slide-content {
 				.venue-overlay {
@@ -312,6 +324,8 @@
 
 		.venue-thumbnail-swiper {
 			height: 80px;
+			position: initial;
+			margin: 0;
 		}
 	}
 
@@ -355,7 +369,7 @@
 
 		.venue-title {
 			@include px-rem(28);
-			margin-bottom: 20px;
+			top: 20px;
 		}
 
 		.venue-main-swiper {

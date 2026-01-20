@@ -70,6 +70,14 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 			line-height: 130%;
 			color: $white;
 			margin: 0 0 20px 0;
+			@media #{$media-995} {
+				font-size: 50px;
+				line-height: 100%;
+			}
+			@media #{$media-700} {
+				font-size: 35px;
+				margin: 0 0 10px 0;
+			}
 		}
 
 		.services-stack-card-description {
@@ -80,6 +88,9 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 			color: $white;
 			margin: 0;
 			max-width: 600px;
+			@media #{$media-700} {
+				font-size: 15px;
+			}
 		}
 
 		.services-stack-arrow-link {
@@ -139,12 +150,12 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 	}
 
 	// Mobile Responsive
-	@media #{$media-768} {
+	@media #{$media-995} {
 		padding-top: 60px;
 
 		.services-stack-card {
 			.services-stack-card-content {
-				padding: 30px 40px;
+				padding: 30px 0px;
 			}
 
 			.services-stack-arrow-link {
@@ -162,12 +173,13 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 	}
 
 	// Small Mobile Responsive
-	@media #{$media-600} {
+	@media #{$media-700} {
 		padding-top: 50px;
 
 		.services-stack-card {
 			.services-stack-card-content {
-				padding: 25px 30px;
+				padding: 20px 25px;
+				left: 0 !important;
 			}
 
 			.services-stack-arrow-link {
@@ -210,6 +222,9 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 			left: max(60px, calc((100vw - 1400px) / 2 - 30px)) !important;
 			transform: translateY(-50%) !important;
 			margin-bottom: 0 !important;
+			@media #{$media-700} {
+				left: 0 !important;
+			}
 		}
 	}
 }

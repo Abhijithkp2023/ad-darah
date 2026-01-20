@@ -44,6 +44,10 @@
             &:last-child {
                 margin-bottom: 0;
             }
+			@media #{$media-700} {
+				font-size: 15px;
+    			line-height: 20px;
+			}
         }
 
 		.image-text-button {
@@ -94,6 +98,9 @@
 			.headline-line-1,
 			.headline-line-2 {
 				@include px-rem(42);
+			}
+			@media #{$media-1060} {
+				font-size: 30px;
 			}
 		}
 

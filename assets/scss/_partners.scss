@@ -77,7 +77,7 @@
 	}
 
 	// Mobile Responsive
-	@media #{$media-768} {
+	@media #{$media-995} {
 		.partners-marquee {
 			animation-duration: 25s; // Faster on mobile
 		}
@@ -87,7 +87,7 @@
 		}
 
 		.partners-logo {
-			height: 60px;
+			height: 115px;
 		}
 	}
 
@@ -102,7 +102,7 @@
 		}
 
 		.partners-logo {
-			height: 50px;
+			height: 80px;
 		}
 	}
 

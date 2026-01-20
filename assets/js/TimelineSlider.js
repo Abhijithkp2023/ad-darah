@@ -43,22 +43,22 @@
 		// Build Swiper config
 		const swiperConfig = {
 			spaceBetween: 30,
-			slidesPerView: 'auto',
+			slidesPerView: 1,
 			speed: 1200,
 			loop: true,
 			effect: 'slide',
 			easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 			breakpoints: {
-				768: {
-					// slidesPerView: 1.5,
+				700: {
+					slidesPerView: 1,
 					spaceBetween: 30,
 				},
 				1024: {
-					// slidesPerView: 2,
+					slidesPerView: 2,
 					spaceBetween: 30,
 				},
 				1280: {
-					// slidesPerView: 1.8,
+					slidesPerView: 'auto',
 					spaceBetween: 30,
 				},
 			},

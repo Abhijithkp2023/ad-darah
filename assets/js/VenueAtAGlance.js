@@ -47,17 +47,20 @@
 			freeMode: true,
 			watchSlidesProgress: true,
 			breakpoints: {
-				640: {
+				0: {
 					slidesPerView: 4,
-					spaceBetween: 15,
+					spaceBetween: 5,
 				},
 				768: {
 					slidesPerView: 5,
-					spaceBetween: 15,
 				},
 				1024: {
 					slidesPerView: 6,
 					spaceBetween: 10,
+				},
+				1200: {
+					slidesPerView: 6,
+					spaceBetween: 15,
 				},
 			},
 		});
