@@ -87,7 +87,12 @@
 	}
 }
 
-// Responsive adjustments
+@media (max-width: 1500px) {
+	.whatsapp-button-container {
+		right: 20px;
+	}
+}
+
 @media (max-width: 768px) {
 	.whatsapp-button-container {
 		bottom: 20px;
@@ -96,6 +101,12 @@
 	.whatsapp-floating-button {
 		width: 56px;
 		height: 56px;
+	}
+
+	.whatsapp-icon {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
 	}
 }
 

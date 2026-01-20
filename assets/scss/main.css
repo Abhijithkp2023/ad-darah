@@ -4756,8 +4756,7 @@ body.banner-animating {
 }
 .where-ever-content .where_ever_text_wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   justify-content: space-between;
 }
 .where-ever-content .where-ever-title {
@@ -4783,6 +4782,21 @@ body.banner-animating {
   color: #C5B17F;
   margin: 0;
 }
+@media (max-width: 1400px) {
+  .where-ever-left-block h2.where-ever-title {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .where-ever-left-block h2.where-ever-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 820px) {
+  .where-ever-left-block h2.where-ever-title {
+    font-size: 30px;
+  }
+}
 
 .where-ever-right-block {
   width: 36%;
@@ -4795,6 +4809,21 @@ body.banner-animating {
   margin-bottom: 20px;
   color: #282828;
   font-weight: 500;
+}
+@media only screen and (max-width: 1400px) {
+  .where-ever-right-block {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .where-ever-right-block {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .where-ever-right-block {
+    width: 50%;
+  }
 }
 
 .where-ever-video-wrapper {
@@ -6633,7 +6662,6 @@ body.banner-animating {
 }
 
 .image-text-section {
-  padding: 100px 0;
   background-color: #fff;
 }
 .image-text-section .container {
@@ -6701,9 +6729,6 @@ body.banner-animating {
   font-weight: 400;
 }
 @media only screen and (max-width: 1024px) {
-  .image-text-section {
-    padding: 70px 0;
-  }
   .image-text-section .image-text-wrapper {
     gap: 50px;
   }
@@ -6731,9 +6756,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 768px) {
-  .image-text-section {
-    padding: 60px 0;
-  }
   .image-text-section .image-text-wrapper {
     flex-direction: column;
     gap: 40px;
@@ -6754,9 +6776,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 600px) {
-  .image-text-section {
-    padding: 50px 0;
-  }
   .image-text-section .image-text-wrapper {
     gap: 30px;
   }
@@ -6772,9 +6791,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 480px) {
-  .image-text-section {
-    padding: 40px 0;
-  }
   .image-text-section .image-text-headline {
     margin-bottom: 18px;
   }
@@ -10672,6 +10688,21 @@ body.banner-animating {
   margin: 0 0 50px 0;
   color: #C5B17F;
 }
+@media (max-width: 1400px) {
+  .landing-gallery-section .landing-gallery-heading {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1200px) {
+  .landing-gallery-section .landing-gallery-heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 820px) {
+  .landing-gallery-section .landing-gallery-heading {
+    font-size: 30px;
+  }
+}
 .landing-gallery-section .landing-gallery-button-wrapper {
   display: flex;
   justify-content: center;
@@ -10869,6 +10900,11 @@ body.banner-animating {
     opacity: 0;
   }
 }
+@media (max-width: 1500px) {
+  .whatsapp-button-container {
+    right: 20px;
+  }
+}
 @media (max-width: 768px) {
   .whatsapp-button-container {
     bottom: 20px;
@@ -10876,6 +10912,11 @@ body.banner-animating {
   .whatsapp-floating-button {
     width: 56px;
     height: 56px;
+  }
+  .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }
 @media (max-width: 480px) {
