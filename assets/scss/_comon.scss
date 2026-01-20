@@ -26,5 +26,15 @@
 	line-height: 130%;
 
 	&.yello{ color: #C5B17F; }
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+		line-height: 1;
+	}
 }
 

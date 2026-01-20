@@ -10,8 +10,12 @@
 		width: 100%;
 		overflow: hidden;
         height: 800px;
-
-
+		@media #{$media-995} {
+			height: 700px;
+		}
+		@media #{$media-700} {
+			height: 540px;
+		}
 		.full-video-thumbnail {
 			position: absolute;
 			top: 0;
@@ -53,7 +57,14 @@
 			justify-content: center;
 			transition: all 0.3s ease;
 			z-index: 3;
-
+			@media #{$media-995} {
+				width: 100px;
+				height: 100px;
+			}
+			@media #{$media-700} {
+				width: 75px;
+				height: 75px;
+			}
 			&:hover {
 				background: rgba(217, 217, 217, 0.3);
 				transform: translate(-50%, -50%) scale(1.1);
@@ -63,6 +74,10 @@
 				width: 30px;
 				height: 36px;
 				margin-left: 4px; // Slight offset for visual centering
+				@media #{$media-700} {
+					width: 20px;
+					height: 30px;
+				}
 			}
 
 			&.is-hidden {
