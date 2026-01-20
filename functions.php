@@ -161,8 +161,6 @@ function addarah_scripts()
 	wp_enqueue_style('flatpickr-css', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', array(), '4.6.13');
 	wp_enqueue_script('flatpickr-js', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.js', array(), '4.6.13', true);
 
-	wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/Header.js', array('gsap', 'choices-js', 'flatpickr-js'), _S_VERSION, true);
-
 	wp_enqueue_script('header-script', get_template_directory_uri() . '/assets/js/Header.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
 
 	// Enqueue Footer component script (loaded on all pages)
@@ -173,9 +171,6 @@ function addarah_scripts()
 
 	// Enqueue ButtonPrimary component scripts (loaded on all pages - used in header)
 	wp_enqueue_script('button-primary-script', get_template_directory_uri() . '/assets/js/ButtonPrimary.js', array(), _S_VERSION, true);
-
-	// Enqueue Common JavaScript (loaded on all pages - handles common functionality)
-	wp_enqueue_script('common-script', get_template_directory_uri() . '/assets/js/Common.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
 
 	// Enqueue PageTabs component script (loaded on all pages - can be used on any inner page)
 	wp_enqueue_script('page-tabs-script', get_template_directory_uri() . '/assets/js/PageTabs.js', array(), _S_VERSION, true);

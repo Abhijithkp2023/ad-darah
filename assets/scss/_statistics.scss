@@ -62,6 +62,10 @@
 				transform: translate(0, 0);
 			}
 		}
+		@media #{$media-700} {
+			aspect-ratio: 370 / 185;
+			border-radius: 10px;
+		}
 	}
 
 	.stat-title {
@@ -70,6 +74,10 @@
 		text-align: left;
 		font-weight: 600;
 		color: #1D1D1B;
+		@media #{$media-700} {
+			font-size:18px;
+			margin-bottom: 0;
+		}
 	}
 
 	.stat-value {
@@ -79,7 +87,12 @@
 		font-weight: 500;
 		gap: 5px;
 		margin-top: auto;
-
+		@media #{$media-995} {
+			font-size: 60px;
+		}
+		@media #{$media-700} {
+			font-size: 50px;
+		}
 		.statNumber,
 		.stat-plus {
 			// Inherit typography from parent .stat-value
