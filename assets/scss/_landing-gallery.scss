@@ -1,0 +1,138 @@
+// Landing Page Gallery Styles
+.landing-gallery-section {
+	width: 100%;
+	background-color: rgba(244, 241, 231, 1);
+
+	.landing-gallery-heading {
+		@include where-ever-title;
+		text-align: center;
+		margin: 0 0 50px 0;
+		color: #C5B17F;
+	}
+
+	.landing-gallery-button-wrapper {
+		display: flex;
+		justify-content: center;
+		margin-top: 60px;
+
+		.landing-gallery-button {
+			@include button_primary;
+		}
+	}
+
+	.landing-gallery-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto auto;
+		gap: 10px;
+		width: 100%;
+
+		.landing-gallery-item {
+			position: relative;
+			overflow: hidden;
+			border-radius: 20px;
+
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+
+            img {
+                transition: transform 0.5s ease;
+            }
+
+			img,
+			video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+
+			// Top Left - 329px height
+			&.landing-gallery-top-left {
+				grid-column: 1;
+				grid-row: 1;
+				height: 329px;
+			}
+
+			// Center Video - 668px height, spans 2 rows
+			&.landing-gallery-center {
+				grid-column: 2;
+				grid-row: 1 / 3;
+				height: 668px;
+			}
+
+			// Top Right - 329px height
+			&.landing-gallery-top-right {
+				grid-column: 3;
+				grid-row: 1;
+				height: 329px;
+			}
+
+			// Bottom Left - 329px height
+			&.landing-gallery-bottom-left {
+				grid-column: 1;
+				grid-row: 2;
+				height: 329px;
+			}
+
+			// Bottom Right - 329px height
+			&.landing-gallery-bottom-right {
+				grid-column: 3;
+				grid-row: 2;
+				height: 329px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		.landing-gallery-container {
+			padding: 0 15px;
+		}
+
+		.landing-gallery-grid {
+			gap: 8px;
+
+			.landing-gallery-item {
+				border-radius: 15px;
+
+				&.landing-gallery-top-left,
+				&.landing-gallery-top-right,
+				&.landing-gallery-bottom-left,
+				&.landing-gallery-bottom-right {
+					height: 200px;
+				}
+
+				&.landing-gallery-center {
+					height: 416px; // 200 + 8 + 200 + 8
+				}
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		.landing-gallery-grid {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+
+			.landing-gallery-item {
+				&.landing-gallery-top-left,
+				&.landing-gallery-top-right,
+				&.landing-gallery-bottom-left,
+				&.landing-gallery-bottom-right {
+					grid-column: 1;
+					height: 250px;
+				}
+
+				&.landing-gallery-center {
+					grid-row: auto;
+					height: 300px;
+				}
+			}
+		}
+	}
+}
+

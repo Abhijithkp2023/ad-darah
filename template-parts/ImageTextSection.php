@@ -43,7 +43,7 @@ if (empty($image_text_image)) {
 }
 ?>
 
-<section class="image-text-section">
+<section class="image-text-section pb_100 pt_100">
 	<div class="container">
 		<div class="image-text-wrapper">
 			<div class="image-text-left">

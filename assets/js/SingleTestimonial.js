@@ -80,21 +80,37 @@
 			return;
 		}
 
+		// Check if navigation buttons exist
+		const contentContainer = swiperElement.closest('.single-testimonial-content');
+		const prevButton = contentContainer ? contentContainer.querySelector('.single-testimonial-nav-prev') : null;
+		const nextButton = contentContainer ? contentContainer.querySelector('.single-testimonial-nav-next') : null;
+
 		console.log("SingleTestimonial: Initializing Swiper with config...");
 		try {
+			// Check if we have enough slides for loop (need at least 6 for smooth loop)
+			const slideCount = slides.length;
+			const enableLoop = slideCount >= 6;
+			
 			const swiperInstance = new Swiper(swiperElement, {
 				slidesPerView: 1,
 				spaceBetween: 20,
 				speed: 600,
 				direction: "horizontal",
 				centeredSlides: true,
-				initialSlide: 2,
+				loop: enableLoop,
+				loopAdditionalSlides: enableLoop ? 3 : 0,
+				loopedSlides: enableLoop ? Math.ceil(slideCount / 2) : undefined,
+				initialSlide: 0,
 				// autoplay: {
 				// 	delay: 5000,
 				// 	disableOnInteraction: false,
 				// },
+				navigation: {
+					nextEl: nextButton,
+					prevEl: prevButton,
+				},
 				breakpoints: {
-					320: {
+					0: {
 						slidesPerView: 1,
 						spaceBetween: 15,
 					},
@@ -113,15 +129,24 @@
 				},
 			});
 			swiperElement._swiperInstance = swiperInstance;
+			
+			// Update loop after initialization to ensure it works correctly
+			if (enableLoop && swiperInstance.loop) {
+				swiperInstance.loopDestroy();
+				swiperInstance.loopCreate();
+				swiperInstance.update();
+			}
+			
 			console.log(
 				"SingleTestimonial: ✓ Swiper initialized successfully!",
 				swiperInstance
 			);
 			console.log("SingleTestimonial: Swiper instance details:", {
 				slides: swiperInstance.slides.length,
+				realIndex: swiperInstance.realIndex,
 				activeIndex: swiperInstance.activeIndex,
+				loop: swiperInstance.params.loop,
 				isLocked: swiperInstance.locked,
-				autoplay: swiperInstance.autoplay,
 			});
 		} catch (error) {
 			console.error("SingleTestimonial: ✗ Error initializing Swiper:", error);
@@ -132,30 +157,81 @@
 	/**
 	 * Wait for DOM and Swiper to be ready
 	 */
-	const waitForReady = function () {
+	const waitForReady = function (retryCount) {
+		retryCount = retryCount || 0;
+		const maxRetries = 20;
+
 		console.log(
 			"SingleTestimonial: waitForReady called, document.readyState:",
-			document.readyState
+			document.readyState,
+			"retryCount:",
+			retryCount
 		);
+
+		// Check if Swiper is loaded
+		if (typeof Swiper === "undefined") {
+			if (retryCount < maxRetries) {
+				console.log(
+					"SingleTestimonial: Swiper not loaded yet, retrying in 200ms...",
+					retryCount + 1
+				);
+				setTimeout(function () {
+					waitForReady(retryCount + 1);
+				}, 200);
+				return;
+			} else {
+				console.error(
+					"SingleTestimonial: Swiper failed to load after",
+					maxRetries,
+					"retries"
+				);
+				return;
+			}
+		}
+
+		// Swiper is loaded, now wait for DOM
 		if (document.readyState === "loading") {
 			console.log(
 				"SingleTestimonial: Document is loading, waiting for DOMContentLoaded..."
 			);
 			document.addEventListener("DOMContentLoaded", function () {
 				console.log(
-					"SingleTestimonial: DOMContentLoaded fired, waiting 100ms..."
+					"SingleTestimonial: DOMContentLoaded fired, waiting 300ms..."
 				);
-				setTimeout(initSingleTestimonialSwiper, 100);
+				setTimeout(initSingleTestimonialSwiper, 300);
 			});
 		} else {
 			console.log(
-				"SingleTestimonial: Document already ready, waiting 100ms..."
+				"SingleTestimonial: Document already ready, waiting 300ms..."
 			);
-			setTimeout(initSingleTestimonialSwiper, 100);
+			setTimeout(initSingleTestimonialSwiper, 300);
 		}
 	};
 
 	// Initialize when ready
 	console.log("SingleTestimonial: Starting initialization...");
 	waitForReady();
+
+	// Also try on window load as fallback
+	if (document.readyState === "complete") {
+		// Page already loaded, try immediately
+		setTimeout(function () {
+			const swiperElement = document.querySelector("[data-single-testimonial-swiper]");
+			if (swiperElement && !swiperElement.swiper && !swiperElement._swiperInstance && !swiperElement.classList.contains("swiper-initialized")) {
+				console.log("SingleTestimonial: Page already loaded, trying initialization...");
+				waitForReady(0);
+			}
+		}, 100);
+	} else {
+		window.addEventListener("load", function () {
+			console.log("SingleTestimonial: Window loaded, checking if Swiper needs initialization...");
+			setTimeout(function () {
+				const swiperElement = document.querySelector("[data-single-testimonial-swiper]");
+				if (swiperElement && !swiperElement.swiper && !swiperElement._swiperInstance && !swiperElement.classList.contains("swiper-initialized")) {
+					console.log("SingleTestimonial: Swiper not initialized, trying again...");
+					waitForReady(0);
+				}
+			}, 500);
+		});
+	}
 })();

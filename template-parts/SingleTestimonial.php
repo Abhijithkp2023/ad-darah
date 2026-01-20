@@ -21,35 +21,42 @@
 $single_testimonial_title = isset($single_testimonial_title) ? $single_testimonial_title : 'Featured Clients';
 $single_testimonial_items = isset($single_testimonial_items) && is_array($single_testimonial_items) ? $single_testimonial_items : array();
 $single_testimonial_decor_image = isset($single_testimonial_decor_image) ? $single_testimonial_decor_image : get_template_directory_uri() . '/assets/images/single_testimonial_decor.png';
+$single_testimonial_show_navigation = isset($single_testimonial_show_navigation) ? $single_testimonial_show_navigation : false;
 
-// Duplicate slides if less than 5
-if (count($single_testimonial_items) > 0 && count($single_testimonial_items) < 5) {
-	$duplicated_items = $single_testimonial_items;
-	
-	// Keep duplicating until we have at least 5 items
-	while (count($duplicated_items) < 5) {
-		$duplicated_items = array_merge($duplicated_items, $single_testimonial_items);
-	}
-	
-	// Use the duplicated items (will have at least 5)
-	$single_testimonial_items = $duplicated_items;
+// Duplicate items to ensure smooth slider loop (need at least 10-12 for smooth loop with 3.3 slidesPerView)
+if (count($single_testimonial_items) > 0) {
+    $duplicated_items = $single_testimonial_items;
+    // Keep duplicating until we have at least 12 items for smooth infinite loop
+    while (count($duplicated_items) < 12) {
+        $duplicated_items = array_merge($duplicated_items, $single_testimonial_items);
+    }
+    $single_testimonial_items = $duplicated_items;
 }
 ?>
 
 <section class="single-testimonial-container pt_100 pb_100">
     <div class="single-testimonial-background-image">
-        <img src="<?php echo esc_url($single_testimonial_decor_image); ?>"
-            alt="Testimonial Decoration">
+        <img src="<?php echo esc_url($single_testimonial_decor_image); ?>" alt="Testimonial Decoration">
     </div>
-
-    <!-- Left Overlay -->
-    <div class="single-testimonial-overlay single-testimonial-overlay-left"></div>
 
     <div class="single-testimonial-header">
         <h2 class="single-testimonial-title"><?php echo esc_html($single_testimonial_title); ?></h2>
     </div>
 
-    <div class="single-testimonial-content">
+    <div class="single-testimonial-content <?php echo $single_testimonial_show_navigation ? 'has-navigation' : ''; ?>">
+        <!-- Left Overlay -->
+        <div class="single-testimonial-overlay single-testimonial-overlay-left"></div>
+
+        <?php if ($single_testimonial_show_navigation): ?>
+            <button class="single-testimonial-nav-button single-testimonial-nav-prev" aria-label="Previous testimonial">
+                <svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5732 0.5342L1.0085 11.099L11.5732 21.6638" stroke="white" stroke-width="0.950845"
+                        stroke-linejoin="round" />
+                    <path d="M36.1321 10.9104L0 10.9104" stroke="white" stroke-width="0.950845" />
+                </svg>
+            </button>
+        <?php endif; ?>
+
         <div class="single-testimonial-swiper-container">
             <div class="swiper single-testimonial-swiper" data-single-testimonial-swiper>
                 <div class="swiper-wrapper">
@@ -86,8 +93,18 @@ if (count($single_testimonial_items) > 0 && count($single_testimonial_items) < 5
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Right Overlay -->
-    <div class="single-testimonial-overlay single-testimonial-overlay-right"></div>
+        <?php if ($single_testimonial_show_navigation): ?>
+            <button class="single-testimonial-nav-button single-testimonial-nav-next" aria-label="Next testimonial">
+                <svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25.4268 21.4658L35.9915 10.901L25.4268 0.33625" stroke="white" stroke-width="0.950845"
+                        stroke-linejoin="round" />
+                    <path d="M0 11.0896L36.1321 11.0896" stroke="white" stroke-width="0.950845" />
+                </svg>
+            </button>
+        <?php endif; ?>
+
+        <!-- Right Overlay -->
+        <div class="single-testimonial-overlay single-testimonial-overlay-right"></div>
+    </div>
 </section>

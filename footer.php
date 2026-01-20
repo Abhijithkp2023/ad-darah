@@ -133,6 +133,11 @@ if ($menu_items) {
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php
+// Include WhatsApp floating button on all pages
+get_template_part('template-parts/WhatsAppButton');
+?>
+
 <?php wp_footer(); ?>
 
 </body>

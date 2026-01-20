@@ -144,6 +144,9 @@ function addarah_scripts()
 {
 	// Enqueue main.css (Footer component styles)
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/scss/main.css', array(), _S_VERSION);
+	
+	// Enqueue WhatsApp button styles (separate file until SCSS is compiled)
+	wp_enqueue_style('whatsapp-button-style', get_template_directory_uri() . '/assets/css/whatsapp-button.css', array(), _S_VERSION);
 
 	// Enqueue Lenis Smooth Scroll library (CDN) - loaded on all pages
 	wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.42', false);
@@ -162,6 +165,9 @@ function addarah_scripts()
 
 	// Enqueue Footer component script (loaded on all pages)
 	wp_enqueue_script('footer-script', get_template_directory_uri() . '/assets/js/Footer.js', array(), _S_VERSION, true);
+
+	// Enqueue WhatsApp floating button script (loaded on all pages)
+	wp_enqueue_script('whatsapp-button-script', get_template_directory_uri() . '/assets/js/WhatsAppButton.js', array(), _S_VERSION, true);
 
 	// Enqueue ButtonPrimary component scripts (loaded on all pages - used in header)
 	wp_enqueue_script('button-primary-script', get_template_directory_uri() . '/assets/js/ButtonPrimary.js', array(), _S_VERSION, true);
@@ -370,6 +376,16 @@ function addarah_scripts()
 
 	}
 
+	// Load scripts for Landing 2 page
+	$is_landing_2_page = is_page_template('page-landing-2.php');
+	
+	if ($is_landing_2_page) {
+		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
+		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
+		// Load SingleTestimonial script with Swiper dependency
+		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
+	}
+
 	// Load page-specific scripts
 	$is_weddings_page = is_page_template('page-weddings-social-services.php');
 
@@ -467,8 +483,8 @@ function addarah_scripts()
 		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
 	}
 
-	// Load scripts for Weddings & Social Services page
-	if ($is_weddings_social_services_page) {
+	// Load scripts for Landing Page 2
+	if ($is_landing_2_page) {
 		// Enqueue Swiper if not already loaded
 		if (!wp_script_is('swiper-js', 'enqueued')) {
 			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);

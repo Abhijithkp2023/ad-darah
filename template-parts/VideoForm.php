@@ -14,7 +14,7 @@ $video_form_heading = get_query_var('video_form_heading', 'Plan Your Wedding wit
 $video_form_video = get_query_var('video_form_video', get_template_directory_uri() . '/assets/images/form_video.mp4');
 ?>
 
-<section class="video-form-section pb_100" data-video-form-section>
+<section class="video-form-section pb_100 pt_100" data-video-form-section>
 	<div class="container">
 		<div class="video-form-wrapper">
 			<div class="video-form-video-wrapper">
