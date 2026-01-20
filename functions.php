@@ -381,6 +381,8 @@ function addarah_scripts()
 	if ($is_landing_2_page) {
 		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
 		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
+		// Load SingleTestimonial script with Swiper dependency
+		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
 	}
 
 	// Load page-specific scripts
@@ -480,8 +482,8 @@ function addarah_scripts()
 		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
 	}
 
-	// Load scripts for Weddings & Social Services page
-	if ($is_weddings_social_services_page) {
+	// Load scripts for Landing Page 2
+	if ($is_landing_2_page) {
 		// Enqueue Swiper if not already loaded
 		if (!wp_script_is('swiper-js', 'enqueued')) {
 			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);

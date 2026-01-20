@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<div class="home-page">
+	<div class="home-page page-landing-2">
 		<?php
 		// Second Landing Banner Section
 		get_template_part('template-parts/SecondLandBanner');
@@ -52,6 +52,32 @@ get_header();
 		);
 		include locate_template('template-parts/InfiniteSlider.php');
 
+		// Single Testimonial Section
+		$single_testimonial_title = 'Featured Clients';
+		$single_testimonial_show_navigation = true;
+		$single_testimonial_decor_image = get_template_directory_uri() . '/assets/images/single_testimonial_decor_2.png';
+		$single_testimonial_items = array(
+			array(
+				'review' => 'This venue is perfect for large celebrations! The elegant halls and impeccable service made our wedding unforgettable.',
+				'name' => 'Sarah Mitchell',
+				'image' => get_template_directory_uri() . '/assets/images/testimonial-placeholder.png',
+				'rating' => 5,
+			),
+			array(
+				'review' => 'AD-DARAH exceeded all our expectations. The attention to detail and luxurious facilities created the perfect atmosphere for our event.',
+				'name' => 'Ahmed Al-Rashid',
+				'image' => get_template_directory_uri() . '/assets/images/testimonial-placeholder.png',
+				'rating' => 5,
+			),
+			array(
+				'review' => 'The professional team and world-class facilities made our corporate event a huge success. Highly recommended!',
+				'name' => 'Fatima Hassan',
+				'image' => get_template_directory_uri() . '/assets/images/testimonial-placeholder.png',
+				'rating' => 5,
+			),
+		);
+		include locate_template('template-parts/SingleTestimonial.php');
+
 		get_template_part('template-parts/VideoForm');
 
 
@@ -84,4 +110,37 @@ get_header();
 
 <?php
 get_footer();
+?>
 
+<!-- Direct script load for SingleTestimonial (fallback) -->
+<script>
+	console.log("Template loaded: page-landing-2.php");
+	(function () {
+		// Wait for Swiper to be available
+		function loadSingleTestimonialScript() {
+			if (typeof Swiper !== 'undefined') {
+				console.log("Swiper is available, loading SingleTestimonial.js...");
+				var script = document.createElement('script');
+				script.src = '<?php echo get_template_directory_uri(); ?>/assets/js/SingleTestimonial.js?v=<?php echo _S_VERSION; ?>';
+				script.onload = function () {
+					console.log("SingleTestimonial.js loaded successfully!");
+				};
+				script.onerror = function () {
+					console.error("Failed to load SingleTestimonial.js from:", script.src);
+				};
+				document.head.appendChild(script);
+			} else {
+				console.log("Waiting for Swiper to load...");
+				setTimeout(loadSingleTestimonialScript, 100);
+			}
+		}
+
+		// Try loading immediately
+		loadSingleTestimonialScript();
+
+		// Also try after window load
+		window.addEventListener('load', function () {
+			setTimeout(loadSingleTestimonialScript, 200);
+		});
+	})();
+</script>
