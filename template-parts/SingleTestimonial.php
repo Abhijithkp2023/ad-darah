@@ -23,16 +23,13 @@ $single_testimonial_items = isset($single_testimonial_items) && is_array($single
 $single_testimonial_decor_image = isset($single_testimonial_decor_image) ? $single_testimonial_decor_image : get_template_directory_uri() . '/assets/images/single_testimonial_decor.png';
 $single_testimonial_show_navigation = isset($single_testimonial_show_navigation) ? $single_testimonial_show_navigation : false;
 
-// Duplicate slides if less than 5
-if (count($single_testimonial_items) > 0 && count($single_testimonial_items) < 5) {
+// Duplicate items to ensure smooth slider loop (need at least 10-12 for smooth loop with 3.3 slidesPerView)
+if (count($single_testimonial_items) > 0) {
     $duplicated_items = $single_testimonial_items;
-
-    // Keep duplicating until we have at least 5 items
-    while (count($duplicated_items) < 5) {
+    // Keep duplicating until we have at least 12 items for smooth infinite loop
+    while (count($duplicated_items) < 12) {
         $duplicated_items = array_merge($duplicated_items, $single_testimonial_items);
     }
-
-    // Use the duplicated items (will have at least 5)
     $single_testimonial_items = $duplicated_items;
 }
 ?>

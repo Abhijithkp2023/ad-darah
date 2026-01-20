@@ -87,13 +87,20 @@
 
 		console.log("SingleTestimonial: Initializing Swiper with config...");
 		try {
+			// Check if we have enough slides for loop (need at least 6 for smooth loop)
+			const slideCount = slides.length;
+			const enableLoop = slideCount >= 6;
+			
 			const swiperInstance = new Swiper(swiperElement, {
 				slidesPerView: 1,
 				spaceBetween: 20,
 				speed: 600,
 				direction: "horizontal",
 				centeredSlides: true,
-				initialSlide: 2,
+				loop: enableLoop,
+				loopAdditionalSlides: enableLoop ? 3 : 0,
+				loopedSlides: enableLoop ? Math.ceil(slideCount / 2) : undefined,
+				initialSlide: 0,
 				// autoplay: {
 				// 	delay: 5000,
 				// 	disableOnInteraction: false,
@@ -122,15 +129,24 @@
 				},
 			});
 			swiperElement._swiperInstance = swiperInstance;
+			
+			// Update loop after initialization to ensure it works correctly
+			if (enableLoop && swiperInstance.loop) {
+				swiperInstance.loopDestroy();
+				swiperInstance.loopCreate();
+				swiperInstance.update();
+			}
+			
 			console.log(
 				"SingleTestimonial: ✓ Swiper initialized successfully!",
 				swiperInstance
 			);
 			console.log("SingleTestimonial: Swiper instance details:", {
 				slides: swiperInstance.slides.length,
+				realIndex: swiperInstance.realIndex,
 				activeIndex: swiperInstance.activeIndex,
+				loop: swiperInstance.params.loop,
 				isLocked: swiperInstance.locked,
-				autoplay: swiperInstance.autoplay,
 			});
 		} catch (error) {
 			console.error("SingleTestimonial: ✗ Error initializing Swiper:", error);
