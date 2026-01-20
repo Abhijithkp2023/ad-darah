@@ -17,16 +17,10 @@
 		display: flex;
 		gap: 10px;
 		justify-content: space-between;
-	}
 
-	.where-ever-title {
-		@include px-rem(48);
-		font-weight: 500;
-		line-height: 1.3;
-		color: $black;
-		margin: 0 0 30px 0;
-		text-align: left;
-		text-transform: capitalize;
+		@media (max-width: 700px) {
+			flex-direction: column;
+		}
 	}
 }
 
@@ -37,6 +31,10 @@
 		@include where-ever-title;
 		color: $gold;
 		margin: 0;
+	}
+
+	@media (max-width: 700px) {
+		width: 100%;
 	}
 }
 
@@ -59,8 +57,9 @@
 		width: 45%;
 	}
 
-	@media #{$media-820} {
-		width: 50%;
+	@media #{$media-700} {
+		width: 100%;
+		margin-bottom: 15px;
 	}
 }
 
@@ -71,6 +70,18 @@
 	display: flex;
 	justify-content: center;
 	overflow: visible;
+
+	@media (max-width: 1440px) {
+		margin-top: 70px;
+	}
+
+	@media (max-width: 1060px) {
+		margin-top: 50px;
+	}
+
+	@media (max-width: 700px) {
+		margin-top: 30px;
+	}
 }
 
 .where-ever-video-container {
@@ -94,6 +105,11 @@
 			opacity: 0;
 		pointer-events: none
 		}
+	}
+
+	@media (max-width: 1400px) {
+		max-width: 90%;
+		margin-inline: auto;
 	}
 }
 
