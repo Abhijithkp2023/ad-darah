@@ -156,6 +156,16 @@
 	transition: all 0.3s ease;
 	z-index: 2;
 
+	@media (max-width: 1400px) {
+		width: 90px;
+		height: 90px;
+	}
+
+	@media (max-width: 700px) {
+		width: 70px;
+		height: 70px;
+	}
+
 	&:hover {
 		background: rgba(217, 217, 217, 0.3);
 		transform: translate(-50%, -50%) scale(1.1);
@@ -164,7 +174,17 @@
 	svg {
 		width: 30px;
 		height: 36px;
-		margin-left: 4px; // Slight offset for visual centering
+		margin-left: 4px; 
+
+		@media (max-width: 1400px) {
+			width: 25px;
+			height: 30px;
+		}
+
+		@media (max-width: 700px) {
+			width: 20px;
+			height: 25px;
+		}
 	}
 
 	&.is-hidden {
