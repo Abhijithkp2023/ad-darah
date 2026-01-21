@@ -234,11 +234,79 @@
 	};
 
 	/**
+	 * Centralized resize handler for all components
+	 * Updates all Swiper instances and triggers recalculations
+	 */
+	const initGlobalResizeHandler = function() {
+		let resizeTimeout;
+		let lastWidth = window.innerWidth;
+		let lastBreakpoint = lastWidth > 1060 ? 'desktop' : 'mobile';
+		
+		const handleResize = function() {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(function() {
+				const currentWidth = window.innerWidth;
+				const currentBreakpoint = currentWidth > 1060 ? 'desktop' : 'mobile';
+				const breakpointChanged = lastBreakpoint !== currentBreakpoint;
+				
+				// Update all Swiper instances
+				const swiperElements = document.querySelectorAll('.swiper');
+				swiperElements.forEach(function(element) {
+					if (element.swiper) {
+						try {
+							element.swiper.update();
+							element.swiper.updateSize();
+							element.swiper.updateSlides();
+							element.swiper.updateSlidesClasses();
+						} catch (error) {
+							console.warn('Common: Error updating Swiper on resize:', error);
+						}
+					}
+					if (element._swiperInstance) {
+						try {
+							element._swiperInstance.update();
+							element._swiperInstance.updateSize();
+							element._swiperInstance.updateSlides();
+							element._swiperInstance.updateSlidesClasses();
+						} catch (error) {
+							console.warn('Common: Error updating Swiper instance on resize:', error);
+						}
+					}
+				});
+
+				// Trigger ScrollTrigger refresh if GSAP is available
+				if (typeof ScrollTrigger !== 'undefined') {
+					ScrollTrigger.refresh();
+				}
+
+				// Dispatch custom resize event for components that need it
+				window.dispatchEvent(new CustomEvent('themeResize', {
+					detail: {
+						width: currentWidth,
+						breakpointChanged: breakpointChanged,
+						breakpoint: currentBreakpoint
+					}
+				}));
+				
+				// Update tracking variables
+				lastWidth = currentWidth;
+				lastBreakpoint = currentBreakpoint;
+			}, 250);
+		};
+
+		// Add resize listener
+		window.addEventListener('resize', handleResize, { passive: true });
+	};
+
+	/**
 	 * Initialize all common functionality
 	 */
 	const init = function() {
 		// Initialize header scroll on all pages
 		initHeaderScroll();
+
+		// Initialize global resize handler
+		initGlobalResizeHandler();
 
 		// Initialize VideoForm components if they exist
 		const initVideoForm = function() {
