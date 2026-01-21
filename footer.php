@@ -85,7 +85,7 @@ if ($menu_items) {
 				<h3 class="footer-newsletter-heading">Subscribe to our newsletter</h3>
 				<form class="footer-newsletter-form">
 					<input type="email" placeholder="Email Address" class="footer-newsletter-input" required>
-					<button type="submit" class="primary-button">Subscribe</button>
+					<button type="submit" class="primary-button footer-newsletter-button">Subscribe</button>
 				</form>
 			</div>
 

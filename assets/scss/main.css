@@ -4189,6 +4189,7 @@ body.fullscreen-nav-open {
   background-color: rgba(240, 240, 240, 0.7411764706);
   color: #000000;
   font-size: 14px;
+  min-width: 300px;
   outline: none;
   border: 1px solid transparent;
 }
@@ -4199,19 +4200,7 @@ body.fullscreen-nav-open {
   border: 1px solid #c5b17f;
 }
 .footer .footer-newsletter-section .footer-newsletter-form .footer-newsletter-button {
-  padding: 12px 24px;
-  background-color: #c5b17f;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-.footer .footer-newsletter-section .footer-newsletter-form .footer-newsletter-button:hover {
-  background-color: #b89950;
+  min-width: 150px;
 }
 .footer .footer-link-list {
   display: flex;
