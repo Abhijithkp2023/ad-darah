@@ -257,8 +257,8 @@
 			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
 			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
 			const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
-			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
-			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			const allGridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocialLinks = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social a');
 			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
 
 			if (!leftPanel || !rightPanel) {
@@ -267,6 +267,11 @@
 				resetFullscreenSubmenu();
 				return;
 			}
+
+			// Separate regular grid subs from social links
+			const regularGridSubs = Array.from(allGridSubs).filter(function(sub) {
+				return !sub.closest('.fullscreen-nav-grid-social');
+			});
 
 			// Create reverse timeline
 			const tl = gsap.timeline({
@@ -283,31 +288,37 @@
 			tl.to(menuItems, {
 				opacity: 0,
 				x: 30,
-				duration: 0.3,
+				duration: 0.4,
 				ease: 'power2.in'
 			})
-			.to([gridSubs, gridSocials], {
+			.to(gridSocialLinks, {
 				opacity: 0,
 				y: -30,
-				duration: 0.3,
-				stagger: 0.02,
+				duration: 0.4,
+				ease: 'power2.in'
+			}, '-=0.2')
+			.to(regularGridSubs, {
+				opacity: 0,
+				y: -30,
+				duration: 0.4,
+				stagger: 0.05,
 				ease: 'power2.in'
 			}, '-=0.2')
 			.to(gridHeadings, {
 				opacity: 0,
-				duration: 0.2,
+				duration: 0.3,
 				ease: 'power2.in'
 			}, '-=0.2')
 			.to(leftPanel, {
 				x: '-100%',
-				duration: 0.6,
+				duration: 0.8,
 				ease: 'power2.out'
 			}, '-=0.2')
 			.to(rightPanel, {
 				x: '100%',
-				duration: 0.6,
+				duration: 0.8,
 				ease: 'power2.out'
-			}, '-=0.6'); // Start at same time as left panel
+			}, '-=0.8'); // Start at same time as left panel
 		};
 
 		/**
@@ -329,13 +340,19 @@
 			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
 			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
 			const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
-			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
-			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			// Get all grid subs but exclude social links (they're inside .fullscreen-nav-grid-social)
+			const allGridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocialLinks = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social a');
 			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
 
 			if (!leftPanel || !rightPanel) {
 				return;
 			}
+
+			// Separate regular grid subs from social links
+			const regularGridSubs = Array.from(allGridSubs).filter(function(sub) {
+				return !sub.closest('.fullscreen-nav-grid-social');
+			});
 
 			// Show menu container
 			fullscreenNav.classList.add('fullscreen-nav-open');
@@ -345,47 +362,56 @@
 			gsap.set(leftPanel, { x: '-100%' });
 			gsap.set(rightPanel, { x: '100%' });
 			gsap.set(gridHeadings, { opacity: 0 });
-			gsap.set(gridSubs, { opacity: 0, y: -30 });
-			gsap.set(gridSocials, { opacity: 0, y: -30 });
+			gsap.set(regularGridSubs, { opacity: 0, y: -30 });
+			gsap.set(gridSocialLinks, { opacity: 0, y: -30 });
 			gsap.set(menuItems, { opacity: 0, x: 30 });
 
 			// Create timeline for animation sequence
 			const tl = gsap.timeline();
 
-			// Step 1: Slide in panels uniformly (0.6s)
+			// Step 1: Slide in panels uniformly (slower - 0.8s)
 			tl.to(leftPanel, {
 				x: 0,
-				duration: 0.6,
+				duration: 0.8,
 				ease: 'power2.out'
 			})
 			.to(rightPanel, {
 				x: 0,
-				duration: 0.6,
+				duration: 0.8,
 				ease: 'power2.out'
-			}, '-=0.6') // Start at the same time as left panel
+			}, '-=0.8') // Start at the same time as left panel
 
 			// Step 2: Show headings (after panels fully join)
 			.to(gridHeadings, {
 				opacity: 1,
-				duration: 0.3,
+				duration: 0.4,
 				ease: 'power2.out'
-			}) // Start after panels animation completes (at 0.6s)
+			}) // Start after panels animation completes
 
-			// Step 3: Grid subs and socials slide down from top together (after headings visible)
-			.to([gridSubs, gridSocials], {
+			// Step 3: Regular grid subs and social links slide down together
+			.to(regularGridSubs, {
 				opacity: 1,
 				y: 0,
-				duration: 0.5,
-				stagger: 0.05,
+				duration: 0.6,
+				stagger: 0.08,
 				ease: 'power2.out',
 				transformOrigin: 'top'
 			}) // Start after headings animation
 
-			// Step 4: Show menu items (after subs/socials finish)
+			// Step 4: Social links slide down in parallel at the same time as regular subs
+			.to(gridSocialLinks, {
+				opacity: 1,
+				y: 0,
+				duration: 0.6,
+				ease: 'power2.out',
+				transformOrigin: 'top'
+			}, '<') // Start at the same time as regular subs
+
+			// Step 5: Show menu items (after subs/socials finish)
 			.to(menuItems, {
 				opacity: 1,
 				x: 0,
-				duration: 0.5,
+				duration: 0.6,
 				ease: 'power2.out'
 			}); // Start after subs/socials animation completes
 		};
