@@ -12,13 +12,16 @@
 	}
 
 	.vision-mission-stack-card {
-		width: 100vw;
+		width: 100%;
+		max-width: 100vw;
 		height: 100vh;
 		position: relative;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
+		margin-left: calc(-50vw + 50%);
+		margin-right: calc(-50vw + 50%);
 
 		.vision-mission-stack-card-bg {
 			position: absolute;

@@ -7,6 +7,11 @@
 	font-family: "Neue Regrade", sans-serif;
 	font-size: 150px;
 	line-height: 1;
+
+	@media #{$media-1400} {
+		font-size: 120px;
+	}
+
 	@media #{$media-1060} {
 		font-size: 100px;
 	}
@@ -72,7 +77,8 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #ABAFB1;
-	@media #{$media-1060} {
+	
+	@media #{$media-1440} {
 		font-size: 16px;
 	}
 	@media #{$media-700} {

@@ -15,6 +15,7 @@
 		const headerSection = document.getElementById('headerMainSection');
 		const menuIcon = document.getElementById('menuIcon');
 		const menuIconScroll = document.getElementById('menuIconScroll');
+		const menuIconInitial = document.getElementById('menuIconInitial');
 		
 		if (!headerSection) {
 			return;
@@ -35,8 +36,24 @@
 
 		/**
 		 * Handle scroll event
+		 * Only works above 1200px screen width
 		 */
 		const handleScroll = function() {
+			const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+			
+			// Only apply scroll behavior above 1200px
+			if (windowWidth <= 1200) {
+				// Reset classes when below 1200px
+				if (initialHeaderContainer) {
+					initialHeaderContainer.classList.remove('header-inactive');
+				}
+				if (scrollHeaderContainer) {
+					scrollHeaderContainer.classList.remove('header-active');
+				}
+				headerSection.classList.remove('header-scroll-active');
+				return;
+			}
+			
 			const scrollY = window.scrollY || window.pageYOffset;
 			
 			// Handle initial header visibility (700px threshold)
@@ -131,6 +148,21 @@
 		// Use Lenis scroll event if available, otherwise fallback to window scroll
 		if (window.lenisInstance) {
 			window.lenisInstance.on('scroll', ({ scroll }) => {
+				const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+				
+				// Only apply scroll behavior above 1200px
+				if (windowWidth <= 1200) {
+					// Reset classes when below 1200px
+					if (initialHeaderContainer) {
+						initialHeaderContainer.classList.remove('header-inactive');
+					}
+					if (scrollHeaderContainer) {
+						scrollHeaderContainer.classList.remove('header-active');
+					}
+					headerSection.classList.remove('header-scroll-active');
+					return;
+				}
+				
 				// Handle initial header visibility (700px threshold)
 				if (scroll >= SCROLL_THRESHOLD) {
 					if (initialHeaderContainer) {
@@ -169,6 +201,15 @@
 			// Fallback to window scroll event
 			window.addEventListener('scroll', handleScroll, { passive: true });
 		}
+		
+		// Also handle resize to check width changes
+		let resizeTimeout;
+		window.addEventListener('resize', function() {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(function() {
+				handleScroll();
+			}, 250);
+		}, { passive: true });
 
 		/**
 		 * Reset Fullscreen Submenu
@@ -323,6 +364,9 @@
 		}
 		if (menuIconScroll) {
 			menuIconScroll.addEventListener('click', toggleFullscreenMenu);
+		}
+		if (menuIconInitial) {
+			menuIconInitial.addEventListener('click', toggleFullscreenMenu);
 		}
 
 		// Initialize fullscreen submenu

@@ -7,6 +7,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.12em;
 		margin-bottom: 25px;
+
+		@media (max-width: 700px) {
+			margin-bottom: 15px;
+		}
 	}
 	h2 {
 		font-size: 40px;
@@ -16,6 +20,10 @@
 		@include px-rem(60);
 		font-weight: 600;
 		margin-bottom: 25px;
+
+		@media (max-width: 700px) {
+			margin-bottom: 15px;
+		}
 	}
 }
 

@@ -10,7 +10,7 @@
 
 ?>
 
-<section class="news-articles-container">
+<section class="news-articles-container pb_100 pt_100">
 	<div class="container text-center">
 		<div class="title-block ">
 			<h5>News & Articles</h5>

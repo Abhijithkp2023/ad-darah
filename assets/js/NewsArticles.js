@@ -54,22 +54,27 @@
 			loop: slides.length > 3, // Only loop if more than 3 slides
 			speed: 800,
 			// autoplay: {
-			// 	delay: 3000,
+			// 	delay: 2000,
 			// 	disableOnInteraction: false,
 			// 	pauseOnMouseEnter: true,
 			// },
 			breakpoints: {
-				640: {
-					slidesPerView: 1.5,
-					spaceBetween: 20,
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 30,
 					centeredSlides: true,
 				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 25,
+				600: {
+					slidesPerView: 1.5,
+					spaceBetween: 30,
 					centeredSlides: true,
 				},
 				1024: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+					centeredSlides: true,
+				},
+				1400: {
 					slidesPerView: 3,
 					spaceBetween: 30,
 					centeredSlides: true,
