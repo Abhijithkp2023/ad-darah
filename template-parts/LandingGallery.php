@@ -54,8 +54,13 @@ $landing_gallery_center_alt = isset($landing_gallery_center_alt)
 
 // Detect whether center media is a video or image (supports image fallback)
 $landing_gallery_is_video = preg_match('/\.(mp4|webm|ogg)$/i', $landing_gallery_video_src) === 1;
+
+// Allow pages to pass extra classes (e.g., remove background)
+$landing_gallery_section_classes = isset($landing_gallery_section_classes)
+	? $landing_gallery_section_classes
+	: 'landing-gallery-section';
 ?>
-<section class="landing-gallery-section pb_100 pt_100">
+<section class="<?php echo esc_attr($landing_gallery_section_classes); ?> pb_100 pt_100">
 	<div class="container">
 		<h2 class="landing-gallery-heading"><?php echo esc_html($landing_gallery_heading); ?></h2>
 		

@@ -440,19 +440,33 @@
 
 			&.single-testimonial-nav-prev {
 				left: 60px;
+				@media #{$media-700} {
+					left: 6px;
+				}
 			}
 
 			&.single-testimonial-nav-next {
 				right: 60px;
+				@media #{$media-700} {
+					right: 6px;
+				}
 			}
 
-			@media (max-width: 768px) {
+			@media (max-width: 995px) {
 				width: 50px;
 				height: 50px;
 
 				svg {
 					width: 30px;
 					height: 18px;
+				}
+			}
+			@media #{$media-700} {
+				width: 40px;
+				height: 40px;	
+				svg {
+					width: 15px;
+					height: 15px;
 				}
 			}
 		}
