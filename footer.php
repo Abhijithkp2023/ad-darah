@@ -75,7 +75,7 @@ if ($menu_items) {
 		<!-- Main Footer Content -->
 		<div class="footer-main-content">
 			<!-- Logo Section -->
-			<div class="footer-logo-section">
+			<div class="footer-logo-section" onclick="window.location.href='<?php echo home_url('/'); ?>'">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/main-logo.svg" alt="Footer Logo"
 					class="footer-logo">
 			</div>
@@ -94,18 +94,18 @@ if ($menu_items) {
 				<div class="footer-link-column">
 					<h4 class="footer-link-heading">Explore</h4>
 					<ul class="footer-link-items">
-						<li><a href="<?php echo home_url('/about-us'); ?>">About Us</a></li>
-						<li><a href="<?php echo home_url('/media-center'); ?>">Media Center</a></li>
-						<li><a href="<?php echo home_url('/contact-us'); ?>">Contact Us</a></li>
+						<li><a href="<?php echo home_url('/about'); ?>">About Us</a></li>
+						<li><a href="<?php echo home_url('/all-news'); ?>">Media Center</a></li>
+						<li><a href="<?php echo home_url('/contact'); ?>">Contact Us</a></li>
 					</ul>
 				</div>
 				<div class="footer-link-column">
 					<h4 class="footer-link-heading">Services</h4>
 					<ul class="footer-link-items">
-						<li><a href="<?php echo home_url('/corporate-services'); ?>">Corporate Services</a></li>
-						<li><a href="<?php echo home_url('/weddings-social-services-detail'); ?>">Weddings & Social
+						<li><a href="<?php echo home_url('/corporate-services-detail'); ?>">Corporate Services</a></li>
+						<li><a href="<?php echo home_url('/weddings-social-service-detail'); ?>">Weddings & Social
 								Services</a></li>
-						<li><a href="<?php echo home_url('/catering-services'); ?>">Catering Services</a></li>
+						<li><a href="<?php echo home_url('/catering-services-detail'); ?>">Catering Services</a></li>
 					</ul>
 				</div>
 			</div>

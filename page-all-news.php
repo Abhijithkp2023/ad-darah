@@ -31,14 +31,12 @@ get_header();
 					<a href="#" class="buttion primary-button">
 						View All
 						<span class="su_button_circle desplode-circle" style="left: 155.391px; top: 270px;"></span></a>
-
-
 				</div>
 
 				<div class="news-list-section">
 					<?php
 					// Get the press release detail page URL
-					$press_release_detail_url = '#';
+					$press_release_detail_url = home_url('/press-release-detail');
 					$press_release_pages = get_pages(array(
 						'meta_key' => '_wp_page_template',
 						'meta_value' => 'page-press-release-detail.php'

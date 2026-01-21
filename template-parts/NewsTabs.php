@@ -15,10 +15,10 @@
 $active_tab = get_query_var('active_tab', 'news');
 
 // Get page URLs for each tab
-$all_page_url = '#';
-$news_page_url = '#';
-$blog_page_url = '#';
-$gallery_page_url = '#';
+$all_page_url = home_url('/all-news');
+$news_page_url = home_url('/news');
+$blog_page_url = home_url('/blog-articles');
+$gallery_page_url = home_url('/gallery');
 
 // Find All News page
 $all_news_pages = get_pages(array(

@@ -59,7 +59,7 @@
 					echo '</span>';
 					echo '</a>';
 					echo '</li>';
-					echo '<li class="nav-item"><a href="' . esc_url(home_url('/media-center')) . '">Media Center</a></li>';
+					echo '<li class="nav-item"><a href="' . esc_url(home_url('/all-news')) . '">Media Center</a></li>';
 					echo '<li class="nav-item"><a href="' . esc_url(home_url('/contact')) . '">Contact Us</a></li>';
 					echo '</ul>';
 				}
@@ -90,27 +90,27 @@
 					<h3 class="dropdown-title">Our Services</h3>
 					<div class="dropdown-columns">
 						<div class="dropdown-column">
-							<h4 class="dropdown-column-title">Corporate Services</h4>
+							<a href="<?php echo esc_url(home_url('/corporate-services')); ?>"><h4 class="dropdown-column-title">Corporate Services</h4></a>
 							<ul class="dropdown-list">
-								<li><a href="#" class="dropdown_item">Conferences & Exhibitions</a></li>
-								<li><a href="#" class="dropdown_item">Meeting Rooms & Workshops</a></li>
-								<li><a href="#" class="dropdown_item">Government Events (B2G)</a></li>
-								<li><a href="#" class="dropdown_item">VIP Majlis</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Conferences & Exhibitions</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Meeting Rooms & Workshops</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Government Events (B2G)</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">VIP Majlis</a></li>
 							</ul>
 						</div>
 						<div class="dropdown-column">
-							<h4 class="dropdown-column-title">Weddings & Social Services</h4>
+							<a href="<?php echo esc_url(home_url('/weddings-social-services')); ?>"><h4 class="dropdown-column-title">Weddings & Social Services</h4></a>
 							<ul class="dropdown-list">
-								<li><a href="#" class="dropdown_item">Female Packages</a></li>
-								<li><a href="#" class="dropdown_item">Male Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>" class="dropdown_item">Female Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>" class="dropdown_item">Male Packages</a></li>
 							</ul>
 						</div>
 						<div class="dropdown-column">
-							<h4 class="dropdown-column-title">Catering Services</h4>
+							<a href="<?php echo esc_url(home_url('/catering-services')); ?>"><h4 class="dropdown-column-title">Catering Services</h4></a>
 							<ul class="dropdown-list">
-								<li><a href="#" class="dropdown_item">On-site Catering</a></li>
-								<li><a href="#" class="dropdown_item">Off-site Catering</a></li>
-								<li><a href="#" class="dropdown_item">Seasonal & Ramadan Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">On-site Catering</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">Off-site Catering</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">Seasonal & Ramadan Packages</a></li>
 							</ul>
 						</div>
 					</div>
@@ -328,7 +328,7 @@
 							</div>
 						</li>
 						<li class="fullscreen-nav-item">
-							<a href="<?php echo esc_url(home_url('/media-center')); ?>"
+							<a href="<?php echo esc_url(home_url('/all-news')); ?>"
 								class="fullscreen-nav-link">Media Center</a>
 						</li>
 						<li class="fullscreen-nav-item">

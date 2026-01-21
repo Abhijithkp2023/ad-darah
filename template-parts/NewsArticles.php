@@ -15,7 +15,7 @@
 		<div class="title-block ">
 			<h5>News & Articles</h5>
 			<h2>What’s New Happening</h2>
-			<a href="#" class="buttion primary-button">
+			<a href="<?php echo esc_url(home_url('/all-news')); ?>" class="buttion primary-button">
 				Explore More
 				<span class="su_button_circle desplode-circle" style="left: 110px; top: 292.438px;"></span></a>
 		</div>

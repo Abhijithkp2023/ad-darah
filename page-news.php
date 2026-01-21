@@ -46,7 +46,7 @@ get_header();
 				<div class="news-list-section">
 					<?php
 					// Get the press release detail page URL
-					$press_release_detail_url = '#';
+					$press_release_detail_url = home_url('/press-release-detail');
 					$press_release_pages = get_pages(array(
 						'meta_key' => '_wp_page_template',
 						'meta_value' => 'page-press-release-detail.php'
