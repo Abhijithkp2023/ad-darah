@@ -20,6 +20,16 @@
 			return;
 		}
 
+		// Add error event listener to catch video loading errors
+		video.addEventListener("error", function (e) {
+			console.error("FullVideoSection: Video error:", e);
+			console.error("FullVideoSection: Video error details:", {
+				code: video.error ? video.error.code : "unknown",
+				message: video.error ? video.error.message : "unknown",
+				src: video.currentSrc || video.src
+			});
+		});
+
 		// Handle play button click
 		playButton.addEventListener("click", function () {
 			// Hide thumbnail
@@ -37,8 +47,25 @@
 			video.muted = true;
 			video.playsInline = true;
 
-			// Play video
-			const playPromise = video.play();
+			// Check if video source is loaded
+			if (video.readyState === 0) {
+				// Video not loaded, wait for it to load
+				video.addEventListener("loadeddata", function playVideo() {
+					playVideoElement(video);
+					video.removeEventListener("loadeddata", playVideo);
+				}, { once: true });
+				
+				// Load the video
+				video.load();
+			} else {
+				// Video already loaded or loading
+				playVideoElement(video);
+			}
+		});
+
+		// Function to play the video
+		function playVideoElement(videoElement) {
+			const playPromise = videoElement.play();
 			if (playPromise !== undefined) {
 				playPromise
 					.then(function () {
@@ -47,22 +74,24 @@
 					.catch(function (error) {
 						console.error("FullVideoSection: Video play error:", error);
 						// Try unmuted play
-						video.muted = false;
-						video.play().catch(function (err) {
+						videoElement.muted = false;
+						videoElement.play().catch(function (err) {
 							console.error("FullVideoSection: Video still cannot play:", err);
+							// Show play button again if video fails
+							playButton.classList.remove("is-hidden");
 						});
 					});
 			}
+		}
 
-			// Hide play button when video starts playing
-			video.addEventListener("play", function () {
-				playButton.classList.add("is-hidden");
-			});
+		// Hide play button when video starts playing
+		video.addEventListener("play", function () {
+			playButton.classList.add("is-hidden");
+		});
 
-			// Show play button when video is paused (optional)
-			video.addEventListener("pause", function () {
-				// Keep it hidden as per requirement
-			});
+		// Show play button when video is paused (optional)
+		video.addEventListener("pause", function () {
+			// Keep it hidden as per requirement
 		});
 	};
 

@@ -110,12 +110,14 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 40px;
-	
-	@media #{$media-768} {
+	@media #{$media-1060} {
+
+		margin-bottom: 10px;
+	}
+	@media #{$media-995} {
 		// flex-direction: column;
 		align-items: flex-start;
 		gap: 20px;
-		margin-bottom: 30px;
 	}
 }
 
