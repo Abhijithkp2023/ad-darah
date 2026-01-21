@@ -508,21 +508,28 @@
 			submenuItems.forEach(item => {
 				const link = item.querySelector('.fullscreen-nav-link');
 				const submenuId = item.getAttribute('data-submenu');
+				const submenuDataMobile = item.querySelector('.fullscreen-nav-submenu-data-mobile');
 				
 				if (link && submenuId) {
 					link.addEventListener('click', function(e) {
 						e.preventDefault();
 						
 						const isActive = item.classList.contains('fullscreen-nav-item-active');
+						const isMobile = window.innerWidth <= 600;
 						
 						// Close all other submenus
 						submenuItems.forEach(otherItem => {
 							if (otherItem !== item) {
 								otherItem.classList.remove('fullscreen-nav-item-active');
+								// Hide mobile submenu
+								const otherSubmenuMobile = otherItem.querySelector('.fullscreen-nav-submenu-data-mobile');
+								if (otherSubmenuMobile) {
+									otherSubmenuMobile.style.display = 'none';
+								}
 							}
 						});
 						
-						// Hide all submenu wrappers
+						// Hide all submenu wrappers (for desktop left panel)
 						const allSubmenuWrappers = submenuContent.querySelectorAll('.fullscreen-nav-submenu-wrapper');
 						allSubmenuWrappers.forEach(wrapper => {
 							wrapper.classList.remove('fullscreen-nav-submenu-wrapper-active');
@@ -532,22 +539,33 @@
 						if (isActive) {
 							item.classList.remove('fullscreen-nav-item-active');
 							submenuContent.classList.remove('fullscreen-nav-submenu-active');
-							// Show main content (logo + grid)
+							// Show main content (logo + grid) on desktop
 							if (leftContent) {
 								leftContent.classList.remove('has-submenu-active');
+							}
+							// Hide mobile submenu
+							if (isMobile && submenuDataMobile) {
+								submenuDataMobile.style.display = 'none';
 							}
 						} else {
 							item.classList.add('fullscreen-nav-item-active');
 							
-							// Find and show the corresponding submenu wrapper
-							const targetSubmenuWrapper = submenuContent.querySelector('[data-submenu-id="' + submenuId + '"]');
-							
-							if (targetSubmenuWrapper) {
-								// Show submenu content and hide main content
-								targetSubmenuWrapper.classList.add('fullscreen-nav-submenu-wrapper-active');
-								submenuContent.classList.add('fullscreen-nav-submenu-active');
-								if (leftContent) {
-									leftContent.classList.add('has-submenu-active');
+							if (isMobile) {
+								// Mobile: Show submenu below the category
+								if (submenuDataMobile) {
+									submenuDataMobile.style.display = 'block';
+								}
+							} else {
+								// Desktop: Show submenu in left panel
+								const targetSubmenuWrapper = submenuContent.querySelector('[data-submenu-id="' + submenuId + '"]');
+								
+								if (targetSubmenuWrapper) {
+									// Show submenu content and hide main content
+									targetSubmenuWrapper.classList.add('fullscreen-nav-submenu-wrapper-active');
+									submenuContent.classList.add('fullscreen-nav-submenu-active');
+									if (leftContent) {
+										leftContent.classList.add('has-submenu-active');
+									}
 								}
 							}
 						}

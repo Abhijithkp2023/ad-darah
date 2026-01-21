@@ -3871,6 +3871,8 @@ body.overflow_body_hidden {
 @media (max-width: 600px) {
   .fullscreen-nav-menu .fullscreen-nav-right {
     width: 100%;
+    align-items: flex-start;
+    padding-top: 100px;
   }
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-close {
@@ -3891,6 +3893,12 @@ body.overflow_body_hidden {
   width: 49px;
   height: 24px;
   display: block;
+}
+@media (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-close img {
+    width: 35px;
+    height: 18px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items {
   width: 100%;
@@ -3936,7 +3944,7 @@ body.overflow_body_hidden {
 }
 @media only screen and (max-width: 700px) {
   .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-link {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 @media (max-width: 1060px) {
@@ -3987,10 +3995,65 @@ body.overflow_body_hidden {
   }
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item.fullscreen-nav-item-active .fullscreen-nav-link .fullscreen-nav-arrow {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data {
   display: none;
+}
+.fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile {
+  display: none;
+}
+@media (min-width: 601px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile {
+    display: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile {
+    display: none;
+    margin-top: 0;
+    padding: 20px 0 20px 90px;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #b64910;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list li a {
+    font-size: 16px;
+    color: #b64910;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list li a:hover {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) and (max-width: 700px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile {
+    padding: 0 0 15px 50px;
+  }
+}
+@media (max-width: 600px) {
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item.fullscreen-nav-item-active .fullscreen-nav-submenu-data-mobile {
+    display: block;
+  }
 }
 
 body.fullscreen-nav-open {

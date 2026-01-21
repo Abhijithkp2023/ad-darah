@@ -297,8 +297,7 @@
 										alt="Arrow">
 								</span>
 							</a>
-							<div class="fullscreen-nav-submenu-data" data-submenu-id="services">
-								<h3 class="fullscreen-nav-submenu-heading">Services</h3>
+							<div class="fullscreen-nav-submenu-data-mobile" data-submenu-id="services">
 								<div class="fullscreen-nav-submenu-categories">
 									<div class="fullscreen-nav-submenu-category">
 										<h4 class="fullscreen-nav-submenu-category-heading">Corporate Services</h4>

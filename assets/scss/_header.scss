@@ -1256,6 +1256,8 @@ body.overflow_body_hidden {
 
 		@media (max-width: 600px) {
 			width: 100%;
+			align-items: flex-start;
+			padding-top: 100px;
 		}
 
 		.fullscreen-nav-close {
@@ -1277,6 +1279,11 @@ body.overflow_body_hidden {
 				width: 49px;
 				height: 24px;
 				display: block;
+
+				@media (max-width: 700px) {
+					width: 35px;
+					height: 18px;
+				}
 			}
 		}
 
@@ -1355,13 +1362,78 @@ body.overflow_body_hidden {
 					&.fullscreen-nav-item-active {
 						.fullscreen-nav-link {
 							.fullscreen-nav-arrow {
-								transform: rotate(90deg);
+								transform: rotate(180deg);
 							}
 						}
 					}
 
 					.fullscreen-nav-submenu-data {
 						display: none; // Hidden - data is rendered on left side
+					}
+
+					.fullscreen-nav-submenu-data-mobile {
+						display: none; // Hidden by default
+						
+						@media (min-width: 601px) {
+							display: none !important; // Always hidden above 600px
+						}
+						
+						@media (max-width: 600px) {
+							display: none; // Hidden by default, shown when active
+							margin-top: 0;
+							padding: 20px 0 20px 90px;
+							
+							.fullscreen-nav-submenu-categories {
+								display: flex;
+								flex-direction: column;
+								gap: 15px;
+								
+								.fullscreen-nav-submenu-category {
+									.fullscreen-nav-submenu-category-heading {
+										font-size: 18px;
+										font-weight: 600;
+										color: #b64910;
+										margin-bottom: 12px;
+										margin-top: 0;
+									}
+									
+									.fullscreen-nav-submenu-category-list {
+										list-style: none;
+										margin: 0;
+										padding: 0;
+										display: flex;
+										flex-direction: column;
+										gap: 10px;
+										
+										li {
+											a {
+												font-size: 16px;
+												color: #b64910;
+												text-decoration: none;
+												opacity: 0.8;
+												transition: opacity 0.3s ease;
+												
+												&:hover {
+													opacity: 1;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							@media (max-width: 700px) {
+								padding: 0 0 15px 50px;
+							}
+						}
+					}
+					
+					&.fullscreen-nav-item-active {
+						.fullscreen-nav-submenu-data-mobile {
+							@media (max-width: 600px) {
+								display: block;
+							}
+						}
 					}
 				}
 			}
