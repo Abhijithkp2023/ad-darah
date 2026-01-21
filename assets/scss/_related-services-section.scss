@@ -126,7 +126,7 @@
 	}
 
 	// Mobile Responsive
-	@media #{$media-768} {
+	@media #{$media-995} {
 		.related-services-heading {
 			font-size: 40px;
 		}
@@ -147,8 +147,28 @@
 				}
 
 				.related-services-card-description {
-					font-size: 14px;
+					font-size: 15px;
+					line-height: 1.2;
+					margin: 0 0 10px 0;
 				}
+			}
+		}
+	}
+	@media #{$media-700} {
+		.related-services-heading {
+			font-size: 30px;
+			margin: 0 0 10px 0;
+		}
+		.related-services-description{
+			font-size: 15px;
+			margin-bottom: 20px;
+		}
+		.related-services-card {
+			border-radius: 10px;
+			.related-services-card-content .related-services-card-title {
+				font-size: 20px;
+				margin: 0 0 10px 0;
+				letter-spacing: 0;
 			}
 		}
 	}

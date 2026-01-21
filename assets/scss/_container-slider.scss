@@ -44,7 +44,16 @@
 		height: 523px;
 		background-color: $black;
 		cursor: pointer;
-
+		@media #{$media-1060} {
+			height: 450px;
+		}
+		@media #{$media-995} {
+			height: 400px;
+		}
+		@media #{$media-700} {
+			height: 400px;
+			border-radius: 10px;
+		}
 		&::before {
 			content: "";
 			position: absolute;

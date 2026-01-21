@@ -40,8 +40,12 @@
 		background-color: #b64910;
 	}
 
-	@media #{$media-768} {
-		height: 42px;
+	@media #{$media-995} {
+		height: 40px;
+		padding-inline: 30px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
 	}
 }
 

@@ -49,7 +49,12 @@
 				autoplay: false,
 				slidesOffsetBefore: initialOffset, // Add space before first slide to match container
 				breakpoints: {
-					768: {
+					0: {
+						slidesPerView: 1,
+						spaceBetween: 15,
+						slidesOffsetBefore:false,
+					},
+					992: {
 						slidesPerView: 2,
 						spaceBetween: 20,
 						slidesOffsetBefore: initialOffset,

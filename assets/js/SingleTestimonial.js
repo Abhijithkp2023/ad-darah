@@ -110,7 +110,7 @@
 					prevEl: prevButton,
 				},
 				breakpoints: {
-					320: {
+					0: {
 						slidesPerView: 1,
 						spaceBetween: 15,
 					},

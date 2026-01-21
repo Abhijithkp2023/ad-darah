@@ -28,7 +28,7 @@ get_header();
         $image_text_button_link = '#';
 
         include locate_template('template-parts/ImageTextSection.php'); ?>
-        ?>
+        
 
 
         <?php
