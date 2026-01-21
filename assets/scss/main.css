@@ -4645,7 +4645,7 @@ body.banner-animating {
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   opacity: 1;
-  animation: svgScaleFade 3s ease-in-out forwards;
+  animation: svgScaleFade 2s ease-in-out forwards;
 }
 .main-banner-container .main-banner-mask svg.main-banner-mask-img {
   display: block;
@@ -4656,7 +4656,7 @@ body.banner-animating {
     opacity: 1;
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1.5);
+    transform: translate3d(0, 0, 0) scale(2);
     opacity: 0;
   }
 }
@@ -12571,7 +12571,7 @@ body.banner-animating {
   bottom: 250px;
   right: -60px;
   left: 0;
-  z-index: 100001;
+  z-index: 1000;
   pointer-events: none;
 }
 .whatsapp-button-container .container {

@@ -87,7 +87,7 @@ body.banner-animating {
 			transform: translate3d(0, 0, 0); // Force hardware acceleration
 			-webkit-transform: translate3d(0, 0, 0); // WebKit hardware acceleration
 			opacity: 1;
-			animation: svgScaleFade 3s ease-in-out forwards;
+			animation: svgScaleFade 2s ease-in-out forwards;
 		}
 
 		// SVG specific styles
@@ -103,7 +103,7 @@ body.banner-animating {
 			opacity: 1;
 		}
 		100% {
-			transform: translate3d(0, 0, 0) scale(1.5);
+			transform: translate3d(0, 0, 0) scale(2);
 			opacity: 0;
 		}
 	}
