@@ -3,11 +3,19 @@
 .where-ever-page {
 	width: 100%;
 	min-height: 100vh;
+
+	@media (max-width: 1200px) {
+		min-height: auto;
+	}
 }
 
 .where-ever-content {
 	background-color: $white;
 	min-height: 100vh;
+
+	@media (max-width: 1200px) {
+		min-height: auto;
+	}
 
 	.container {
 		position: relative;

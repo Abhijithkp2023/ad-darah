@@ -12,6 +12,10 @@
 	justify-content: center;
 	background-color: #c5b17f;
 
+	@media (max-width: 1200px) {
+		min-height: auto;
+	}
+
 	.testimonials-background-image {
 		position: absolute;
 		top: 50%;
@@ -42,14 +46,18 @@
 			vertical-align: middle;
 			text-transform: uppercase;
 			color: #b64910;
-			margin-bottom: 20px;
+			margin-bottom: 35px;
+
+			@media (max-width: 1440px) {
+				margin-bottom: 28px;
+			}
+
+			@media (max-width: 1260px) {
+				margin-bottom: 18px;
+			}
 
 			@media (max-width: 700px) {
 				margin-bottom: 15px;
-			}
-
-			@media (max-width: 480px) {
-				margin-bottom: 10px;
 			}
 		}
 
@@ -126,7 +134,7 @@
 		position: relative;
 		width: 100%;
 		overflow: hidden;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -141,7 +149,7 @@
 		.testimonials-slider-track {
 			display: flex;
 			width: fit-content;
-			gap: 20px;
+			gap: 30px;
 			animation: slideInfinite 30s linear infinite;
 
 			@media (max-width: 700px) {
