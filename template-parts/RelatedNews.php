@@ -22,6 +22,7 @@
 
 // Get parameters from query vars or use defaults
 $related_news_title = get_query_var('related_news_title', 'Related Blogs');
+$related_news_title_color = get_query_var('related_news_title_color', '');
 $related_news_view_all_url = get_query_var('related_news_view_all_url', home_url('/blog'));
 $related_news_items = get_query_var('related_news_items', array());
 
@@ -44,34 +45,38 @@ if (empty($related_news_items)) {
 }
 ?>
 
-<section class=" mt_120 related-news-section" style="background: #F4F1E7 url('<?php echo get_template_directory_uri(); ?>/assets/images/related-bg.svg') no-repeat center center; background-size: cover;">
+<section class=" mt_120 related-news-section"
+	style="background: #F4F1E7 url('<?php echo get_template_directory_uri(); ?>/assets/images/related-bg.svg') no-repeat center center; background-size: cover;">
 	<div class="container">
 		<div class="title-block-related">
-			<h2 class="title_style_1"><?php echo esc_html($related_news_title); ?></h2>
+			<h2 class="title_style_1" <?php echo !empty($related_news_title_color) ? ' style="color: ' . esc_attr($related_news_title_color) . ';"' : ''; ?>><?php echo esc_html($related_news_title); ?></h2>
 			<a class="primary-button" href="<?php echo esc_url($related_news_view_all_url); ?>">View All</a>
 		</div>
 
 		<div class="related-news-carousel-wrapper">
 			<div class="swiper related-news-carousel" data-related-news-swiper>
 				<div class="swiper-wrapper">
-					<?php foreach ($related_news_items as $item) : ?>
+					<?php foreach ($related_news_items as $item): ?>
 						<div class="swiper-slide">
 							<article class="related-news-item">
 								<div class="related-news-image">
 									<a href="<?php echo esc_url($item['link']); ?>">
-										<img src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title']); ?>">
+										<img src="<?php echo esc_url($item['image']); ?>"
+											alt="<?php echo esc_attr($item['title']); ?>">
 									</a>
 								</div>
 								<div class="related-news-content">
 									<span class="related-news-date"><?php echo esc_html($item['date']); ?></span>
 									<div class="related-news-title-wrap">
 										<h3 class="related-news-title">
-											<a href="<?php echo esc_url($item['link']); ?>"><?php echo esc_html($item['title']); ?></a>
+											<a
+												href="<?php echo esc_url($item['link']); ?>"><?php echo esc_html($item['title']); ?></a>
 										</h3>
 										<a href="<?php echo esc_url($item['link']); ?>" class="read-more-link">
 											<span class="read-more-text">Read More</span>
 											<span class="read_icon">
-												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/learn-icn.svg" alt="Read More">
+												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/learn-icn.svg"
+													alt="Read More">
 											</span>
 										</a>
 									</div>
@@ -84,4 +89,3 @@ if (empty($related_news_items)) {
 		</div>
 	</div>
 </section>
-
