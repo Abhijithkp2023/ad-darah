@@ -273,6 +273,9 @@
 				return !sub.closest('.fullscreen-nav-grid-social');
 			});
 
+			// Check if mobile (below 600px) - left panel is hidden
+			const isMobile = window.innerWidth <= 600;
+
 			// Create reverse timeline
 			const tl = gsap.timeline({
 				onComplete: function() {
@@ -284,41 +287,56 @@
 				}
 			});
 
-			// Reverse sequence
-			tl.to(menuItems, {
-				opacity: 0,
-				x: 30,
-				duration: 0.4,
-				ease: 'power2.in'
-			})
-			.to(gridSocialLinks, {
-				opacity: 0,
-				y: -30,
-				duration: 0.4,
-				ease: 'power2.in'
-			}, '-=0.2')
-			.to(regularGridSubs, {
-				opacity: 0,
-				y: -30,
-				duration: 0.4,
-				stagger: 0.05,
-				ease: 'power2.in'
-			}, '-=0.2')
-			.to(gridHeadings, {
-				opacity: 0,
-				duration: 0.3,
-				ease: 'power2.in'
-			}, '-=0.2')
-			.to(leftPanel, {
-				x: '-100%',
-				duration: 0.8,
-				ease: 'power2.out'
-			}, '-=0.2')
-			.to(rightPanel, {
-				x: '100%',
-				duration: 0.8,
-				ease: 'power2.out'
-			}, '-=0.8'); // Start at same time as left panel
+			if (isMobile) {
+				// Mobile: Skip left panel animations, only animate right panel and menu items
+				tl.to(menuItems, {
+					opacity: 0,
+					x: 30,
+					duration: 0.4,
+					ease: 'power2.in'
+				})
+				.to(rightPanel, {
+					x: '100%',
+					duration: 0.6,
+					ease: 'power2.out'
+				}, '-=0.2');
+			} else {
+				// Desktop: Normal reverse sequence with both panels
+				tl.to(menuItems, {
+					opacity: 0,
+					x: 30,
+					duration: 0.4,
+					ease: 'power2.in'
+				})
+				.to(gridSocialLinks, {
+					opacity: 0,
+					y: -30,
+					duration: 0.4,
+					ease: 'power2.in'
+				}, '-=0.2')
+				.to(regularGridSubs, {
+					opacity: 0,
+					y: -30,
+					duration: 0.4,
+					stagger: 0.05,
+					ease: 'power2.in'
+				}, '-=0.2')
+				.to(gridHeadings, {
+					opacity: 0,
+					duration: 0.3,
+					ease: 'power2.in'
+				}, '-=0.2')
+				.to(leftPanel, {
+					x: '-100%',
+					duration: 0.8,
+					ease: 'power2.out'
+				}, '-=0.2')
+				.to(rightPanel, {
+					x: '100%',
+					duration: 0.8,
+					ease: 'power2.out'
+				}, '-=0.8'); // Start at same time as left panel
+			}
 		};
 
 		/**
@@ -358,62 +376,88 @@
 			fullscreenNav.classList.add('fullscreen-nav-open');
 			document.body.classList.add('fullscreen-nav-open');
 
+			// Check if mobile (below 600px) - left panel is hidden
+			const isMobile = window.innerWidth <= 600;
+
 			// Reset initial states
-			gsap.set(leftPanel, { x: '-100%' });
-			gsap.set(rightPanel, { x: '100%' });
-			gsap.set(gridHeadings, { opacity: 0 });
-			gsap.set(regularGridSubs, { opacity: 0, y: -30 });
-			gsap.set(gridSocialLinks, { opacity: 0, y: -30 });
-			gsap.set(menuItems, { opacity: 0, x: 30 });
+			if (isMobile) {
+				// Mobile: Only set right panel and menu items
+				gsap.set(rightPanel, { x: '100%' });
+				gsap.set(menuItems, { opacity: 0, x: 30 });
+			} else {
+				// Desktop: Set all elements
+				gsap.set(leftPanel, { x: '-100%' });
+				gsap.set(rightPanel, { x: '100%' });
+				gsap.set(gridHeadings, { opacity: 0 });
+				gsap.set(regularGridSubs, { opacity: 0, y: -30 });
+				gsap.set(gridSocialLinks, { opacity: 0, y: -30 });
+				gsap.set(menuItems, { opacity: 0, x: 30 });
+			}
 
 			// Create timeline for animation sequence
 			const tl = gsap.timeline();
 
-			// Step 1: Slide in panels uniformly (slower - 0.8s)
-			tl.to(leftPanel, {
-				x: 0,
-				duration: 0.8,
-				ease: 'power2.out'
-			})
-			.to(rightPanel, {
-				x: 0,
-				duration: 0.8,
-				ease: 'power2.out'
-			}, '-=0.8') // Start at the same time as left panel
+			if (isMobile) {
+				// Mobile: Skip left panel animations, show right panel and menu items immediately
+				tl.to(rightPanel, {
+					x: 0,
+					duration: 0.6,
+					ease: 'power2.out'
+				})
+				.to(menuItems, {
+					opacity: 1,
+					x: 0,
+					duration: 0.5,
+					ease: 'power2.out'
+				}, '-=0.3'); // Start slightly before right panel finishes
+			} else {
+				// Desktop: Normal animation with both panels
+				// Step 1: Slide in panels uniformly (slower - 0.8s)
+				tl.to(leftPanel, {
+					x: 0,
+					duration: 0.8,
+					ease: 'power2.out'
+				})
+				.to(rightPanel, {
+					x: 0,
+					duration: 0.8,
+					ease: 'power2.out'
+				}, '-=0.8') // Start at the same time as left panel
 
-			// Step 2: Show headings (after panels fully join)
-			.to(gridHeadings, {
-				opacity: 1,
-				duration: 0.4,
-				ease: 'power2.out'
-			}) // Start after panels animation completes
+				// Step 2: Show headings (after panels fully join)
+				.to(gridHeadings, {
+					opacity: 1,
+					duration: 0.4,
+					ease: 'power2.out'
+				}) // Start after panels animation completes
 
-			// Step 3: Regular grid subs and social links slide down together
-			.to(regularGridSubs, {
-				opacity: 1,
-				y: 0,
-				duration: 0.6,
-				stagger: 0.08,
-				ease: 'power2.out',
-				transformOrigin: 'top'
-			}) // Start after headings animation
+				// Step 3: Regular grid subs and social links slide down together
+				.to(regularGridSubs, {
+					opacity: 1,
+					y: 0,
+					duration: 0.6,
+					stagger: 0.08,
+					ease: 'power2.out',
+					transformOrigin: 'top'
+				}) // Start after headings animation
 
-			// Step 4: Social links slide down in parallel at the same time as regular subs
-			.to(gridSocialLinks, {
-				opacity: 1,
-				y: 0,
-				duration: 0.6,
-				ease: 'power2.out',
-				transformOrigin: 'top'
-			}, '<') // Start at the same time as regular subs
+				// Step 4: Social links slide down in parallel at the same time as regular subs
+				.to(gridSocialLinks, {
+					opacity: 1,
+					y: 0,
+					duration: 0.6,
+					ease: 'power2.out',
+					transformOrigin: 'top'
+				}, '<') // Start at the same time as regular subs
 
-			// Step 5: Show menu items (after subs/socials finish)
-			.to(menuItems, {
-				opacity: 1,
-				x: 0,
-				duration: 0.6,
-				ease: 'power2.out'
-			}); // Start after subs/socials animation completes
+				// Step 5: Show menu items (after subs/socials finish)
+				.to(menuItems, {
+					opacity: 1,
+					x: 0,
+					duration: 0.6,
+					ease: 'power2.out'
+				}); // Start after subs/socials animation completes
+			}
 		};
 
 		/**
