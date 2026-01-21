@@ -127,6 +127,9 @@
 	
 	li {
 		margin-bottom: 10px;
+		@media #{$media-700} {
+			margin-bottom: 5px;
+		}
 	}
 	
 	a {
@@ -189,7 +192,11 @@
 	@media #{$media-1060} {
 		max-width: 100%;
 	}
-    p{ line-height: 110%; }
+    p{ line-height: 110%; 
+		@media #{$media-700} {
+			line-height:1.2;
+		}
+	}
 }
 
 .title-block-related{ display: flex; justify-content: space-between; align-items: center; }

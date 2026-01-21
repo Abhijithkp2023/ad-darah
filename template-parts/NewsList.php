@@ -24,37 +24,37 @@ $news_items = array(
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-01.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
+		'title' => 'ADDarah and the future of Saudi hospitality',
 		'link' => $press_release_detail_url
 	),
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-02.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'ADDarah and the future of Saudi hospitality',
+		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
 		'link' => $press_release_detail_url
 	),
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-03.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'Inside ADDarah\'s vision for transformative hospitality',
+		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
 		'link' => $press_release_detail_url
 	),
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-04.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'AD-DARAH: A landmark of architectural excellence in Riyadh',
+		'title' => 'ADDarah and the future of Saudi hospitality',
 		'link' => $press_release_detail_url
 	),
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-05.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'Modern design meets traditional Saudi heritage at AD-DARAH',
+		'title' => 'ADDarah and the future of Saudi hospitality',
 		'link' => $press_release_detail_url
 	),
 	array(
 		'image' => get_template_directory_uri() . '/assets/images/news-06.jpg',
 		'date' => '05 Aug 2022',
-		'title' => 'Transforming event experiences through innovative hospitality',
+		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
 		'link' => $press_release_detail_url
 	)
 );
@@ -77,7 +77,7 @@ $news_items = array(
 								<a href="<?php echo esc_url($item['link']); ?>"><?php echo esc_html($item['title']); ?></a>
 							</h3>
 							<a href="<?php echo esc_url($item['link']); ?>" class="read-more-link">
-								<span class="read-more-text">Read More</span>
+								<span class="read-more-text">Learn More</span>
 								<span class="read_icon">
 									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/learn-icn.svg" alt="Read More">
 								</span>

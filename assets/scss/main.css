@@ -5897,6 +5897,7 @@ body.banner-animating {
 }
 .testimonials-container .testimonials-slider-wrapper .testimonials-slider-track {
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
   gap: 20px;
   animation: slideInfinite 30s linear infinite;
@@ -8702,6 +8703,11 @@ body.banner-animating {
 .press-release-detail-content li {
   margin-bottom: 10px;
 }
+@media only screen and (max-width: 700px) {
+  .press-release-detail-content li {
+    margin-bottom: 5px;
+  }
+}
 .press-release-detail-content a {
   color: #C5B17F;
   text-decoration: none;
@@ -8797,6 +8803,11 @@ body.banner-animating {
 }
 .press-release-detail-content-block p {
   line-height: 110%;
+}
+@media only screen and (max-width: 700px) {
+  .press-release-detail-content-block p {
+    line-height: 1.2;
+  }
 }
 
 .title-block-related {
@@ -11052,17 +11063,17 @@ body.banner-animating {
 }
 
 .related-news-content {
-  padding: 35px 4%;
+  padding: 35px 0 35px 4%;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 995px) {
   .related-news-content {
     padding: 20px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .related-news-content {
     padding: 18px 0;
   }
@@ -11071,7 +11082,6 @@ body.banner-animating {
 .related-news-date {
   font-size: 14px;
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
   display: block;
@@ -11084,19 +11094,20 @@ body.banner-animating {
 }
 
 .related-news-title {
-  font-size: 24px;
-  width: calc(100% - 140px);
-  font-weight: 500;
+  font-size: 21px;
+  width: calc(100% - 220px);
+  font-weight: bold;
   color: #000;
-  margin: 0 0 15px 0;
+  margin: 0;
   line-height: 1.4;
+  font-family: "Neue Regrade";
+  letter-spacing: 1px;
 }
 .related-news-title a {
   color: #000;
   text-decoration: none;
   transition: color 0.3s ease;
   display: block;
-  font-weight: 500;
 }
 .related-news-title a:hover {
   color: #C5B17F;
@@ -11218,11 +11229,14 @@ body.banner-animating {
 .news-list-section {
   width: 100%;
 }
+.news-list-section .container {
+  padding: 0;
+}
 
 .news-list-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 17px;
 }
 @media only screen and (max-width: 1060px) {
   .news-list-grid {
@@ -11435,7 +11449,7 @@ body.banner-animating {
   padding: 30px 40px;
   font-size: 24px;
   font-weight: 500;
-  color: #666;
+  color: #282828;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;

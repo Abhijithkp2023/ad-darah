@@ -3,13 +3,15 @@
 .news-list-section {
 	width: 100%;
  
- 
+  .container{
+	 padding: 0;
+  }
 }
 
 .news-list-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 30px;
+	gap: 17px;
 	
 	@media #{$media-1060} {
 		gap: 25px;
