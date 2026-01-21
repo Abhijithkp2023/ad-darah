@@ -242,24 +242,152 @@
 		 * Close Fullscreen Navigation Menu
 		 */
 		const closeFullscreenMenu = function() {
+			// Check if GSAP is available
+			if (typeof gsap === 'undefined') {
+				console.warn('GSAP is not loaded');
+				return;
+			}
+
 			const fullscreenNav = document.getElementById('fullscreenNavMenu');
-			if (fullscreenNav) {
+			if (!fullscreenNav) {
+				return;
+			}
+
+			// Get elements
+			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+			const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
+			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+			if (!leftPanel || !rightPanel) {
 				fullscreenNav.classList.remove('fullscreen-nav-open');
 				document.body.classList.remove('fullscreen-nav-open');
-				// Reset submenu state
 				resetFullscreenSubmenu();
+				return;
 			}
+
+			// Create reverse timeline
+			const tl = gsap.timeline({
+				onComplete: function() {
+					// Reset after animation completes
+					fullscreenNav.classList.remove('fullscreen-nav-open');
+					document.body.classList.remove('fullscreen-nav-open');
+					// Reset submenu state
+					resetFullscreenSubmenu();
+				}
+			});
+
+			// Reverse sequence
+			tl.to(menuItems, {
+				opacity: 0,
+				x: 30,
+				duration: 0.3,
+				ease: 'power2.in'
+			})
+			.to([gridSubs, gridSocials], {
+				opacity: 0,
+				y: -30,
+				duration: 0.3,
+				stagger: 0.02,
+				ease: 'power2.in'
+			}, '-=0.2')
+			.to(gridHeadings, {
+				opacity: 0,
+				duration: 0.2,
+				ease: 'power2.in'
+			}, '-=0.2')
+			.to(leftPanel, {
+				x: '-100%',
+				duration: 0.6,
+				ease: 'power2.out'
+			}, '-=0.2')
+			.to(rightPanel, {
+				x: '100%',
+				duration: 0.6,
+				ease: 'power2.out'
+			}, '-=0.6'); // Start at same time as left panel
 		};
 
 		/**
-		 * Open Fullscreen Navigation Menu
+		 * Open Fullscreen Navigation Menu with GSAP Animation
 		 */
 		const openFullscreenMenu = function() {
-			const fullscreenNav = document.getElementById('fullscreenNavMenu');
-			if (fullscreenNav) {
-				fullscreenNav.classList.add('fullscreen-nav-open');
-				document.body.classList.add('fullscreen-nav-open');
+			// Check if GSAP is available
+			if (typeof gsap === 'undefined') {
+				console.warn('GSAP is not loaded');
+				return;
 			}
+
+			const fullscreenNav = document.getElementById('fullscreenNavMenu');
+			if (!fullscreenNav) {
+				return;
+			}
+
+			// Get elements
+			const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+			const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+			const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
+			const gridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+			const gridSocials = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social');
+			const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+			if (!leftPanel || !rightPanel) {
+				return;
+			}
+
+			// Show menu container
+			fullscreenNav.classList.add('fullscreen-nav-open');
+			document.body.classList.add('fullscreen-nav-open');
+
+			// Reset initial states
+			gsap.set(leftPanel, { x: '-100%' });
+			gsap.set(rightPanel, { x: '100%' });
+			gsap.set(gridHeadings, { opacity: 0 });
+			gsap.set(gridSubs, { opacity: 0, y: -30 });
+			gsap.set(gridSocials, { opacity: 0, y: -30 });
+			gsap.set(menuItems, { opacity: 0, x: 30 });
+
+			// Create timeline for animation sequence
+			const tl = gsap.timeline();
+
+			// Step 1: Slide in panels uniformly (0.6s)
+			tl.to(leftPanel, {
+				x: 0,
+				duration: 0.6,
+				ease: 'power2.out'
+			})
+			.to(rightPanel, {
+				x: 0,
+				duration: 0.6,
+				ease: 'power2.out'
+			}, '-=0.6') // Start at the same time as left panel
+
+			// Step 2: Show headings (after panels fully join)
+			.to(gridHeadings, {
+				opacity: 1,
+				duration: 0.3,
+				ease: 'power2.out'
+			}) // Start after panels animation completes (at 0.6s)
+
+			// Step 3: Grid subs and socials slide down from top together (after headings visible)
+			.to([gridSubs, gridSocials], {
+				opacity: 1,
+				y: 0,
+				duration: 0.5,
+				stagger: 0.05,
+				ease: 'power2.out',
+				transformOrigin: 'top'
+			}) // Start after headings animation
+
+			// Step 4: Show menu items (after subs/socials finish)
+			.to(menuItems, {
+				opacity: 1,
+				x: 0,
+				duration: 0.5,
+				ease: 'power2.out'
+			}); // Start after subs/socials animation completes
 		};
 
 		/**

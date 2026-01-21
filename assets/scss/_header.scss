@@ -1000,6 +1000,7 @@ body.overflow_body_hidden {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		will-change: transform;
 
 		.fullscreen-nav-decor {
 			position: absolute;
@@ -1064,6 +1065,7 @@ body.overflow_body_hidden {
 						@include fullscreen-nav-grid-heading;
 						color: #ffffff;
 						margin: 0 0 12px 0;
+						opacity: 1;
 					}
 
 					.fullscreen-nav-grid-sub {
@@ -1071,12 +1073,16 @@ body.overflow_body_hidden {
 						color: #ffffff;
 						margin: 0;
 						opacity: 1;
+						will-change: opacity, transform;
+						transform-origin: top;
 					}
 
 					.fullscreen-nav-grid-social {
 						display: flex;
 						gap: 8px;
 						flex-wrap: wrap;
+						will-change: opacity, transform;
+						transform-origin: top;
 
 						a {
 							width: 48%;
@@ -1194,6 +1200,7 @@ body.overflow_body_hidden {
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		will-change: transform;
 
 		.fullscreen-nav-close {
 			position: absolute;
@@ -1219,6 +1226,7 @@ body.overflow_body_hidden {
 
 		.fullscreen-nav-menu-items {
 			width: 100%;
+			will-change: opacity, transform;
 
 			.fullscreen-nav-list {
 				list-style: none;

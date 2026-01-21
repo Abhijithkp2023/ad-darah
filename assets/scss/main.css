@@ -3545,6 +3545,7 @@ body.overflow_body_hidden {
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform;
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-decor {
   position: absolute;
@@ -3603,6 +3604,7 @@ body.overflow_body_hidden {
   text-transform: uppercase;
   color: #ffffff;
   margin: 0 0 12px 0;
+  opacity: 1;
 }
 @media only screen and (max-width: 1060px) {
   .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-heading {
@@ -3624,6 +3626,8 @@ body.overflow_body_hidden {
   color: #ffffff;
   margin: 0;
   opacity: 1;
+  will-change: opacity, transform;
+  transform-origin: top;
 }
 @media only screen and (max-width: 700px) {
   .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-sub {
@@ -3634,6 +3638,8 @@ body.overflow_body_hidden {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  will-change: opacity, transform;
+  transform-origin: top;
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-social a {
   width: 48%;
@@ -3781,6 +3787,7 @@ body.overflow_body_hidden {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  will-change: transform;
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-close {
   position: absolute;
@@ -3803,6 +3810,7 @@ body.overflow_body_hidden {
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items {
   width: 100%;
+  will-change: opacity, transform;
 }
 .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list {
   list-style: none;
