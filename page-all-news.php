@@ -107,33 +107,9 @@ get_header();
 				'link' => $press_release_detail_url
 			),
 			array(
-				'image' => get_template_directory_uri() . '/assets/images/blog-02.jpg',
+				'image' => get_template_directory_uri() . '/assets/images/blog-02.png',
 				'date' => '05 Mar 2025',
 				'title' => 'Culinary Excellence: Our Professional Chef Team',
-				'link' => $press_release_detail_url
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/blog-03.jpg',
-				'date' => '08 Mar 2025',
-				'title' => 'Luxurious Lounge Spaces: Elegant Event Preparation at AD-DARAH',
-				'link' => $press_release_detail_url
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/blog-04.jpg',
-				'date' => '10 Mar 2025',
-				'title' => 'Celebrating Saudi Heritage: Traditional Attire and Cultural Pride',
-				'link' => $press_release_detail_url
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/blog-05.jpg',
-				'date' => '12 Mar 2025',
-				'title' => 'AD-DARAH: Architectural Grandeur and Illuminated Elegance',
-				'link' => $press_release_detail_url
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/blog-06.jpg',
-				'date' => '15 Mar 2025',
-				'title' => 'Conference & Event Excellence: Professional Meeting Spaces at AD-DARAH',
 				'link' => $press_release_detail_url
 			)
 		);

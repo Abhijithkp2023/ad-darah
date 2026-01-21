@@ -219,6 +219,9 @@ function addarah_scripts()
 	if (!wp_script_is('swiper-js', 'enqueued')) {
 		wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
 	}
+	
+	// Enqueue RelatedNews script globally (available on all pages)
+	wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
 
 	// Enqueue component styles
 	if (is_front_page()) {
