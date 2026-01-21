@@ -268,6 +268,7 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 	text-transform: uppercase;
+	
 	@media #{$media-1060} {
 		font-size: 18px;
 	}
@@ -297,9 +298,15 @@
 	font-size: 50px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	@media #{$media-1060} {
+
+	@media #{$media-1400} {
 		font-size: 40px;
 	}
+
+	@media #{$media-1060} {
+		font-size: 36px;
+	}
+
 	@media #{$media-700} {
 		font-size: 30px;
 	}
@@ -313,11 +320,15 @@
 	font-size: 36px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	@media #{$media-1060} {
+
+	@media #{$media-1400} {
 		font-size: 30px;
 	}
-	@media #{$media-700} {
+	@media #{$media-1060} {
 		font-size: 24px;
+	}
+	@media #{$media-700} {
+		font-size: 20px;
 	}
 }
 
@@ -329,6 +340,11 @@
 	font-size: 24px;
 	line-height: 1.2;
 	letter-spacing: 0%;
+
+	@media #{$media-1400} {
+		font-size: 22px;
+	}
+
 	@media #{$media-1060} {
 		font-size: 20px;
 	}
