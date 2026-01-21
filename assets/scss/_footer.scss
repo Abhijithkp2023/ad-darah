@@ -100,8 +100,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 22px;
     min-width: 300px;
+    
     @media #{$media-1060} {
       min-width: 100%;
     }

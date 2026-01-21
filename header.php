@@ -131,22 +131,22 @@
 			<!-- Booking Form -->
 			<form class="header-booking-form" action="#" method="post">
 				<span class="header-booking-form-inputs">
-					<div class="header-form-field-wrapper">
+					<div class="header-form-field-wrapper header-form-field-fullname">
 						<span class="header-form-field-display">Full Name</span>
 						<input type="text" name="full_name" placeholder="Full Name"
 							class="header-form-input header-form-input-small" required>
 					</div>
-					<div class="header-form-field-wrapper">
+					<div class="header-form-field-wrapper header-form-field-email">
 						<span class="header-form-field-display">Email Address</span>
 						<input type="email" name="email" placeholder="Email Address"
 							class="header-form-input header-form-input-small" required>
 					</div>
-					<div class="header-form-field-wrapper">
+					<div class="header-form-field-wrapper header-form-field-phone">
 						<span class="header-form-field-display">Phone No.</span>
 						<input type="tel" name="phone" placeholder="Phone No."
 							class="header-form-input header-form-input-small" required>
 					</div>
-					<div class="header-form-field-wrapper">
+					<div class="header-form-field-wrapper header-form-field-event-type">
 						<span class="header-form-field-display">Event Type</span>
 						<select name="event_type" id="headerEventType" class="header-form-input header-form-input-large"
 							required>
@@ -156,14 +156,14 @@
 							<option value="social">Social</option>
 						</select>
 					</div>
-					<div class="header-form-field-wrapper header-form-date-wrapper">
+					<div class="header-form-field-wrapper header-form-date-wrapper header-form-field-event-date">
 						<span class="header-form-field-display">Event Date</span>
 						<input type="text" name="event_date" id="headerEventDate" class="header-form-input"
 							placeholder="Event Date" required>
 						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/header_calendar.svg'); ?>"
 							alt="Calendar" class="header-form-calendar-icon">
 					</div>
-					<div class="header-form-field-wrapper">
+					<div class="header-form-field-wrapper header-form-field-preferred-time">
 						<span class="header-form-field-display">Preferred Time</span>
 						<select name="preferred_time" id="headerPreferredTime"
 							class="header-form-input header-form-input-large" required>

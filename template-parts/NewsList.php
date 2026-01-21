@@ -8,62 +8,14 @@
  * get_template_part('template-parts/NewsList');
  */
 
-// Get the press release detail page URL
-$press_release_detail_url = '#';
-$press_release_pages = get_pages(array(
-	'meta_key' => '_wp_page_template',
-	'meta_value' => 'page-press-release-detail.php'
-));
-
-if (!empty($press_release_pages)) {
-	$press_release_detail_url = get_permalink($press_release_pages[0]->ID);
-}
-
-// Static news data
-$news_items = array(
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-01.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'ADDarah and the future of Saudi hospitality',
-		'link' => $press_release_detail_url
-	),
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-02.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
-		'link' => $press_release_detail_url
-	),
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-03.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
-		'link' => $press_release_detail_url
-	),
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-04.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'ADDarah and the future of Saudi hospitality',
-		'link' => $press_release_detail_url
-	),
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-05.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'ADDarah and the future of Saudi hospitality',
-		'link' => $press_release_detail_url
-	),
-	array(
-		'image' => get_template_directory_uri() . '/assets/images/news-06.jpg',
-		'date' => '05 Aug 2022',
-		'title' => 'Marzouq Al-Harbi: Delivering hospitality projects in line with Vision 2030',
-		'link' => $press_release_detail_url
-	)
-);
+// Get news items from query var (passed from page template)
+$news_items = get_query_var('news_items', array());
 ?>
 
 <div class="news-list-section">
 	<div class="container">
 		<div class="news-list-grid">
-			<?php foreach ($news_items as $item) : ?>
+			<?php foreach ($news_items as $item): ?>
 				<article class="related-news-item">
 					<div class="related-news-image">
 						<a href="<?php echo esc_url($item['link']); ?>">
@@ -79,7 +31,8 @@ $news_items = array(
 							<a href="<?php echo esc_url($item['link']); ?>" class="read-more-link">
 								<span class="read-more-text">Learn More</span>
 								<span class="read_icon">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/learn-icn.svg" alt="Read More">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/learn-icn.svg"
+										alt="Read More">
 								</span>
 							</a>
 						</div>
@@ -88,5 +41,4 @@ $news_items = array(
 			<?php endforeach; ?>
 		</div>
 	</div>
-            </div>
-
+</div>
