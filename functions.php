@@ -168,6 +168,9 @@ function addarah_scripts()
 
 	// Enqueue WhatsApp floating button script (loaded on all pages)
 	wp_enqueue_script('whatsapp-button-script', get_template_directory_uri() . '/assets/js/WhatsAppButton.js', array(), _S_VERSION, true);
+	
+	// Enqueue Form Popup script (loaded on all pages, depends on Choices.js)
+	wp_enqueue_script('form-popup-script', get_template_directory_uri() . '/assets/js/FormPopup.js', array('choices-js'), _S_VERSION, true);
 
 	// Enqueue ButtonPrimary component scripts (loaded on all pages - used in header)
 	wp_enqueue_script('button-primary-script', get_template_directory_uri() . '/assets/js/ButtonPrimary.js', array(), _S_VERSION, true);
