@@ -274,7 +274,7 @@
 		tl.to([bannerMaskRef, bannerMaskImgRef], {
 			scale: 8,
 			duration: 2,
-			ease: "power2.out", // Smooth easing
+			ease: "power1.inOut", 
 			force3D: true, // Force hardware acceleration to prevent blur
 		});
 
@@ -292,7 +292,7 @@
 			1 // Start at 1 second (50% of the 2 second scale duration)
 		);
 
-		// Animate title from left to right (starts immediately after mask animation completes)
+		// Animate title from left to right (starts earlier, overlapping with mask fade)
 		if (titleElement) {
 			tl.to(
 				titleElement,
@@ -303,8 +303,8 @@
 					ease: "power2.out",
 					force3D: true,
 				},
-				"-=0.1"
-			); // Start 0.1 seconds before mask animation ends (or use "+=0" for exact end)
+				"-=0.8"
+			); // Start 0.8 seconds before mask animation ends (overlaps with opacity fade)
 		}
 
 		// Animate subtitle from bottom to top (like increasing height)
