@@ -27,7 +27,7 @@ $full_video_url = isset($full_video_url) ? $full_video_url : '';
                         fill="#F3EEEA" />
                 </svg>
             </button>
-            <video class="full-video-element" controls muted loop preload="metadata" style="display: none;">
+            <video class="full-video-element" src="<?php echo esc_url($full_video_url); ?>" controls muted loop preload="none" playsinline webkit-playsinline poster="<?php echo esc_url($full_video_thumbnail); ?>" style="display: none;">
                 <source src="<?php echo esc_url($full_video_url); ?>" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
