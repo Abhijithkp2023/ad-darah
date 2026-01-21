@@ -166,6 +166,9 @@ function addarah_scripts()
 	// Enqueue Footer component script (loaded on all pages)
 	wp_enqueue_script('footer-script', get_template_directory_uri() . '/assets/js/Footer.js', array(), _S_VERSION, true);
 
+	// Enqueue Contact Us popup script (loaded on all pages)
+	wp_enqueue_script('contact-us-script', get_template_directory_uri() . '/assets/js/ContactUs.js', array(), _S_VERSION, true);
+
 	// Enqueue WhatsApp floating button script (loaded on all pages)
 	wp_enqueue_script('whatsapp-button-script', get_template_directory_uri() . '/assets/js/WhatsAppButton.js', array(), _S_VERSION, true);
 	

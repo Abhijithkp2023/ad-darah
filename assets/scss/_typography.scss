@@ -90,11 +90,10 @@
 @mixin book-visit-button {
 	font-family: "Neue Regrade", sans-serif;
 	font-weight: 600;
-	font-style: normal;
 	font-size: 16px;
-	line-height: 30px;
+	line-height: 1.5;
 	letter-spacing: 0%;
-	text-align: center;
+
 	@media #{$media-700} {
 		font-size: 15px;
 	}
