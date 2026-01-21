@@ -234,15 +234,14 @@ header.main-header,
 			&.desktop-menu-toggle {
 				padding-left: 20px;
 			}
-		}
 
-		.mobile-menu-toggle {
-			display: none;
-			@media #{$media-1024} {
-				display: flex;
-			}
-			@media #{$media-700} {
-				width: 50px;
+			&.mobile-menu-toggle {
+				display: none;
+				cursor: pointer;
+
+				@media (max-width: 1200px) {
+					display: flex;
+				}
 			}
 		}
 	}

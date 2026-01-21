@@ -76,10 +76,10 @@
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/lang.svg.svg'); ?>"
 						alt="Language">
 				</a>
-				<button class="mobile-menu-toggle" id="menuIcon" aria-label="Menu">
+				<span class="header-icon mobile-menu-toggle" id="menuIconInitial" aria-label="Menu">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/hamburger.svg'); ?>"
 						alt="Menu">
-				</button>
+				</span>
 			</div>
 		</div>
 
