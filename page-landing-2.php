@@ -53,20 +53,20 @@ get_header();
 		include locate_template('template-parts/InfiniteSlider.php');
 
 		// Landing Gallery Section
-		$landing_gallery_heading = 'Our Gallery';
-		$landing_gallery_button_text = 'View All';
-		$landing_gallery_button_link = get_permalink(get_page_by_path('gallery'));
+		set_query_var('landing_gallery_heading', 'Our Gallery');
+		set_query_var('landing_gallery_button_text', 'View All');
+		set_query_var('landing_gallery_button_link', get_permalink(get_page_by_path('gallery')));
 		// Page-specific media for LandingGallery (Landing 2)
-		$landing_gallery_top_left = get_template_directory_uri() . '/assets/images/top_left.png';
-		$landing_gallery_top_left_alt = 'Landing Gallery Top Left';
-		$landing_gallery_top_right = get_template_directory_uri() . '/assets/images/top_right.png';
-		$landing_gallery_top_right_alt = 'Landing Gallery Top Right';
-		$landing_gallery_bottom_left = get_template_directory_uri() . '/assets/images/bottom_left.png';
-		$landing_gallery_bottom_left_alt = 'Landing Gallery Bottom Left';
-		$landing_gallery_bottom_right = get_template_directory_uri() . '/assets/images/bottom_right.png';
-		$landing_gallery_bottom_right_alt = 'Landing Gallery Bottom Right';
-		$landing_gallery_video_src = get_template_directory_uri() . '/assets/videos/home-video.mp4';
-		include locate_template('template-parts/LandingGallery.php');
+		set_query_var('landing_gallery_top_left', get_template_directory_uri() . '/assets/images/top_left.png');
+		set_query_var('landing_gallery_top_left_alt', 'Landing Gallery Top Left');
+		set_query_var('landing_gallery_top_right', get_template_directory_uri() . '/assets/images/top_right.png');
+		set_query_var('landing_gallery_top_right_alt', 'Landing Gallery Top Right');
+		set_query_var('landing_gallery_bottom_left', get_template_directory_uri() . '/assets/images/bottom_left.png');
+		set_query_var('landing_gallery_bottom_left_alt', 'Landing Gallery Bottom Left');
+		set_query_var('landing_gallery_bottom_right', get_template_directory_uri() . '/assets/images/bottom_right.png');
+		set_query_var('landing_gallery_bottom_right_alt', 'Landing Gallery Bottom Right');
+		set_query_var('landing_gallery_video_src', get_template_directory_uri() . '/assets/videos/home-video.mp4');
+		get_template_part('template-parts/LandingGallery');
 
 		// Single Testimonial Section
 		$single_testimonial_title = 'Featured Clients';

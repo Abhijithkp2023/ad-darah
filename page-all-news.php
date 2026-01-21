@@ -119,22 +119,21 @@ get_header();
 
 		<?php
 		// Gallery Grid Section
-		// get_template_part('template-parts/GalleryGrid');
-		$landing_gallery_heading = 'Photo Gallery';
-		$landing_gallery_button_text = 'View All';
-		$landing_gallery_section_classes = 'landing-gallery-section no-bg';
-		$landing_gallery_button_link = get_permalink(get_page_by_path('gallery'));
+		set_query_var('landing_gallery_heading', 'Photo Gallery');
+		set_query_var('landing_gallery_button_text', 'View All');
+		set_query_var('landing_gallery_section_classes', 'landing-gallery-section no-bg');
+		set_query_var('landing_gallery_button_link', get_permalink(get_page_by_path('gallery')));
 		// Page-specific media for LandingGallery
-		$landing_gallery_top_left = get_template_directory_uri() . '/assets/images/gallery-01.jpg';
-		$landing_gallery_top_left_alt = 'Gallery Top Left';
-		$landing_gallery_top_right = get_template_directory_uri() . '/assets/images/gallery-04.jpg';
-		$landing_gallery_top_right_alt = 'Gallery Top Right';
-		$landing_gallery_bottom_left = get_template_directory_uri() . '/assets/images/gallery-02.jpg';
-		$landing_gallery_bottom_left_alt = 'Gallery Bottom Left';
-		$landing_gallery_bottom_right = get_template_directory_uri() . '/assets/images/gallery-05.jpg';
-		$landing_gallery_bottom_right_alt = 'Gallery Bottom Right';
-		$landing_gallery_video_src = get_template_directory_uri() . '/assets/images/gallery-03.jpg';
-		include locate_template('template-parts/LandingGallery.php');
+		set_query_var('landing_gallery_top_left', get_template_directory_uri() . '/assets/images/gallery-01.jpg');
+		set_query_var('landing_gallery_top_left_alt', 'Gallery Top Left');
+		set_query_var('landing_gallery_top_right', get_template_directory_uri() . '/assets/images/gallery-04.jpg');
+		set_query_var('landing_gallery_top_right_alt', 'Gallery Top Right');
+		set_query_var('landing_gallery_bottom_left', get_template_directory_uri() . '/assets/images/gallery-02.jpg');
+		set_query_var('landing_gallery_bottom_left_alt', 'Gallery Bottom Left');
+		set_query_var('landing_gallery_bottom_right', get_template_directory_uri() . '/assets/images/gallery-05.jpg');
+		set_query_var('landing_gallery_bottom_right_alt', 'Gallery Bottom Right');
+		set_query_var('landing_gallery_video_src', get_template_directory_uri() . '/assets/images/gallery-03.jpg');
+		get_template_part('template-parts/LandingGallery');
 		?>
 
 

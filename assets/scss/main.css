@@ -12614,6 +12614,30 @@ body.banner-animating {
   grid-row: 2;
   height: 329px;
 }
+.landing-gallery-section .landing-gallery-grid-second {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.landing-gallery-section .landing-gallery-grid-second .landing-gallery-second-left {
+  grid-column: 1;
+  grid-row: 1/3;
+  height: 668px;
+}
+.landing-gallery-section .landing-gallery-grid-second .landing-gallery-second-center-top {
+  grid-column: 2;
+  grid-row: 1;
+  height: 329px;
+}
+.landing-gallery-section .landing-gallery-grid-second .landing-gallery-second-center-bottom {
+  grid-column: 2;
+  grid-row: 2;
+  height: 329px;
+}
+.landing-gallery-section .landing-gallery-grid-second .landing-gallery-second-right {
+  grid-column: 3;
+  grid-row: 1/3;
+  height: 668px;
+}
 @media (max-width: 995px) {
   .landing-gallery-section .landing-gallery-container {
     padding: 0 15px;
@@ -12629,6 +12653,14 @@ body.banner-animating {
   }
   .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
     height: 416px;
+  }
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-left,
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-right {
+    height: 416px;
+  }
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-center-top,
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-center-bottom {
+    height: 200px;
   }
 }
 @media (max-width: 700px) {
@@ -12650,6 +12682,14 @@ body.banner-animating {
     height: 250px;
     grid-row: initial;
     grid-column: 1;
+  }
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-left,
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-center-top,
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-center-bottom,
+  .landing-gallery-section .landing-gallery-grid.landing-gallery-grid-second .landing-gallery-second-right {
+    grid-column: 1;
+    grid-row: initial;
+    height: 250px;
   }
 }
 
