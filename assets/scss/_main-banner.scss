@@ -117,6 +117,10 @@ body.banner-animating {
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 60px 0;
+
+		@media (max-width: 1200px) {
+			margin-top: 200px;
+		}
 	}
 
 	.main-banner-text-wrapper {

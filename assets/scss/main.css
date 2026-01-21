@@ -4670,6 +4670,11 @@ body.banner-animating {
   justify-content: space-between;
   padding: 60px 0;
 }
+@media (max-width: 1200px) {
+  .main-banner-container .main-banner-content {
+    margin-top: 200px;
+  }
+}
 .main-banner-container .main-banner-text-wrapper {
   display: flex;
   justify-content: space-between;
@@ -12706,7 +12711,7 @@ body.banner-animating {
   position: relative;
   width: 60px;
   height: 60px;
-  background: #c5b17f;
+  background: #b64910;
   border-radius: 50%;
   display: none;
   align-items: center;
@@ -12724,12 +12729,22 @@ body.banner-animating {
     display: flex;
   }
 }
+@media (max-width: 768px) {
+  .form-floating-button {
+    width: 56px;
+    height: 56px;
+  }
+}
+@media (max-width: 600px) {
+  .form-floating-button {
+    width: 95%;
+    height: 45px;
+    border-radius: 10px;
+  }
+}
 .form-floating-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 25px rgba(197, 177, 127, 0.6);
-}
-.form-floating-button:active {
-  transform: scale(0.95);
 }
 .form-floating-button .form-button-icon {
   width: 100%;
@@ -12739,9 +12754,27 @@ body.banner-animating {
   justify-content: center;
   color: #ffffff;
 }
+.form-floating-button .form-button-icon span {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-left: 8px;
+}
+@media (max-width: 600px) {
+  .form-floating-button .form-button-icon span {
+    display: block;
+  }
+}
 .form-floating-button .form-button-icon svg {
   width: 28px;
   height: 28px;
+}
+@media (max-width: 768px) {
+  .form-floating-button .form-button-icon svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 .form-floating-button::before {
   content: "";
@@ -12756,31 +12789,26 @@ body.banner-animating {
   animation: whatsappPulse 2s infinite;
   pointer-events: none;
 }
+@media (max-width: 600px) {
+  .form-floating-button::before {
+    display: none;
+  }
+}
 
+.whatsapp-button-container .container {
+  gap: 15px;
+}
 @media (max-width: 768px) {
   .whatsapp-button-container .container {
     gap: 12px;
-  }
-  .form-floating-button {
-    width: 56px;
-    height: 56px;
-    margin-left: 0;
-  }
-  .form-floating-button .form-button-icon svg {
-    width: 24px;
-    height: 24px;
   }
 }
 @media (max-width: 480px) {
   .whatsapp-button-container .container {
     gap: 10px;
   }
-  .form-floating-button {
-    width: 50px;
-    height: 50px;
-    margin-left: 0;
-  }
 }
+
 .form-popup-overlay {
   position: fixed;
   top: 0;
@@ -12813,6 +12841,7 @@ body.banner-animating {
   transform: scale(0.9);
   transition: transform 0.3s ease;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
 }
 .form-popup-overlay.active .form-popup-modal {
   transform: scale(1);
@@ -13145,7 +13174,7 @@ body.banner-animating {
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 4px;
-  z-index: 10001;
+  z-index: 10002 !important;
   position: absolute;
   width: 100%;
 }
