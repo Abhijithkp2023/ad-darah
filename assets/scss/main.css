@@ -6310,10 +6310,20 @@ body.banner-animating {
 .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button.single-testimonial-nav-prev {
   left: 60px;
 }
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button.single-testimonial-nav-prev {
+    left: 6px;
+  }
+}
 .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button.single-testimonial-nav-next {
   right: 60px;
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button.single-testimonial-nav-next {
+    right: 6px;
+  }
+}
+@media (max-width: 995px) {
   .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button {
     width: 50px;
     height: 50px;
@@ -6321,6 +6331,16 @@ body.banner-animating {
   .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button svg {
     width: 30px;
     height: 18px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button {
+    width: 40px;
+    height: 40px;
+  }
+  .single-testimonial-container .single-testimonial-content .single-testimonial-nav-button svg {
+    width: 15px;
+    height: 15px;
   }
 }
 .single-testimonial-container .single-testimonial-content .single-testimonial-swiper-container {
@@ -12382,6 +12402,9 @@ body.banner-animating {
   width: 100%;
   background-color: rgb(244, 241, 231);
 }
+.landing-gallery-section.no-bg {
+  background-color: transparent;
+}
 .landing-gallery-section .landing-gallery-heading {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
@@ -12417,6 +12440,16 @@ body.banner-animating {
   display: flex;
   justify-content: center;
   margin-top: 60px;
+}
+@media only screen and (max-width: 995px) {
+  .landing-gallery-section .landing-gallery-button-wrapper {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .landing-gallery-section .landing-gallery-button-wrapper {
+    margin-top: 30px;
+  }
 }
 .landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button {
   font-family: "Neue Regrade", sans-serif;
@@ -12530,13 +12563,20 @@ body.banner-animating {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  .landing-gallery-section .landing-gallery-grid .landing-gallery-item {
+    border-radius: 10px;
+  }
   .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-top-right, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-left, .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-bottom-right {
     grid-column: auto;
     height: 250px;
+    grid-column: 1;
+    grid-row: initial;
   }
   .landing-gallery-section .landing-gallery-grid .landing-gallery-item.landing-gallery-center {
     grid-row: auto;
     height: 250px;
+    grid-row: initial;
+    grid-column: 1;
   }
 }
 
@@ -12658,6 +12698,16 @@ body.banner-animating {
   align-items: flex-end;
   overflow: hidden;
 }
+@media only screen and (max-width: 1060px) {
+  .second-land-banner-container {
+    height: 85vh;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .second-land-banner-container {
+    height: 80vh;
+  }
+}
 .second-land-banner-container .second-land-banner-image {
   position: absolute;
   top: 0;
@@ -12719,6 +12769,11 @@ body.banner-animating {
 .second-land-banner-container .second-land-banner-content .second-land-banner-text-wrapper .second-land-banner-button {
   align-self: flex-start;
   margin-top: 20px;
+}
+@media only screen and (max-width: 700px) {
+  .second-land-banner-container .second-land-banner-content .second-land-banner-text-wrapper .second-land-banner-button {
+    margin-top: 5px;
+  }
 }
 @media (max-width: 1024px) {
   .second-land-banner-container .second-land-banner-content .second-land-banner-text-wrapper .second-land-banner-title {
@@ -12811,6 +12866,11 @@ body.banner-animating {
   animation: infinite-slide 20s linear infinite;
   will-change: transform;
 }
+@media only screen and (max-width: 995px) {
+  .infinite-slider-section .infinite-slider-track {
+    gap: 10px;
+  }
+}
 @keyframes infinite-slide {
   0% {
     transform: translateX(0);
@@ -12866,6 +12926,17 @@ body.banner-animating {
   margin-top: auto;
   transform: translateY(calc(100% - 100px));
 }
+@media only screen and (max-width: 1060px) {
+  .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay {
+    padding: 20px;
+    transform: initial;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay {
+    padding: 10px;
+  }
+}
 .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-heading {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
@@ -12914,6 +12985,11 @@ body.banner-animating {
     font-size: 15px;
   }
 }
+@media only screen and (max-width: 1060px) {
+  .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-description {
+    opacity: 1;
+  }
+}
 .infinite-slider-section .infinite-slider-card:hover .infinite-slider-card-overlay {
   transform: translateY(0);
 }
@@ -12948,7 +13024,7 @@ body.banner-animating {
     font-size: 16px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .infinite-slider-section .infinite-slider-section-heading {
     font-size: 36px;
     margin-bottom: 40px;
@@ -12958,18 +13034,20 @@ body.banner-animating {
     height: 400px;
   }
   .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay {
-    bottom: 25px;
-    left: 15px;
-    right: 15px;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    padding: 20px;
   }
   .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-heading {
     font-size: 22px;
   }
   .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-description {
     font-size: 15px;
+    margin-top: 10px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .infinite-slider-section .infinite-slider-section-heading {
     font-size: 28px;
     margin-bottom: 30px;
@@ -12977,17 +13055,14 @@ body.banner-animating {
   .infinite-slider-section .infinite-slider-card {
     width: 280px;
     height: 380px;
-  }
-  .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay {
-    bottom: 20px;
-    left: 15px;
-    right: 15px;
+    border-radius: 10px;
   }
   .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-heading {
     font-size: 20px;
   }
   .infinite-slider-section .infinite-slider-card .infinite-slider-card-overlay .infinite-slider-card-description {
     font-size: 14px;
+    line-height: 1.2;
   }
 }
 
@@ -13210,17 +13285,21 @@ body.banner-animating {
     max-width: 600px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
   .video-form-section .video-form-wrapper {
-    flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    height: auto;
   }
   .video-form-section .video-form-video-wrapper {
     max-width: 100%;
     width: 100%;
+    flex: initial;
+    height: 750px;
   }
   .video-form-section .video-form-form-wrapper {
     width: 100%;
+    flex: initial;
+    padding-inline: 15px;
   }
   .video-form-section .video-form-form-container {
     max-width: 100%;
@@ -13228,11 +13307,24 @@ body.banner-animating {
   .video-form-section .video-form-heading {
     text-align: center;
   }
+  .video-form-section .video-form-section .video-form-form-container .video-form-heading {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .video-form-section {
     min-height: auto;
     padding: 40px 0;
+  }
+  .video-form-section .video-form-wrapper {
+    flex-direction: column;
+  }
+  .video-form-section .video-form-video-wrapper {
+    border-radius: 0;
+  }
+  .video-form-section .video-form-form-wrapper {
+    padding: 20px 20px 40px 25px;
   }
   .video-form-section .video-form-form-container .video-form-heading {
     font-size: 36px;
@@ -13245,15 +13337,24 @@ body.banner-animating {
     width: 100%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .video-form-section {
     padding: 30px 0;
   }
-  .video-form-section .video-form-form-container {
-    padding: 15px;
+  .video-form-section .video-form-video-wrapper {
+    height: 450px;
+  }
+  .video-form-section .video-form-form-wrapper {
+    padding: 0px 20px 35px 20px;
+  }
+  .video-form-section .video-form-wrapper {
+    border-radius: 10px;
+  }
+  .video-form-section .video-form-video-wrapper .video-form-video {
+    border-radius: 10px;
   }
   .video-form-section .video-form-form-container .video-form-heading {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 20px;
   }
   .video-form-section .video-form-form-container .video-form-form {
@@ -13280,11 +13381,16 @@ body.banner-animating {
   gap: 40px;
   margin-bottom: 60px;
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .wedding-packages-section .wedding-packages-header {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .wedding-packages-section .wedding-packages-header {
+    gap: 10px;
   }
 }
 .wedding-packages-section .wedding-packages-heading {
@@ -13309,14 +13415,14 @@ body.banner-animating {
     font-size: 30px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .wedding-packages-section .wedding-packages-heading {
     font-size: 40px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .wedding-packages-section .wedding-packages-heading {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .wedding-packages-section .wedding-packages-description {
@@ -13340,10 +13446,16 @@ body.banner-animating {
     font-size: 15px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .wedding-packages-section .wedding-packages-description {
     font-size: 16px;
     max-width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .wedding-packages-section .wedding-packages-description {
+    font-size: 15px;
+    line-height: 1.2;
   }
 }
 .wedding-packages-section .wedding-packages-cards {
@@ -13375,6 +13487,11 @@ body.banner-animating {
   overflow: hidden;
   border-radius: 20px;
 }
+@media (max-width: 1060px) {
+  .wedding-packages-section .wedding-packages-card-image {
+    border-radius: 10px;
+  }
+}
 .wedding-packages-section .wedding-packages-card-image:hover img {
   transform: scale(1.1);
 }
@@ -13387,15 +13504,20 @@ body.banner-animating {
   transition: transform 0.5s ease;
 }
 .wedding-packages-section .wedding-packages-card-content {
-  padding: 30px 40px 0px 40px;
+  padding: 30px 20px 0px 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: flex-start;
 }
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
   .wedding-packages-section .wedding-packages-card-content {
-    padding: 20px;
+    padding: 15px 0 0px 0;
+  }
+}
+@media (max-width: 995px) {
+  .wedding-packages-section .wedding-packages-card-content {
+    padding: 20px 0;
   }
 }
 .wedding-packages-section .wedding-packages-card-heading {
@@ -13425,9 +13547,19 @@ body.banner-animating {
     font-size: 18px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
+  .wedding-packages-section .wedding-packages-card-heading {
+    margin: 0 0 10px 0;
+  }
+}
+@media (max-width: 995px) {
   .wedding-packages-section .wedding-packages-card-heading {
     font-size: 24px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .wedding-packages-section .wedding-packages-card-heading {
+    font-size: 20px;
   }
 }
 .wedding-packages-section .wedding-packages-card-description {
@@ -13451,10 +13583,21 @@ body.banner-animating {
     font-size: 15px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1060px) {
+  .wedding-packages-section .wedding-packages-card-description {
+    margin: 0 0 15px 0;
+  }
+}
+@media (max-width: 995px) {
   .wedding-packages-section .wedding-packages-card-description {
     font-size: 16px;
     margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .wedding-packages-section .wedding-packages-card-description {
+    font-size: 15px;
+    margin-bottom: 10px;
   }
 }
 .wedding-packages-section .wedding-packages-card-button {
@@ -13680,17 +13823,21 @@ body.banner-animating {
     max-width: 600px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
   .video-form-section .video-form-wrapper {
-    flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    height: auto;
   }
   .video-form-section .video-form-video-wrapper {
     max-width: 100%;
     width: 100%;
+    flex: initial;
+    height: 750px;
   }
   .video-form-section .video-form-form-wrapper {
     width: 100%;
+    flex: initial;
+    padding-inline: 15px;
   }
   .video-form-section .video-form-form-container {
     max-width: 100%;
@@ -13698,11 +13845,24 @@ body.banner-animating {
   .video-form-section .video-form-heading {
     text-align: center;
   }
+  .video-form-section .video-form-section .video-form-form-container .video-form-heading {
+    font-size: 40px;
+    line-height: 45px;
+  }
 }
-@media (max-width: 768px) {
+@media (max-width: 995px) {
   .video-form-section {
     min-height: auto;
     padding: 40px 0;
+  }
+  .video-form-section .video-form-wrapper {
+    flex-direction: column;
+  }
+  .video-form-section .video-form-video-wrapper {
+    border-radius: 0;
+  }
+  .video-form-section .video-form-form-wrapper {
+    padding: 20px 20px 40px 25px;
   }
   .video-form-section .video-form-form-container .video-form-heading {
     font-size: 36px;
@@ -13715,15 +13875,24 @@ body.banner-animating {
     width: 100%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   .video-form-section {
     padding: 30px 0;
   }
-  .video-form-section .video-form-form-container {
-    padding: 15px;
+  .video-form-section .video-form-video-wrapper {
+    height: 450px;
+  }
+  .video-form-section .video-form-form-wrapper {
+    padding: 0px 20px 35px 20px;
+  }
+  .video-form-section .video-form-wrapper {
+    border-radius: 10px;
+  }
+  .video-form-section .video-form-video-wrapper .video-form-video {
+    border-radius: 10px;
   }
   .video-form-section .video-form-form-container .video-form-heading {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 20px;
   }
   .video-form-section .video-form-form-container .video-form-form {

@@ -10,6 +10,12 @@
 	display: flex;
 	align-items: flex-end;
 	overflow: hidden;
+	@media #{$media-1060} {
+		height: 85vh;
+	}
+	@media #{$media-700} {
+		height: 80vh;
+	}
 
 	.second-land-banner-image {
 		position: absolute;
@@ -79,6 +85,9 @@ linear-gradient(205.47deg, rgba(0, 0, 0, 0) 46.96%, rgba(0, 0, 0, 0.96) 98.36%);
 			.second-land-banner-button {
 				align-self: flex-start;
 				margin-top: 20px;
+				@media #{$media-700} {
+					margin-top: 5px;
+				}
 			}
 		}
 	}

@@ -30,6 +30,7 @@ get_header();
 			// get_template_part('template-parts/GalleryGrid');
 			$landing_gallery_heading = 'Photo Gallery';
 			$landing_gallery_button_text = 'View All';
+			$landing_gallery_section_classes = 'landing-gallery-section no-bg';
 			$landing_gallery_button_link = get_permalink(get_page_by_path('gallery'));
 			// Page-specific media for LandingGallery
 			$landing_gallery_top_left = get_template_directory_uri() . '/assets/images/gallery-01.jpg';
