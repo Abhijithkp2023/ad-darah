@@ -150,6 +150,7 @@ body.banner-animating {
 		@include main-banner-title-large;
 		color: rgba(255, 255, 255, 0.83);
 		margin: 0;
+		opacity: 0;
 		font-weight: 700;
 		text-transform: uppercase;
 	}
@@ -169,7 +170,7 @@ body.banner-animating {
 		font-weight: 500;
 		color: $white;
 		margin: 0;
-		opacity: 0.95;
+		opacity: 0;
 	}
 
 	.main-banner-form-wrapper {
@@ -196,6 +197,7 @@ body.banner-animating {
 		justify-content: space-between;
 		gap: 20px;
 		position: relative; 
+		opacity: 0;
 
 		@media (max-width: 1440px) {
 			gap: 5px;

@@ -4935,6 +4935,7 @@ body.banner-animating {
   line-height: 1;
   color: rgba(255, 255, 255, 0.83);
   margin: 0;
+  opacity: 0;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -4975,7 +4976,7 @@ body.banner-animating {
   font-weight: 500;
   color: #fff;
   margin: 0;
-  opacity: 0.95;
+  opacity: 0;
 }
 @media only screen and (max-width: 1060px) {
   .main-banner-container .main-banner-subtitle {
@@ -5013,6 +5014,7 @@ body.banner-animating {
   justify-content: space-between;
   gap: 20px;
   position: relative;
+  opacity: 0;
 }
 @media (max-width: 1440px) {
   .main-banner-container .main-banner-form {
