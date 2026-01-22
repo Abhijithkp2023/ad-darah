@@ -154,6 +154,9 @@ function addarah_scripts()
 	// Enqueue smooth scroll initialization (loaded on all pages)
 	wp_enqueue_script('smooth-scroll', get_template_directory_uri() . '/assets/js/smooth-scroll.js', array('lenis'), _S_VERSION, true);
 
+	// Enqueue GSAP library (CDN) - loaded on all pages for fullscreen menu animations
+	wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+
 	// Enqueue Header component script (loaded on all pages)
 	// Enqueue Choices.js and Flatpickr globally for header form
 	wp_enqueue_style('choices-css', 'https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css', array(), '10.2.0');
@@ -228,8 +231,10 @@ function addarah_scripts()
 
 	// Enqueue component styles
 	if (is_front_page()) {
-		// Enqueue GSAP library (CDN) - load in header for early access
-		wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+		// GSAP is already loaded globally above, but check if not already enqueued (for safety)
+		if (!wp_script_is('gsap', 'enqueued')) {
+			wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+		}
 
 		// Add inline script to initialize banner mask immediately (prevents flash)
 		wp_add_inline_script('gsap', '

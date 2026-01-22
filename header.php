@@ -90,27 +90,42 @@
 					<h3 class="dropdown-title">Our Services</h3>
 					<div class="dropdown-columns">
 						<div class="dropdown-column">
-							<a href="<?php echo esc_url(home_url('/corporate-services')); ?>"><h4 class="dropdown-column-title">Corporate Services</h4></a>
+							<a href="<?php echo esc_url(home_url('/corporate-services')); ?>">
+								<h4 class="dropdown-column-title">Corporate Services</h4>
+							</a>
 							<ul class="dropdown-list">
-								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Conferences & Exhibitions</a></li>
-								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Meeting Rooms & Workshops</a></li>
-								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">Government Events (B2G)</a></li>
-								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>" class="dropdown_item">VIP Majlis</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>"
+										class="dropdown_item">Conferences & Exhibitions</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>"
+										class="dropdown_item">Meeting Rooms & Workshops</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>"
+										class="dropdown_item">Government Events (B2G)</a></li>
+								<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>"
+										class="dropdown_item">VIP Majlis</a></li>
 							</ul>
 						</div>
 						<div class="dropdown-column">
-							<a href="<?php echo esc_url(home_url('/weddings-social-services')); ?>"><h4 class="dropdown-column-title">Weddings & Social Services</h4></a>
+							<a href="<?php echo esc_url(home_url('/weddings-social-services')); ?>">
+								<h4 class="dropdown-column-title">Weddings & Social Services</h4>
+							</a>
 							<ul class="dropdown-list">
-								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>" class="dropdown_item">Female Packages</a></li>
-								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>" class="dropdown_item">Male Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>"
+										class="dropdown_item">Female Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>"
+										class="dropdown_item">Male Packages</a></li>
 							</ul>
 						</div>
 						<div class="dropdown-column">
-							<a href="<?php echo esc_url(home_url('/catering-services')); ?>"><h4 class="dropdown-column-title">Catering Services</h4></a>
+							<a href="<?php echo esc_url(home_url('/catering-services')); ?>">
+								<h4 class="dropdown-column-title">Catering Services</h4>
+							</a>
 							<ul class="dropdown-list">
-								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">On-site Catering</a></li>
-								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">Off-site Catering</a></li>
-								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>" class="dropdown_item">Seasonal & Ramadan Packages</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>"
+										class="dropdown_item">On-site Catering</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>"
+										class="dropdown_item">Off-site Catering</a></li>
+								<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>"
+										class="dropdown_item">Seasonal & Ramadan Packages</a></li>
 							</ul>
 						</div>
 					</div>
@@ -300,36 +315,57 @@
 							<div class="fullscreen-nav-submenu-data-mobile" data-submenu-id="services">
 								<div class="fullscreen-nav-submenu-categories">
 									<div class="fullscreen-nav-submenu-category">
-										<h4 class="fullscreen-nav-submenu-category-heading">Corporate Services</h4>
+										<a href="<?php echo esc_url(home_url('/corporate-services')); ?>">
+											<h4 class="fullscreen-nav-submenu-category-heading">Corporate Services</h4>
+										</a>
 										<ul class="fullscreen-nav-submenu-category-list">
-											<li><a href="#">Conferences & Exhibitions</a></li>
-											<li><a href="#">Meeting Rooms & Workshops</a></li>
-											<li><a href="#">Government Events (B2G)</a></li>
-											<li><a href="#">VIP Majlis</a></li>
+											<li><a
+													href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Conferences
+													& Exhibitions</a></li>
+											<li><a
+													href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Meeting
+													Rooms & Workshops</a></li>
+											<li><a
+													href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Government
+													Events (B2G)</a></li>
+											<li><a
+													href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">VIP
+													Majlis</a></li>
 										</ul>
 									</div>
 									<div class="fullscreen-nav-submenu-category">
-										<h4 class="fullscreen-nav-submenu-category-heading">Weddings & Social Services
-										</h4>
-										<ul class="fullscreen-nav-submenu-category-list">
-											<li><a href="#">Female Packages</a></li>
-											<li><a href="#">Male Packages</a></li>
-										</ul>
+										<a href="<?php echo esc_url(home_url('/weddings-social-services')); ?>">
+											<h4 class="fullscreen-nav-submenu-category-heading">Weddings & Social
+												Services
+											</h4>
+											<ul class="fullscreen-nav-submenu-category-list">
+												<li><a
+														href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Female
+														Packages</a></li>
+												<li><a
+														href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Male
+														Packages</a></li>
+											</ul>
 									</div>
 									<div class="fullscreen-nav-submenu-category">
-										<h4 class="fullscreen-nav-submenu-category-heading">Catering Services</h4>
+										<a href="<?php echo esc_url(home_url('/catering-services')); ?>">
+											<h4 class="fullscreen-nav-submenu-category-heading">Catering Services</h4>
+										</a>
 										<ul class="fullscreen-nav-submenu-category-list">
-											<li><a href="#">On-site Catering</a></li>
-											<li><a href="#">Off-site Catering</a></li>
-											<li><a href="#">Seasonal & Ramadan Packages</a></li>
+											<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">On-site
+													Catering</a></li>
+											<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Off-site
+													Catering</a></li>
+											<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Seasonal
+													& Ramadan Packages</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</li>
 						<li class="fullscreen-nav-item">
-							<a href="<?php echo esc_url(home_url('/all-news')); ?>"
-								class="fullscreen-nav-link">Media Center</a>
+							<a href="<?php echo esc_url(home_url('/all-news')); ?>" class="fullscreen-nav-link">Media
+								Center</a>
 						</li>
 						<li class="fullscreen-nav-item">
 							<a href="<?php echo esc_url(home_url('/contact')); ?>" class="fullscreen-nav-link">Contact
@@ -340,5 +376,284 @@
 			</div>
 		</div>
 	</header>
+
+	<!-- Inline script to ensure menu toggle works on all pages -->
+	<script>
+		(function () {
+			'use strict';
+
+			// Mark as initialized immediately to prevent Header.js from attaching listeners
+			window.fullscreenMenuInitialized = true;
+
+			// Initialize menu toggle functionality immediately
+			function initMenuToggle() {
+				const menuIconScroll = document.getElementById('menuIconScroll');
+				const menuIconInitial = document.getElementById('menuIconInitial');
+				const fullscreenNav = document.getElementById('fullscreenNavMenu');
+				const fullscreenNavClose = document.getElementById('fullscreenNavClose');
+
+				if (!fullscreenNav) {
+					return;
+				}
+
+				// Function to open fullscreen menu
+				function openFullscreenMenu() {
+					// Wait for GSAP if not loaded yet
+					if (typeof gsap === 'undefined') {
+						// Retry after a short delay
+						setTimeout(function () {
+							if (typeof gsap !== 'undefined') {
+								openFullscreenMenu();
+							} else {
+								// Fallback if GSAP still not loaded - just show menu
+								fullscreenNav.classList.add('fullscreen-nav-open');
+								document.body.classList.add('fullscreen-nav-open');
+							}
+						}, 100);
+						return;
+					}
+
+					const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+					const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+					const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
+					const allGridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+					const gridSocialLinks = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social a');
+					const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+					if (!leftPanel || !rightPanel) {
+						fullscreenNav.classList.add('fullscreen-nav-open');
+						document.body.classList.add('fullscreen-nav-open');
+						return;
+					}
+
+					const regularGridSubs = Array.from(allGridSubs).filter(function (sub) {
+						return !sub.closest('.fullscreen-nav-grid-social');
+					});
+
+					fullscreenNav.classList.add('fullscreen-nav-open');
+					fullscreenNav.classList.add('animating');
+					document.body.classList.add('fullscreen-nav-open');
+
+					const isMobile = window.innerWidth <= 600;
+
+					if (isMobile) {
+						gsap.set(rightPanel, { x: '100%' });
+						gsap.set(menuItems, { opacity: 0, x: 30 });
+					} else {
+						gsap.set(leftPanel, { x: '-100%' });
+						gsap.set(rightPanel, { x: '100%' });
+						gsap.set(gridHeadings, { opacity: 0 });
+						gsap.set(regularGridSubs, { opacity: 0, y: -30 });
+						gsap.set(gridSocialLinks, { opacity: 0, y: -30 });
+						gsap.set(menuItems, { opacity: 0, x: 30 });
+					}
+
+					const tl = gsap.timeline({
+						onComplete: function () {
+							fullscreenNav.classList.remove('animating');
+						}
+					});
+
+					if (isMobile) {
+						tl.to(rightPanel, {
+							x: 0,
+							duration: 0.6,
+							ease: 'power2.out'
+						})
+							.to(menuItems, {
+								opacity: 1,
+								x: 0,
+								duration: 0.4,
+								ease: 'power2.out'
+							}, '-=0.2');
+					} else {
+						tl.to(leftPanel, {
+							x: 0,
+							duration: 0.8,
+							ease: 'power2.out'
+						})
+							.to(rightPanel, {
+								x: 0,
+								duration: 0.8,
+								ease: 'power2.out'
+							}, '-=0.8')
+							.to(gridHeadings, {
+								opacity: 1,
+								duration: 0.3,
+								ease: 'power2.out'
+							}, '-=0.4')
+							.to(regularGridSubs, {
+								opacity: 1,
+								y: 0,
+								duration: 0.4,
+								stagger: 0.05,
+								ease: 'power2.out'
+							}, '-=0.2')
+							.to(gridSocialLinks, {
+								opacity: 1,
+								y: 0,
+								duration: 0.4,
+								stagger: 0.05,
+								ease: 'power2.out'
+							}, '-=0.4')
+							.to(menuItems, {
+								opacity: 1,
+								x: 0,
+								duration: 0.4,
+								ease: 'power2.out'
+							}, '-=0.2');
+					}
+				}
+
+				// Function to close fullscreen menu
+				function closeFullscreenMenu() {
+					// Wait for GSAP if not loaded yet
+					if (typeof gsap === 'undefined') {
+						// Retry after a short delay
+						setTimeout(function () {
+							if (typeof gsap !== 'undefined') {
+								closeFullscreenMenu();
+							} else {
+								// Fallback if GSAP still not loaded
+								fullscreenNav.classList.remove('fullscreen-nav-open');
+								document.body.classList.remove('fullscreen-nav-open');
+							}
+						}, 100);
+						return;
+					}
+
+					const leftPanel = fullscreenNav.querySelector('.fullscreen-nav-left');
+					const rightPanel = fullscreenNav.querySelector('.fullscreen-nav-right');
+					const gridHeadings = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-heading');
+					const allGridSubs = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-sub');
+					const gridSocialLinks = fullscreenNav.querySelectorAll('.fullscreen-nav-grid-social a');
+					const menuItems = fullscreenNav.querySelector('.fullscreen-nav-menu-items');
+
+					if (!leftPanel || !rightPanel) {
+						fullscreenNav.classList.remove('fullscreen-nav-open');
+						document.body.classList.remove('fullscreen-nav-open');
+						return;
+					}
+
+					const regularGridSubs = Array.from(allGridSubs).filter(function (sub) {
+						return !sub.closest('.fullscreen-nav-grid-social');
+					});
+
+					const isMobile = window.innerWidth <= 600;
+
+					fullscreenNav.classList.add('animating');
+
+					const tl = gsap.timeline({
+						onComplete: function () {
+							fullscreenNav.classList.remove('fullscreen-nav-open');
+							fullscreenNav.classList.remove('animating');
+							document.body.classList.remove('fullscreen-nav-open');
+						}
+					});
+
+					if (isMobile) {
+						tl.to(menuItems, {
+							opacity: 0,
+							x: 30,
+							duration: 0.4,
+							ease: 'power2.in'
+						})
+							.to(rightPanel, {
+								x: '100%',
+								duration: 0.6,
+								ease: 'power2.out'
+							}, '-=0.2');
+					} else {
+						tl.to(menuItems, {
+							opacity: 0,
+							x: 30,
+							duration: 0.4,
+							ease: 'power2.in'
+						})
+							.to(gridSocialLinks, {
+								opacity: 0,
+								y: -30,
+								duration: 0.4,
+								ease: 'power2.in'
+							}, '-=0.2')
+							.to(regularGridSubs, {
+								opacity: 0,
+								y: -30,
+								duration: 0.4,
+								stagger: 0.05,
+								ease: 'power2.in'
+							}, '-=0.2')
+							.to(gridHeadings, {
+								opacity: 0,
+								duration: 0.3,
+								ease: 'power2.in'
+							}, '-=0.2')
+							.to(leftPanel, {
+								x: '-100%',
+								duration: 0.8,
+								ease: 'power2.out'
+							}, '-=0.2')
+							.to(rightPanel, {
+								x: '100%',
+								duration: 0.8,
+								ease: 'power2.out'
+							}, '-=0.8');
+					}
+				}
+
+				// Toggle function
+				function toggleFullscreenMenu(e) {
+					if (e) {
+						e.preventDefault();
+						e.stopPropagation();
+					}
+
+					// Prevent multiple rapid clicks during animation
+					if (fullscreenNav.classList.contains('animating')) {
+						return;
+					}
+
+					const isOpen = fullscreenNav.classList.contains('fullscreen-nav-open');
+
+					if (isOpen) {
+						closeFullscreenMenu();
+					} else {
+						openFullscreenMenu();
+					}
+				}
+
+				// Add event listeners (always add since we marked as initialized at top)
+				if (menuIconScroll) {
+					menuIconScroll.addEventListener('click', toggleFullscreenMenu);
+				}
+				if (menuIconInitial) {
+					menuIconInitial.addEventListener('click', toggleFullscreenMenu);
+				}
+				if (fullscreenNavClose) {
+					fullscreenNavClose.addEventListener('click', function (e) {
+						e.preventDefault();
+						e.stopPropagation();
+						closeFullscreenMenu();
+					});
+				}
+
+				// Close on escape key
+				document.addEventListener('keydown', function (event) {
+					if (event.key === 'Escape') {
+						if (fullscreenNav.classList.contains('fullscreen-nav-open')) {
+							closeFullscreenMenu();
+						}
+					}
+				});
+			}
+
+			// Initialize immediately if DOM is ready, otherwise wait
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', initMenuToggle);
+			} else {
+				initMenuToggle();
+			}
+		})();
+	</script>
 
 	<div id="content" class="site-content">

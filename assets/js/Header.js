@@ -240,6 +240,8 @@
 
 		/**
 		 * Close Fullscreen Navigation Menu
+		 * Note: This is now handled by inline script in header.php
+		 * Keeping this function for backward compatibility but it won't be called
 		 */
 		const closeFullscreenMenu = function() {
 			// Check if GSAP is available
@@ -341,6 +343,8 @@
 
 		/**
 		 * Open Fullscreen Navigation Menu with GSAP Animation
+		 * Note: This is now handled by inline script in header.php
+		 * Keeping this function for backward compatibility but it won't be called
 		 */
 		const openFullscreenMenu = function() {
 			// Check if GSAP is available
@@ -578,11 +582,15 @@
 		if (menuIcon) {
 			menuIcon.addEventListener('click', toggleMenu);
 		}
-		if (menuIconScroll) {
-			menuIconScroll.addEventListener('click', toggleFullscreenMenu);
-		}
-		if (menuIconInitial) {
-			menuIconInitial.addEventListener('click', toggleFullscreenMenu);
+		// Note: menuIconScroll and menuIconInitial are handled by inline script in header.php
+		// Only attach if inline script hasn't initialized (fallback)
+		if (!window.fullscreenMenuInitialized) {
+			if (menuIconScroll) {
+				menuIconScroll.addEventListener('click', toggleFullscreenMenu);
+			}
+			if (menuIconInitial) {
+				menuIconInitial.addEventListener('click', toggleFullscreenMenu);
+			}
 		}
 
 		// Initialize fullscreen submenu
