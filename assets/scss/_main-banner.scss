@@ -23,7 +23,7 @@ body.banner-animating {
 	display: flex;
 	align-items: center;
 	// overflow: hidden;
-	// max-height: 900px;
+	max-height: 900px;
 
 	// Dark overlay for better text readability
 	.main-banner-overlay {
@@ -32,18 +32,23 @@ body.banner-animating {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: linear-gradient(
-				180deg,
-				rgba(0, 0, 0, 0.3) 0%,
-				rgba(0, 0, 0, 0.5) 20%,
-				rgba(0, 0, 0, 0) 55%
-			),
-			linear-gradient(
-				0deg,
-				rgba(0, 0, 0, 0.6) 0%,
-				rgba(0, 0, 0, 0.5) 25%,
-				rgba(0, 0, 0, 0) 55%
-			);
+
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 37.44%, rgba(0, 0, 0, 0.5) 100%),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0) 27.83%, rgba(0, 0, 0, 0.27) 88%),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 57.11%);
+
+		// background-image: linear-gradient(
+		// 		180deg,
+		// 		rgba(0, 0, 0, 0.3) 0%,
+		// 		rgba(0, 0, 0, 0.5) 20%,
+		// 		rgba(0, 0, 0, 0) 55%
+		// 	),
+		// 	linear-gradient(
+		// 		0deg,
+		// 		rgba(0, 0, 0, 0.6) 0%,
+		// 		rgba(0, 0, 0, 0.5) 25%,
+		// 		rgba(0, 0, 0, 0) 55%
+		// 	);
 		z-index: 4;
 	}
 
@@ -162,7 +167,7 @@ body.banner-animating {
 	.main-banner-subtitle-wrapper {
 		flex: 0 0 auto;
 		text-align: right;
-		max-width: 400px;
+		max-width: 380px;
 
 		@media (max-width: 1200px) {
 			text-align: left;

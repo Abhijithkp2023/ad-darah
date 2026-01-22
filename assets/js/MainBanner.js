@@ -287,26 +287,19 @@
 		tl.to([bannerMaskRef, bannerMaskImgRef], {
 			scale: 2,
 			duration: 2,
-			ease: "power1.out", 
+			ease: "none", 
 			force3D: true, // Force hardware acceleration to prevent blur
 		});
-
-		// Opacity animation
-		// Scale animation duration: 4 seconds
-		// Opacity starts reducing 0.5s after animation starts (at 1.0s on timeline)
-		// Opacity reaches 0 at 50% of scale animation (2s into scale = 2.5s on timeline)
-		
-		// Opacity fade: starts at 1.0s (0.5s after animation start at 0.5s), reaches 0 at 2.5s (50% of 4s scale)
 		tl.to(
 			[bannerMaskRef, bannerMaskImgRef],
 			{
 				opacity: 0,
 				duration: 1.5, 
-				ease: "power2.out",
+				ease: "none",
 				force3D: true,
-				onComplete: reEnableScroll // Re-enable scrolling when mask animation completes
+				onComplete: reEnableScroll 
 			},
-			0.5// Start at 1.0s (0.5s after animation start at 0.5s)
+			0.5 
 		);
 
 		// Animate title from left to right (starts earlier, overlapping with mask fade)

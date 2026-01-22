@@ -4777,6 +4777,7 @@ body.banner-animating {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  max-height: 900px;
 }
 .main-banner-container .main-banner-overlay {
   position: absolute;
@@ -4784,7 +4785,7 @@ body.banner-animating {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 55%), linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0) 55%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 37.44%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 27.83%, rgba(0, 0, 0, 0.27) 88%), linear-gradient(180deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0) 57.11%);
   z-index: 4;
 }
 .main-banner-container .main-banner-mask {
@@ -4908,7 +4909,7 @@ body.banner-animating {
 .main-banner-container .main-banner-subtitle-wrapper {
   flex: 0 0 auto;
   text-align: right;
-  max-width: 400px;
+  max-width: 380px;
 }
 @media (max-width: 1200px) {
   .main-banner-container .main-banner-subtitle-wrapper {
@@ -12868,7 +12869,7 @@ body.banner-animating {
  */
 .whatsapp-button-container {
   position: fixed;
-  bottom: 250px;
+  bottom: 260px;
   right: -60px;
   left: 0;
   z-index: 1000;
@@ -12887,12 +12888,11 @@ body.banner-animating {
   position: relative;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #1FAF38 0%, #60D669 100%);
+  background-color: #60D668;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(31, 175, 56, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;

@@ -30,7 +30,7 @@ if (empty($where_ever_title) && empty($where_ever_content)) {
 $use_post_content = empty($where_ever_title) && empty($where_ever_content);
 ?>
 
-<section class="where-ever-content pb_80 pt_80">
+<section class="where-ever-content pb_100 pt_150">
   <div class="container">
     <div class="where_ever_text_wrapper">
       <div class="where-ever-left-block">
