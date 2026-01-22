@@ -4860,6 +4860,8 @@ body.banner-animating {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   perspective: 1000px;
+  opacity: 1;
+  visibility: visible;
 }
 .main-banner-container .main-banner-mask img,
 .main-banner-container .main-banner-mask .main-banner-mask-img {
@@ -4877,7 +4879,6 @@ body.banner-animating {
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   opacity: 1;
-  animation: svgScaleFade 2s ease-in-out forwards;
 }
 .main-banner-container .main-banner-mask svg.main-banner-mask-img {
   display: block;

@@ -228,8 +228,25 @@ function addarah_scripts()
 
 	// Enqueue component styles
 	if (is_front_page()) {
-		// Enqueue GSAP library (CDN)
+		// Enqueue GSAP library (CDN) - load in header for early access
 		wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+		
+		// Add inline script to initialize banner mask immediately (prevents flash)
+		wp_add_inline_script('gsap', '
+			(function() {
+				// Set initial state immediately to prevent flash
+				if (typeof gsap !== "undefined") {
+					document.addEventListener("DOMContentLoaded", function() {
+						const bannerMask = document.querySelector(".main-banner-mask");
+						const bannerMaskImg = document.querySelector(".main-banner-mask-img");
+						if (bannerMask && bannerMaskImg) {
+							gsap.set(bannerMask, { scale: 1, opacity: 1, force3D: true });
+							gsap.set(bannerMaskImg, { scale: 1, opacity: 1, force3D: true });
+						}
+					});
+				}
+			})();
+		', 'after');
 
 		// Enqueue GSAP ScrollTrigger plugin (CDN)
 		wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
@@ -248,7 +265,8 @@ function addarah_scripts()
 
 
 		// Enqueue component scripts
-		wp_enqueue_script('main-banner-script', get_template_directory_uri() . '/assets/js/MainBanner.js', array('gsap'), _S_VERSION, true);
+		// Load MainBanner.js in header (false) to prevent flash - needs to run before page renders
+		wp_enqueue_script('main-banner-script', get_template_directory_uri() . '/assets/js/MainBanner.js', array('gsap'), _S_VERSION, false);
 		wp_enqueue_script('banner-script', get_template_directory_uri() . '/assets/js/Banner.js', array('gsap', 'swiper-js'), _S_VERSION, true);
 		wp_enqueue_script('home-video-script', get_template_directory_uri() . '/assets/js/HomeVideo.js', array('gsap', 'gsap-scrolltrigger'), _S_VERSION, true);
 		wp_enqueue_script('who-we-are-script', get_template_directory_uri() . '/assets/js/WhoWeAre.js', array('gsap', 'gsap-scrolltrigger'), _S_VERSION, true);

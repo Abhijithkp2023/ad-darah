@@ -164,6 +164,12 @@
 	 * Then animates title, subtitle, and form in sequence
 	 */
 	const initMainBannerAnimations = function (bannerMaskRef, bannerMaskImgRef) {
+		// Mark container as JS ready to show content
+		const bannerContainer = document.querySelector(".main-banner-container");
+		if (bannerContainer) {
+			bannerContainer.classList.add('js-ready');
+		}
+		
 		// Get elements for text animations
 		const titleElement = document.querySelector(".main-banner-title");
 		const subtitleElement = document.querySelector(".main-banner-subtitle");
@@ -342,6 +348,16 @@
 	 * Wait for DOM and GSAP to be ready
 	 */
 	const waitForReady = function () {
+		// Try to initialize immediately if GSAP is already loaded
+		if (typeof gsap !== "undefined") {
+			// If DOM is ready, initialize immediately
+			if (document.readyState === "complete" || document.readyState === "interactive") {
+				initMainBanner();
+				return;
+			}
+		}
+		
+		// Otherwise wait for DOM
 		if (document.readyState === "loading") {
 			document.addEventListener("DOMContentLoaded", function () {
 				// Wait a bit for GSAP to load if it's loaded via script tag
@@ -352,7 +368,7 @@
 						// Retry if GSAP not loaded yet
 						retryInit();
 					}
-				}, 100);
+				}, 50); // Reduced delay
 			});
 		} else {
 			// DOM already loaded
@@ -362,7 +378,7 @@
 				} else {
 					retryInit();
 				}
-			}, 100);
+			}, 50); // Reduced delay
 		}
 	};
 

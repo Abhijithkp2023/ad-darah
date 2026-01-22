@@ -70,6 +70,9 @@ body.banner-animating {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		perspective: 1000px; // Enable 3D rendering context
+		// Ensure mask is visible initially to cover banner
+		opacity: 1;
+		visibility: visible;
 
 		img,
 		.main-banner-mask-img {
@@ -87,7 +90,7 @@ body.banner-animating {
 			transform: translate3d(0, 0, 0); // Force hardware acceleration
 			-webkit-transform: translate3d(0, 0, 0); // WebKit hardware acceleration
 			opacity: 1;
-			animation: svgScaleFade 2s ease-in-out forwards;
+			// Animation removed - handled by GSAP in MainBanner.js
 		}
 
 		// SVG specific styles
@@ -120,6 +123,7 @@ body.banner-animating {
 		flex-direction: column;
 		justify-content: space-between;
 		padding: 60px 0;
+		// Content is visible but behind mask (mask z-index 1001 covers it)
 
 		@media (max-width: 1200px) {
 			margin-top: 200px;
