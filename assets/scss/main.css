@@ -3783,6 +3783,34 @@ body.overflow_body_hidden {
     margin: 0 0 15px 0;
   }
 }
+.fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-category-with-arrow {
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+}
+.fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-category-with-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 20px;
+  background-image: url("../images/arrow_right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.3s ease;
+}
+@media only screen and (max-width: 1060px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-category-with-arrow::after {
+    width: 12px;
+    height: 20px;
+  }
+}
+.fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category a:hover .fullscreen-nav-category-with-arrow::after {
+  transform: translateY(-50%) translateX(5px);
+}
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
   list-style: none;
   margin: 0;
@@ -4015,6 +4043,28 @@ body.overflow_body_hidden {
     margin-bottom: 12px;
     margin-top: 0;
   }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-category-with-arrow {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-category-with-arrow::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 20px;
+    background-image: url("../images/arrow_right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.3s ease;
+  }
+  .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category a:hover .fullscreen-nav-category-with-arrow::after {
+    transform: translateY(-50%) translateX(5px);
+  }
   .fullscreen-nav-menu .fullscreen-nav-right .fullscreen-nav-menu-items .fullscreen-nav-list .fullscreen-nav-item .fullscreen-nav-submenu-data-mobile .fullscreen-nav-submenu-categories .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
     list-style: none;
     margin: 0;
@@ -4212,6 +4262,7 @@ body.fullscreen-nav-open {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 1px;
 }
 .footer .footer-link-list .footer-link-column .footer-link-items {
   list-style: none;
@@ -4340,6 +4391,7 @@ body.fullscreen-nav-open {
   display: flex;
   align-items: center;
   overflow: hidden;
+  min-height: 471px;
 }
 .contact-us-container::before {
   content: "";
@@ -4348,12 +4400,12 @@ body.fullscreen-nav-open {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(0deg, rgba(140, 109, 51, 0.6), rgba(140, 109, 51, 0.6)), linear-gradient(90deg, rgba(199, 165, 94, 0) 17.08%, #BD9E5A 81.87%);
   z-index: 1;
 }
 .contact-us-container .container {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
 }
 .contact-us-container .contact-us-title {
@@ -7772,7 +7824,7 @@ body.banner-animating {
 .image-text-section .image-text-left {
   width: 42.3%;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 24px;
   overflow: hidden;
 }
 .image-text-section .image-text-left img {

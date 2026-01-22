@@ -1194,6 +1194,38 @@ body.overflow_body_hidden {
 
 					}
 
+					// Arrow icon for category headings using pseudo-element
+					.fullscreen-nav-category-with-arrow {
+						position: relative;
+						display: inline-block;
+						padding-right: 30px;
+
+						&::after {
+							content: '';
+							position: absolute;
+							right: 0;
+							top: 50%;
+							transform: translateY(-50%);
+							width: 14px;
+							height: 20px;
+							background-image: url("../images/arrow_right.svg");
+							background-repeat: no-repeat;
+							background-position: center;
+							background-size: contain;
+							transition: transform 0.3s ease;
+
+							@media #{$media-1060} {
+								width: 12px;
+								height: 20px;
+							}
+						}
+					}
+
+					// Hover effect on link
+					a:hover .fullscreen-nav-category-with-arrow::after {
+						transform: translateY(-50%) translateX(5px);
+					}
+
 					.fullscreen-nav-submenu-category-list {
 						list-style: none;
 						margin: 0;
@@ -1395,6 +1427,33 @@ body.overflow_body_hidden {
 										color: #b64910;
 										margin-bottom: 12px;
 										margin-top: 0;
+									}
+
+									// Arrow icon for mobile category headings using pseudo-element
+									.fullscreen-nav-category-with-arrow {
+										position: relative;
+										display: inline-block;
+										padding-right: 20px;
+
+										&::after {
+											content: '';
+											position: absolute;
+											right: 0;
+											top: 50%;
+											transform: translateY(-50%);
+											width: 12px;
+											height: 20px;
+											background-image: url("../images/arrow_right.svg");
+											background-repeat: no-repeat;
+											background-position: center;
+											background-size: contain;
+											transition: transform 0.3s ease;
+										}
+									}
+
+									// Hover effect on mobile link
+									a:hover .fullscreen-nav-category-with-arrow::after {
+										transform: translateY(-50%) translateX(5px);
 									}
 									
 									.fullscreen-nav-submenu-category-list {

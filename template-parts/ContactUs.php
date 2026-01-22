@@ -18,7 +18,7 @@ $contact_title = get_query_var('contact_title', get_theme_mod('contact_title', '
 $contact_description = get_query_var('contact_description', get_theme_mod('contact_description', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'));
 $contact_button_text = get_query_var('contact_button_text', get_theme_mod('contact_button_text', 'Contact Us'));
 $contact_button_link = get_query_var('contact_button_link', get_theme_mod('contact_button_link', '#'));
-$contact_bg_image = get_query_var('contact_bg_image', get_theme_mod('contact_bg_image', get_template_directory_uri() . '/assets/images/contact-bg.jpg'));
+$contact_bg_image = get_query_var('contact_bg_image', get_theme_mod('contact_bg_image', get_template_directory_uri() . '/assets/images/contact-bg.png'));
 ?>
 
 <section class="contact-us-container pb_120 pt_120"

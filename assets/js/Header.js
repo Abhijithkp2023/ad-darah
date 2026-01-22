@@ -24,9 +24,13 @@
 		let isScrolled = false;
 		let isMenuOpen = false;
 		const isHomePage = document.body.classList.contains('home');
+		// Check for Landing Page 2 - WordPress adds class like 'page-template-page-landing-2'
+		const bodyClasses = document.body.className.split(' ');
+		const isLandingPage2 = bodyClasses.some(cls => cls.includes('landing-2') || cls.includes('page-landing-2'));
 		const initialHeaderContainer = document.getElementById('headerInitialContainer');
 		const scrollHeaderContainer = document.getElementById('headerScrollContainer');
-		const SCROLL_THRESHOLD = 700;
+		// Home page and Landing Page 2: 700px, Other pages: 500px
+		const SCROLL_THRESHOLD = (isHomePage || isLandingPage2) ? 700 : 500;
 
 		// Show header immediately on non-home pages (pages without Banner component)
 		if (!isHomePage) {
@@ -56,7 +60,7 @@
 			
 			const scrollY = window.scrollY || window.pageYOffset;
 			
-			// Handle initial header visibility (700px threshold)
+			// Handle initial header visibility (dynamic threshold: 700px for home/landing-2, 500px for others)
 			if (scrollY >= SCROLL_THRESHOLD) {
 				if (initialHeaderContainer) {
 					initialHeaderContainer.classList.add('header-inactive');
@@ -163,7 +167,7 @@
 					return;
 				}
 				
-				// Handle initial header visibility (700px threshold)
+				// Handle initial header visibility (dynamic threshold: 700px for home/landing-2, 500px for others)
 				if (scroll >= SCROLL_THRESHOLD) {
 					if (initialHeaderContainer) {
 						initialHeaderContainer.classList.add('header-inactive');

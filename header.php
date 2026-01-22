@@ -262,7 +262,11 @@
 						<div class="fullscreen-nav-submenu-wrapper" data-submenu-id="services">
 							<div class="fullscreen-nav-submenu-categories">
 								<div class="fullscreen-nav-submenu-category">
-									<h4 class="fullscreen-nav-submenu-category-heading">Corporate Services</h4>
+									<a href="<?php echo esc_url(home_url('/corporate-services')); ?>">
+										<h4
+											class="fullscreen-nav-submenu-category-heading fullscreen-nav-category-with-arrow">
+											Corporate Services</h4>
+									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
 										<li><a href="#">Conferences & Exhibitions</a></li>
 										<li><a href="#">Meeting Rooms & Workshops</a></li>
@@ -271,14 +275,22 @@
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
-									<h4 class="fullscreen-nav-submenu-category-heading">Weddings & Social Services</h4>
+									<a href="<?php echo esc_url(home_url('/weddings-social-services')); ?>">
+										<h4
+											class="fullscreen-nav-submenu-category-heading fullscreen-nav-category-with-arrow">
+											Weddings & Social Services</h4>
+									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
 										<li><a href="#">Female Packages</a></li>
 										<li><a href="#">Male Packages</a></li>
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
-									<h4 class="fullscreen-nav-submenu-category-heading">Catering Services</h4>
+									<a href="<?php echo esc_url(home_url('/catering-services')); ?>">
+										<h4
+											class="fullscreen-nav-submenu-category-heading fullscreen-nav-category-with-arrow">
+											Catering Services</h4>
+									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
 										<li><a href="#">On-site Catering</a></li>
 										<li><a href="#">Off-site Catering</a></li>
@@ -316,7 +328,9 @@
 								<div class="fullscreen-nav-submenu-categories">
 									<div class="fullscreen-nav-submenu-category">
 										<a href="<?php echo esc_url(home_url('/corporate-services')); ?>">
-											<h4 class="fullscreen-nav-submenu-category-heading">Corporate Services</h4>
+											<h4
+												class="fullscreen-nav-submenu-category-heading fullscreen-nav-category-with-arrow">
+												Corporate Services</h4>
 										</a>
 										<ul class="fullscreen-nav-submenu-category-list">
 											<li><a
@@ -349,7 +363,9 @@
 									</div>
 									<div class="fullscreen-nav-submenu-category">
 										<a href="<?php echo esc_url(home_url('/catering-services')); ?>">
-											<h4 class="fullscreen-nav-submenu-category-heading">Catering Services</h4>
+											<h4
+												class="fullscreen-nav-submenu-category-heading fullscreen-nav-category-with-arrow">
+												Catering Services</h4>
 										</a>
 										<ul class="fullscreen-nav-submenu-category-list">
 											<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">On-site
