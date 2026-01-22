@@ -280,22 +280,50 @@
 		tl.to([bannerMaskRef, bannerMaskImgRef], {
 			scale: 8,
 			duration: 2,
-			ease: "power1.inOut", 
+			ease: "power1.out", 
 			force3D: true, // Force hardware acceleration to prevent blur
 		});
 
-		// Add opacity animation that starts AFTER 50% of scale duration (after 1 second)
-		// Scale duration is 2 seconds, so 50% = 1 second
-		// Start opacity fade at 1 second and fade over the remaining 1 second
+		// Opacity animation with specific keyframe values
+		// Total animation duration: 1.5 seconds
+		// At 50% (0.75s): opacity 0.8
+		// At 80% (1.2s): opacity 0.2
+		// At 100% (1.5s): opacity 0
+		
+		// First keyframe: fade from 1 to 0.8, reaching 0.8 exactly at 50% (0.75s)
+		tl.to(
+			[bannerMaskRef, bannerMaskImgRef],
+			{
+				opacity: 0.8,
+				duration: 0.05, // Quick transition to ensure 0.8 at exactly 0.75s
+				ease: "power1.out",
+				force3D: true,
+			},
+			0.7 // Start slightly before 0.75s to reach 0.8 at 0.75s
+		);
+		
+		// Second keyframe: fade from 0.8 to 0.2, reaching 0.2 exactly at 80% (1.2s)
+		tl.to(
+			[bannerMaskRef, bannerMaskImgRef],
+			{
+				opacity: 0.2,
+				duration: 0.45, // From 0.75s to 1.2s (fade from 0.8 to 0.2)
+				ease: "power2.out",
+				force3D: true,
+			},
+			0.75 // Start at 0.75 seconds (50% mark)
+		);
+		
+		// Final keyframe: fade from 0.2 to 0, reaching 0 exactly at 100% (1.5s)
 		tl.to(
 			[bannerMaskRef, bannerMaskImgRef],
 			{
 				opacity: 0,
-				duration: 1, // Fade over 1 second (the remaining half of the scale animation)
-				ease: "power2.in", // Fade out easing
+				duration: 0.3, // From 1.2s to 1.5s (fade from 0.2 to 0)
+				ease: "power2.out",
 				force3D: true,
 			},
-			1 // Start at 1 second (50% of the 2 second scale duration)
+			1.2 // Start at 1.2 seconds (80% mark)
 		);
 
 		// Animate title from left to right (starts earlier, overlapping with mask fade)
@@ -305,7 +333,7 @@
 				{
 					x: 0,
 					opacity: 1,
-					duration: 0.8,
+					duration: 1,
 					ease: "power2.out",
 					force3D: true,
 				},
@@ -320,7 +348,7 @@
 				{
 					scaleY: 1,
 					opacity: 1,
-					duration: 0.6,
+					duration: 1,
 					ease: "power2.out",
 					force3D: true,
 				},
@@ -335,7 +363,7 @@
 				{
 					y: 0,
 					opacity: 1,
-					duration: 0.8,
+					duration: 1,
 					ease: "power2.out",
 					force3D: true,
 				},
@@ -346,39 +374,45 @@
 
 	/**
 	 * Wait for DOM and GSAP to be ready
+	 * Try to initialize as early as possible to prevent flash
 	 */
 	const waitForReady = function () {
-		// Try to initialize immediately if GSAP is already loaded
-		if (typeof gsap !== "undefined") {
-			// If DOM is ready, initialize immediately
-			if (document.readyState === "complete" || document.readyState === "interactive") {
-				initMainBanner();
-				return;
+		// Function to try initialization
+		const tryInit = function() {
+			if (typeof gsap !== "undefined") {
+				// Check if elements exist
+				const bannerMask = document.querySelector(".main-banner-mask");
+				const bannerMaskImg = document.querySelector(".main-banner-mask-img");
+				if (bannerMask && bannerMaskImg) {
+					// Set initial state immediately to prevent flash
+					gsap.set(bannerMask, { scale: 1, opacity: 1, force3D: true });
+					gsap.set(bannerMaskImg, { scale: 1, opacity: 1, force3D: true });
+					// Then initialize full animation
+					initMainBanner();
+					return true;
+				}
 			}
+			return false;
+		};
+		
+		// Try immediately if GSAP and DOM are ready
+		if (tryInit()) {
+			return;
 		}
 		
-		// Otherwise wait for DOM
+		// If DOM is loading, wait for it
 		if (document.readyState === "loading") {
 			document.addEventListener("DOMContentLoaded", function () {
-				// Wait a bit for GSAP to load if it's loaded via script tag
-				setTimeout(function () {
-					if (typeof gsap !== "undefined") {
-						initMainBanner();
-					} else {
-						// Retry if GSAP not loaded yet
-						retryInit();
-					}
-				}, 50); // Reduced delay
-			});
-		} else {
-			// DOM already loaded
-			setTimeout(function () {
-				if (typeof gsap !== "undefined") {
-					initMainBanner();
-				} else {
+				if (!tryInit()) {
+					// Retry if GSAP not loaded yet
 					retryInit();
 				}
-			}, 50); // Reduced delay
+			});
+		} else {
+			// DOM already loaded, wait for GSAP
+			if (!tryInit()) {
+				retryInit();
+			}
 		}
 	};
 

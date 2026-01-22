@@ -144,7 +144,7 @@ function addarah_scripts()
 {
 	// Enqueue main.css (Footer component styles)
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/scss/main.css', array(), _S_VERSION);
-	
+
 	// Enqueue WhatsApp button styles (separate file until SCSS is compiled)
 	wp_enqueue_style('whatsapp-button-style', get_template_directory_uri() . '/assets/css/whatsapp-button.css', array(), _S_VERSION);
 
@@ -171,7 +171,7 @@ function addarah_scripts()
 
 	// Enqueue WhatsApp floating button script (loaded on all pages)
 	wp_enqueue_script('whatsapp-button-script', get_template_directory_uri() . '/assets/js/WhatsAppButton.js', array(), _S_VERSION, true);
-	
+
 	// Enqueue Form Popup script (loaded on all pages, depends on Choices.js)
 	wp_enqueue_script('form-popup-script', get_template_directory_uri() . '/assets/js/FormPopup.js', array('choices-js'), _S_VERSION, true);
 
@@ -222,7 +222,7 @@ function addarah_scripts()
 	if (!wp_script_is('swiper-js', 'enqueued')) {
 		wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
 	}
-	
+
 	// Enqueue RelatedNews script globally (available on all pages)
 	wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
 
@@ -230,7 +230,7 @@ function addarah_scripts()
 	if (is_front_page()) {
 		// Enqueue GSAP library (CDN) - load in header for early access
 		wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
-		
+
 		// Add inline script to initialize banner mask immediately (prevents flash)
 		wp_add_inline_script('gsap', '
 			(function() {
@@ -391,13 +391,13 @@ function addarah_scripts()
 
 		wp_enqueue_script('venue-at-a-glance-script', get_template_directory_uri() . '/assets/js/VenueAtAGlance.js', array('swiper-js'), _S_VERSION, true);
 		wp_enqueue_script('timeline-slider-script', get_template_directory_uri() . '/assets/js/TimelineSlider.js', array('swiper-js'), _S_VERSION, true);
-		
+
 		// Enqueue ServicesStack script (depends on GSAP and ScrollTrigger)
 		wp_enqueue_script('services-stack-script', get_template_directory_uri() . '/assets/js/ServicesStack.js', array('gsap', 'gsap-scrolltrigger'), _S_VERSION, true);
-		
+
 		// Enqueue DualSlider script (depends on Swiper)
 		wp_enqueue_script('dual-slider-script', get_template_directory_uri() . '/assets/js/DualSlider.js', array('swiper-js'), _S_VERSION, true);
-		
+
 		// Enqueue Statistics script for number animation
 		wp_enqueue_script('statistics-script', get_template_directory_uri() . '/assets/js/Statistics.js', array(), _S_VERSION, true);
 
@@ -405,7 +405,7 @@ function addarah_scripts()
 
 	// Load scripts for Landing 2 page
 	$is_landing_2_page = is_page_template('page-landing-2.php');
-	
+
 	if ($is_landing_2_page) {
 		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
 		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
