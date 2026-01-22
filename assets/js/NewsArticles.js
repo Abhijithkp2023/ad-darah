@@ -61,22 +61,27 @@
 			breakpoints: {
 				0: {
 					slidesPerView: 1,
-					spaceBetween: 30,
+					spaceBetween: 15,
 					centeredSlides: true,
 				},
 				600: {
 					slidesPerView: 1.5,
-					spaceBetween: 30,
+					spaceBetween: 15,
 					centeredSlides: true,
 				},
 				1024: {
 					slidesPerView: 2,
-					spaceBetween: 30,
+					spaceBetween: 15,
 					centeredSlides: true,
 				},
 				1400: {
-					slidesPerView: 3,
-					spaceBetween: 30,
+					slidesPerView: 2.6,
+					spaceBetween: 15,
+					centeredSlides: true,
+				},
+				1600: {
+					slidesPerView: 3.5,
+					spaceBetween: 10,
 					centeredSlides: true,
 				},
 			},

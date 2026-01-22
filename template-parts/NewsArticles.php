@@ -49,38 +49,40 @@
 						<div class="news-article-card">
 							<div class="news-article-image"
 								style="background-image: url('<?php echo esc_url($news_images[$image_index]); ?>');">
-								<div class="news-article-overlay"></div>
-								<div class="news-article-content">
-									<div class="news-article-left">
-										<div class="news-article-date">
-											<?php echo esc_html($news_data[$data_index]['date']); ?></div>
-										<h3 class="news-article-heading">
-											<?php echo esc_html($news_data[$data_index]['heading']); ?></h3>
+							</div>
+							<div class="news-article-overlay"></div>
+							<div class="news-article-content">
+								<div class="news-article-left">
+									<div class="news-article-date">
+										<?php echo esc_html($news_data[$data_index]['date']); ?>
 									</div>
-									<div class="news-article-right">
-										<a href="<?php echo esc_url(home_url('/press-release-detail')); ?>" class="news-article-learn-more">
-											<span class="news-article-learn-text">Learn More</span>
-											<span class="news-article-learn-icon">
-												<svg width="34" height="34" viewBox="0 0 34 34" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<rect x="0.617143" y="32.7086" width="32.0914" height="32.0914"
-														rx="16.0457" transform="rotate(-90 0.617143 32.7086)" stroke="currentColor"
-														stroke-width="1.23429" />
-													<path d="M10.0361 16.6636H23.2906" stroke="currentColor" stroke-width="1.23429"
-														stroke-linecap="round" stroke-linejoin="round" />
-													<path d="M19.5035 12.8766L23.2906 16.6636" stroke="currentColor"
-														stroke-width="1.23429" stroke-linecap="round"
-														stroke-linejoin="round" />
-													<path d="M19.5029 20.4507L23.2899 16.6637" stroke="currentColor"
-														stroke-width="1.23429" stroke-linecap="round"
-														stroke-linejoin="round" />
-												</svg>
+									<h3 class="news-article-heading">
+										<?php echo esc_html($news_data[$data_index]['heading']); ?>
+									</h3>
+								</div>
+								<div class="news-article-right">
+									<a href="<?php echo esc_url(home_url('/press-release-detail')); ?>"
+										class="news-article-learn-more">
+										<span class="news-article-learn-text">Learn More</span>
+										<span class="news-article-learn-icon">
+											<svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<rect x="0.617143" y="32.7086" width="32.0914" height="32.0914" rx="16.0457"
+													transform="rotate(-90 0.617143 32.7086)" stroke="currentColor"
+													stroke-width="1.23429" />
+												<path d="M10.0361 16.6636H23.2906" stroke="currentColor"
+													stroke-width="1.23429" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M19.5035 12.8766L23.2906 16.6636" stroke="currentColor"
+													stroke-width="1.23429" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M19.5029 20.4507L23.2899 16.6637" stroke="currentColor"
+													stroke-width="1.23429" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
 
-											</span>
-										</a>
-									</div>
+										</span>
+									</a>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				<?php endfor; ?>
