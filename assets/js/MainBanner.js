@@ -232,7 +232,7 @@
 		// Set initial states for text elements (hidden)
 		if (titleElement) {
 			gsap.set(titleElement, {
-				x: -100,
+				x: -200,
 				opacity: 0,
 				force3D: true,
 			});
@@ -255,83 +255,58 @@
 			});
 		}
 
+		// Function to re-enable scrolling (called after mask animation completes)
+		const reEnableScroll = function() {
+			// Remove event listeners
+			window.removeEventListener("scroll", preventScroll);
+			window.removeEventListener("wheel", preventScroll);
+			window.removeEventListener("touchmove", preventScroll);
+			window.removeEventListener("keydown", preventKeyboardScroll);
+			
+			// Re-enable body scroll
+			html.style.overflow = "";
+			body.style.overflow = "";
+			html.classList.remove("banner-animating");
+			body.classList.remove("banner-animating");
+			
+			// Restore scroll position and body styles
+			body.style.top = "";
+			body.style.position = "";
+			body.style.width = "";
+			window.scrollTo(0, scrollY);
+		};
+
 		// Create animation timeline
 		const tl = gsap.timeline({
 			delay: 0.5, // Small delay before animation starts
-			onComplete: function () {
-				// Remove event listeners first
-				window.removeEventListener("scroll", preventScroll);
-				window.removeEventListener("wheel", preventScroll);
-				window.removeEventListener("touchmove", preventScroll);
-				window.removeEventListener("keydown", preventKeyboardScroll);
-				
-				// Re-enable body scroll after animation completes
-				html.style.overflow = "";
-				body.style.overflow = "";
-				html.classList.remove("banner-animating");
-				body.classList.remove("banner-animating");
-				
-				// Restore scroll position and body styles
-				body.style.top = "";
-				body.style.position = "";
-				body.style.width = "";
-				window.scrollTo(0, scrollY);
-				
-				// Animation complete
-				console.log("MainBanner: All animations completed");
-			},
 		});
 
 		// Animate scale from 1 (100%) to 8 (800%) for both mask and image (covering the image)
 		// force3D: true ensures hardware acceleration and crisp rendering during animation
 		// Duration: 2 seconds
 		tl.to([bannerMaskRef, bannerMaskImgRef], {
-			scale: 8,
+			scale: 2,
 			duration: 2,
 			ease: "power1.out", 
 			force3D: true, // Force hardware acceleration to prevent blur
 		});
 
-		// Opacity animation with specific keyframe values
-		// Total animation duration: 1.5 seconds
-		// At 50% (0.75s): opacity 0.8
-		// At 80% (1.2s): opacity 0.2
-		// At 100% (1.5s): opacity 0
+		// Opacity animation
+		// Scale animation duration: 4 seconds
+		// Opacity starts reducing 0.5s after animation starts (at 1.0s on timeline)
+		// Opacity reaches 0 at 50% of scale animation (2s into scale = 2.5s on timeline)
 		
-		// First keyframe: fade from 1 to 0.8, reaching 0.8 exactly at 50% (0.75s)
-		tl.to(
-			[bannerMaskRef, bannerMaskImgRef],
-			{
-				opacity: 0.8,
-				duration: 0.05, // Quick transition to ensure 0.8 at exactly 0.75s
-				ease: "power1.out",
-				force3D: true,
-			},
-			0.7 // Start slightly before 0.75s to reach 0.8 at 0.75s
-		);
-		
-		// Second keyframe: fade from 0.8 to 0.2, reaching 0.2 exactly at 80% (1.2s)
-		tl.to(
-			[bannerMaskRef, bannerMaskImgRef],
-			{
-				opacity: 0.2,
-				duration: 0.45, // From 0.75s to 1.2s (fade from 0.8 to 0.2)
-				ease: "power2.out",
-				force3D: true,
-			},
-			0.75 // Start at 0.75 seconds (50% mark)
-		);
-		
-		// Final keyframe: fade from 0.2 to 0, reaching 0 exactly at 100% (1.5s)
+		// Opacity fade: starts at 1.0s (0.5s after animation start at 0.5s), reaches 0 at 2.5s (50% of 4s scale)
 		tl.to(
 			[bannerMaskRef, bannerMaskImgRef],
 			{
 				opacity: 0,
-				duration: 0.3, // From 1.2s to 1.5s (fade from 0.2 to 0)
+				duration: 1.5, 
 				ease: "power2.out",
 				force3D: true,
+				onComplete: reEnableScroll // Re-enable scrolling when mask animation completes
 			},
-			1.2 // Start at 1.2 seconds (80% mark)
+			0.5// Start at 1.0s (0.5s after animation start at 0.5s)
 		);
 
 		// Animate title from left to right (starts earlier, overlapping with mask fade)
@@ -340,12 +315,12 @@
 				titleElement,
 				{
 					x: 0,
-					opacity: 1,
+					opacity: 1.5,
 					duration: 1,
 					ease: "power2.out",
 					force3D: true,
 				},
-				"-=0.8"
+				"-=0.4"
 			); // Start 0.8 seconds before mask animation ends (overlaps with opacity fade)
 		}
 
