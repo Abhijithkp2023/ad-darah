@@ -58,7 +58,7 @@
 											<?php echo esc_html($news_data[$data_index]['heading']); ?></h3>
 									</div>
 									<div class="news-article-right">
-										<a href="#" class="news-article-learn-more">
+										<a href="<?php echo esc_url(home_url('/press-release-detail')); ?>" class="news-article-learn-more">
 											<span class="news-article-learn-text">Learn More</span>
 											<span class="news-article-learn-icon">
 												<svg width="34" height="34" viewBox="0 0 34 34" fill="none"

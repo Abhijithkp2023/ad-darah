@@ -219,12 +219,14 @@ header.main-header,
 			align-items: center;
 			justify-content: center;
 			width: auto;
-			height: 24px;
+			height: 18px;
 			cursor: pointer;
 			transition: opacity 0.3s ease;
+
 			@media #{$media-700} {
 				height:17px;
 			}	
+			
 			img {
 				width: 100%;
 				height: 100%;

@@ -324,7 +324,7 @@
 				{
 					scaleY: 1,
 					opacity: 1,
-					duration: 1,
+					duration: 0.9,
 					ease: "power2.out",
 					force3D: true,
 				},
@@ -338,7 +338,7 @@
 				formElement,
 				{
 					y: 0,
-					opacity: 1,
+					opacity: 0.9,
 					duration: 1,
 					ease: "power2.out",
 					force3D: true,
