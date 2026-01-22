@@ -31,12 +31,13 @@
 				isHovered = true;
 				button.classList.add('hovered');
 				
-				// Get mouse position relative to button
+				// Get button dimensions
 				const rect = button.getBoundingClientRect();
-				mouseX = e.clientX - rect.left;
-				mouseY = e.clientY - rect.top;
+				// Always position circle at bottom center of button
+				mouseX = rect.width / 2; // Center horizontally
+				mouseY = rect.height; // Bottom vertically
 				
-				// Position circle at mouse location and explode
+				// Position circle at bottom center and explode
 				circle.style.left = mouseX + 'px';
 				circle.style.top = mouseY + 'px';
 				circle.classList.remove('desplode-circle');
@@ -48,12 +49,13 @@
 				isHovered = false;
 				button.classList.remove('hovered');
 				
-				// Get mouse position relative to button
+				// Get button dimensions
 				const rect = button.getBoundingClientRect();
-				mouseX = e.clientX - rect.left;
-				mouseY = e.clientY - rect.top;
+				// Always position circle at bottom center of button (same as enter)
+				mouseX = rect.width / 2; // Center horizontally
+				mouseY = rect.height; // Bottom vertically
 				
-				// Position circle at mouse location and desplode
+				// Position circle at bottom center and desplode
 				circle.style.left = mouseX + 'px';
 				circle.style.top = mouseY + 'px';
 				circle.classList.remove('explode-circle');
