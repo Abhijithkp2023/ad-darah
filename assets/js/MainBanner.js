@@ -175,7 +175,7 @@
 		const subtitleElement = document.querySelector(".main-banner-subtitle");
 		const formElement = document.querySelector(".main-banner-form");
 
-		// Disable body scroll at start of animation using CSS class
+		// Disable body scroll at start of animation
 		const body = document.body;
 		const html = document.documentElement;
 		
@@ -198,10 +198,14 @@
 			}
 		};
 		
-		// Apply classes and styles
+		// Apply overflow hidden and lock scroll position
+		html.style.overflow = "hidden";
+		body.style.overflow = "hidden";
 		html.classList.add("banner-animating");
 		body.classList.add("banner-animating");
 		body.style.top = `-${scrollY}px`;
+		body.style.position = "fixed";
+		body.style.width = "100%";
 		
 		// Add event listeners to prevent scrolling
 		window.addEventListener("scroll", preventScroll, { passive: false });
@@ -262,11 +266,15 @@
 				window.removeEventListener("keydown", preventKeyboardScroll);
 				
 				// Re-enable body scroll after animation completes
+				html.style.overflow = "";
+				body.style.overflow = "";
 				html.classList.remove("banner-animating");
 				body.classList.remove("banner-animating");
 				
-				// Restore scroll position
+				// Restore scroll position and body styles
 				body.style.top = "";
+				body.style.position = "";
+				body.style.width = "";
 				window.scrollTo(0, scrollY);
 				
 				// Animation complete

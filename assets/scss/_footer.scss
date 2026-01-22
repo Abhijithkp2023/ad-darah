@@ -36,7 +36,7 @@
           width: 100%;
         }
       }
-      @media #{$media-1060} {
+      @media (max-width: 1250px) {
          flex-direction: column;
       }
     }
@@ -102,10 +102,12 @@
     flex-direction: column;
     gap: 22px;
     min-width: 300px;
-    
+
     @media #{$media-1060} {
-      min-width: 100%;
+      max-width: 300px;
     }
+
+    
     .footer-newsletter-heading {
       color: #c5b17f;
       @include px-rem(24);
@@ -144,6 +146,11 @@
 
       .footer-newsletter-button {
       min-width: 150px;
+
+      @media #{$media-1060} {
+        width: 100%;
+        max-width: 150px;
+      }
       }
     }
   }
@@ -157,7 +164,7 @@
     .footer-link-column {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 35px;
 
       .footer-link-heading {
         color: #c5b17f;
@@ -172,31 +179,34 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        max-width: 169px;
+        gap: 15px;
+
         @media #{$media-1060} {
-          flex-direction: row;
           gap: 17px;
         }
-        li {
-          margin: 0;
-          @media #{$media-1060} {
-            position: relative;
-            &::after {
-              content: "";
-              position: absolute;
-              right: -10px;
-              bottom: 5px;
-              width: 1px;
-              height: 10px;
-              border-right: 1px solid #000000;
-            }
-          }
-          &:last-child {
-            &::after {
-              display: none;
-            }
-          }
-        }
+
+
+        // li {
+        //   margin: 0;
+        //   @media #{$media-1060} {
+        //     position: relative;
+        //     &::after {
+        //       content: "";
+        //       position: absolute;
+        //       right: -10px;
+        //       bottom: 5px;
+        //       width: 1px;
+        //       height: 10px;
+        //       border-right: 1px solid #000000;
+        //     }
+        //   }
+        //   &:last-child {
+        //     &::after {
+        //       display: none;
+        //     }
+        //   }
+        // }
 
         a {
           color: #000000;
@@ -235,13 +245,8 @@
         gap: 40px;
 
 
-        .footer-newsletter-section {
-          width: 100%;
-        }
-
         .footer-link-list {
           justify-content: center;
-          width: 100%;
           gap: 40px;
         }
       }
@@ -276,18 +281,11 @@
         .footer-newsletter-section {
           .footer-newsletter-form {
             width: 100%;
-
-            .footer-newsletter-button {
-              width: 100%;
-            }
           }
         }
 
         .footer-link-list {
           gap: 30px;
-          width: 100%;
-
-      
         }
       }
 
@@ -357,9 +355,7 @@
         }
       }
     }
-    .footer-newsletter-form{
-      flex-direction: column;
-    }
+   
     .footer-link-list .footer-link-column .footer-link-items{
       flex-direction: column;
       gap: 10px;
