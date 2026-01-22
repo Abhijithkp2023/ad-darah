@@ -77,21 +77,21 @@ get_header();
                 'title' => 'Pearl Package',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 'button_text' => 'Download PDF',
-                'button_link' => '#'
+                'button_link' => home_url('/landing-2')
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/facility_02.png',
                 'title' => 'Diamond Package',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 'button_text' => 'Download PDF',
-                'button_link' => '#'
+                'button_link' => home_url('/landing-2')
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/facility_03.png',
                 'title' => 'Royal Package',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 'button_text' => 'Download PDF',
-                'button_link' => '#'
+                'button_link' => home_url('/landing-2')
             ),
         );
 
@@ -108,7 +108,7 @@ get_header();
                 'title' => 'Male Packages',
                 'description' => 'Host your celebration in a grand setting that reflects Saudi tradition and modern sophistication. Our male halls offer spacious layouts, premium service, and refined details that ensure every moment feels exceptional.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/landing-2')
             ),
         );
 

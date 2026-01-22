@@ -26,7 +26,7 @@ get_header();
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tempus libero. Donec ornare mauris ac dictum sodales. Aenean eu consequat tortor."
         );
         $image_text_button_text = 'Explore Corporate Services';
-        $image_text_button_link = '#';
+        $image_text_button_link = home_url('/corporate-services-detail');
 
         include locate_template('template-parts/ImageTextSection.php');
         ?>
@@ -41,28 +41,28 @@ get_header();
                 'heading' => 'Conferences & Exhibitions',
                 'paragraph' => 'Grand halls with advanced AV and staging for large-scale events.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/corporate-services-detail')
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/corp_ser_02.png',
                 'heading' => 'Meeting Rooms & Workshops',
                 'paragraph' => 'Professional spaces designed for productive meetings and collaborative workshops.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/corporate-services-detail')
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/corp_ser_03.png',
                 'heading' => 'Government Events (B2G)',
                 'paragraph' => 'Elegant venues for official government functions and formal ceremonies.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/corporate-services-detail')
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/corp_ser_04.png',
                 'heading' => 'Corporate Events',
                 'paragraph' => 'Sophisticated settings for corporate gatherings and business events.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/corporate-services-detail')
             ),
         );
 

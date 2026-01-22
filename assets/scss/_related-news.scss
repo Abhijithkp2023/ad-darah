@@ -237,8 +237,17 @@
 
 .read-more-link{ display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 500; color: #000;
     
+.read_icon {
+	transition: transform 0.3s ease;
+	padding-right: 3px;
 
-    &:hover{ opacity: 0.8; }
+	img {
+		transition: transform 0.3s ease;
+	}
+}
+    &:hover {
+		.read_icon img{ transform: translateX(2px); }
+	}
 
 }
 

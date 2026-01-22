@@ -4396,6 +4396,7 @@ body.fullscreen-nav-open {
 .contact-us-container::before {
   content: "";
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
   right: 0;
@@ -6264,7 +6265,7 @@ body.banner-animating {
 .testimonials-container .testimonials-header .testimonials-title {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 60px;
   line-height: 86px;
   letter-spacing: 0px;
   line-height: 120%;
@@ -6564,7 +6565,7 @@ body.banner-animating {
 .single-testimonial-container .single-testimonial-header .single-testimonial-title {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 60px;
   line-height: 86px;
   letter-spacing: 0px;
   text-align: center;
@@ -7222,7 +7223,7 @@ body.banner-animating {
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-title {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 600;
-  font-size: 70px;
+  font-size: 60px;
   line-height: 86px;
   letter-spacing: 0px;
   text-align: center;
@@ -11686,8 +11687,15 @@ body.banner-animating {
   font-weight: 500;
   color: #000;
 }
-.read-more-link:hover {
-  opacity: 0.8;
+.read-more-link .read_icon {
+  transition: transform 0.3s ease;
+  padding-right: 3px;
+}
+.read-more-link .read_icon img {
+  transition: transform 0.3s ease;
+}
+.read-more-link:hover .read_icon img {
+  transform: translateX(2px);
 }
 
 @media (max-width: 820px) {
@@ -11900,7 +11908,7 @@ body.banner-animating {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 50px;
 }
 
 .news-tabs-item {

@@ -27,7 +27,7 @@ get_header();
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tempus libero. Donec ornare mauris ac dictum sodales. Aenean eu consequat tortor."
         );
         $image_text_button_text = 'Explore Catering Services';
-        $image_text_button_link = '#';
+        $image_text_button_link = home_url('/catering-services-detail');
 
         include locate_template('template-parts/ImageTextSection.php');
         ?>
@@ -42,21 +42,21 @@ get_header();
                 'heading' => 'On-site Catering',
                 'paragraph' => 'Professional catering services delivered directly to your venue with full service support.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/catering-services-detail');
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/cater_02.png',
                 'heading' => 'Off-site Catering',
                 'paragraph' => 'Expert culinary services for events at external locations with customized menu options.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/catering-services-detail');
             ),
             array(
                 'image' => get_template_directory_uri() . '/assets/images/cater_03.png',
                 'heading' => 'Seasonal & Ramadan Packages',
                 'paragraph' => 'Specially curated menus for seasonal celebrations and Ramadan with authentic flavors.',
                 'button_text' => 'Explore More',
-                'button_link' => '#'
+                'button_link' => home_url('/catering-services-detail');
             ),
         );
 

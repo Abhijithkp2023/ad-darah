@@ -103,7 +103,7 @@ if ($menu_items) {
 					<h4 class="footer-link-heading">Services</h4>
 					<ul class="footer-link-items">
 						<li><a href="<?php echo home_url('/corporate-services-detail'); ?>">Corporate Services</a></li>
-						<li><a href="<?php echo home_url('/weddings-social-service-detail'); ?>">Weddings & Social
+						<li><a href="<?php echo home_url('/weddings-social-services-detail'); ?>">Weddings & Social
 								Services</a></li>
 						<li><a href="<?php echo home_url('/catering-services-detail'); ?>">Catering Services</a></li>
 					</ul>
