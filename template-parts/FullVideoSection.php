@@ -13,11 +13,12 @@
 // Get variables with defaults
 $full_video_thumbnail = isset($full_video_thumbnail) ? $full_video_thumbnail : '';
 $full_video_url = isset($full_video_url) ? $full_video_url : '';
+$full_video_height_class = isset($full_video_height_class) ? $full_video_height_class : '';
 ?>
 
 <?php if (!empty($full_video_thumbnail) && !empty($full_video_url)): ?>
     <section class="full-video-section">
-        <div class="full-video-container">
+        <div class="full-video-container  <?php echo esc_attr($full_video_height_class); ?>">
             <img src="<?php echo esc_url($full_video_thumbnail); ?>" alt="Video thumbnail" class="full-video-thumbnail">
             <div class="full-video-overlay"></div>
             <button class="full-video-play-button" aria-label="Play video">

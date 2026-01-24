@@ -11,14 +11,31 @@
 	 * Initialize Full Video Section
 	 */
 	const initFullVideoSection = function () {
-		const videoContainer = document.querySelector(".full-video-container");
-		const playButton = document.querySelector(".full-video-play-button");
-		const video = document.querySelector(".full-video-element");
-		const thumbnail = document.querySelector(".full-video-thumbnail");
+		const videoContainers = document.querySelectorAll(".full-video-container");
 
-		if (!videoContainer || !video || !playButton) {
+		if (videoContainers.length === 0) {
 			return;
 		}
+
+		// Initialize each video container
+		videoContainers.forEach(function (videoContainer) {
+			const playButton = videoContainer.querySelector(".full-video-play-button");
+			const video = videoContainer.querySelector(".full-video-element");
+			const thumbnail = videoContainer.querySelector(".full-video-thumbnail");
+
+			if (!video || !playButton) {
+				return;
+			}
+
+			// Initialize this specific video instance
+			initVideoInstance(videoContainer, playButton, video, thumbnail);
+		});
+	};
+
+	/**
+	 * Initialize a single video instance
+	 */
+	const initVideoInstance = function (videoContainer, playButton, video, thumbnail) {
 
 		// Add error event listener to catch video loading errors
 		video.addEventListener("error", function (e) {

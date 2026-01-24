@@ -12,7 +12,11 @@
 		position: relative;
 		width: 100%;
 		overflow: hidden;
-        height: 800px;
+        height: 800px; // Default height
+
+		&.full-video-section--tall {
+			height: 900px;
+		}
 		
 		@media #{$media-995} {
 			height: 700px;
@@ -20,6 +24,7 @@
 		@media #{$media-700} {
 			height: 540px;
 		}
+
 		.full-video-thumbnail {
 			position: absolute;
 			top: 0;
@@ -100,4 +105,6 @@
 			z-index: 1;
 		}
 	}
+
+
 }

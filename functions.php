@@ -229,6 +229,9 @@ function addarah_scripts()
 	// Enqueue RelatedNews script globally (available on all pages)
 	wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
 
+	// Enqueue FullVideoSection script globally (available on all pages)
+	wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
+
 	// Enqueue component styles
 	if (is_front_page()) {
 		// GSAP is already loaded globally above, but check if not already enqueued (for safety)
@@ -449,14 +452,14 @@ function addarah_scripts()
 	$is_weddings_detail_page = is_page_template('page-weddings-social-services-detail.php');
 
 	if ($is_weddings_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
+		// FullVideoSection script is already enqueued globally
 	}
 
 	// Load scripts for Corporate Services Detail page
 	$is_corporate_services_detail_page = is_page_template('page-corporate-services-detail.php');
 
 	if ($is_corporate_services_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
+		// FullVideoSection script is already enqueued globally
 		wp_enqueue_script('container-slider-script', get_template_directory_uri() . '/assets/js/ContainerSlider.js', array('swiper-js'), _S_VERSION, true);
 	}
 
@@ -464,14 +467,14 @@ function addarah_scripts()
 	$is_catering_services_detail_page = is_page_template('page-catering-services-detail.php');
 
 	if ($is_catering_services_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
+		// FullVideoSection script is already enqueued globally
 	}
 
 	// Load scripts for Gallery page
 	$is_gallery_page = is_page_template('page-gallery.php');
 
 	if ($is_gallery_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
+		// FullVideoSection script is already enqueued globally
 	}
 
 	// Load Contact Map script for Contact page
@@ -504,8 +507,6 @@ function addarah_scripts()
 			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
 		}
 		wp_enqueue_script('all-news-swiper-script', get_template_directory_uri() . '/assets/js/AllNewsSwiper.js', array('swiper-js'), _S_VERSION, true);
-		// Also enqueue RelatedNews script since RelatedNews component is used on this page
-		wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
 	}
 
 	// Load scripts for Weddings & Social Services page

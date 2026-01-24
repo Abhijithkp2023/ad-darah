@@ -276,10 +276,10 @@
 											Corporate Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="#">Conferences & Exhibitions</a></li>
-										<li><a href="#">Meeting Rooms & Workshops</a></li>
-										<li><a href="#">Government Events (B2G)</a></li>
-										<li><a href="#">VIP Majlis</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Conferences & Exhibitions</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Meeting Rooms & Workshops</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Government Events (B2G)</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">VIP Majlis</a></li>
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
@@ -289,8 +289,8 @@
 											Weddings & Social Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="#">Female Packages</a></li>
-										<li><a href="#">Male Packages</a></li>
+										<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Female Packages</a></li>
+										<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Male Packages</a></li>
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
@@ -300,9 +300,9 @@
 											Catering Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="#">On-site Catering</a></li>
-										<li><a href="#">Off-site Catering</a></li>
-										<li><a href="#">Seasonal & Ramadan Packages</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">On-site Catering</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Off-site Catering</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Seasonal & Ramadan Packages</a></li>
 									</ul>
 								</div>
 							</div>

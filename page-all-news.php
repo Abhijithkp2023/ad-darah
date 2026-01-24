@@ -15,6 +15,7 @@ get_header();
 		// Banner Section
 		set_query_var('banner_title', 'Press Releases');
 		set_query_var('banner_bg_image', get_template_directory_uri() . '/assets/images/news-banner.jpg');
+		set_query_var('banner_image_position', 'center');
 		get_template_part('template-parts/Banner');
 		?>
 
@@ -139,7 +140,8 @@ get_header();
 		// Full Video Section
 		$full_video_thumbnail = get_template_directory_uri() . '/assets/images/g_video_thumb.jpg';
 		$full_video_url = get_template_directory_uri() . '/assets/videos/home-video.mp4';
-
+		$full_video_height_class = 'full-video-section--tall'; // 900px height
+		
 		include locate_template('template-parts/FullVideoSection.php');
 		?>
 

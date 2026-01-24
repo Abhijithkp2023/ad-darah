@@ -13,6 +13,7 @@
 // Get banner parameters from query vars or use defaults
 $banner_title = get_query_var('banner_title', '');
 $banner_bg_image = get_query_var('banner_bg_image', '');
+$banner_image_position = get_query_var('banner_image_position', 'bottom'); // Default: bottom
 
 // If no background image provided, don't render
 if (empty($banner_bg_image)) {
@@ -28,5 +29,5 @@ if (empty($banner_bg_image)) {
 			<?php endif; ?>
 		</div>
 	</div>
-	<img src="<?php echo esc_url($banner_bg_image); ?>" alt="" aria-hidden="true">
+	<img src="<?php echo esc_url($banner_bg_image); ?>" alt="" aria-hidden="true" class="banner-image--<?php echo esc_attr($banner_image_position); ?>">
 </section>

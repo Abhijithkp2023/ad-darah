@@ -4826,6 +4826,15 @@ body.contact-popup-open {
   object-fit: cover;
   object-position: bottom;
 }
+.banner-container img.banner-image--center {
+  object-position: center;
+}
+.banner-container img.banner-image--top {
+  object-position: top;
+}
+.banner-container img.banner-image--bottom {
+  object-position: bottom;
+}
 .banner-container::before {
   content: "";
   position: absolute;
@@ -4833,7 +4842,7 @@ body.contact-popup-open {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0) 53.25%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)), linear-gradient(360deg, rgba(0, 0, 0, 0) 70.58%, rgba(0, 0, 0, 0.47) 100%), linear-gradient(208.27deg, rgba(0, 0, 0, 0) 57.56%, rgba(0, 0, 0, 0.42) 93.46%), linear-gradient(180deg, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0) 53.25%);
   z-index: 1;
 }
 .banner-container .banner-content {
@@ -11156,6 +11165,9 @@ body.banner-animating {
   width: 100%;
   overflow: hidden;
   height: 800px;
+}
+.full-video-section .full-video-container.full-video-section--tall {
+  height: 900px;
 }
 @media only screen and (max-width: 995px) {
   .full-video-section .full-video-container {
