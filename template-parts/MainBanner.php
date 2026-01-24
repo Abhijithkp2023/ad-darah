@@ -12,7 +12,7 @@
  */
 
 // Get banner parameters from query vars or use defaults
-$main_banner_title = get_query_var('main_banner_title', get_theme_mod('main_banner_title', 'AdDarah'));
+$main_banner_title = get_query_var('main_banner_title', get_theme_mod('main_banner_title', 'Ad-Darah'));
 $main_banner_subtitle = get_query_var('main_banner_subtitle', get_theme_mod('main_banner_subtitle', 'AD-DARAH combines modern luxury with Saudi heritage to host unforgettable events'));
 $main_banner_button_text = get_query_var('main_banner_button_text', get_theme_mod('main_banner_button_text', 'Get Started'));
 $main_banner_button_link = get_query_var('main_banner_button_link', get_theme_mod('main_banner_button_link', '#'));
