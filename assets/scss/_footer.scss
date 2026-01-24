@@ -13,6 +13,10 @@
   background-repeat: no-repeat;
   border-top: 1px solid #C5B17F;
 
+  @media (max-width: 600px) {
+    padding-bottom: 60px;
+  }
+
   .footer-container {
     min-height: 602px;
     display: flex;
@@ -107,6 +111,11 @@
       max-width: 300px;
     }
 
+    @media (max-width: 600px) {
+      max-width: unset;
+      width: 100%;
+    }
+
     
     .footer-newsletter-heading {
       color: #c5b17f;
@@ -122,6 +131,10 @@
 
       @media #{$media-1060} {
         width: 100%;
+      }
+      
+      @media (max-width: 600px) {
+       flex-direction: column;
       }
 
       .footer-newsletter-input {
@@ -142,15 +155,24 @@
         &:focus {
           border: 1px solid #c5b17f;
         }
+
+        @media (max-width: 600px) {
+         width: 100%;
+        }
       }
 
       .footer-newsletter-button {
-      min-width: 150px;
+        min-width: 150px;
 
-      @media #{$media-1060} {
-        width: 100%;
-        max-width: 150px;
-      }
+        @media #{$media-1060} {
+          width: 100%;
+          max-width: 150px;
+        }
+
+        @media (max-width: 600px) {
+          width: 100%;
+          max-width: unset;
+        }
       }
     }
   }
