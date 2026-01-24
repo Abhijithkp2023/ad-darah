@@ -222,6 +222,7 @@
 			const submenuContent = document.getElementById('fullscreenNavSubmenuContent');
 			const activeItem = document.querySelector('.fullscreen-nav-item-active');
 			const leftContent = document.querySelector('.fullscreen-nav-left-content');
+			const decorImage = document.querySelector('.fullscreen-nav-decor');
 			
 			if (submenuContent) {
 				submenuContent.classList.remove('fullscreen-nav-submenu-active');
@@ -239,6 +240,11 @@
 			// Show main content (logo + grid)
 			if (leftContent) {
 				leftContent.classList.remove('has-submenu-active');
+			}
+
+			// Remove class from decor image to show it
+			if (decorImage) {
+				decorImage.classList.remove('submenu-active');
 			}
 		};
 
@@ -544,6 +550,8 @@
 						});
 						
 						// Toggle current submenu
+						const decorImage = document.querySelector('.fullscreen-nav-decor');
+						
 						if (isActive) {
 							item.classList.remove('fullscreen-nav-item-active');
 							submenuContent.classList.remove('fullscreen-nav-submenu-active');
@@ -555,6 +563,10 @@
 							if (isMobile && submenuDataMobile) {
 								submenuDataMobile.style.display = 'none';
 							}
+							// Remove class from decor image to show it
+							if (decorImage) {
+								decorImage.classList.remove('submenu-active');
+							}
 						} else {
 							item.classList.add('fullscreen-nav-item-active');
 							
@@ -562,6 +574,10 @@
 								// Mobile: Show submenu below the category
 								if (submenuDataMobile) {
 									submenuDataMobile.style.display = 'block';
+								}
+								// Add class to decor image to hide it on mobile
+								if (decorImage) {
+									decorImage.classList.add('submenu-active');
 								}
 							} else {
 								// Desktop: Show submenu in left panel
@@ -573,6 +589,10 @@
 									submenuContent.classList.add('fullscreen-nav-submenu-active');
 									if (leftContent) {
 										leftContent.classList.add('has-submenu-active');
+									}
+									// Add class to decor image to hide it
+									if (decorImage) {
+										decorImage.classList.add('submenu-active');
 									}
 								}
 							}

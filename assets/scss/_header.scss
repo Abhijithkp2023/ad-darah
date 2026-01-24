@@ -1014,6 +1014,7 @@ body.overflow_body_hidden {
 			height: 100%;
 			opacity: 1;
 			z-index: 1;
+			transition: opacity 0.1s ease;
 
 			img {
 				width: 100%;
@@ -1022,6 +1023,11 @@ body.overflow_body_hidden {
 				width: 100%;
 				aspect-ratio: 1/1;
 				margin: 0 auto;
+			}
+
+			// Hide decor image when submenu is active
+			&.submenu-active {
+				opacity: 0;
 			}
 		}
 
@@ -1189,12 +1195,12 @@ body.overflow_body_hidden {
 				}
 
 				.fullscreen-nav-submenu-category {
-					padding-top: 30px;
+					padding-top: 35px;
 					padding-bottom: 30px;
-					border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+					border-bottom: 1px solid rgba(229, 199, 165, 0.5);
 
 					@media #{$media-1440} {
-						padding-top: 20px;
+						padding-top: 25px;
 						padding-bottom: 20px;
 					}
 
@@ -1206,7 +1212,7 @@ body.overflow_body_hidden {
 					.fullscreen-nav-submenu-category-heading {
 						@include fullscreen-nav-submenu-heading;
 						color: #ffffff;
-						margin: 0 0 25px 0;
+						margin: 0 0 20px 0;
 						font-weight: 500;
 
 						@media #{$media-1400} {
@@ -1257,7 +1263,7 @@ body.overflow_body_hidden {
 						padding: 0;
 						display: flex;
 						flex-direction: column;
-						gap: 20px;
+						gap: 18px;
 
 						@media #{$media-1060} {
 							gap: 15px;
@@ -1285,7 +1291,7 @@ body.overflow_body_hidden {
 
 					.fullscreen-nav-submenu-category-heading,
 					.fullscreen-nav-submenu-category-list {
-						margin-left: 20%;
+						margin-left: 15%;
 
 						@media (max-width: 1060px) {
 							margin-left: 10%;
@@ -1468,11 +1474,20 @@ body.overflow_body_hidden {
 											transform: translateY(-50%);
 											width: 12px;
 											height: 20px;
-											background-image: url("../images/arrow_right.svg");
+											background-image: url("data:image/svg+xml,%3Csvg width='14' height='25' viewBox='0 0 14 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 23.5L10.6863 14.4444C12.6308 12.5 12.6308 12.5 10.6863 10.5556L1.5 1.5' stroke='white' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 											background-repeat: no-repeat;
 											background-position: center;
 											background-size: contain;
 											transition: transform 0.3s ease;
+											
+											@media (max-width: 1060px) {
+												height: 18px;
+											}
+
+											@media (max-width: 600px) {
+												height: 13px;
+												background-image: url("data:image/svg+xml,%3Csvg width='14' height='25' viewBox='0 0 14 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.5 23.5L10.6863 14.4444C12.6308 12.5 12.6308 12.5 10.6863 10.5556L1.5 1.5' stroke='%23b64910' stroke-width='3' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+											}
 										}
 									}
 
