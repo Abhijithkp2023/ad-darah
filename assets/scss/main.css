@@ -8166,6 +8166,7 @@ body.banner-animating {
 }
 .timeline-slider .container {
   position: relative;
+  z-index: 10;
 }
 .timeline-slider .timeline-header {
   display: flex;
