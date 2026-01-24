@@ -469,6 +469,39 @@
 				.swiper-wrapper {
 					animation: singleTestimonialSlide 10s linear infinite;
 					will-change: transform;
+					display: flex;
+					gap: 30px;
+					
+					@media (max-width: 700px) {
+						gap: 15px;
+					}
+				}
+
+				.swiper-slide {
+					width: auto !important;
+					height: auto;
+					flex-shrink: 0;
+
+					.testimonial-card {
+						width: 587px;
+						flex-shrink: 0;
+
+						@media (max-width: 1440px) {
+							width: 550px;
+						}
+
+						@media (max-width: 1024px) {
+							width: 450px;
+						}
+
+						@media (max-width: 768px) {
+							width: 400px;
+						}
+
+						@media (max-width: 480px) {
+							width: 350px;
+						}
+					}
 				}
 			}
 
@@ -697,6 +730,7 @@
 							gap: 20px;
 							@media #{$media-700} {
 								gap: 10px;
+								flex-direction: column;
 							}
 
 							.testimonial-image {
@@ -711,6 +745,7 @@
 								flex-grow: 1;
 								display: flex;
 								align-items: center;
+								gap: 20px;
 								justify-content: space-between;
 
 								.testimonial-name {

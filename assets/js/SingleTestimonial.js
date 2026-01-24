@@ -118,25 +118,37 @@
 				};
 			}
 
-			// Add breakpoints
-			swiperConfig.breakpoints = {
-				0: {
-					slidesPerView: 1,
-					spaceBetween: 15,
-				},
-				768: {
-					slidesPerView: 1.5,
-					spaceBetween: 20,
-				},
-				1024: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				1200: {
-					slidesPerView: 3.1,
-					spaceBetween: 20,
-				},
-			};
+			// Add breakpoints (only when navigation is present - CSS animation handles sizing)
+			if (hasNavigation) {
+				swiperConfig.breakpoints = {
+					0: {
+						slidesPerView: 1.2,
+						spaceBetween: 100,
+					},
+					768: {
+						slidesPerView: 1.5,
+						spaceBetween: 20,
+					},
+					1024: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					1200: {
+						slidesPerView: 2.3,
+						spaceBetween: 20,
+					},
+
+					1600: {
+						slidesPerView: 3.1,
+						spaceBetween: 20,
+					},
+				};
+			} else {
+				// When CSS animation is used, disable Swiper's slide sizing
+				// CSS controls the card widths directly
+				swiperConfig.slidesPerView = 'auto';
+				swiperConfig.spaceBetween = 0; // Gap is handled by CSS flexbox
+			}
 			
 			const swiperInstance = new Swiper(swiperElement, swiperConfig);
 			swiperElement._swiperInstance = swiperInstance;
