@@ -105,7 +105,7 @@
 	font-weight: 600;
 	font-style: normal;
 	font-size: 60px;
-	line-height: 100%;
+	line-height: 130%;
 	letter-spacing: 0px;
 	@media #{$media-1060} {
 		font-size: 45px;
@@ -262,7 +262,7 @@
 // Full Screen Nav Menu Grid Heading Typography
 @mixin fullscreen-nav-grid-heading {
 	font-family: "Neue Regrade", sans-serif;
-	font-weight: 600;
+	font-weight: 500;
 	font-style: normal;
 	font-size: 20px;
 	line-height: 100%;

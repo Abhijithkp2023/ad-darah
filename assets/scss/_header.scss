@@ -1073,17 +1073,17 @@ body.overflow_body_hidden {
 			.fullscreen-nav-grid {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				gap: 40px 30px;
+				gap: 90px 30px;
 				width: 100%;
 
 					@media (max-width: 1060px) {
-						gap: 30px 20px;
+						gap: 50px 20px;
 						grid-template-columns: 1fr;
 						width: 300px;
 					}
 
 					@media (max-width: 700px) {
-						gap: 20px 15px;
+						gap: 30px 15px;
 						width: 200px;
 					}
 
@@ -1394,7 +1394,11 @@ body.overflow_body_hidden {
 					&.fullscreen-nav-item-active {
 						.fullscreen-nav-link {
 							.fullscreen-nav-arrow {
-								transform: rotate(180deg);
+								transform: rotate(90deg);
+
+									@media (max-width: 600px) {
+										transform: rotate(180deg);
+									}
 							}
 						}
 					}

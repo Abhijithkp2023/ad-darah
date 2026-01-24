@@ -65,10 +65,10 @@ $use_post_content = empty($where_ever_title) && empty($where_ever_content);
       </button>
       <video class="where-ever-video" controls muted loop preload="metadata" style="display: none;">
         <!-- External test video -->
-        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          type="video/mp4">
+
         <!-- Original video (commented for testing) -->
-        <!-- <source src="<?php echo esc_url(get_template_directory_uri() . '/assets/videos/intro_video.mp4'); ?>" type="video/mp4"> -->
+        <source src="<?php echo esc_url(get_template_directory_uri() . '/assets/videos/home-video.mp4'); ?>"
+          type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>

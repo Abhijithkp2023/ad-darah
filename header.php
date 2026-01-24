@@ -224,7 +224,7 @@
 					<div class="fullscreen-nav-main-content" id="fullscreenNavMainContent">
 						<!-- Logo -->
 						<div class="fullscreen-nav-logo">
-							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/main-logo.svg'); ?>"
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/nav_logo.svg'); ?>"
 								alt="<?php bloginfo('name'); ?>">
 						</div>
 						<!-- Contact Grid -->
