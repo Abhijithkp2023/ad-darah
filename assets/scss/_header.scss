@@ -1132,8 +1132,12 @@ body.overflow_body_hidden {
 							color: #ffffff;
 							text-decoration: none;
 							opacity: 1;
-							transition: opacity 0.3s ease;
+							transition: all 0.3s ease;
 							width: 47%;
+
+							&:hover {
+								color: #c5b17f;
+							}
 						}
 					}
 				}
@@ -1188,6 +1192,11 @@ body.overflow_body_hidden {
 					padding-top: 30px;
 					padding-bottom: 30px;
 					border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+					@media #{$media-1440} {
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
 
 					&:last-child {
 						padding-bottom: 0;
@@ -1248,11 +1257,7 @@ body.overflow_body_hidden {
 						padding: 0;
 						display: flex;
 						flex-direction: column;
-						gap: 25px;
-
-						@media #{$media-1400} {
-							gap: 20px;
-						}
+						gap: 20px;
 
 						@media #{$media-1060} {
 							gap: 15px;

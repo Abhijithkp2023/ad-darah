@@ -3688,13 +3688,16 @@ body.overflow_body_hidden {
   color: #ffffff;
   text-decoration: none;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   width: 47%;
 }
 @media only screen and (max-width: 700px) {
   .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-social a {
     font-size: 15px;
   }
+}
+.fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-grid .fullscreen-nav-grid-item .fullscreen-nav-grid-social a:hover {
+  color: #c5b17f;
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content {
   display: none;
@@ -3757,6 +3760,12 @@ body.overflow_body_hidden {
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+@media only screen and (max-width: 1440px) {
+  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category:last-child {
   padding-bottom: 0;
@@ -3832,12 +3841,7 @@ body.overflow_body_hidden {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-}
-@media only screen and (max-width: 1400px) {
-  .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
-    gap: 20px;
-  }
+  gap: 20px;
 }
 @media only screen and (max-width: 1060px) {
   .fullscreen-nav-menu .fullscreen-nav-left .fullscreen-nav-left-content .fullscreen-nav-submenu-content .fullscreen-nav-submenu-category .fullscreen-nav-submenu-category-list {
@@ -4361,6 +4365,14 @@ body.fullscreen-nav-open {
     align-items: center;
     text-align: center;
   }
+}
+@media screen and (max-width: 767px) and (max-width: 600px) {
+  .footer .footer-container .footer-bottom-section {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 767px) {
   .footer .footer-container .footer-bottom-section .footer-bottom-left {
     justify-content: center;
   }
@@ -4386,6 +4398,13 @@ body.fullscreen-nav-open {
     font-size: 12px;
     text-align: center;
   }
+}
+@media screen and (max-width: 992px) and (max-width: 600px) {
+  .footer .footer-container .footer-bottom-section .footer-bottom-left .footer-copyright {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 992px) {
   .footer .footer-container .footer-bottom-section .footer-bottom-right {
     gap: 10px;
   }
@@ -4443,7 +4462,6 @@ body.fullscreen-nav-open {
 .contact-us-container::before {
   content: "";
   position: absolute;
-  display: none;
   top: 0;
   left: 0;
   right: 0;
@@ -4801,9 +4819,8 @@ body.contact-popup-open {
   font-family: "Neue Regrade", sans-serif;
   font-family: "Neue Regrade", sans-serif;
   font-size: 70px;
-  line-height: 86px;
+  line-height: 110%;
   font-weight: 600;
-  letter-spacing: 0px;
   font-size: 4.375rem;
   font-weight: 600;
   font-style: normal;
@@ -5901,7 +5918,7 @@ body.banner-animating {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   z-index: 1;
 }
@@ -5930,7 +5947,7 @@ body.banner-animating {
   line-height: 60px;
   font-weight: 600;
   font-style: normal;
-  letter-spacing: 12%;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   display: block;
   margin-bottom: 20px;
@@ -5987,7 +6004,7 @@ body.banner-animating {
   font-family: "Neue Regrade", sans-serif;
   font-size: 20px;
   line-height: 140%;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   letter-spacing: 0%;
   color: #fff;
@@ -6325,13 +6342,11 @@ body.banner-animating {
 }
 .testimonials-container .testimonials-header .testimonials-title {
   font-family: "Neue Regrade", sans-serif;
+  font-size: 70px;
+  line-height: 110%;
   font-weight: 600;
-  font-size: 60px;
-  line-height: 86px;
-  letter-spacing: 0px;
   line-height: 120%;
   text-align: center;
-  text-transform: capitalize;
   color: #ffffff;
   margin: 0;
 }

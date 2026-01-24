@@ -67,11 +67,9 @@
 		}
 
 		.testimonials-title {
-			@include testimonials-title;
-			letter-spacing: 0px;
+			@include banner-title;
 			line-height: 120%;
 			text-align: center;
-			text-transform: capitalize;
 			color: #ffffff;
 			margin: 0;
 		}

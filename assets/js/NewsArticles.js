@@ -53,11 +53,11 @@
 			centeredSlides: true, // Enable centered slides - center slide is always active
 			loop: slides.length > 3, // Only loop if more than 3 slides
 			speed: 800,
-			// autoplay: {
-			// 	delay: 2000,
-			// 	disableOnInteraction: false,
-			// 	pauseOnMouseEnter: true,
-			// },
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
 			breakpoints: {
 				0: {
 					slidesPerView: 1,
