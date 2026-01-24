@@ -84,14 +84,17 @@
 		const contentContainer = swiperElement.closest('.single-testimonial-content');
 		const prevButton = contentContainer ? contentContainer.querySelector('.single-testimonial-nav-prev') : null;
 		const nextButton = contentContainer ? contentContainer.querySelector('.single-testimonial-nav-next') : null;
+		const hasNavigation = prevButton && nextButton;
 
 		console.log("SingleTestimonial: Initializing Swiper with config...");
+		console.log("SingleTestimonial: Has navigation buttons:", hasNavigation);
 		try {
 			// Check if we have enough slides for loop (need at least 6 for smooth loop)
 			const slideCount = slides.length;
 			const enableLoop = slideCount >= 6;
 			
-			const swiperInstance = new Swiper(swiperElement, {
+			// Build Swiper config
+			const swiperConfig = {
 				slidesPerView: 1,
 				spaceBetween: 20,
 				speed: 600,
@@ -101,33 +104,49 @@
 				loopAdditionalSlides: enableLoop ? 3 : 0,
 				loopedSlides: enableLoop ? Math.ceil(slideCount / 2) : undefined,
 				initialSlide: 0,
-				// autoplay: {
-				// 	delay: 5000,
-				// 	disableOnInteraction: false,
-				// },
-				navigation: {
+			};
+
+			// Enable autoplay only if navigation buttons are not present
+			if (!hasNavigation) {
+				swiperConfig.autoplay = {
+					delay: 2000,
+					disableOnInteraction: false,
+					pauseOnMouseEnter: true,
+				};
+				console.log("SingleTestimonial: Autoplay enabled (no navigation buttons)");
+			} else {
+				console.log("SingleTestimonial: Autoplay disabled (navigation buttons present)");
+			}
+
+			// Add navigation if buttons exist
+			if (hasNavigation) {
+				swiperConfig.navigation = {
 					nextEl: nextButton,
 					prevEl: prevButton,
+				};
+			}
+
+			// Add breakpoints
+			swiperConfig.breakpoints = {
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 15,
 				},
-				breakpoints: {
-					0: {
-						slidesPerView: 1,
-						spaceBetween: 15,
-					},
-					768: {
-						slidesPerView: 1.5,
-						spaceBetween: 20,
-					},
-					1024: {
-						slidesPerView: 2,
-						spaceBetween: 20,
-					},
-					1200: {
-						slidesPerView: 3.3,
-						spaceBetween: 20,
-					},
+				768: {
+					slidesPerView: 1.5,
+					spaceBetween: 20,
 				},
-			});
+				1024: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				1200: {
+					slidesPerView: 3.1,
+					spaceBetween: 20,
+				},
+			};
+			
+			const swiperInstance = new Swiper(swiperElement, swiperConfig);
 			swiperElement._swiperInstance = swiperInstance;
 			
 			// Update loop after initialization to ensure it works correctly

@@ -10444,9 +10444,15 @@ body.banner-animating {
   position: relative;
   width: 100%;
 }
-.overflow-slider-section .container {
-  position: relative;
-  z-index: 1;
+.overflow-slider-section .overflow-slider-container {
+  width: 100vw;
+  overflow: visible;
+  padding-left: calc((100vw - 1440px) / 2 + 20px);
+}
+@media only screen and (max-width: 1440px) {
+  .overflow-slider-section .overflow-slider-container {
+    padding-left: 3%;
+  }
 }
 .overflow-slider-section .overflow-slider-section-heading {
   font-family: "Neue Regrade", sans-serif;

@@ -5,9 +5,15 @@
 	position: relative;
 	width: 100%;
 
-	.container {
-		position: relative;
-		z-index: 1;
+	.overflow-slider-container {
+		width: 100vw;
+		overflow: visible;
+		padding-left: calc((100vw - 1440px) / 2 + 20px);
+
+
+		@media #{$media-1440} {
+			padding-left: 3%;
+		}
 	}
 
 	.overflow-slider-section-heading {

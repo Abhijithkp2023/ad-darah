@@ -36,19 +36,19 @@
 		try {
 			const swiperConfig = {
 				spaceBetween: 20,
-				slidesPerView: 1,
+				slidesPerView: 1.1,
 				autoplay: false,
 				breakpoints: {
 					768: {
-						slidesPerView: 2,
+						slidesPerView: 2.1,
 						spaceBetween: 20,
 					},
 					1024: {
-						slidesPerView: 3,
+						slidesPerView: 2.8,
 						spaceBetween: 20,
 					},
 					1200: {
-						slidesPerView: 2.8,
+						slidesPerView: 3.2,
 						spaceBetween: 20,
 					},
 				},
