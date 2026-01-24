@@ -102,27 +102,13 @@
 				}
 
 				.venue-button {
-					display: inline-block;
-					padding: 12px 30px;
-					background-color: $gold;
-					color: $white;
-					text-decoration: none;
-					@include px-rem(16);
-					font-weight: 500;
-					border-radius: 30px;
-					transition: all 0.3s ease;
-                    margin-top: 25px;
+					margin-top: 30px;
+
 					@media #{$media-1024} {
-						margin-top: 15px;
+						margin-top: 20px;
 					}
 					@media #{$media-700} {
-						font-size: 13px;
-        				line-height: 1;
-						padding: 11px 20px 10px 20px;
-					}
-					&:hover {
-						background-color: darken($gold, 10%);
-						transform: translateY(-2px);
+						margin-top: 15px;
 					}
 				}
 			}
@@ -137,39 +123,79 @@
 		display: flex;
 		gap: 15px;
 		z-index: 10;
-        .venue-swiper-prev{
-            img{
-                transform: rotate(180deg);
-            }
-        }
-		.venue-swiper-prev,
+        
+		
 		.venue-swiper-next {
-			width: 58px;
-			height: 58px;
+			width: 59px;
+			height: 59px;
 			border-radius: 50%;
-			background-color:transparent;
-            border: 1px solid #FFFFFF;
+			background-color: transparent;
+            border: 1px solid $white;
 			cursor: pointer;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			color: $black;
-			transition: all 0.3s ease;
-
+			color: $white;
+			transition: all 0.5s ease;
 
 			&:hover {
-				background-color: $gold;
-				transform: scale(1.1);
-                border-color: $gold;
-			}
+				background: rgba(197, 177, 127, 0.2);
+				border: 1px solid #C5B17F;
+				transform: rotate(-45deg);
 
-			&:active {
-				transform: scale(0.95);
+				svg {
+					color: #C5B17F;
+				}
 			}
 
 			svg {
-				width: 20px;
-				height: 20px;
+				height: 15px;
+				width: 26px;
+				color: $white;
+				transition: color 0.5s ease;
+			}
+		}
+
+		.venue-swiper-prev {
+			width: 59px;
+			height: 59px;
+			border-radius: 50%;
+			background-color: transparent;
+            border: 1px solid $white;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			transition: all 0.5s ease;
+
+			&:hover {
+				background: rgba(197, 177, 127, 0.2);
+				border: 1px solid #C5B17F;
+				transform: rotate(45deg);
+
+				svg {
+					color: #C5B17F;
+				}
+			}
+
+			svg {
+				height: 15px;
+				width: 26px;
+				color: $white;
+				transition: color 0.5s ease;
+			}
+		}
+
+		.venue-swiper-prev {
+			svg {
+				transform: rotate(180deg);
+			}
+
+			&:hover {
+				svg {
+					transform: rotate(180deg);
+				}
 			}
 		}
 
@@ -264,6 +290,19 @@
 			right: 15px;
 			bottom: 30px;
 		}
+
+		.venue-navigation {
+			.venue-swiper-prev,
+			.venue-swiper-next {
+				width: 70px;
+				height: 70px;
+
+				svg {
+					width: 32px;
+					height: 19px;
+				}
+			}
+		}
 	}
 
 	// Mobile Responsive
@@ -296,11 +335,6 @@
 						@include px-rem(24);
 					}
 				}
-
-				.venue-button {
-					padding: 10px 25px;
-					@include px-rem(14);
-				}
 			}
 		}
 
@@ -311,21 +345,36 @@
 
 			.venue-swiper-prev,
 			.venue-swiper-next {
-				width: 40px;
-				height: 40px;
+				width: 60px;
+				height: 60px;
 
 				svg {
-					width: 16px;
-					height: 16px;
+					width: 28px;
+					height: 17px;
 				}
 			}
-
 		}
 
 		.venue-thumbnail-swiper {
 			height: 80px;
 			position: initial;
 			margin: 0;
+		}
+	}
+
+	// Small Mobile Responsive
+	@media #{$media-700} {
+		.venue-navigation {
+			.venue-swiper-prev,
+			.venue-swiper-next {
+				width: 55px;
+				height: 55px;
+
+				svg {
+					width: 25px;
+					height: 15px;
+				}
+			}
 		}
 	}
 
@@ -390,10 +439,6 @@
 					}
 				}
 
-				.venue-button {
-					padding: 8px 20px;
-					@include px-rem(12);
-				}
 			}
 		}
 
@@ -403,12 +448,12 @@
 
 			.venue-swiper-prev,
 			.venue-swiper-next {
-				width: 35px;
-				height: 35px;
+				width: 55px;
+				height: 55px;
 
 				svg {
-					width: 14px;
-					height: 14px;
+					width: 25px;
+					height: 15px;
 				}
 			}
 		}

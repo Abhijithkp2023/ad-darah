@@ -7723,32 +7723,17 @@ body.banner-animating {
   }
 }
 .venue-at-a-glance .venue-main-swiper .swiper-slide .venue-slide-content .venue-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #C5B17F;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 @media only screen and (max-width: 1024px) {
   .venue-at-a-glance .venue-main-swiper .swiper-slide .venue-slide-content .venue-button {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 @media only screen and (max-width: 700px) {
   .venue-at-a-glance .venue-main-swiper .swiper-slide .venue-slide-content .venue-button {
-    font-size: 13px;
-    line-height: 1;
-    padding: 11px 20px 10px 20px;
+    margin-top: 15px;
   }
-}
-.venue-at-a-glance .venue-main-swiper .swiper-slide .venue-slide-content .venue-button:hover {
-  background-color: #b59c5c;
-  transform: translateY(-2px);
 }
 .venue-at-a-glance .venue-navigation {
   position: absolute;
@@ -7758,37 +7743,65 @@ body.banner-animating {
   gap: 15px;
   z-index: 10;
 }
-.venue-at-a-glance .venue-navigation .venue-swiper-prev img {
-  transform: rotate(180deg);
-}
-.venue-at-a-glance .venue-navigation .venue-swiper-prev,
 .venue-at-a-glance .venue-navigation .venue-swiper-next {
-  width: 58px;
-  height: 58px;
+  width: 59px;
+  height: 59px;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
-  transition: all 0.3s ease;
+  color: #fff;
+  transition: all 0.5s ease;
 }
-.venue-at-a-glance .venue-navigation .venue-swiper-prev:hover,
 .venue-at-a-glance .venue-navigation .venue-swiper-next:hover {
-  background-color: #C5B17F;
-  transform: scale(1.1);
-  border-color: #C5B17F;
+  background: rgba(197, 177, 127, 0.2);
+  border: 1px solid #C5B17F;
+  transform: rotate(-45deg);
 }
-.venue-at-a-glance .venue-navigation .venue-swiper-prev:active,
-.venue-at-a-glance .venue-navigation .venue-swiper-next:active {
-  transform: scale(0.95);
+.venue-at-a-glance .venue-navigation .venue-swiper-next:hover svg {
+  color: #C5B17F;
 }
-.venue-at-a-glance .venue-navigation .venue-swiper-prev svg,
 .venue-at-a-glance .venue-navigation .venue-swiper-next svg {
-  width: 20px;
-  height: 20px;
+  height: 15px;
+  width: 26px;
+  color: #fff;
+  transition: color 0.5s ease;
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev {
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev:hover {
+  background: rgba(197, 177, 127, 0.2);
+  border: 1px solid #C5B17F;
+  transform: rotate(45deg);
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev:hover svg {
+  color: #C5B17F;
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev svg {
+  height: 15px;
+  width: 26px;
+  color: #fff;
+  transition: color 0.5s ease;
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev svg {
+  transform: rotate(180deg);
+}
+.venue-at-a-glance .venue-navigation .venue-swiper-prev:hover svg {
+  transform: rotate(180deg);
 }
 .venue-at-a-glance .venue-navigation .venue-swiper-prev.swiper-button-disabled,
 .venue-at-a-glance .venue-navigation .venue-swiper-next.swiper-button-disabled {
@@ -7864,6 +7877,16 @@ body.banner-animating {
     right: 15px;
     bottom: 30px;
   }
+  .venue-at-a-glance .venue-navigation .venue-swiper-prev,
+  .venue-at-a-glance .venue-navigation .venue-swiper-next {
+    width: 70px;
+    height: 70px;
+  }
+  .venue-at-a-glance .venue-navigation .venue-swiper-prev svg,
+  .venue-at-a-glance .venue-navigation .venue-swiper-next svg {
+    width: 32px;
+    height: 19px;
+  }
 }
 @media only screen and (max-width: 995px) {
   .venue-at-a-glance {
@@ -7888,10 +7911,6 @@ body.banner-animating {
   .venue-at-a-glance .venue-main-swiper .venue-slide-content .venue-capacity .capacity-value {
     font-size: 1.5rem;
   }
-  .venue-at-a-glance .venue-main-swiper .venue-slide-content .venue-button {
-    padding: 10px 25px;
-    font-size: 0.875rem;
-  }
   .venue-at-a-glance .venue-navigation {
     top: 15px;
     right: 15px;
@@ -7899,18 +7918,30 @@ body.banner-animating {
   }
   .venue-at-a-glance .venue-navigation .venue-swiper-prev,
   .venue-at-a-glance .venue-navigation .venue-swiper-next {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
   .venue-at-a-glance .venue-navigation .venue-swiper-prev svg,
   .venue-at-a-glance .venue-navigation .venue-swiper-next svg {
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 17px;
   }
   .venue-at-a-glance .venue-thumbnail-swiper {
     height: 80px;
     position: initial;
     margin: 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .venue-at-a-glance .venue-navigation .venue-swiper-prev,
+  .venue-at-a-glance .venue-navigation .venue-swiper-next {
+    width: 55px;
+    height: 55px;
+  }
+  .venue-at-a-glance .venue-navigation .venue-swiper-prev svg,
+  .venue-at-a-glance .venue-navigation .venue-swiper-next svg {
+    width: 25px;
+    height: 15px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -7957,23 +7988,19 @@ body.banner-animating {
   .venue-at-a-glance .venue-main-swiper .venue-slide-content .venue-capacity .capacity-value {
     font-size: 1.25rem;
   }
-  .venue-at-a-glance .venue-main-swiper .venue-slide-content .venue-button {
-    padding: 8px 20px;
-    font-size: 0.75rem;
-  }
   .venue-at-a-glance .venue-navigation {
     top: 10px;
     right: 10px;
   }
   .venue-at-a-glance .venue-navigation .venue-swiper-prev,
   .venue-at-a-glance .venue-navigation .venue-swiper-next {
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
   }
   .venue-at-a-glance .venue-navigation .venue-swiper-prev svg,
   .venue-at-a-glance .venue-navigation .venue-swiper-next svg {
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 15px;
   }
   .venue-at-a-glance .venue-thumbnail-swiper {
     height: 60px;

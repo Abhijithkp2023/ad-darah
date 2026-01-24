@@ -36,7 +36,7 @@ if (empty($venue_slides) && isset($venue_images) && is_array($venue_images)) {
 	$venue_capacity_value = isset($venue_capacity_value) ? $venue_capacity_value : '';
 	$venue_button_text = isset($venue_button_text) ? $venue_button_text : 'Download Venue Floor Plan';
 	$venue_button_url = isset($venue_button_url) ? $venue_button_url : '#';
-	
+
 	foreach ($venue_images as $image) {
 		$venue_slides[] = array(
 			'image' => $image,
@@ -74,41 +74,50 @@ if (empty($venue_slides)) {
 						<div class="swiper-slide">
 							<div class="venue-slide-content">
 								<?php if ($slide_image): ?>
-									<img src="<?php echo esc_url($slide_image); ?>" alt="<?php echo esc_attr($venue_title . ' - Slide ' . ($index + 1)); ?>">
+									<img src="<?php echo esc_url($slide_image); ?>"
+										alt="<?php echo esc_attr($venue_title . ' - Slide ' . ($index + 1)); ?>">
 								<?php endif; ?>
 								<div class="venue-overlay"></div>
-									<div class="venue-info">
-										<?php if ($slide_capacity_label): ?>
-											<div class="venue-capacity">
-												<span class="capacity-label"><?php echo esc_html($slide_capacity_label); ?></span>
-												<?php if ($slide_capacity_value): ?>
-													<span class="capacity-value"><?php echo esc_html($slide_capacity_value); ?></span>
-												<?php endif; ?>
-											</div>
-										<?php endif; ?>
-										<?php if ($slide_button_text && $slide_button_url): ?>
-											<a href="<?php echo esc_url($slide_button_url); ?>" class="venue-button">
-												<?php echo esc_html($slide_button_text); ?>
-											</a>
-										<?php endif; ?>
-									
+								<div class="venue-info">
+									<?php if ($slide_capacity_label): ?>
+										<div class="venue-capacity">
+											<span class="capacity-label"><?php echo esc_html($slide_capacity_label); ?></span>
+											<?php if ($slide_capacity_value): ?>
+												<span class="capacity-value"><?php echo esc_html($slide_capacity_value); ?></span>
+											<?php endif; ?>
+										</div>
+									<?php endif; ?>
+									<?php if ($slide_button_text && $slide_button_url): ?>
+										<a href="<?php echo esc_url($slide_button_url); ?>" class="primary-button venue-button">
+											<?php echo esc_html($slide_button_text); ?>
+										</a>
+									<?php endif; ?>
+
 								</div>
 							</div>
 						</div>
 					<?php endforeach; ?>
 				</div>
-				
+
 				<!-- Navigation Arrows -->
 				<div class="venue-navigation">
 					<button class="venue-swiper-prev" aria-label="Previous slide">
-						<image src="<?php echo get_template_directory_uri(); ?>/assets/images/right_arw.svg" alt="Previous slide" />
+						<svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M25.4268 21.4658L35.9915 10.901L25.4268 0.33625" stroke="currentColor"
+								stroke-width="0.950845" stroke-linejoin="round" />
+							<path d="M0 11.0898L36.1321 11.0898" stroke="currentColor" stroke-width="0.950845" />
+						</svg>
 					</button>
 					<button class="venue-swiper-next" aria-label="Next slide">
-                        <image src="<?php echo get_template_directory_uri(); ?>/assets/images/right_arw.svg" alt="Previous slide" />
+						<svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M25.4268 21.4658L35.9915 10.901L25.4268 0.33625" stroke="currentColor"
+								stroke-width="0.950845" stroke-linejoin="round" />
+							<path d="M0 11.0898L36.1321 11.0898" stroke="currentColor" stroke-width="0.950845" />
+						</svg>
 					</button>
 				</div>
 			</div>
-			
+
 			<!-- Thumbnail Swiper -->
 			<div class="swiper venue-thumbnail-swiper" data-venue-thumbnail-swiper>
 				<div class="swiper-wrapper">
@@ -119,7 +128,8 @@ if (empty($venue_slides)) {
 						<div class="swiper-slide">
 							<div class="venue-thumbnail">
 								<?php if ($slide_image): ?>
-									<img src="<?php echo esc_url($slide_image); ?>" alt="<?php echo esc_attr($venue_title . ' - Thumbnail ' . ($index + 1)); ?>">
+									<img src="<?php echo esc_url($slide_image); ?>"
+										alt="<?php echo esc_attr($venue_title . ' - Thumbnail ' . ($index + 1)); ?>">
 								<?php endif; ?>
 							</div>
 						</div>
