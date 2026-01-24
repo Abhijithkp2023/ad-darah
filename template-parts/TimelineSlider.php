@@ -41,8 +41,12 @@ foreach ($timeline_slides as $slide) {
 }
 ?>
 
-<section class="timeline-slider" data-timeline-slider>
+<section class="timeline-slider pb_100 pt_100" data-timeline-slider>
+<div class="timeline-slider-bg">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/rooted saudi.png" alt="Timeline Slider Background" />
+		</div>
 	<div class="container">
+		
 		<div class="timeline-header">
 			<div class="timeline-header-left">
 				<?php if ($timeline_headline): ?>

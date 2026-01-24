@@ -3321,7 +3321,7 @@ body.overflow_body_hidden {
 .header-booking-form .header-form-input[type=text][id=headerEventDate], .header-booking-form .header-form-input[type=date] {
   position: relative;
   cursor: pointer;
-  padding-right: 40px;
+  padding-right: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3471,6 +3471,9 @@ body.overflow_body_hidden {
 .header-booking-form .header-choices .choices[data-type*=select-one].is-open::before {
   transform: translateY(-50%) rotate(180deg);
 }
+.header-booking-form .header-form-date-wrapper {
+  position: relative;
+}
 .header-booking-form .header-form-date-wrapper .header-form-input {
   padding-right: 40px;
 }
@@ -3492,6 +3495,13 @@ body.overflow_body_hidden {
 }
 .header-booking-form .header-form-date-wrapper .header-form-field-display {
   padding-right: 20px;
+}
+.header-booking-form .header-form-date-wrapper .flatpickr-calendar {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 4px !important;
+  z-index: 10000 !important;
 }
 .header-booking-form .header-form-date-wrapper.is-focused .header-form-calendar-icon, .header-booking-form .header-form-date-wrapper:focus-within .header-form-calendar-icon, .header-booking-form .header-form-date-wrapper.has-value .header-form-calendar-icon {
   opacity: 1;
@@ -5426,6 +5436,69 @@ body.banner-animating {
 }
 .main-banner-container .main-banner-form input[type=date]:placeholder-shown {
   color: #ABAFB1;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .flatpickr-calendar {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 4px !important;
+  z-index: 10000 !important;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-field-display {
+  display: block;
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ABAFB1;
+  white-space: nowrap;
+  cursor: text;
+  pointer-events: none;
+}
+@media (max-width: 1440px) {
+  .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-field-display {
+    font-size: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-field-display {
+    font-size: 15px;
+  }
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-input {
+  display: none;
+  padding-right: 40px;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 13px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper .form-calendar-icon:hover {
+  opacity: 1;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.is-focused .form-field-display, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper:focus-within .form-field-display, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.has-value .form-field-display {
+  display: none;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.is-focused .form-input, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper:focus-within .form-input, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.has-value .form-input {
+  display: block;
+}
+.main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.is-focused .form-calendar-icon, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper:focus-within .form-calendar-icon, .main-banner-container .main-banner-form .form-field-wrapper.form-date-wrapper.has-value .form-calendar-icon {
+  opacity: 1;
 }
 .main-banner-container .form-field {
   flex: 0 1 auto;
@@ -8062,9 +8135,23 @@ body.banner-animating {
 }
 
 .timeline-slider {
-  padding: 80px 0;
   background-color: #C5B17F;
   position: relative;
+}
+.timeline-slider .timeline-slider-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.timeline-slider .timeline-slider-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 1314px;
+  margin: 0 auto;
 }
 .timeline-slider .container {
   position: relative;
@@ -8411,9 +8498,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .timeline-slider {
-    padding: 70px 0;
-  }
   .timeline-slider .timeline-header {
     margin-bottom: 50px;
     gap: 40px;
@@ -8429,9 +8513,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 995px) {
-  .timeline-slider {
-    padding: 60px 0;
-  }
   .timeline-slider .timeline-header {
     flex-direction: column;
     margin-bottom: 40px;
@@ -8474,9 +8555,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 700px) {
-  .timeline-slider {
-    padding: 50px 0;
-  }
   .timeline-slider .timeline-headline {
     font-size: 28px;
   }
@@ -8498,9 +8576,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 480px) {
-  .timeline-slider {
-    padding: 40px 0;
-  }
   .timeline-slider .timeline-description {
     font-size: 0.875rem;
   }

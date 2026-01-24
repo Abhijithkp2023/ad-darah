@@ -452,6 +452,83 @@ body.banner-animating {
 				color: $placeholder-gray;
 			}
 		}
+
+		// Date wrapper styling (for Flatpickr date picker)
+		.form-field-wrapper.form-date-wrapper {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			width: 100%;
+
+			// Flatpickr calendar container positioning
+			.flatpickr-calendar {
+				position: absolute !important;
+				top: 100% !important;
+				left: 0 !important;
+				margin-top: 4px !important;
+				z-index: 10000 !important;
+			}
+
+			.form-field-display {
+				display: block;
+				font-family: "Neue Regrade", sans-serif;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 1.5;
+				color: $placeholder-gray;
+				white-space: nowrap;
+				cursor: text;
+				pointer-events: none;
+
+				@media (max-width: 1440px) {
+					font-size: 16px;
+				}
+
+				@media (max-width: 700px) {
+					font-size: 15px;
+				}
+			}
+
+			.form-input {
+				display: none; // Hidden by default, shown when focused or has value
+				padding-right: 40px;
+			}
+
+			.form-calendar-icon {
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 12px;
+				height: 13px;
+				pointer-events: auto;
+				cursor: pointer;
+				z-index: 10;
+				transition: opacity 0.2s ease;
+				opacity: 0.7;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			// When focused or has value, show input and hide display
+			&.is-focused,
+			&:focus-within,
+			&.has-value {
+				.form-field-display {
+					display: none;
+				}
+
+				.form-input {
+					display: block;
+				}
+
+				.form-calendar-icon {
+					opacity: 1;
+				}
+			}
+		}
 	}
 
 	.form-field {

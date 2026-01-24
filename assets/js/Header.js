@@ -968,8 +968,18 @@
 
 			const dateInput = document.getElementById('headerEventDate');
 			const calendarIcon = document.querySelector('.header-form-calendar-icon');
+			const dateWrapper = document.querySelector('.header-form-date-wrapper');
 
 			if (dateInput) {
+				const dateWrapperEl = dateWrapper || dateInput.closest('.header-form-date-wrapper');
+				const display = dateWrapperEl ? dateWrapperEl.querySelector('.header-form-field-display') : null;
+				
+				// Set initial state: show display, hide input
+				if (display && dateWrapperEl) {
+					display.style.display = 'block';
+					dateInput.style.display = 'none';
+				}
+
 				const flatpickrInstance = flatpickr(dateInput, {
 					dateFormat: 'Y-m-d',
 					altInput: false,
@@ -977,17 +987,85 @@
 					clickOpens: true,
 					placeholder: 'Event Date',
 					disableMobile: false,
+					appendTo: dateWrapper || dateInput.parentElement, // Append to wrapper (which has position: relative)
 					onReady: function(selectedDates, dateStr, instance) {
 						// Make calendar icon clickable
 						if (calendarIcon) {
-							calendarIcon.addEventListener('click', function() {
+							calendarIcon.style.pointerEvents = 'auto';
+							calendarIcon.style.cursor = 'pointer';
+							calendarIcon.addEventListener('click', function(e) {
+								e.preventDefault();
+								e.stopPropagation();
+								// Show input and focus it before opening calendar
+								if (display && dateWrapperEl) {
+									display.style.display = 'none';
+									dateInput.style.display = 'block';
+									dateWrapperEl.classList.add('is-focused');
+								}
 								instance.open();
 							});
+						}
+
+						// Handle input focus
+						dateInput.addEventListener('focus', function() {
+							if (display && dateWrapperEl) {
+								display.style.display = 'none';
+								dateInput.style.display = 'block';
+								dateWrapperEl.classList.add('is-focused');
+							}
+						});
+
+						// Handle input blur
+						dateInput.addEventListener('blur', function() {
+							if (!dateInput.value || dateInput.value.trim() === '') {
+								if (display && dateWrapperEl) {
+									dateWrapperEl.classList.remove('is-focused');
+									// Keep input visible if calendar is open, otherwise hide it
+									setTimeout(function() {
+										if (!instance.isOpen) {
+											dateInput.style.display = 'none';
+											display.style.display = 'block';
+										}
+									}, 200);
+								}
+							}
+						});
+					},
+					onOpen: function(selectedDates, dateStr, instance) {
+						// Position calendar near the input field
+						const calendar = instance.calendarContainer;
+						if (calendar && (dateWrapper || dateInput.parentElement)) {
+							const container = dateWrapper || dateInput.parentElement;
+							calendar.style.position = 'absolute';
+							calendar.style.top = '100%';
+							calendar.style.left = '0';
+							calendar.style.marginTop = '4px';
+							calendar.style.zIndex = '10000';
+						}
+					},
+					onClose: function(selectedDates, dateStr, instance) {
+						// If no value, hide input and show display after closing
+						if (!dateInput.value || dateInput.value.trim() === '') {
+							if (display && dateWrapperEl) {
+								setTimeout(function() {
+									dateInput.style.display = 'none';
+									display.style.display = 'block';
+									dateWrapperEl.classList.remove('is-focused');
+								}, 100);
+							}
 						}
 					},
 					onChange: function(selectedDates, dateStr, instance) {
 						// Update display when date is selected
 						updateFieldDisplay(dateInput);
+						// If date is selected, keep input visible
+						if (dateStr) {
+							if (display && dateWrapperEl) {
+								display.style.display = 'none';
+								dateInput.style.display = 'block';
+								dateWrapperEl.classList.add('has-value');
+							}
+						}
 					}
 				});
 			}
@@ -1004,6 +1082,12 @@
 				const input = wrapper.querySelector('.header-form-input, select');
 				const choicesContainer = wrapper.querySelector('.header-choices');
 				const isSelect = input && input.tagName === 'SELECT';
+				const isDateInput = wrapper.classList.contains('header-form-date-wrapper');
+				
+				// Skip date inputs - they are handled by Flatpickr
+				if (isDateInput) {
+					return;
+				}
 				
 				// For selects, always show them and hide display
 				if (isSelect) {
@@ -1021,6 +1105,10 @@
 
 				// Only handle text inputs
 				if (!display || !input) return;
+
+				// Set initial state: show display, hide input
+				display.style.display = 'block';
+				input.style.display = 'none';
 
 				// Update display text based on input value
 				const updateDisplay = function() {

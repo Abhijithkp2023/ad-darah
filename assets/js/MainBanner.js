@@ -112,22 +112,108 @@
 			});
 		}
 
-		// Handle date inputs
-		const dateInputs = form.querySelectorAll('input[type="date"]');
-		dateInputs.forEach(function (dateInput) {
-			// Check initial state
-			updateDateInputColor(dateInput);
+		// Initialize Flatpickr for date picker
+		if (typeof flatpickr !== "undefined") {
+			const dateInput = document.getElementById("event-date");
+			const calendarIcon = form.querySelector(".form-calendar-icon");
+			const dateWrapper = form.querySelector(".form-date-wrapper");
 
-			// Update on change
-			dateInput.addEventListener("change", function () {
-				updateDateInputColor(dateInput);
-			});
+			if (dateInput && dateWrapper) {
+				// Initialize display state
+				updateDateInputDisplay(dateInput);
 
-			// Also update on input (for browsers that support it)
-			dateInput.addEventListener("input", function () {
+				const flatpickrInstance = flatpickr(dateInput, {
+					dateFormat: "Y-m-d",
+					altInput: false,
+					allowInput: true,
+					clickOpens: true,
+					placeholder: "Select Event Date",
+					disableMobile: false,
+					appendTo: dateWrapper, // Append to wrapper (which has position: relative)
+					onReady: function (selectedDates, dateStr, instance) {
+						// Make calendar icon clickable
+						if (calendarIcon) {
+							calendarIcon.style.pointerEvents = "auto";
+							calendarIcon.style.cursor = "pointer";
+							calendarIcon.addEventListener("click", function (e) {
+								e.preventDefault();
+								e.stopPropagation();
+								instance.open();
+							});
+						}
+
+						// Handle focus events
+						dateInput.addEventListener("focus", function () {
+							dateWrapper.classList.add("is-focused");
+							updateDateInputDisplay(dateInput);
+						});
+
+						dateInput.addEventListener("blur", function () {
+							dateWrapper.classList.remove("is-focused");
+							updateDateInputDisplay(dateInput);
+						});
+					},
+					onOpen: function(selectedDates, dateStr, instance) {
+						// Position calendar near the input field
+						const calendar = instance.calendarContainer;
+						if (calendar && dateWrapper) {
+							calendar.style.position = 'absolute';
+							calendar.style.top = '100%';
+							calendar.style.left = '0';
+							calendar.style.marginTop = '4px';
+							calendar.style.zIndex = '10000';
+						}
+					},
+					onChange: function (selectedDates, dateStr, instance) {
+						// Update display when date is selected
+						updateDateInputDisplay(dateInput);
+					},
+				});
+			}
+		} else {
+			// Fallback: Handle native date inputs if Flatpickr is not available
+			const dateInputs = form.querySelectorAll('input[type="date"]');
+			dateInputs.forEach(function (dateInput) {
+				// Check initial state
 				updateDateInputColor(dateInput);
+
+				// Update on change
+				dateInput.addEventListener("change", function () {
+					updateDateInputColor(dateInput);
+				});
+
+				// Also update on input (for browsers that support it)
+				dateInput.addEventListener("input", function () {
+					updateDateInputColor(dateInput);
+				});
 			});
-		});
+		}
+	};
+
+	/**
+	 * Update date input display based on value
+	 */
+	const updateDateInputDisplay = function (dateInput) {
+		const wrapper = dateInput.closest(".form-date-wrapper");
+		if (!wrapper) return;
+
+		const display = wrapper.querySelector(".form-field-display");
+
+		if (dateInput.value && dateInput.value !== "") {
+			// Has value - hide display, show input
+			if (display) {
+				display.style.display = "none";
+			}
+			dateInput.style.display = "block";
+			dateInput.classList.add("has-value");
+		} else {
+			// No value - show display, hide input
+			if (display) {
+				display.style.display = "block";
+			}
+			dateInput.style.display = "none";
+			dateInput.classList.remove("has-value");
+		}
 	};
 
 	/**

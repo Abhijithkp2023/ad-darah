@@ -65,7 +65,13 @@ $main_banner_bg_image = get_query_var('main_banner_bg_image', get_theme_mod('mai
 				</div>
 				<div class="form-field">
 					<label for="event-date" class="form-label">Event Date</label>
-					<input type="date" id="event-date" name="event_date" class="form-input" required>
+					<div class="form-field-wrapper form-date-wrapper">
+						<span class="form-field-display">Select Event Date</span>
+						<input type="text" id="event-date" name="event_date" class="form-input"
+							placeholder="Select Event Date" required>
+						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/header_calendar.svg'); ?>"
+							alt="Calendar" class="form-calendar-icon">
+					</div>
 				</div>
 				<div class="form-field">
 					<label for="contact-time" class="form-label">Preferred Contact Time</label>
