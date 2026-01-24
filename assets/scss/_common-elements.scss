@@ -43,9 +43,12 @@
 	@media #{$media-1400} {
 		height: 45px;
 		padding-inline: 30px;
+		font-size: 15px;
 	}
 	@media #{$media-700} {
-		font-size: 15px;
+		font-size: 14px;
+		height: 36px;
+		padding-inline: 25px;
 	}
 }
 

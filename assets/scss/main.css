@@ -2403,11 +2403,14 @@ a,
   .primary-button {
     height: 45px;
     padding-inline: 30px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 700px) {
   .primary-button {
-    font-size: 15px;
+    font-size: 14px;
+    height: 36px;
+    padding-inline: 25px;
   }
 }
 
@@ -5559,11 +5562,14 @@ body.banner-animating {
   .main-banner-container .book-visit-button {
     height: 45px;
     padding-inline: 30px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 700px) {
   .main-banner-container .book-visit-button {
-    font-size: 15px;
+    font-size: 14px;
+    height: 36px;
+    padding-inline: 25px;
   }
 }
 .main-banner-container .main-banner-image {
@@ -7368,7 +7374,7 @@ body.banner-animating {
 }
 .virtual-tour-container .virtual-tour-overlay {
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -8152,6 +8158,11 @@ body.banner-animating {
   object-fit: cover;
   max-width: 1314px;
   margin: 0 auto;
+}
+@media only screen and (max-width: 1200px) {
+  .timeline-slider .timeline-slider-bg {
+    display: none;
+  }
 }
 .timeline-slider .container {
   position: relative;
@@ -12995,11 +13006,14 @@ body.banner-animating {
   .landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button {
     height: 45px;
     padding-inline: 30px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 700px) {
   .landing-gallery-section .landing-gallery-button-wrapper .landing-gallery-button {
-    font-size: 15px;
+    font-size: 14px;
+    height: 36px;
+    padding-inline: 25px;
   }
 }
 .landing-gallery-section .landing-gallery-grid {
@@ -13596,11 +13610,14 @@ body.banner-animating {
   .form-popup-form .primary-button {
     height: 45px;
     padding-inline: 30px;
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 700px) {
   .form-popup-form .primary-button {
-    font-size: 15px;
+    font-size: 14px;
+    height: 36px;
+    padding-inline: 25px;
   }
 }
 

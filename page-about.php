@@ -125,12 +125,12 @@ get_header();
 				array(
 					'title' => 'Our Vision',
 					'description' => 'To be the Kingdom\'s leading venue for prestigious events, setting new benchmarks in hospitality and excellence.',
-					'image' => get_template_directory_uri() . '/assets/images/vision.jpg',
+					'image' => get_template_directory_uri() . '/assets/images/vision.png',
 				),
 				array(
 					'title' => 'Our Mission',
 					'description' => 'To deliver exceptional experiences that honor Saudi heritage while embracing innovation, creating unforgettable moments for every event we host.',
-					'image' => get_template_directory_uri() . '/assets/images/mision.jpg',
+					'image' => get_template_directory_uri() . '/assets/images/mission.png',
 				),
 			);
 			set_query_var('services_stack_services', $services_stack_services);

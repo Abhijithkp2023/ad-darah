@@ -18,6 +18,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml"
+		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
+	<link rel="icon" type="image/png"
+		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
+	<link rel="apple-touch-icon"
+		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
+
 	<?php wp_head(); ?>
 </head>
 

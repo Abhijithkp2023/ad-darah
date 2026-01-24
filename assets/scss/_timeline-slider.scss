@@ -12,7 +12,6 @@
 		height: 100%;
 		z-index: 1;
 
-
 		img {
 			width: 100%;
 			height: 100%;
@@ -21,7 +20,7 @@
 			margin: 0 auto;
 		}
 
-		@media #{$media-1200px} {
+		@media #{$media-1200} {
 			display: none;
 		}
 	}
