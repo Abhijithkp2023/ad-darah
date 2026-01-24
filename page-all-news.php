@@ -138,7 +138,7 @@ get_header();
 		<?php
 		// Full Video Section
 		$full_video_thumbnail = get_template_directory_uri() . '/assets/images/g_video_thumb.jpg';
-		$full_video_url = get_template_directory_uri() . '/assets/videos/g_video.mp4';
+		$full_video_url = get_template_directory_uri() . '/assets/videos/home-video.mp4';
 
 		include locate_template('template-parts/FullVideoSection.php');
 		?>

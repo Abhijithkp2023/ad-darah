@@ -4824,6 +4824,7 @@ body.contact-popup-open {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom;
 }
 .banner-container::before {
   content: "";
@@ -4832,7 +4833,7 @@ body.contact-popup-open {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 25%, rgba(0, 0, 0, 0) 50%);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(0, 0, 0, 0.57) 0%, rgba(0, 0, 0, 0) 53.25%);
   z-index: 1;
 }
 .banner-container .banner-content {
@@ -6352,6 +6353,26 @@ body.banner-animating {
 @media only screen and (max-width: 700px) {
   .sub-title {
     font-size: 16px;
+  }
+}
+.sub-title.sub-title-page {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: 0px;
+  color: #C5B17F;
+  text-transform: none;
+}
+@media only screen and (max-width: 1060px) {
+  .sub-title.sub-title-page {
+    font-size: 45px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .sub-title.sub-title-page {
+    font-size: 30px;
   }
 }
 

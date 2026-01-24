@@ -133,4 +133,10 @@
 	text-transform: uppercase;
 	color: #b64910;
 	margin: 0;
+
+	&.sub-title-page {
+		@include where-ever-title;
+		color: $gold;
+		text-transform: none;
+	}
 }
