@@ -69,7 +69,7 @@ if (empty($image_text_image)) {
 					<?php endforeach; ?>
 				<?php endif; ?>
 				<?php if (!empty($image_text_button_text) && !empty($image_text_button_link)): ?>
-					<a href="<?php echo esc_url($image_text_button_link); ?>" class="primary-button image-text-button">
+					<a href="<?php echo esc_url($image_text_button_link); ?>" class="primary-button image-text-button wide">
 						<?php echo esc_html($image_text_button_text); ?>
 					</a>
 				<?php endif; ?>

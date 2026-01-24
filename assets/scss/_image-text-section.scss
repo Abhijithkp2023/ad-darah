@@ -13,7 +13,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		gap: 60px;
+		gap: 75px;
 	}
 
 	.image-text-left {
@@ -79,7 +79,11 @@
 		}
 	}
 
-
+@media #{$media-1200} {
+	.image-text-wrapper {
+		gap: 60px;
+	}
+}
 
 	// Tablet Responsive
 	@media #{$media-1024} {

@@ -2058,8 +2058,12 @@ a,
 	position: relative;
 	overflow: hidden;
 	transition: color 0.4s ease;
-	z-index: 1;
+z-index: 1;
 	width: max-content;
+
+	&.wide {
+		padding-inline: 83px;
+	}
 
 	.su_button_circle {
 		position: absolute;

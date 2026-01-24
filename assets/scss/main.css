@@ -2287,6 +2287,9 @@ a,
   z-index: 1;
   width: max-content;
 }
+.primary-button.wide {
+  padding-inline: 83px;
+}
 .primary-button .su_button_circle {
   position: absolute;
   width: 0;
@@ -8049,7 +8052,7 @@ body.banner-animating {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  gap: 75px;
 }
 .image-text-section .image-text-left {
   width: 42.3%;
@@ -8109,6 +8112,11 @@ body.banner-animating {
 }
 .image-text-section .image-text-headline .headline-line-2 {
   font-weight: 400;
+}
+@media only screen and (max-width: 1200px) {
+  .image-text-section .image-text-wrapper {
+    gap: 60px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .image-text-section {
