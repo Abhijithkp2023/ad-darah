@@ -11,8 +11,8 @@ get_header();
 
 <main id="primary" class="site-main">
 	<div class="home-page">
-		
-	 
+
+
 		<?php
 		// Banner Section
 		set_query_var('banner_title', get_the_title());
@@ -46,54 +46,97 @@ get_header();
 
 		<section class="press-release-detail-content ">
 			<div class="wrap">
-				 <div class="press-release-detail-content-wrapper">
-                    <p>26 MAR 2025</p>
-                    <ul class="share-links">
-                        <li>Share :</li>
-                        <li><a href="">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg" alt="Facebook">
-                        </a> </li>
-                        <li><a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/x.svg" alt="Facebook">
-                        </a> </li>
-                        <li><a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg" alt="Facebook">
-                        </a> </li>
-                        <li><a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedIn.svg" alt="Facebook">
-                        </a> </li>
+				<div class="press-release-detail-content-wrapper">
+					<p>26 MAR 2025</p>
+					<ul class="share-links">
+						<li>Share :</li>
+						<li><a href="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg"
+									alt="Facebook">
+							</a> </li>
+						<li><a href="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/x.svg"
+									alt="Facebook">
+							</a> </li>
+						<li><a href="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg"
+									alt="Facebook">
+							</a> </li>
+						<li><a href="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedIn.svg"
+									alt="Facebook">
+							</a> </li>
 
-                        <li><a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube.svg" alt="Facebook">
-                        </a> </li>
-                                             </ul>
-                 </div>
+						<li><a href="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube.svg"
+									alt="Facebook">
+							</a> </li>
+					</ul>
+				</div>
 
- 
-                 <div class="press-release-detail-wrap">
-                    <h1 class="title_style_1 yello">Inside ADDarah’s vision for transformative hospitality</h1>
-<div class="press-release-detail-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/press-image-01.jpg" alt="Inside ADDarah’s vision for transformative hospitality">
-     </div>
 
-     <div class="press-release-detail-content-block">
- 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum justo quis tempor elementum. Cras dapibus, ante non egestas viverra, mi ante venenatis est, non feugiat sem elit eu nisl. Vivamus efficitur luctus rutrum. Nulla nisi turpis, elementum in cursus venenatis, vehicula non ante. Maecenas fermentum odio ut nisi tempus interdum. Sed posuere, mi eu tempor accumsan, mi sem consectetur quam, vel ultrices sapien enim sit amet felis. Phasellus mattis nulla ac condimentum scelerisque. Etiam accumsan non neque eget mattis. Vestibulum luctus fermentum sodales. Vivamus finibus cursus mollis. Integer condimentum finibus nibh id egestas. Curabitur efficitur nibh eros, in interdum risus ultrices at. Mauris neque lorem, fringilla sit amet elementum vitae, posuere a velit. Proin ac neque non nisi bibendum tincidunt id et neque.</p>
+				<div class="press-release-detail-wrap">
+					<h1 class="title_style_1 yello">Inside ADDarah’s vision for transformative hospitality</h1>
+					<div class="press-release-detail-image">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/press-image-01.jpg"
+							alt="Inside ADDarah’s vision for transformative hospitality">
+					</div>
 
-<p>Donec pellentesque orci tincidunt, ultricies dui at, pharetra metus. In in dolor egestas, lacinia enim vel, congue turpis. Nam in ligula lobortis, ultrices purus ut, sodales orci. Donec nulla nibh, condimentum in mauris quis, molestie luctus diam. Sed eget enim quis sapien fermentum consequat. Morbi dictum molestie lorem, ut faucibus enim sodales quis. Quisque nec augue consectetur justo facilisis laoreet. Nunc vulputate interdum nunc, nec tincidunt felis pellentesque fringilla. Sed elementum sed sem tempus tempus. Cras dapibus efficitur diam vitae finibus. Sed nec metus dolor. Praesent consequat eget purus id laoreet. Sed luctus, nibh sit amet ultricies placerat, orci dui imperdiet nibh, a porta arcu nisi eget nisl. Pellentesque quis rhoncus velit. Mauris pellentesque dui sed orci efficitur lobortis. Proin aliquet fringilla </p>
+					<div class="press-release-detail-content-block">
 
-<p>accumsan.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum justo quis tempor elementum. Cras dapibus, ante non egestas viverra, mi ante venenatis est, non feugiat sem elit eu nisl. Vivamus efficitur luctus rutrum. Nulla nisi turpis, elementum in cursus venenatis, vehicula non ante. Maecenas fermentum odio ut nisi tempus interdum. Sed posuere, mi eu tempor accumsan, mi sem consectetur quam, vel ultrices sapien enim sit amet felis. Phasellus mattis nulla ac condimentum scelerisque. Etiam accumsan non neque eget mattis. Vestibulum luctus fermentum sodales. Vivamus finibus cursus mollis. Integer condimentum finibus nibh id egestas. Curabitur efficitur nibh eros, in interdum risus ultrices at. Mauris neque lorem, fringilla sit amet elementum vitae, posuere a velit. Proin ac neque non nisi bibendum tincidunt id et neque.</p>
-      
-    </div>
-                </div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum justo quis tempor
+							elementum. Cras dapibus, ante non egestas viverra, mi ante venenatis est, non feugiat sem
+							elit eu nisl. Vivamus efficitur luctus rutrum. Nulla nisi turpis, elementum in cursus
+							venenatis, vehicula non ante. Maecenas fermentum odio ut nisi tempus interdum. Sed posuere,
+							mi eu tempor accumsan, mi sem consectetur quam, vel ultrices sapien enim sit amet felis.
+							Phasellus mattis nulla ac condimentum scelerisque. Etiam accumsan non neque eget mattis.
+							Vestibulum luctus fermentum sodales. Vivamus finibus cursus mollis. Integer condimentum
+							finibus nibh id egestas. Curabitur efficitur nibh eros, in interdum risus ultrices at.
+							Mauris neque lorem, fringilla sit amet elementum vitae, posuere a velit. Proin ac neque non
+							nisi bibendum tincidunt id et neque.</p>
+
+						<p>Donec pellentesque orci tincidunt, ultricies dui at, pharetra metus. In in dolor egestas,
+							lacinia enim vel, congue turpis. Nam in ligula lobortis, ultrices purus ut, sodales orci.
+							Donec nulla nibh, condimentum in mauris quis, molestie luctus diam. Sed eget enim quis
+							sapien fermentum consequat. Morbi dictum molestie lorem, ut faucibus enim sodales quis.
+							Quisque nec augue consectetur justo facilisis laoreet. Nunc vulputate interdum nunc, nec
+							tincidunt felis pellentesque fringilla. Sed elementum sed sem tempus tempus. Cras dapibus
+							efficitur diam vitae finibus. Sed nec metus dolor. Praesent consequat eget purus id laoreet.
+							Sed luctus, nibh sit amet ultricies placerat, orci dui imperdiet nibh, a porta arcu nisi
+							eget nisl. Pellentesque quis rhoncus velit. Mauris pellentesque dui sed orci efficitur
+							lobortis. Proin aliquet fringilla </p>
+
+						<p>accumsan.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum justo quis
+							tempor elementum. Cras dapibus, ante non egestas viverra, mi ante venenatis est, non feugiat
+							sem elit eu nisl. Vivamus efficitur luctus rutrum. Nulla nisi turpis, elementum in cursus
+							venenatis, vehicula non ante. Maecenas fermentum odio ut nisi tempus interdum. Sed posuere,
+							mi eu tempor accumsan, mi sem consectetur quam, vel ultrices sapien enim sit amet felis.
+							Phasellus mattis nulla ac condimentum scelerisque. Etiam accumsan non neque eget mattis.
+							Vestibulum luctus fermentum sodales. Vivamus finibus cursus mollis. Integer condimentum
+							finibus nibh id egestas. Curabitur efficitur nibh eros, in interdum risus ultrices at.
+							Mauris neque lorem, fringilla sit amet elementum vitae, posuere a velit. Proin ac neque non
+							nisi bibendum tincidunt id et neque.</p>
+
+					</div>
+				</div>
 			</div>
 		</section>
 
- 
+
 
 		<?php
 		// Related News Section
 		get_template_part('template-parts/RelatedNews');
+		?>
+
+		<?php
+		// Contact Us Section
+		set_query_var('contact_title', 'Your Event, Our Venue — Excellence Awaits');
+		set_query_var('contact_description', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+		set_query_var('contact_button_text', 'Contact Us');
+		set_query_var('contact_button_link', '#');
+		set_query_var('contact_bg_image', get_template_directory_uri() . '/assets/images/contact-bg.jpg');
+		get_template_part('template-parts/ContactUs');
 		?>
 	</div>
 </main><!-- #main -->
