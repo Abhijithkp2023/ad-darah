@@ -91,7 +91,7 @@
 		try {
 			// Check if we have enough slides for loop (need at least 6 for smooth loop)
 			const slideCount = slides.length;
-			const enableLoop = slideCount >= 6;
+			const enableLoop = slideCount >= 6 && hasNavigation; // Only enable Swiper loop when navigation is present
 			
 			// Build Swiper config
 			const swiperConfig = {
@@ -100,23 +100,15 @@
 				speed: 600,
 				direction: "horizontal",
 				centeredSlides: true,
-				loop: enableLoop,
+				loop: enableLoop, // Disable loop when CSS animation is used
 				loopAdditionalSlides: enableLoop ? 3 : 0,
 				loopedSlides: enableLoop ? Math.ceil(slideCount / 2) : undefined,
 				initialSlide: 0,
 			};
 
-			// Enable autoplay only if navigation buttons are not present
-			if (!hasNavigation) {
-				swiperConfig.autoplay = {
-					delay: 2000,
-					disableOnInteraction: false,
-					pauseOnMouseEnter: true,
-				};
-				console.log("SingleTestimonial: Autoplay enabled (no navigation buttons)");
-			} else {
-				console.log("SingleTestimonial: Autoplay disabled (navigation buttons present)");
-			}
+			// CSS animation will handle auto-sliding when navigation is not present
+			// No Swiper autoplay needed - CSS provides uniform linear motion
+			console.log("SingleTestimonial: Using CSS animation for auto-slide (no navigation buttons)");
 
 			// Add navigation if buttons exist
 			if (hasNavigation) {
@@ -149,11 +141,35 @@
 			const swiperInstance = new Swiper(swiperElement, swiperConfig);
 			swiperElement._swiperInstance = swiperInstance;
 			
-			// Update loop after initialization to ensure it works correctly
-			if (enableLoop && swiperInstance.loop) {
+			// Update loop after initialization to ensure it works correctly (only when navigation is present)
+			if (enableLoop && swiperInstance.loop && hasNavigation) {
 				swiperInstance.loopDestroy();
 				swiperInstance.loopCreate();
 				swiperInstance.update();
+			}
+			
+			// When CSS animation is used, prevent Swiper from updating transforms
+			if (!hasNavigation) {
+				// Disable Swiper's transform updates - CSS animation handles it
+				swiperInstance.allowTouchMove = false;
+				swiperInstance.allowSlideNext = false;
+				swiperInstance.allowSlidePrev = false;
+				
+				// Override Swiper's setTranslate to completely prevent transform updates
+				swiperInstance.setTranslate = function(translate) {
+					// Don't let Swiper update transforms - CSS animation handles it
+					return;
+				};
+				
+				// Also prevent Swiper from updating transforms on resize
+				const originalUpdate = swiperInstance.update;
+				swiperInstance.update = function() {
+					originalUpdate.call(this);
+					// Clear any transform Swiper might have set
+					if (this.wrapperEl) {
+						this.wrapperEl.style.transform = '';
+					}
+				};
 			}
 			
 			console.log(

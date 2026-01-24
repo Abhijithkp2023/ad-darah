@@ -22,19 +22,34 @@ $single_testimonial_title = isset($single_testimonial_title) ? $single_testimoni
 $single_testimonial_items = isset($single_testimonial_items) && is_array($single_testimonial_items) ? $single_testimonial_items : array();
 $single_testimonial_decor_image = isset($single_testimonial_decor_image) ? $single_testimonial_decor_image : get_template_directory_uri() . '/assets/images/single_testimonial_decor.png';
 $single_testimonial_show_navigation = isset($single_testimonial_show_navigation) ? $single_testimonial_show_navigation : false;
+$single_testimonial_variant_class = isset($single_testimonial_variant_class) ? $single_testimonial_variant_class : '';
 
-// Duplicate items to ensure smooth slider loop (need at least 10-12 for smooth loop with 3.3 slidesPerView)
+// Duplicate items for seamless CSS animation loop
+// For CSS animation: duplicate 4-5 times for seamless continuous loop
+// For Swiper with navigation: duplicate until we have enough for smooth loop
 if (count($single_testimonial_items) > 0) {
-    $duplicated_items = $single_testimonial_items;
-    // Keep duplicating until we have at least 12 items for smooth infinite loop
-    while (count($duplicated_items) < 12) {
-        $duplicated_items = array_merge($duplicated_items, $single_testimonial_items);
+    if ($single_testimonial_show_navigation) {
+        // For Swiper with navigation: duplicate until we have at least 12 items
+        $duplicated_items = $single_testimonial_items;
+        while (count($duplicated_items) < 12) {
+            $duplicated_items = array_merge($duplicated_items, $single_testimonial_items);
+        }
+        $single_testimonial_items = $duplicated_items;
+    } else {
+        // For CSS animation: duplicate 4-5 times for seamless continuous loop
+        $original_items = $single_testimonial_items;
+        $single_testimonial_items = array_merge(
+            $original_items,
+            $original_items,
+            $original_items,
+            $original_items,
+            $original_items
+        ); // 5 times total
     }
-    $single_testimonial_items = $duplicated_items;
 }
 ?>
 
-<section class="single-testimonial-container pt_100 pb_100">
+<section class="single-testimonial-container pt_100 pb_100 <?php echo esc_attr($single_testimonial_variant_class); ?>">
     <div class="single-testimonial-background-image">
         <img src="<?php echo esc_url($single_testimonial_decor_image); ?>" alt="Testimonial Decoration">
     </div>
@@ -43,7 +58,8 @@ if (count($single_testimonial_items) > 0) {
         <h2 class="single-testimonial-title"><?php echo esc_html($single_testimonial_title); ?></h2>
     </div>
 
-    <div class="single-testimonial-content <?php echo $single_testimonial_show_navigation ? 'has-navigation' : ''; ?>">
+    <div
+        class="single-testimonial-content <?php echo $single_testimonial_show_navigation ? 'has-navigation' : 'css-animation'; ?>">
         <!-- Left Overlay -->
         <div class="single-testimonial-overlay single-testimonial-overlay-left"></div>
 

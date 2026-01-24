@@ -72,6 +72,7 @@ get_header();
 		$single_testimonial_title = 'Featured Clients';
 		$single_testimonial_show_navigation = true;
 		$single_testimonial_decor_image = get_template_directory_uri() . '/assets/images/single_testimonial_decor_2.png';
+		$single_testimonial_variant_class = 'landing-page-2-variant';
 		$single_testimonial_items = array(
 			array(
 				'review' => 'This venue is perfect for large celebrations! The elegant halls and impeccable service made our wedding unforgettable.',

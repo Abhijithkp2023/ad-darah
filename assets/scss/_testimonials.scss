@@ -369,6 +369,63 @@
 		}
 	}
 
+	// Contact page variant
+	&.contact-page-variant {
+		background-color: #C5B17F;
+
+		.single-testimonial-title {
+			color: #fff !important;
+		}
+
+		.single-testimonial-overlay {
+			&-left {
+				background: linear-gradient(
+					270deg,
+					rgba(197, 177, 127, 0) 0%,
+					#C5B17F 106%
+				);
+			}
+
+			&-right {
+				background: linear-gradient(
+					90deg,
+					rgba(197, 177, 127, 0) 0%,
+					#C5B17F 106%
+				);
+			}
+		}
+	}
+
+	// Landing page 2 variant
+	&.landing-page-2-variant {
+		background-color: #C5B17F;
+
+		.single-testimonial-title {
+			color: #fff !important;
+		}
+
+		.single-testimonial-overlay {
+			width: 134px !important;
+
+			&-left {
+				background: linear-gradient(
+					270deg,
+					rgba(197, 177, 127, 0) 0%,
+					#C5B17F 106%
+				);
+			}
+
+			&-right {
+				width: 134px !important;
+				background: linear-gradient(
+					90deg,
+					rgba(197, 177, 127, 0) 0%,
+					#C5B17F 106%
+				);
+			}
+		}
+	}
+
 	.single-testimonial-content {
 		position: relative;
 		z-index: 2;
@@ -400,6 +457,115 @@
 				);
 			}
 		}
+
+		// CSS Animation for uniform linear sliding (when navigation is NOT present)
+		&.css-animation {
+			.single-testimonial-swiper-container {
+				overflow: hidden;
+			}
+
+			.single-testimonial-swiper {
+				// Disable Swiper's transform to allow CSS animation to control it
+				.swiper-wrapper {
+					animation: singleTestimonialSlide 10s linear infinite;
+					will-change: transform;
+				}
+			}
+
+			&:hover .single-testimonial-swiper .swiper-wrapper {
+				animation-play-state: paused;
+			}
+		}
+
+		// When navigation is present, disable CSS animation
+		&.has-navigation {
+			.single-testimonial-swiper .swiper-wrapper {
+				animation: none !important;
+			}
+		}
+	}
+
+	// Contact page variant - overlay inside content
+	&.contact-page-variant {
+		.single-testimonial-content {
+			.single-testimonial-overlay {
+				&-left {
+					background: linear-gradient(
+						270deg,
+						rgba(197, 177, 127, 0) 0%,
+						#C5B17F 106%
+					);
+				}
+
+				&-right {
+					background: linear-gradient(
+						90deg,
+						rgba(197, 177, 127, 0) 0%,
+						#C5B17F 106%
+					);
+				}
+			}
+		}
+	}
+
+	// Landing page 2 variant - overlay inside content
+	&.landing-page-2-variant {
+		.single-testimonial-content {
+			.single-testimonial-overlay {
+				width: 134px !important;
+
+				&-left {
+					background: linear-gradient(
+						270deg,
+						rgba(197, 177, 127, 0) 0%,
+						#C5B17F 106%
+					);
+				}
+
+				&-right {
+					width: 134px !important;
+					background: linear-gradient(
+						90deg,
+						rgba(197, 177, 127, 0) 0%,
+						#C5B17F 106%
+					);
+				}
+			}
+		}
+	}
+
+	.single-testimonial-content {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+
+		.single-testimonial-overlay {
+			position: absolute;
+			top: 0;
+			width: 200px;
+			height: 100%;
+			z-index: 3;
+			pointer-events: none;
+
+			&-left {
+				left: 0;
+				background: linear-gradient(
+					270deg,
+					rgba(255, 255, 255, 0) 0%,
+					#ffffff 81.3%
+				);
+			}
+
+			&-right {
+				right: 0;
+				background: linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0) 0%,
+					#ffffff 81.3%
+				);
+			}
+		}
+
 
 		&.has-navigation {
 			.single-testimonial-nav-button {
@@ -582,65 +748,13 @@
 	}
 }
 
-// Contact Page Specific Override
-.contact-page-testimonial-wrapper {
-	.single-testimonial-container {
-		background-color: #C5B17F;
+// Keyframe animation for smooth linear sliding
+// Items are duplicated 5 times, so we animate by 20% (1/5) for seamless loop
+@keyframes singleTestimonialSlide {
+	0% {
+		transform: translateX(0);
 	}
-
-	.single-testimonial-title {
-		color: #fff !important;
-	}
-
-	.single-testimonial-overlay {
-		&-left {
-			background: linear-gradient(
-				270deg,
-				rgba(197, 177, 127, 0) 0%,
-				#C5B17F 106%
-			);
-		}
-
-		&-right {
-			background: linear-gradient(
-				90deg,
-				rgba(197, 177, 127, 0) 0%,
-				#C5B17F 106%
-			);
-		}
-	}
-}
-
-// Landing Page 2 Specific Override
-.page-landing-2 {
-	.single-testimonial-container {
-		background-color: #C5B17F;
-
-		.single-testimonial-title {
-			color: #fff !important;
-		}
-
-		.single-testimonial-content {
-			.single-testimonial-overlay {
-				width: 134px !important;
-				&-left {
-					background: linear-gradient(
-						270deg,
-						rgba(197, 177, 127, 0) 0%,
-						#C5B17F 106%
-					);
-				}
-				
-
-				&-right {
-				width: 134px !important;
-					background: linear-gradient(
-						90deg,
-						rgba(197, 177, 127, 0) 0%,
-						#C5B17F 106%
-					);
-				}
-			}
-		}
+	100% {
+		transform: translateX(-100%);
 	}
 }

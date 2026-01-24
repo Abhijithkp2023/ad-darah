@@ -25,7 +25,7 @@ get_header();
 			?>
 		</section>
 
-		
+
 
 		<section class="contact-info-map-page-section">
 			<?php
@@ -39,6 +39,7 @@ get_header();
 			// Single Testimonial Section
 			$single_testimonial_title = 'Featured Clients';
 			$single_testimonial_decor_image = get_template_directory_uri() . '/assets/images/single_testimonial_decor_2.png';
+			$single_testimonial_variant_class = 'contact-page-variant';
 			$single_testimonial_items = array(
 				array(
 					'review' => 'This venue is perfect for large celebrations! The spaciousness is ideal for accommodating a significant number of guests, making it a fantastic choice for big events.',
