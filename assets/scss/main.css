@@ -8673,11 +8673,8 @@ body.banner-animating {
 }
 .timeline-slider .timeline-main-swiper .swiper-slide-active {
   height: auto;
-  flex-basis: 55% !important;
-  max-width: 55%;
-}
-.timeline-slider .timeline-main-swiper .swiper-slide-active .timeline-image {
-  height: 414px;
+  transform: scale(1);
+  width: auto;
 }
 .timeline-slider .timeline-main-swiper .swiper-slide-active .timeline-year {
   font-size: 50px;
@@ -8688,26 +8685,18 @@ body.banner-animating {
     margin-bottom: 10px;
   }
 }
-@media only screen and (max-width: 700px) {
-  .timeline-slider .timeline-main-swiper .swiper-slide-active {
-    flex-basis: initial !important;
-    max-width: 100%;
-  }
-}
 .timeline-slider .timeline-main-swiper .swiper-slide:not(.swiper-slide-active) {
-  flex-basis: 45% !important;
-  max-width: 45%;
+  transform: scale(0.85);
 }
 @media only screen and (max-width: 1060px) {
   .timeline-slider .timeline-main-swiper .swiper-slide:not(.swiper-slide-active) {
-    flex-basis: 49% !important;
-    max-width: 50%;
+    transform: scale(0.9);
   }
 }
 @media only screen and (max-width: 700px) {
   .timeline-slider .timeline-main-swiper .swiper-slide:not(.swiper-slide-active) {
-    flex-basis: initial !important;
-    max-width: 100%;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 @media only screen and (max-width: 1024px) {

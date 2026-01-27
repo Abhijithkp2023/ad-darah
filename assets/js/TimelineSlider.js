@@ -58,7 +58,7 @@
 					spaceBetween: 30,
 				},
 				1280: {
-					slidesPerView: 'auto',
+					slidesPerView: 2.1,
 					spaceBetween: 30,
 				},
 			},
