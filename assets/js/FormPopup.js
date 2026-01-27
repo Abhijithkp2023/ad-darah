@@ -233,7 +233,8 @@
 					allowInput: true,
 					clickOpens: false, // We handle clicks manually since input is hidden
 					placeholder: 'Select Event Date',
-					disableMobile: false,
+					// Force desktop-style calendar on mobile to avoid native picker issues
+					disableMobile: true,
 					appendTo: dateWrapper, // Append to wrapper (which has position: relative)
 					onReady: function (selectedDates, dateStr, instance) {
 						const display = dateWrapper.querySelector('.form-field-display');
