@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-ExtraBold-Italic.woff2') format('woff2'),
+        url('NeueRegrade-ExtraBold-Italic.woff') format('woff'),
+        url('NeueRegrade-ExtraBold-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Bold.woff2') format('woff2'),
+        url('NeueRegrade-Bold.woff') format('woff'),
+        url('NeueRegrade-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Light-Italic.woff2') format('woff2'),
+        url('NeueRegrade-Light-Italic.woff') format('woff'),
+        url('NeueRegrade-Light-Italic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Bold-Italic.woff2') format('woff2'),
+        url('NeueRegrade-Bold-Italic.woff') format('woff'),
+        url('NeueRegrade-Bold-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Extrabold.woff2') format('woff2'),
+        url('NeueRegrade-Extrabold.woff') format('woff'),
+        url('NeueRegrade-Extrabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Medium.woff2') format('woff2'),
+        url('NeueRegrade-Medium.woff') format('woff'),
+        url('NeueRegrade-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Regular-Italic.woff2') format('woff2'),
+        url('NeueRegrade-Regular-Italic.woff') format('woff'),
+        url('NeueRegrade-Regular-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Light.woff2') format('woff2'),
+        url('NeueRegrade-Light.woff') format('woff'),
+        url('NeueRegrade-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Regular.woff2') format('woff2'),
+        url('NeueRegrade-Regular.woff') format('woff'),
+        url('NeueRegrade-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-SemiBold-Italic.woff2') format('woff2'),
+        url('NeueRegrade-SemiBold-Italic.woff') format('woff'),
+        url('NeueRegrade-SemiBold-Italic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Medium-Italic.woff2') format('woff2'),
+        url('NeueRegrade-Medium-Italic.woff') format('woff'),
+        url('NeueRegrade-Medium-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Regular_1.woff2') format('woff2'),
+        url('NeueRegrade-Regular_1.woff') format('woff'),
+        url('NeueRegrade-Regular_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Regrade';
+    src: url('NeueRegrade-Semibold.woff2') format('woff2'),
+        url('NeueRegrade-Semibold.woff') format('woff'),
+        url('NeueRegrade-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

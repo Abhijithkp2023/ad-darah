@@ -34,9 +34,20 @@
 			return;
 		}
 
-		// Scroll active tab into view (works for all tabs including gallery)
-		// Only scroll on mobile where horizontal scrolling is enabled
-		if (isMobile) {
+		// Check if active tab is gallery
+		const activeLink = activeTab.querySelector('.news-tabs-link') || activeTab.querySelector('.page-tabs-link');
+		const isGallery = activeLink && activeLink.getAttribute('data-tab') === 'gallery';
+
+		// On mobile, if gallery is active, scroll to the beginning (left) of the list
+		// This ensures gallery is hidden to the right and requires scrolling to see it
+		if (isMobile && isGallery) {
+			// Scroll to the start of the tabs list
+			tabsList.scrollTo({
+				left: 0,
+				behavior: 'smooth'
+			});
+		} else {
+			// For all other tabs (on both mobile and desktop), scroll active tab into view
 			// Calculate scroll position to ensure active tab is visible and centered
 			const tabRect = activeTab.getBoundingClientRect();
 			const listRect = tabsList.getBoundingClientRect();

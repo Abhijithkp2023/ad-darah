@@ -1,22 +1,57 @@
 @font-face {
   font-family: "Neue Regrade";
-  src: url("../fonts/NeueRegrade-Light.woff2") format("woff2"), url("../fonts/NeueRegrade-Light.woff") format("woff");
+  src: url("../fonts/latest_font/NeueRegrade-Light.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Light.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Regrade";
-  src: url("../fonts/NeueRegrade-Regular-Italic.woff2") format("woff2"), url("../fonts/NeueRegrade-Regular-Italic.woff") format("woff");
+  src: url("../fonts/latest_font/NeueRegrade-Light-Italic.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Light-Italic.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Light-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../fonts/latest_font/NeueRegrade-Regular.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Regular.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../fonts/latest_font/NeueRegrade-Regular-Italic.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Regular-Italic.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Regular-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: "Neue Regrade";
-  src: url("../fonts/NeueRegrade-Medium.woff2") format("woff2"), url("../fonts/NeueRegrade-Medium.woff") format("woff");
+  src: url("../fonts/latest_font/NeueRegrade-Medium.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Medium.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../fonts/latest_font/NeueRegrade-Medium-Italic.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Medium-Italic.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Medium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../fonts/latest_font/NeueRegrade-Semibold.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-Semibold.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("../fonts/latest_font/NeueRegrade-SemiBold-Italic.woff2") format("woff2"), url("../fonts/latest_font/NeueRegrade-SemiBold-Italic.woff") format("woff"), url("../fonts/latest_font/NeueRegrade-SemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
   font-display: swap;
 }
 * {
