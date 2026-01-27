@@ -55,10 +55,12 @@
 	.timeline-header-right {
 		flex: 1;
 		p{
+			font-family: "Neue Regrade", sans-serif;
 			font-size: 18px;
 			line-height: 1.3;
 			color: #FFFFFF;
 			margin: 0;
+			letter-spacing: 0.05em;
 			max-width: 660px;
 			margin-left: auto;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -142,14 +144,41 @@
 	}
 
 	.timeline-swiper-container {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
+		// Slider moved outside `.container` in markup, so keep the same horizontal alignment
+		// max-width: calc(1440px  + (100vw - 1440px) / 2);
+		max-width: 1440px;
+		// padding: 0 20px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		overflow: visible; // allow right side to be visible
+
+		// Hide ONLY the left overflow by covering it with the section background
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 100%;
+			width: calc(100vw - (100vw - 1440px) / 2); // large enough to cover any left overflow
+			background-color: #C5B17F; // same as `.timeline-slider` background
+			z-index: 5;
+			pointer-events: none;
+		}
+
+		@media #{$media-1440} {
+			max-width: 95vw;
+
+
+		}
 	}
 
 
 
 	.timeline-card {
 		background-color: $white;
-		border-radius: 15px;
+		border-radius: 20px;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
@@ -164,6 +193,8 @@
 			margin:0;
 			font-size: 18px;
 			line-height: 1.3;
+			letter-spacing: 0.05em;
+			font-weight: 400;
 			color: #FFFFFF;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 			@media #{$media-700} {
@@ -195,7 +226,7 @@
 		height: 343px;
 		overflow: hidden;
 		position: relative;
-		// transition: all 0.3s ease-in-out;
+		transition: height 0.3s ease-in-out;
 
 		img {
 			width: 100%;
@@ -243,7 +274,7 @@
 		left: 0;
 		right: 0;
 		width: 100%;
-		height: 2px;
+		height: 4px;
 		background-color: rgba(255, 255, 255, 0.23);
 		transform: translateY(-50%);
 		overflow: hidden;
@@ -307,6 +338,7 @@
 
 		.timeline-year-label {
 			@include px-rem(20);
+			font-family: "Neue Regrade", sans-serif;
 			font-weight: 400;
 			color: rgba(255, 255, 255, 0.5);
 			transition: color 0.3s ease;
@@ -347,21 +379,62 @@
 	.timeline-main-swiper {
 		width: 100%;
 		overflow: visible;
+
+		// Prevent layout jump when active slide changes size
+		height: 414px;
+
 		.swiper-wrapper{
 			align-items: flex-end;
+			height: 414px;
 		}
 		.swiper-slide {
-			transition: all 0.3s ease-in-out;
+			transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			// Base dimensions for non-active slides
+			width: 637px; // 343 * (770/414) = 637px to maintain 770:414 aspect ratio
+			height: 414px; // keep wrapper height stable; shrink inner card instead
+			flex-shrink: 0;
+			display: flex;
+			align-items: flex-end; // keep smaller (343px) cards aligned to bottom
+			
+			@media #{$media-1024} {
+				width: auto !important;
+				height: auto;
+			}
+			
+			.timeline-card {
+				width: 100%;
+				height: 343px;
+				margin-top: auto; // ensure bottom alignment inside fixed-height slide
+				transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
+			
+			.timeline-image {
+				height: 343px;
+				transition: height 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+			}
 		}
 		.swiper-slide-active {
-			height: auto;
+			width: 770px !important;
+			height: 414px;
 			transform: scale(1);
-			width: auto;
-			// .timeline-image{
-			// 	height: 414px;
-			// }
-			.timeline-year{
+			aspect-ratio: 770/414;
+			transform-origin: center bottom;
+
+			@media #{$media-1024} {
+				width: auto !important;
+				height: auto;
+			}
+			
+			.timeline-card {
+				height: 414px;
+			}
+			.timeline-image {
+				height: 414px;
+			}
+			
+			.timeline-year {
 				font-size: 50px;
+				transition: font-size 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 				@media #{$media-700} {
 					font-size: 35px;
 					margin-bottom: 10px;
@@ -369,16 +442,38 @@
 			}
 		}
 		.swiper-slide:not(.swiper-slide-active) {
-			transform: scale(0.85);
-			@media #{$media-1060} {
-				transform: scale(0.9);
+			width: 637px;
+			height: 414px;
+			transform: scale(1);
+			transform-origin: center bottom;
+			
+			.timeline-card {
+				height: 343px;
 			}
+			.timeline-image {
+				height: 343px;
+			}
+			
+			@media #{$media-1024} {
+				width: auto !important;
+				height: auto;
+			}
+			
 			@media #{$media-700} {
-				transform: scale(1);
-				opacity: 1;
+				width: auto !important;
+				max-width: 100%;
+				.timeline-card {
+					height: auto;
+				}
 			}
 		}
 		
+		@media #{$media-700} {
+			.swiper-slide-active {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
 	}
 	// Tablet Responsive
 	@media #{$media-1024} {

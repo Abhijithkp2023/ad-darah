@@ -87,7 +87,7 @@ get_header();
 		include locate_template('template-parts/VenueAtAGlance.php'); ?>
 		<?php
 		// Timeline Slider Section
-		$timeline_headline = 'Rooted in Saudi Identity';
+		$timeline_headline = 'Rooted in <br /> Saudi Identity';
 		$timeline_description = 'Inspired by the Kingdom\'s heritage and values, AD-DARAH was envisioned as more than just a venue—it is a cultural landmark. Every detail, from the architectural design to the hospitality experience, reflects the richness of Saudi tradition while offering the sophistication of modern luxury.';
 		$timeline_slides = array(
 			array(
