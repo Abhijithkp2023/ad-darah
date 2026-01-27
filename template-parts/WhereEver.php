@@ -45,7 +45,7 @@ $use_post_content = empty($where_ever_title) && empty($where_ever_content);
           modern innovation. From corporate summits to royal weddings, our venue represents elegance, excellence, and
           cultural pride.
         </p>
-        <a href="<?php echo esc_url(home_url('/about')); ?>" class="buttion primary-button">
+        <a href="<?php echo esc_url(home_url('/about')); ?>" class="buttion primary-button mid_wide">
           Learn More
         </a>
       </div>

@@ -2061,6 +2061,10 @@ a,
 z-index: 1;
 	width: max-content;
 
+	&.mid_wide  {
+		padding-inline: 60px;
+	}
+
 	&.wide {
 		padding-inline: 83px;
 	}

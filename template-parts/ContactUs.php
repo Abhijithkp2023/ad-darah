@@ -34,7 +34,7 @@ $contact_bg_image = get_query_var('contact_bg_image', get_theme_mod('contact_bg_
 			<?php endif; ?>
 
 			<?php if ($contact_button_text): ?>
-				<button type="button" class="primary-button contact-section-button" id="contactUsButton">
+				<button type="button" class="primary-button contact-section-button mid_wide" id="contactUsButton">
 					<?php echo esc_html($contact_button_text); ?>
 				</button>
 			<?php endif; ?>

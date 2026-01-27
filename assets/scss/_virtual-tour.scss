@@ -60,9 +60,17 @@
 			font-weight: 400;
 			font-size: 18px;
 			line-height: 150%;
-			letter-spacing: 0%;
+			letter-spacing: 0.12em;
 			color: #ffffff;
 			margin: 0 0 40px 0;
+
+			@media #{$media-1440} {
+				font-size: 16px;
+			}
+
+			@media #{$media-768} {
+				font-size: 15px;
+			}
 		}
 
 		.virtual-tour-line {
@@ -71,7 +79,7 @@
 			height: 1px;
 			background: #C5B17F;
 			margin: 0 auto;
-			margin-top: 100px;
+			margin-top: 140px;
 
 			.virtual-tour-arrow {
 				position: absolute;
@@ -89,14 +97,14 @@
 				}
 
 				&-left {
-					left: calc(50% - 200px); // Distance from center
+					left: 25%; // Distance from center
 					img {
 						transform: rotate(180deg);
 					}
 				}
 
 				&-right {
-					right: calc(50% - 200px); // Distance from center
+					right: 25% // Distance from center
 				}
 			}
 

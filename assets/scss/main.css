@@ -2322,6 +2322,9 @@ a,
   z-index: 1;
   width: max-content;
 }
+.primary-button.mid_wide {
+  padding-inline: 60px;
+}
 .primary-button.wide {
   padding-inline: 83px;
 }
@@ -4263,6 +4266,7 @@ body.fullscreen-nav-open {
   color: #000000;
   font-size: 14px;
   line-height: 1.5;
+  font-weight: 400;
 }
 .footer .footer-container .footer-bottom-section .footer-bottom-left .footer-copyright .footer-legal-link {
   color: #000000;
@@ -4275,7 +4279,7 @@ body.fullscreen-nav-open {
 .footer .footer-container .footer-bottom-section .footer-bottom-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 .footer .footer-container .footer-bottom-section .footer-bottom-right .footer-social-link {
@@ -4283,6 +4287,7 @@ body.fullscreen-nav-open {
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
+  font-weight: 400;
 }
 .footer .footer-container .footer-bottom-section .footer-bottom-right .footer-social-link:hover {
   color: #c5b17f;
@@ -6120,7 +6125,7 @@ body.banner-animating {
   font-style: normal;
   line-height: 130%;
   color: #fff;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
 }
 @media only screen and (max-width: 1060px) {
   .services-stack-container .services-stack-card .services-stack-card-title {
@@ -7325,7 +7330,7 @@ body.banner-animating {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 45px 40px;
+  padding: 45px 35px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -7361,7 +7366,7 @@ body.banner-animating {
 }
 .news-articles-container .news-article-left .news-article-date {
   font-family: "Neue Regrade", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   line-height: 100%;
   color: #ffffff;
@@ -7380,16 +7385,12 @@ body.banner-animating {
 }
 .news-articles-container .news-article-left .news-article-heading {
   font-family: "Neue Regrade", sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 120%;
   color: #ffffff;
   margin: 0;
-}
-@media (max-width: 1440px) {
-  .news-articles-container .news-article-left .news-article-heading {
-    font-size: 16px;
-  }
 }
 @media (max-width: 768px) {
   .news-articles-container .news-article-left .news-article-heading {
@@ -7412,7 +7413,7 @@ body.banner-animating {
 }
 .news-articles-container .news-article-right .news-article-learn-more .news-article-learn-text {
   font-family: "Neue Regrade", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0%;
@@ -7581,9 +7582,19 @@ body.banner-animating {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
-  letter-spacing: 0%;
+  letter-spacing: 0.12em;
   color: #ffffff;
   margin: 0 0 40px 0;
+}
+@media only screen and (max-width: 1440px) {
+  .virtual-tour-container .virtual-tour-overlay .virtual-tour-subtitle {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .virtual-tour-container .virtual-tour-overlay .virtual-tour-subtitle {
+    font-size: 15px;
+  }
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line {
   position: relative;
@@ -7591,7 +7602,7 @@ body.banner-animating {
   height: 1px;
   background: #C5B17F;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 140px;
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line .virtual-tour-arrow {
   position: absolute;
@@ -7608,13 +7619,13 @@ body.banner-animating {
   object-fit: contain;
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line .virtual-tour-arrow-left {
-  left: calc(50% - 200px);
+  left: 25%;
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line .virtual-tour-arrow-left img {
   transform: rotate(180deg);
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line .virtual-tour-arrow-right {
-  right: calc(50% - 200px);
+  right: 25%;
 }
 .virtual-tour-container .virtual-tour-overlay .virtual-tour-line .virtual-tour-icon {
   position: absolute;
@@ -13612,7 +13623,7 @@ body.banner-animating {
   border-radius: 12px;
   max-width: 600px;
   width: 100%;
-  max-height: 97vh;
+  max-height: 97dvh;
   overflow-y: auto;
   transform: scale(0.9);
   transition: transform 0.3s ease;
