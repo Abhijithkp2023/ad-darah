@@ -96,7 +96,13 @@ $whatsapp_url = 'https://wa.me/' . esc_attr($whatsapp_number) . '?text=' . urlen
                 </div>
                 <div class="form-popup-field">
                     <label for="popup-event-date" class="form-label">Event Date</label>
-                    <input type="date" id="popup-event-date" name="event_date" class="form-input" required>
+                    <div class="form-field-wrapper form-date-wrapper">
+                        <span class="form-field-display">Select Event Date</span>
+                        <input type="text" id="popup-event-date" name="event_date" class="form-input"
+                            placeholder="Select Event Date" required>
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/header_calendar.svg'); ?>"
+                            alt="Calendar" class="form-calendar-icon">
+                    </div>
                 </div>
                 <div class="form-popup-field">
                     <label for="popup-contact-time" class="form-label">Preferred Contact Time</label>

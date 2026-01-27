@@ -132,7 +132,6 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
 	// Tablet Responsive
 	@media #{$media-1024} {
-		padding-top: 70px;
 
 		.services-stack-card {
 			.services-stack-card-content {
@@ -155,7 +154,6 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
 	// Mobile Responsive
 	@media #{$media-995} {
-		padding-top: 60px;
 
 		.services-stack-card {
 			.services-stack-card-content {
@@ -178,7 +176,6 @@ linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
 	// Small Mobile Responsive
 	@media #{$media-700} {
-		padding-top: 50px;
 
 		.services-stack-card {
 			.services-stack-card-content {

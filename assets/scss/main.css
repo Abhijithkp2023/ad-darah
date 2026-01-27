@@ -6164,9 +6164,6 @@ body.banner-animating {
   color: #fff;
 }
 @media only screen and (max-width: 1024px) {
-  .services-stack-container {
-    padding-top: 70px;
-  }
   .services-stack-container .services-stack-card .services-stack-card-content {
     padding: 35px 50px;
   }
@@ -6182,9 +6179,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 995px) {
-  .services-stack-container {
-    padding-top: 60px;
-  }
   .services-stack-container .services-stack-card .services-stack-card-content {
     padding: 30px 0px;
   }
@@ -6200,9 +6194,6 @@ body.banner-animating {
   }
 }
 @media only screen and (max-width: 700px) {
-  .services-stack-container {
-    padding-top: 50px;
-  }
   .services-stack-container .services-stack-card .services-stack-card-content {
     padding: 20px 25px;
     left: 0 !important;
@@ -13737,6 +13728,106 @@ body.banner-animating {
   transition: opacity 0.3s ease;
 }
 .form-popup-form input[type=date]:hover::-webkit-calendar-picker-indicator {
+  opacity: 1;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #abafb1;
+  background: #ffffff;
+  height: 48px;
+  padding-left: 15px;
+  padding-right: 40px;
+  border-radius: 24px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .form-popup-form .form-field-wrapper.form-date-wrapper {
+    height: 45px;
+  }
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper:focus-within {
+  border-color: #b64910;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper input[type=date]::-webkit-calendar-picker-indicator,
+.form-popup-form .form-field-wrapper.form-date-wrapper input[type=text]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .flatpickr-calendar {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  margin-top: 4px !important;
+  z-index: 10001 !important;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-field-display {
+  display: block;
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ABAFB1;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  flex: 1;
+}
+@media (max-width: 700px) {
+  .form-popup-form .form-field-wrapper.form-date-wrapper .form-field-display {
+    font-size: 15px;
+  }
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-input {
+  display: none;
+  border: none;
+  background: transparent;
+  height: auto;
+  padding: 0;
+  flex: 1;
+  width: 100%;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-input::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-input::-webkit-inner-spin-button, .form-popup-form .form-field-wrapper.form-date-wrapper .form-input::-webkit-outer-spin-button {
+  display: none !important;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 13px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper .form-calendar-icon:hover {
+  opacity: 1;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper.is-focused .form-field-display, .form-popup-form .form-field-wrapper.form-date-wrapper:focus-within .form-field-display, .form-popup-form .form-field-wrapper.form-date-wrapper.has-value .form-field-display {
+  display: none;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper.is-focused .form-input, .form-popup-form .form-field-wrapper.form-date-wrapper:focus-within .form-input, .form-popup-form .form-field-wrapper.form-date-wrapper.has-value .form-input {
+  display: block;
+}
+.form-popup-form .form-field-wrapper.form-date-wrapper.is-focused .form-calendar-icon, .form-popup-form .form-field-wrapper.form-date-wrapper:focus-within .form-calendar-icon, .form-popup-form .form-field-wrapper.form-date-wrapper.has-value .form-calendar-icon {
   opacity: 1;
 }
 .form-popup-form .primary-button {
