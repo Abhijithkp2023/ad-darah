@@ -12243,12 +12243,31 @@ body.banner-animating {
   align-items: center;
   justify-content: center;
   gap: 50px;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .news-tabs-list {
+    /* Change to X for horizontal scrolling */
+    overflow-x: auto;
+    justify-content: unset; /* 'unset' can be buggy; flex-start is safer */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-padding: 0 20px; /* Padding when scrolling to items (left and right) */
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+    /* Hide scrollbar for IE/Edge */
+    -ms-overflow-style: none;
+    /* Hide scrollbar for Chrome/Safari/Webkit */
+  }
+  .news-tabs-list::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .news-tabs-item {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-shrink: 0; /* Prevent tabs from shrinking on mobile */
 }
 .news-tabs-item.active .news-tabs-link {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(197, 177, 127, 0.2) 100%);
@@ -13536,7 +13555,7 @@ body.banner-animating {
   border-radius: 12px;
   max-width: 600px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 97vh;
   overflow-y: auto;
   transform: scale(0.9);
   transition: transform 0.3s ease;
