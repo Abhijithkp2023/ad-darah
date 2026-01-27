@@ -302,7 +302,7 @@
 		// Set initial state - mask and image at 100% (normal size) with full opacity
 		// Force 3D to enable hardware acceleration and prevent blur
 		gsap.set(bannerMaskRef, {
-			scale: 1,
+			scale: 1.3,
 			opacity: 1,
 			transformOrigin: "center center",
 			force3D: true, // Force hardware acceleration
