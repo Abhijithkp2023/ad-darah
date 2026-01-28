@@ -1202,6 +1202,67 @@
 		// Initialize Choices and Flatpickr
 		initChoicesSelects();
 		initFlatpickrDate();
+
+		/**
+		 * Initialize Header Search (toggle search input near icon)
+		 */
+		const initHeaderSearch = function() {
+			const searchContainers = headerSection.querySelectorAll('.header-search-container');
+
+			if (!searchContainers.length) return;
+
+			searchContainers.forEach(function(container) {
+				const toggle = container.querySelector('[data-header-search-toggle]');
+				const form = container.querySelector('[data-header-search-form]');
+				const input = form ? form.querySelector('.header-search-input') : null;
+
+				if (!toggle || !form || !input) return;
+
+				let open = false;
+
+				const closeSearch = function() {
+					container.classList.remove('is-open');
+					open = false;
+				};
+
+				toggle.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+
+					open = !open;
+					if (open) {
+						container.classList.add('is-open');
+						setTimeout(function() {
+							input.focus();
+						}, 150);
+					} else {
+						closeSearch();
+					}
+				});
+
+				// Prevent clicks inside form from closing it
+				form.addEventListener('click', function(e) {
+					e.stopPropagation();
+				});
+
+				// Close when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!container.contains(e.target) && open) {
+						closeSearch();
+					}
+				});
+
+				// Close on Escape key
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape' && open) {
+						closeSearch();
+					}
+				});
+			});
+		};
+
+		// Initialize header search
+		initHeaderSearch();
 		
 		// Initialize form field wrappers after a short delay to ensure Choices.js is initialized
 		setTimeout(function() {

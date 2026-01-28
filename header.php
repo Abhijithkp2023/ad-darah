@@ -23,8 +23,7 @@
 		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
 	<link rel="icon" type="image/png"
 		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
-	<link rel="apple-touch-icon"
-		href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
+	<link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/fav.png'); ?>">
 
 	<?php wp_head(); ?>
 </head>
@@ -76,10 +75,21 @@
 
 			<!-- Utility Icons -->
 			<div class="header-utilities">
-				<a href="#" class="header-icon search-icon" aria-label="Search">
-					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
-						alt="Search">
-				</a>
+				<div class="header-search-container">
+					<a href="#" class="header-icon search-icon" aria-label="Search" data-header-search-toggle>
+						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
+							alt="Search">
+					</a>
+					<form class="header-search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get"
+						data-header-search-form>
+						<input type="search" name="s" class="header-search-input" placeholder="Search..."
+							aria-label="Search">
+						<button type="submit" class="header-search-submit" aria-label="Submit search">
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
+								alt="">
+						</button>
+					</form>
+				</div>
 				<a href="#" class="header-icon lang-icon" aria-label="Language">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/lang.svg.svg'); ?>"
 						alt="Language">
@@ -202,10 +212,21 @@
 
 			<!-- Utility Icons -->
 			<div class="header-utilities">
-				<a href="#" class="header-icon search-icon" aria-label="Search">
-					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
-						alt="Search">
-				</a>
+				<div class="header-search-container">
+					<a href="#" class="header-icon search-icon" aria-label="Search" data-header-search-toggle>
+						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
+							alt="Search">
+					</a>
+					<form class="header-search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get"
+						data-header-search-form>
+						<input type="search" name="s" class="header-search-input" placeholder="Search..."
+							aria-label="Search">
+						<button type="submit" class="header-search-submit" aria-label="Submit search">
+							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/search.svg.svg'); ?>"
+								alt="">
+						</button>
+					</form>
+				</div>
 				<a href="#" class="header-icon lang-icon" aria-label="Language">
 					<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/lang.svg.svg'); ?>"
 						alt="Language">
@@ -276,10 +297,14 @@
 											Corporate Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Conferences & Exhibitions</a></li>
-										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Meeting Rooms & Workshops</a></li>
-										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Government Events (B2G)</a></li>
-										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">VIP Majlis</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Conferences
+												& Exhibitions</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Meeting
+												Rooms & Workshops</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">Government
+												Events (B2G)</a></li>
+										<li><a href="<?php echo esc_url(home_url('/corporate-services-detail')); ?>">VIP
+												Majlis</a></li>
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
@@ -289,8 +314,12 @@
 											Weddings & Social Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Female Packages</a></li>
-										<li><a href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Male Packages</a></li>
+										<li><a
+												href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Female
+												Packages</a></li>
+										<li><a
+												href="<?php echo esc_url(home_url('/weddings-social-services-detail')); ?>">Male
+												Packages</a></li>
 									</ul>
 								</div>
 								<div class="fullscreen-nav-submenu-category">
@@ -300,9 +329,12 @@
 											Catering Services</h4>
 									</a>
 									<ul class="fullscreen-nav-submenu-category-list">
-										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">On-site Catering</a></li>
-										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Off-site Catering</a></li>
-										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Seasonal & Ramadan Packages</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">On-site
+												Catering</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Off-site
+												Catering</a></li>
+										<li><a href="<?php echo esc_url(home_url('/catering-services-detail')); ?>">Seasonal
+												& Ramadan Packages</a></li>
 									</ul>
 								</div>
 							</div>

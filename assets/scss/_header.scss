@@ -264,6 +264,74 @@ header.main-header,
 				}
 			}
 		}
+
+		// Header search (desktop + scroll header)
+		.header-search-container {
+			position: relative;
+
+			.header-search-form {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				display: flex;
+				align-items: center;
+				background-color: rgba(244, 244, 244, 0.95);
+				border-radius: 999px;
+				border: 1px solid #c5b17f;
+				padding: 4px 10px 4px 16px;
+				min-width: 0;
+				width: 0;
+				max-width: 0;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.25s ease, max-width 0.25s ease, width 0.25s ease, visibility 0.25s ease;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+				z-index: 1200;
+			}
+
+			&.is-open .header-search-form {
+				opacity: 1;
+				visibility: visible;
+				width: 240px;
+				max-width: 240px;
+
+				@media #{$media-700} {
+					width: 150px;
+					max-width: 150px;
+				}
+			}
+
+			.header-search-input {
+				background: transparent;
+				border: none;
+				outline: none;
+				font-family: "Neue Regrade", sans-serif;
+				font-size: 14px;
+				color: #191919;
+				width: 100%;
+				padding: 4px 8px 4px 0;
+
+				&::placeholder {
+					color: #929292;
+				}
+			}
+
+			.header-search-submit {
+				background: none;
+				border: none;
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+
+				img {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
 	}
 
 	// Services Dropdown
