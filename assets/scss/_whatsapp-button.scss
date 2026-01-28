@@ -4,7 +4,7 @@
 
 .whatsapp-button-container {
 	position: fixed;
-	bottom: 260px;
+	bottom: 400px;
 	right: -140px;
 	left: 0;
 	// z-index: 100001;
@@ -22,7 +22,6 @@
 
 	@media (max-width: 1500px) {
 		right: 20px;
-		bottom: 200px;
 	}
 }
 

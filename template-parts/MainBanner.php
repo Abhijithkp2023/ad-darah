@@ -82,7 +82,7 @@ $main_banner_bg_image = get_query_var('main_banner_bg_image', get_theme_mod('mai
 						<option value="evening">Evening</option>
 					</select>
 				</div>
-				<a type="submit" class="primary-button">Book a Visit</a>
+				<a type="submit" class="primary-button short">Book a Visit</a>
 			</form>
 		</div>
 	</div>

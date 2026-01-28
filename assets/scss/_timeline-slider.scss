@@ -89,56 +89,67 @@
 
 	.timeline-navigation {
 		display: flex;
-		gap: 12px;
+		gap: 15px;
 		position: absolute;
 		bottom: -40px;
 		right: 25px;
-
-		.timeline-swiper-prev {
-			img {
-				transform: rotate(180deg);
-			}
-		}
+		z-index: 10;
 
 		.timeline-swiper-prev,
 		.timeline-swiper-next {
-			width: 58px;
-			height: 58px;
+			width: 59px;
+			height: 59px;
 			border-radius: 50%;
-			background-color:rgb(255 255 255 / 8%);
-			border: 1px solid #fff;
+			background-color: transparent;
+			border: 1px solid $white;
 			cursor: pointer;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			transition: all 0.3s ease;
+			color: $white;
+			transition: all 0.5s ease;
 			padding: 0;
 
-			img {
-				width: 24px;
-				height: 24px;
-				display: block;
-				@media #{$media-700} {
-					width: 20px;
-					height: 20px;
-				}
-			}
-			&:hover {
-				background-color: $gold;
-				transform: scale(1.1);
+			svg {
+				height: 15px;
+				width: 26px;
+				color: $white;
+				transition: color 0.5s ease;
 			}
 
-			&:active {
-				background-color: $gold;
-				transform: scale(1.1);
+			&:hover {
+				background: rgba(197, 177, 127, 0.2);
+				// border: 1px solid #C5B17F;
+				transform: rotate(-45deg);
+
+				// svg {
+				// 	color: #C5B17F;
+				// }
 			}
 
 			&.swiper-button-disabled {
 				cursor: not-allowed;
+				opacity: 0.5;
 			}
+
 			@media #{$media-700} {
 				width: 42px;
 				height: 42px;
+				
+				svg {
+					height: 12px;
+					width: 20px;
+				}
+			}
+		}
+
+		.timeline-swiper-prev {
+			&:hover {
+				transform: rotate(45deg);
+			}
+
+			svg {
+				transform: rotate(180deg);
 			}
 		}
 	}

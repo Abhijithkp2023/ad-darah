@@ -2058,8 +2058,13 @@ a,
 	position: relative;
 	overflow: hidden;
 	transition: color 0.4s ease;
+	white-space: nowrap;
 z-index: 1;
 	width: max-content;
+
+	&.short {
+		padding-inline: 30px;
+	}
 
 	&.mid_wide  {
 		padding-inline: 60px;

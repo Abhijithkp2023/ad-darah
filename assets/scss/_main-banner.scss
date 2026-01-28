@@ -56,9 +56,9 @@ body.banner-animating {
 	// SVG mask overlay
 	.main-banner-mask {
 		position: absolute;
-		bottom: 0;
 		left: 50%;
-		bottom: -100px;
+		bottom: 50%;
+		transform: translate(0, 50%);
 		top: 0;
 		width: 100vw;
 		max-width: 100%;
@@ -217,7 +217,6 @@ body.banner-animating {
 		opacity: 0;
 
 		@media (max-width: 1440px) {
-			gap: 5px;
 			padding: 20px 20px 20px 30px;
 		}
 
@@ -227,8 +226,9 @@ body.banner-animating {
 
 		.form-label {
 			@include form-label;
+			display: block; // Ensure margin-bottom works (labels are inline by default)
 			white-space: nowrap;
-			margin-bottom: 10px;
+			margin-bottom: 6px !important; // Force margin to apply
 		}
 
 		input,
@@ -496,20 +496,16 @@ body.banner-animating {
 
 			.form-calendar-icon {
 				position: absolute;
-				right: 12px;
-				top: 50%;
+				right: -10px;
+				top: 47%;
 				transform: translateY(-50%);
-				width: 12px;
-				height: 13px;
+				width: 16px;
+				height: 18px;
 				pointer-events: auto;
 				cursor: pointer;
 				z-index: 10;
 				transition: opacity 0.2s ease;
-				opacity: 0.7;
-
-				&:hover {
-					opacity: 1;
-				}
+				opacity: 0.4;
 			}
 
 			// When focused or has value, show input and hide display
@@ -535,6 +531,8 @@ body.banner-animating {
 		flex: 0 1 auto;
 		padding-left: 20px;
 		border-left: 1px solid #abafb1;
+		display: flex;
+		flex-direction: column; // Stack label and input vertically so margin-bottom works
 
 		@media (max-width: 1400px) {
 			padding-left: 10px;
@@ -546,16 +544,44 @@ body.banner-animating {
 		}
 
 		// Smaller fields (Full Name, Email Address, Phone No.)
-		&:nth-child(1),
-		&:nth-child(2),
+		&:nth-child(1) {
+			width: 145px;
+
+			@media (max-width: 1400px) {
+				width: 135px;
+			}
+		}
+		&:nth-child(2) {
+			width: 159px;
+
+			@media (max-width: 1400px) {
+				width: 149px;
+			}
+		}
+
 		&:nth-child(3) {
-			min-width: 100px;
-			max-width: 140px;
+			width: 150px;
+
+			@media (max-width: 1400px) {
+				width: 140px;
+			}
 		}
 
 		// Larger fields (Event Type, Event Date, Preferred Contact Time)
-		&:nth-child(4),
-		&:nth-child(5),
+		&:nth-child(4) {
+			width: 200px;
+
+			@media (max-width: 1400px) {
+				width: 180px;
+			}
+		}
+		&:nth-child(5){
+			width: 187px;
+
+			@media (max-width: 1400px) {
+				width: 167px;
+			}
+		}
 		&:nth-child(6) {
 			min-width: 150px;
 			max-width: 200px;
