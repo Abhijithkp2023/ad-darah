@@ -61,6 +61,7 @@ $wedding_packages_items = isset($wedding_packages_items) && is_array($wedding_pa
 							<?php if (!empty($item['pdf_url'])): ?>
 								<a href="<?php echo esc_url($item['pdf_url']); ?>" 
 									class="primary-button wedding-packages-card-button" 
+									download
 									target="_blank" 
 									rel="noopener noreferrer">
 									Download PDF

@@ -415,10 +415,20 @@ function addarah_scripts()
 	$is_landing_2_page = is_page_template('page-landing-2.php');
 
 	if ($is_landing_2_page) {
+		// Enqueue Swiper if not already loaded (needed for SingleTestimonial)
+		if (!wp_script_is('swiper-js', 'enqueued')) {
+			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+		}
+		// Enqueue Swiper CSS if not already loaded
+		if (!wp_style_is('swiper-css', 'enqueued')) {
+			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+		}
 		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
 		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
-		// Load SingleTestimonial script with Swiper dependency
 		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
+		
+		// Debug: Verify VideoForm script and Choices.js are loaded
+		wp_add_inline_script('video-form-script', 'console.log("Landing-2: VideoForm.js should be loaded. Choices.js available:", typeof Choices !== "undefined");', 'after');
 	}
 
 	// Load page-specific scripts
@@ -522,18 +532,6 @@ function addarah_scripts()
 		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
 	}
 
-	// Load scripts for Landing Page 2
-	if ($is_landing_2_page) {
-		// Enqueue Swiper if not already loaded
-		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
-		}
-		// Enqueue Swiper CSS if not already loaded
-		if (!wp_style_is('swiper-css', 'enqueued')) {
-			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-		}
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

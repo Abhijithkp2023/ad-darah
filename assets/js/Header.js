@@ -21,12 +21,30 @@
 			return;
 		}
 
+		// Landing Page 2 (detect by URL): add class on the exact elements you pointed
+		const path = (window.location && window.location.pathname) ? window.location.pathname : '';
+		const isLanding2Url = path.includes('/landing-2');
+		if (isLanding2Url) {
+			const applyLanding2Hide = function() {
+				headerSection.querySelectorAll('.header-nav').forEach((el) => el.classList.add('landing2-hide'));
+				headerSection.querySelectorAll('.header-booking-form').forEach((el) => el.classList.add('landing2-hide'));
+				const scrollHamburger = document.getElementById('menuIconScroll');
+				if (scrollHamburger) scrollHamburger.classList.add('landing2-hide');
+				const mobileHamburger = document.getElementById('menuIconInitial');
+				if (mobileHamburger) mobileHamburger.classList.add('landing2-hide');
+			};
+			applyLanding2Hide();
+			setTimeout(applyLanding2Hide, 100);
+			setTimeout(applyLanding2Hide, 600);
+		}
+
 		let isScrolled = false;
 		let isMenuOpen = false;
 		const isHomePage = document.body.classList.contains('home');
 		// Check for Landing Page 2 - WordPress adds class like 'page-template-page-landing-2'
 		const bodyClasses = document.body.className.split(' ');
 		const isLandingPage2 = bodyClasses.some(cls => cls.includes('landing-2') || cls.includes('page-landing-2'));
+
 		const initialHeaderContainer = document.getElementById('headerInitialContainer');
 		const scrollHeaderContainer = document.getElementById('headerScrollContainer');
 		// Home page and Landing Page 2: 700px, Other pages: 500px

@@ -121,6 +121,7 @@
 			background-position: right 20px center;
 			padding-right: 45px;
 			cursor: pointer;
+			color: #929292; // Default color for placeholder state
 
 			option {
 				color: $black;
@@ -128,7 +129,19 @@
 			}
 
 			option[value=""] {
-				color: #929292;
+				color: #929292 !important;
+			}
+
+			// When a value is selected, change text color to black
+			&:not([value=""]) {
+				color: $black;
+			}
+
+			// Hide native select when Choices.js is initialized
+			&.choices__input {
+				position: absolute;
+				opacity: 0;
+				pointer-events: none;
 			}
 		}
 
@@ -166,7 +179,7 @@
 				font-family: "Neue Regrade", sans-serif;
 				font-weight: 500;
 				font-size: 16px;
-				color: #929292;
+				color: #929292 !important;
 				padding: 0;
 			}
 
@@ -174,20 +187,24 @@
 				font-family: "Neue Regrade", sans-serif;
 				font-weight: 500;
 				font-size: 16px;
-				color: #929292;
+				color: #929292 !important;
 				opacity: 1;
 			}
 
 			&.has-value {
 				.choices__item--selectable {
-					color: $black;
+					color: $black !important;
 				}
 			}
 
 			// When showing placeholder (no value selected)
 			&:not(.has-value) {
 				.choices__item--selectable {
-					color: #929292;
+					color: #929292 !important;
+				}
+				
+				.choices__placeholder {
+					color: #929292 !important;
 				}
 			}
 

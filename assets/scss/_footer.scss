@@ -145,13 +145,26 @@
         border-radius: 37px;
         background-color: #f0f0f0bd;
         color: #000000;
-        font-size: 14px;
+        font-family: "Neue Regrade", sans-serif;
+        font-size: 16px;
         min-width: 300px;
         outline: none;
         border: 1px solid transparent;
 
+        @media (max-width: 1400px) {
+          font-size: 14px;
+        }
+
         &::placeholder {
           color: #6b6b6b;
+          font-family: "Neue Regrade", sans-serif;
+          font-family: Neue Regrade;
+          font-weight: 500;
+          font-size: 16px;
+
+          @media (max-width: 1400px) {
+            font-size: 14px;
+          }
         }
 
         &:focus {

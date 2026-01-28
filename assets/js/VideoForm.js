@@ -19,6 +19,109 @@
 			return;
 		}
 
+		// iOS compatibility: Set playsInline property explicitly
+		video.playsInline = true;
+		video.setAttribute('playsinline', '');
+		video.setAttribute('webkit-playsinline', '');
+		video.muted = true; // Ensure muted for autoplay
+		video.loop = true; // Ensure looping is enabled
+		
+		// Ensure video restarts when it ends (fallback for browsers that don't respect loop attribute)
+		video.addEventListener('ended', function() {
+			video.currentTime = 0;
+			video.loop = true;
+			video.play().catch(function(error) {
+				console.log('VideoForm: Error restarting video:', error);
+				// Retry after a short delay
+				setTimeout(function() {
+					video.play().catch(function(err) {
+						console.log('VideoForm: Retry failed:', err);
+					});
+				}, 100);
+			});
+		}, false);
+		
+		// Monitor video playback to ensure it stays playing
+		video.addEventListener('timeupdate', function() {
+			// If video is near the end and loop might not work, prepare to restart
+			if (video.currentTime >= video.duration - 0.5 && !video.loop) {
+				video.loop = true;
+			}
+		}, false);
+		
+		// Ensure video keeps playing continuously
+		// Monitor and restart if it stops unexpectedly (but allow brief pauses)
+		let pauseTimeout;
+		video.addEventListener('play', function() {
+			// Clear any pending pause timeout when video plays
+			if (pauseTimeout) {
+				clearTimeout(pauseTimeout);
+				pauseTimeout = null;
+			}
+			// Ensure loop is always enabled when playing
+			video.loop = true;
+		}, false);
+		
+		video.addEventListener('pause', function() {
+			// Only auto-resume if pause lasts too long (likely unintentional)
+			// This allows for brief pauses without interfering
+			const rect = section.getBoundingClientRect();
+			const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+			
+			if (isVisible && !video.ended) {
+				pauseTimeout = setTimeout(function() {
+					if (video.paused && !video.ended) {
+						video.loop = true;
+						video.play().catch(function(error) {
+							console.log('VideoForm: Error resuming video:', error);
+						});
+					}
+				}, 500); // Wait 500ms before resuming (allows brief pauses)
+			}
+		}, false);
+
+		// iOS: Load video first, then try to play
+		const loadAndPlayVideo = function() {
+			// Check if video is already loaded
+			if (video.readyState === 0) {
+				// Video not loaded, wait for it to load
+				video.addEventListener('loadeddata', function playOnLoad() {
+					attemptPlay();
+					video.removeEventListener('loadeddata', playOnLoad);
+				}, { once: true });
+				video.load();
+			} else {
+				// Video already loaded or loading
+				attemptPlay();
+			}
+		};
+
+		const attemptPlay = function() {
+			// Ensure loop is set before playing
+			video.loop = true;
+			const playPromise = video.play();
+			if (playPromise !== undefined) {
+				playPromise
+					.then(function() {
+						console.log('VideoForm: Video playing successfully');
+						// Ensure it keeps looping
+						video.loop = true;
+					})
+					.catch(function(error) {
+						console.log('VideoForm: Video autoplay prevented:', error);
+						// On iOS, user interaction might be required
+						// Try again when user interacts with page
+						document.addEventListener('touchstart', function tryPlayOnce() {
+							video.loop = true;
+							video.play().catch(function(err) {
+								console.log('VideoForm: Video play failed after touch:', err);
+							});
+							document.removeEventListener('touchstart', tryPlayOnce);
+						}, { once: true });
+					});
+			}
+		};
+
 		let hasPlayed = false;
 
 		const handleIntersection = function(entries, observer) {
@@ -29,9 +132,7 @@
 				const visiblePercentage = (visibleHeight / sectionHeight) * 100;
 
 				if (visiblePercentage >= 1 && !hasPlayed) {
-					video.play().catch(function(error) {
-						console.log('Video autoplay prevented:', error);
-					});
+					loadAndPlayVideo();
 					hasPlayed = true;
 					observer.unobserve(section);
 				} else if (visiblePercentage < 1 && hasPlayed) {
@@ -49,6 +150,17 @@
 
 		const observer = new IntersectionObserver(handleIntersection, observerOptions);
 		observer.observe(section);
+
+		// iOS fallback: Try to play immediately if video is in viewport
+		if (video.readyState >= 2) {
+			// Video metadata is loaded
+			attemptPlay();
+		} else {
+			// Wait for metadata to load
+			video.addEventListener('loadedmetadata', function() {
+				attemptPlay();
+			}, { once: true });
+		}
 	};
 
 	/**
@@ -56,7 +168,7 @@
 	 */
 	const initChoicesSelects = function(retryCount) {
 		retryCount = retryCount || 0;
-		const maxRetries = 10;
+		const maxRetries = 15; // Increased retries
 
 		// Wait for Choices.js to be available
 		if (typeof Choices === 'undefined') {
@@ -66,6 +178,20 @@
 				}, 200);
 			} else {
 				console.error('VideoForm: Choices.js failed to load after', maxRetries, 'retries');
+				// Fallback: Apply placeholder styling to native selects
+				const selects = document.querySelectorAll('.video-form-choices-select');
+				selects.forEach(function(select) {
+					if (select.value === '') {
+						select.style.color = '#929292';
+					}
+					select.addEventListener('change', function() {
+						if (this.value === '') {
+							this.style.color = '#929292';
+						} else {
+							this.style.color = '#000';
+						}
+					});
+				});
 			}
 			return;
 		}
@@ -207,12 +333,15 @@
 			setTimeout(initDateInput, 400);
 		};
 
+		// Multiple initialization attempts to ensure it works
 		if (document.readyState === 'loading') {
 			document.addEventListener('DOMContentLoaded', initializeAll);
 			// Also try on window load as fallback
 			window.addEventListener('load', function() {
 				console.log('VideoForm: Window loaded, retrying Choices.js initialization...');
 				setTimeout(initChoicesSelects, 100);
+				setTimeout(initChoicesSelects, 500);
+				setTimeout(initChoicesSelects, 1000);
 			});
 		} else {
 			// DOM already loaded
@@ -221,8 +350,17 @@
 			window.addEventListener('load', function() {
 				console.log('VideoForm: Window loaded, retrying Choices.js initialization...');
 				setTimeout(initChoicesSelects, 100);
+				setTimeout(initChoicesSelects, 500);
+				setTimeout(initChoicesSelects, 1000);
 			});
 		}
+
+		// Additional fallback: try after a longer delay
+		setTimeout(function() {
+			if (typeof Choices !== 'undefined') {
+				initChoicesSelects();
+			}
+		}, 2000);
 	};
 
 	// Start initialization

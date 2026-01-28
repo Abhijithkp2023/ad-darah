@@ -18,7 +18,8 @@ $video_form_video = get_query_var('video_form_video', get_template_directory_uri
 	<div class="container">
 		<div class="video-form-wrapper">
 			<div class="video-form-video-wrapper">
-				<video class="video-form-video" data-video-form-video playsinline muted loop preload="metadata">
+				<video class="video-form-video" data-video-form-video autoplay muted playsinline webkit-playsinline loop
+					preload="auto">
 					<source src="<?php echo esc_url($video_form_video); ?>" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
@@ -67,8 +68,8 @@ $video_form_video = get_query_var('video_form_video', get_template_directory_uri
 
 						<div class="video-form-row">
 							<div class="video-form-field video-form-field-half">
-								<input id="video-form-guests" name="number_of_guests"
-									placeholder="Number of Guests" class="video-form-input" required>
+								<input id="video-form-guests" name="number_of_guests" placeholder="Number of Guests"
+									class="video-form-input" required>
 							</div>
 
 							<div class="video-form-field video-form-field-half">

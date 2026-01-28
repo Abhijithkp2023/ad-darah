@@ -105,19 +105,19 @@ get_header();
 				'image' => get_template_directory_uri() . '/assets/images/package_01.png',
 				'heading' => 'Pearl Package',
 				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-				'pdf_url' => '#',
+				'pdf_url' => get_template_directory_uri() . '/assets/pdfs/pearl-package.pdf',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/package_02.png',
 				'heading' => 'Diamond Package',
 				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-				'pdf_url' => '#',
+				'pdf_url' => get_template_directory_uri() . '/assets/pdfs/diamond-package.pdf',
 			),
 			array(
 				'image' => get_template_directory_uri() . '/assets/images/package_03.png',
 				'heading' => 'Royal Package',
 				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-				'pdf_url' => '#',
+				'pdf_url' => get_template_directory_uri() . '/assets/pdfs/royal-package.pdf',
 			),
 		);
 		include locate_template('template-parts/WeddingPackages.php');
@@ -158,6 +158,40 @@ get_footer();
 		// Also try after window load
 		window.addEventListener('load', function () {
 			setTimeout(loadSingleTestimonialScript, 200);
+		});
+	})();
+
+	// Ensure VideoForm selects are initialized and styled correctly
+	(function() {
+		function initVideoFormSelects() {
+			var selects = document.querySelectorAll('.video-form-choices-select');
+			selects.forEach(function(select) {
+				// Apply placeholder color to native select if Choices.js hasn't initialized
+				if (!select.closest('.video-form-choices') && select.value === '') {
+					select.style.color = '#929292';
+				}
+				
+				// Update color on change
+				select.addEventListener('change', function() {
+					if (this.value === '') {
+						this.style.color = '#929292';
+					} else {
+						this.style.color = '#000';
+					}
+				});
+			});
+		}
+
+		// Try multiple times to catch the selects
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initVideoFormSelects);
+		} else {
+			initVideoFormSelects();
+		}
+		
+		window.addEventListener('load', function() {
+			setTimeout(initVideoFormSelects, 100);
+			setTimeout(initVideoFormSelects, 500);
 		});
 	})();
 </script>

@@ -29,6 +29,12 @@ header.main-header,
 		}
 	}
 
+	&.scrolled {
+		@media #{$media-1024} {
+			background-color: #fff !important;
+		}
+	}
+
 	// White background when scroll container is active
 	&.header-scroll-active {
 		background-color: #fff !important;
@@ -94,6 +100,10 @@ header.main-header,
 		align-items: center;
 		padding-right: 100px;
 		padding-left: 5px;
+
+		&.landing2-hide {
+			display: none !important;
+		}
 
 		@media #{$media-1024} {
 			display: none;
@@ -235,11 +245,19 @@ header.main-header,
 
 			&.desktop-menu-toggle {
 				padding-left: 20px;
+
+				&.landing2-hide {
+					display: none !important;
+				}
 			}
 
 			&.mobile-menu-toggle {
 				display: none;
 				cursor: pointer;
+
+				&.landing2-hide {
+					display: none !important;
+				}
 
 				@media (max-width: 1200px) {
 					display: flex;
@@ -558,6 +576,10 @@ body.overflow_body_hidden {
 	display: flex;
 	align-items: center;
 	gap: 12px;
+
+	&.landing2-hide {
+		display: none !important;
+	}
 
 	.header-booking-form-inputs {
 		display: flex;
