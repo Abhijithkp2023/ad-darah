@@ -45,7 +45,7 @@
 			spaceBetween: 30,
 			slidesPerView: 1,
 			speed: 1200,
-			loop: true,
+			loop: false,
 			effect: 'slide',
 			easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 			breakpoints: {
@@ -58,7 +58,7 @@
 					spaceBetween: 30,
 				},
 				1280: {
-					slidesPerView: 2.2,
+					slidesPerView: 2,
 					spaceBetween: 30,
 				},
 			},
@@ -108,9 +108,9 @@
 			const updateActiveYear = function() {
 				let activeIndex = timelineSwiper.activeIndex;
 				
-				// When loop is enabled, get the real index
-				if (timelineSwiper.params.loop) {
-					activeIndex = timelineSwiper.realIndex;
+				// With the empty spacer slide, clamp active index to last REAL slide for UI updates
+				if (totalSlides > 0) {
+					activeIndex = Math.min(activeIndex, totalSlides - 1);
 				}
 				
 				// Update year buttons
@@ -136,10 +136,7 @@
 			const updateProgressDuringTransition = function() {
 				if (progressBar && totalSlides > 0) {
 					let activeIndex = timelineSwiper.activeIndex;
-					// When loop is enabled, get the real index
-					if (timelineSwiper.params.loop) {
-						activeIndex = timelineSwiper.realIndex;
-					}
+					activeIndex = Math.min(activeIndex, totalSlides - 1);
 					targetProgress = ((activeIndex + 1) / totalSlides) * 100;
 					if (progressAnimationFrame) {
 						cancelAnimationFrame(progressAnimationFrame);

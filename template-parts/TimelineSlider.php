@@ -60,18 +60,12 @@ foreach ($timeline_slides as $slide) {
 				<?php endif; ?>
 				<div class="timeline-navigation">
 					<button class="timeline-swiper-prev" aria-label="Previous slide">
-						<svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M25.4268 21.4658L35.9915 10.901L25.4268 0.33625" stroke="currentColor"
-								stroke-width="0.950845" stroke-linejoin="round" />
-							<path d="M0 11.0898L36.1321 11.0898" stroke="currentColor" stroke-width="0.950845" />
-						</svg>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right_arw.svg"
+							alt="Previous slide" />
 					</button>
 					<button class="timeline-swiper-next" aria-label="Next slide">
-						<svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M25.4268 21.4658L35.9915 10.901L25.4268 0.33625" stroke="currentColor"
-								stroke-width="0.950845" stroke-linejoin="round" />
-							<path d="M0 11.0898L36.1321 11.0898" stroke="currentColor" stroke-width="0.950845" />
-						</svg>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/right_arw.svg"
+							alt="Next slide" />
 					</button>
 				</div>
 			</div>
@@ -106,6 +100,9 @@ foreach ($timeline_slides as $slide) {
 						</div>
 					</div>
 				<?php endforeach; ?>
+
+				<!-- Empty spacer slide (no data) so the last real slide can become active/clickable without loop -->
+				<div class="swiper-slide timeline-empty-slide" aria-hidden="true"></div>
 			</div>
 		</div>
 	</div>
@@ -116,14 +113,14 @@ foreach ($timeline_slides as $slide) {
 				<div class="timeline-progress" data-timeline-progress></div>
 			</div>
 			<div class="timeline-years">
-					<?php foreach ($timeline_years as $index => $year): ?>
-							<button class="timeline-year-btn <?php echo $index === 0 ? 'active' : ''; ?>"
-								data-year="<?php echo esc_attr($year); ?>" data-slide-index="<?php echo esc_attr($index); ?>">
-								<span class="timeline-year-label"><?php echo esc_html($year); ?></span>
-							</button>
-					<?php endforeach; ?>
-				</div>
+				<?php foreach ($timeline_years as $index => $year): ?>
+					<button class="timeline-year-btn <?php echo $index === 0 ? 'active' : ''; ?>"
+						data-year="<?php echo esc_attr($year); ?>" data-slide-index="<?php echo esc_attr($index); ?>">
+						<span class="timeline-year-label"><?php echo esc_html($year); ?></span>
+					</button>
+				<?php endforeach; ?>
 			</div>
+		</div>
 	<?php endif; ?>
 
 </section>
