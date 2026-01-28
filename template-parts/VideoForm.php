@@ -91,6 +91,7 @@ $video_form_video = get_query_var('video_form_video', get_template_directory_uri
 							<button type="submit" class="primary-button video-form-button">
 								Book a Visit
 							</button>
+							<div class="video-form-message" data-video-form-message></div>
 						</div>
 					</form>
 				</div>

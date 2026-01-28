@@ -14787,6 +14787,18 @@ body.form-popup-open {
   align-self: flex-start;
   margin-top: 10px;
 }
+.video-form-section .video-form-form-container .video-form-message {
+  margin-top: 10px;
+  padding-left: 10px;
+  font-family: "Neue Regrade", sans-serif;
+  font-size: 14px;
+  color: #1b5e20;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.video-form-section .video-form-form-container .video-form-message.is-visible {
+  opacity: 1;
+}
 .video-form-section .video-form-form-container .video-form-choices {
   width: 100%;
   margin-bottom: 0;
@@ -15351,6 +15363,18 @@ body.form-popup-open {
 .video-form-section .video-form-form-container .video-form-button {
   align-self: flex-start;
   margin-top: 10px;
+}
+.video-form-section .video-form-form-container .video-form-message {
+  margin-top: 10px;
+  padding-left: 10px;
+  font-family: "Neue Regrade", sans-serif;
+  font-size: 14px;
+  color: #1b5e20;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.video-form-section .video-form-form-container .video-form-message.is-visible {
+  opacity: 1;
 }
 .video-form-section .video-form-form-container .video-form-choices {
   width: 100%;

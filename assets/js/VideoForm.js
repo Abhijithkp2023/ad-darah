@@ -352,6 +352,71 @@
 	};
 
 	/**
+	 * Handle form submit: show thank-you message and reset fields
+	 */
+	const initFormSubmitHandler = function() {
+		const form = document.querySelector('.video-form-form');
+		if (!form) {
+			return;
+		}
+
+		const messageEl = form.querySelector('[data-video-form-message]');
+
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			// Let browser validate required fields
+			if (!form.checkValidity()) {
+				form.reportValidity();
+				return;
+			}
+
+			// Show thank-you message
+			if (messageEl) {
+				messageEl.textContent = 'Thank you! We will contact you soon.';
+				messageEl.classList.add('is-visible');
+			}
+
+			// Reset form fields
+			form.reset();
+
+			// Reset Choices.js selects
+			const selects = form.querySelectorAll('.video-form-choices-select');
+			selects.forEach(function(select) {
+				if (select.choices && typeof select.choices.clearStore === 'function') {
+					// Clear to placeholder
+					select.choices.clearStore();
+				} else {
+					select.value = '';
+					select.dispatchEvent(new Event('change'));
+				}
+			});
+			const choicesContainers = form.querySelectorAll('.video-form-choices');
+			choicesContainers.forEach(function(container) {
+				container.classList.remove('has-value');
+			});
+
+			// Reset date input (and Flatpickr if initialized)
+			const dateInput = document.getElementById('video-form-date');
+			if (dateInput) {
+				if (dateInput._flatpickr) {
+					dateInput._flatpickr.clear();
+				} else {
+					dateInput.value = '';
+				}
+			}
+
+			// Optionally hide message after a delay
+			if (messageEl) {
+				setTimeout(function() {
+					messageEl.classList.remove('is-visible');
+					messageEl.textContent = '';
+				}, 5000);
+			}
+		});
+	};
+
+	/**
 	 * Initialize all components
 	 */
 	const init = function() {
@@ -363,6 +428,7 @@
 			// Initialize Choices.js - it will retry if not available
 			initChoicesSelects();
 			setTimeout(initDateInput, 400);
+			initFormSubmitHandler();
 		};
 
 		// Multiple initialization attempts to ensure it works

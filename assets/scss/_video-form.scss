@@ -181,6 +181,20 @@
 			margin-top: 10px;
 		}
 
+		.video-form-message {
+			margin-top: 10px;
+			padding-left: 10px;
+			font-family: "Neue Regrade", sans-serif;
+			font-size: 14px;
+			color: #1b5e20; // subtle green
+			opacity: 0;
+			transition: opacity 0.3s ease;
+
+			&.is-visible {
+				opacity: 1;
+			}
+		}
+
 		// Choices.js styling for select dropdowns
 		.video-form-choices {
 			width: 100%;
