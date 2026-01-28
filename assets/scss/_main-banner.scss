@@ -56,25 +56,25 @@ body.banner-animating {
 	// SVG mask overlay
 	.main-banner-mask {
 		position: absolute;
-		left: 50%;
-		bottom: 50%;
-		transform: translate(0, 50%);
 		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
 		width: 100vw;
 		max-width: 100%;
-		height: 100vh;
+		height: 100dvh;
 		z-index: 1001;
 		pointer-events: none;
 		transform-origin: center center;
 		will-change: transform; // Optimize for animation
 		backface-visibility: hidden; // Prevent blur during transforms
 		-webkit-backface-visibility: hidden;
-		transform: translateX(-50%) translate3d(
+		transform: translate3d(
 			0,
 			0,
 			0
 		); // Force hardware acceleration with 3D transform
-		-webkit-transform: translateX(-50%) translate3d(0, 0, 0); // WebKit hardware acceleration
+		-webkit-transform: translate3d(0, 0, 0); // WebKit hardware acceleration
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		perspective: 1000px; // Enable 3D rendering context
@@ -82,16 +82,12 @@ body.banner-animating {
 		opacity: 1;
 		visibility: visible;
 
-		@media (max-width: 1200px) {
-			bottom: -50px;
-		}
-
 		img,
 		.main-banner-mask-img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			object-position: bottom;
+			object-position: center;
 			image-rendering: -webkit-optimize-contrast; // Crisp edges for WebKit
 			image-rendering: crisp-edges; // Crisp edges standard
 			shape-rendering: crispEdges; // Crisp edges for SVG paths
