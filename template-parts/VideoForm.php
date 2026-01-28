@@ -60,9 +60,13 @@ $video_form_video = get_query_var('video_form_video', get_template_directory_uri
 							</div>
 
 							<div class="video-form-field video-form-field-half">
-								<input type="text" id="video-form-date" name="event_date"
-									placeholder="Select or Type Event Date"
-									class="video-form-input video-form-date-input" required>
+								<div class="video-form-date-wrapper">
+									<input type="text" id="video-form-date" name="event_date"
+										placeholder="Select or Type Event Date"
+										class="video-form-input video-form-date-input" required>
+									<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/header_calendar.svg'); ?>"
+										alt="Calendar" class="video-form-calendar-icon">
+								</div>
 							</div>
 						</div>
 

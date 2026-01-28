@@ -112,6 +112,37 @@
 			}
 		}
 
+		// Date picker wrapper + calendar icon (same icon as main banner)
+		.video-form-date-wrapper {
+			position: relative;
+			width: 100%;
+
+			.video-form-date-input {
+				padding-right: 45px; // room for icon
+			}
+
+			.video-form-calendar-icon {
+				position: absolute;
+				right: 18px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 14px;
+				height: 14px;
+				opacity: 0.6;
+				transition: opacity 0.2s ease;
+				cursor: pointer;
+				z-index: 2;
+			}
+
+			&:hover .video-form-calendar-icon {
+				opacity: 1;
+			}
+
+			.flatpickr-calendar {
+				z-index: 100000;
+			}
+		}
+
 		.video-form-select {
 			appearance: none;
 			-webkit-appearance: none;

@@ -298,6 +298,8 @@
 	 */
 	const initDateInput = function() {
 		const dateInput = document.getElementById('video-form-date');
+		const dateWrapper = dateInput ? dateInput.closest('.video-form-date-wrapper') : null;
+		const calendarIcon = dateWrapper ? dateWrapper.querySelector('.video-form-calendar-icon') : null;
 		
 		if (!dateInput) {
 			return;
@@ -310,7 +312,37 @@
 				dateFormat: 'Y-m-d',
 				allowInput: true, // Allow manual input
 				clickOpens: true,
-				placeholder: 'Select or Type Event Date'
+				placeholder: 'Select or Type Event Date',
+				// Important: avoid being clipped by parent overflow:hidden (VideoForm wrapper)
+				appendTo: document.body,
+				onReady: function() {
+					// Make calendar icon clickable: delegate to input click so Flatpickr handles it
+					if (calendarIcon) {
+						calendarIcon.style.pointerEvents = 'auto';
+						calendarIcon.style.cursor = 'pointer';
+						calendarIcon.addEventListener('click', function(e) {
+							e.preventDefault();
+							e.stopPropagation();
+							// Focus and click the input so Flatpickr opens reliably
+							dateInput.focus();
+							dateInput.click();
+						});
+					}
+				},
+				onOpen: function(selectedDates, dateStr, fp) {
+					// Position calendar under the input (and above overflow:hidden containers)
+					const cal = fp.calendarContainer;
+					if (cal) {
+						const rect = dateInput.getBoundingClientRect();
+						const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+						const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+						cal.style.position = 'absolute';
+						cal.style.top = (rect.bottom + scrollTop + 4) + 'px';
+						cal.style.left = (rect.left + scrollLeft) + 'px';
+						cal.style.zIndex = '100000';
+					}
+				}
 			});
 		} else {
 			// Fallback: Use native date input with type="date" but allow text input

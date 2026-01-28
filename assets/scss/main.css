@@ -14732,6 +14732,31 @@ body.form-popup-open {
 .video-form-section .video-form-form-container .video-form-select:hover {
   border-color: #C5B17F;
 }
+.video-form-section .video-form-form-container .video-form-date-wrapper {
+  position: relative;
+  width: 100%;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .video-form-date-input {
+  padding-right: 45px;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .video-form-calendar-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper:hover .video-form-calendar-icon {
+  opacity: 1;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .flatpickr-calendar {
+  z-index: 100000;
+}
 .video-form-section .video-form-form-container .video-form-select {
   appearance: none;
   -webkit-appearance: none;
@@ -15271,6 +15296,31 @@ body.form-popup-open {
 .video-form-section .video-form-form-container .video-form-input:hover,
 .video-form-section .video-form-form-container .video-form-select:hover {
   border-color: #C5B17F;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper {
+  position: relative;
+  width: 100%;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .video-form-date-input {
+  padding-right: 45px;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .video-form-calendar-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper:hover .video-form-calendar-icon {
+  opacity: 1;
+}
+.video-form-section .video-form-form-container .video-form-date-wrapper .flatpickr-calendar {
+  z-index: 100000;
 }
 .video-form-section .video-form-form-container .video-form-select {
   appearance: none;

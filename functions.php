@@ -412,7 +412,9 @@ function addarah_scripts()
 	}
 
 	// Load scripts for Landing 2 page
-	$is_landing_2_page = is_page_template('page-landing-2.php');
+	// Note: `page-landing-2.php` is a "page slug template" in WP, so `is_page_template()` can be false.
+	// Use `is_page('landing-2')` to ensure assets load on the actual Landing-2 page.
+	$is_landing_2_page = is_page('landing-2') || is_page_template('page-landing-2.php');
 
 	if ($is_landing_2_page) {
 		// Enqueue Swiper if not already loaded (needed for SingleTestimonial)
