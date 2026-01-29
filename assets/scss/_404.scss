@@ -1,10 +1,16 @@
 // 404 Error Page Styles
 .error_404_section {
-	background: #fff;
+	background: $white;
 	width: 100%;
-	min-height: 60vh;
+	min-height: 80vh;
 	display: flex;
 	align-items: center;
+	text-align: center;
+
+	@media #{$media-700} {
+		min-height: 600px;
+		padding-top: 100px;
+	}
 }
 
 .error_404_content {
@@ -13,20 +19,29 @@
 	width: 100%;
 
 	.error_404_number {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 
 		.error_404_title {
-			font-size: 150px;
+			font-family: "Neue Regrade", sans-serif;
+			font-size: 200px;
 			font-weight: 700;
-			color: #173B87;
+			color: $gold;
 			line-height: 1;
 			margin: 0;
 
-			@media screen and (max-width: 768px) {
+			@media #{$media-1024} {
+				font-size: 150px;
+			}
+
+			@media #{$media-768} {
+				font-size: 120px;
+			}
+
+			@media #{$media-700} {
 				font-size: 100px;
 			}
 
-			@media screen and (max-width: 480px) {
+			@media #{$media-480} {
 				font-size: 80px;
 			}
 		}
@@ -35,92 +50,139 @@
 	.error_404_message {
 		margin-bottom: 40px;
 
+		.error_404_heading {
+			font-family: "Neue Regrade", sans-serif;
+			font-size: 36px;
+			font-weight: 600;
+			color: $black;
+			line-height: 1.3;
+			margin: 0 0 20px 0;
+
+			@media #{$media-1024} {
+				font-size: 32px;
+			}
+
+			@media #{$media-768} {
+				font-size: 28px;
+			}
+
+			@media #{$media-700} {
+				font-size: 24px;
+			}
+		}
+
 		.error_404_description {
+			font-family: "Neue Regrade", sans-serif;
 			font-size: 18px;
+			font-weight: 500;
 			line-height: 1.6;
 			color: #666;
-			margin-top: 20px;
+			margin: 0 auto;
 			max-width: 600px;
-			margin-left: auto;
-			margin-right: auto;
 
-			@media screen and (max-width: 768px) {
+			@media #{$media-1024} {
 				font-size: 16px;
+			}
+
+			@media #{$media-768} {
+				font-size: 15px;
+			}
+
+			@media #{$media-700} {
+				font-size: 14px;
 			}
 		}
 	}
 
 	.error_404_actions {
-		margin-bottom: 50px;
+		margin-bottom: 60px;
+		display: flex;
+		justify-content: center;
 
-		.btn_style {
-			margin: 0 auto;
+		.primary-button {
+			display: inline-block;
 		}
 	}
 
 	.error_404_search {
-		margin-top: 50px;
-		padding-top: 50px;
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		margin-top: 60px;
+		padding-top: 60px;
+		border-top: 1px solid rgba(197, 177, 127, 0.2);
 
-		h4 {
-			font-size: 20px;
+		.error_404_search_title {
+			font-family: "Neue Regrade", sans-serif;
+			font-size: 24px;
 			font-weight: 600;
-			color: #000;
-			margin: 0 0 20px 0;
+			color: $black;
+			margin: 0 0 30px 0;
+
+			@media #{$media-768} {
+				font-size: 20px;
+			}
+
+			@media #{$media-700} {
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
 		}
 
 		.search-form {
 			max-width: 500px;
 			margin: 0 auto;
 			display: flex;
-			gap: 10px;
+			gap: 12px;
+			align-items: center;
+
+			@media #{$media-700} {
+				flex-direction: column;
+				gap: 15px;
+			}
 
 			.search-field {
 				flex: 1;
-				padding: 12px 20px;
-				border: 1px solid #dadada;
+				padding: 14px 20px;
+				border: 1px solid #D4C4B0;
+				border-radius: 24px;
+				font-family: "Neue Regrade", sans-serif;
 				font-size: 16px;
+				font-weight: 500;
+				color: $black;
+				background: rgba(255, 255, 255, 0.74);
 				outline: none;
+				transition: border-color 0.3s ease;
+
+				&::placeholder {
+					color: #929292;
+				}
 
 				&:focus {
-					border-color: #173B87;
+					border-color: $gold;
+				}
+
+				@media #{$media-700} {
+					width: 100%;
 				}
 			}
 
 			.search-submit {
-				padding: 12px 30px;
-				background: #173B87;
-				color: #fff;
-				border: 1px solid #173B87;
+				padding: 14px 30px;
+				background: $gold;
+				color: $white;
+				border: 1px solid $gold;
+				border-radius: 24px;
 				cursor: pointer;
+				font-family: "Neue Regrade", sans-serif;
 				font-size: 16px;
+				font-weight: 500;
 				transition: all 0.3s ease;
+				white-space: nowrap;
 
 				&:hover {
-					background: #1a4ba0;
-					border-color: #1a4ba0;
+					background: darken($gold, 5%);
+					border-color: darken($gold, 5%);
 				}
-			}
-		}
-	}
-}
 
-// Responsive styles
-@media screen and (max-width: 768px) {
-	.error_404_section {
-		padding-top: 40px;
-		padding-bottom: 40px;
-		min-height: auto;
-	}
-
-	.error_404_content {
-		.error_404_search {
-			.search-form {
-				flex-direction: column;
-
-				.search-field,
-				.search-submit {
+				@media #{$media-700} {
 					width: 100%;
 				}
 			}
